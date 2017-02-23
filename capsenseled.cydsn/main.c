@@ -341,10 +341,7 @@ void AppCallBack(uint32 event, void* eventParam)
             /* request to update the alarm status */
             if (wrReqParam->handleValPair.attrHandle == CYBLE_LEDCAPSENSE_ALARMSTATUS_CHAR_HANDLE)
             {
-                if (CYBLE_GATT_ERR_NONE == CyBle_GattsWriteAttributeValue(&wrReqParam->handleValPair, 0, &cyBle_connHandle, CYBLE_GATT_DB_PEER_INITIATED))
-                {
-                    alarm_state = wrReqParam->handleValPair.value.val[0];
-                }
+                alarm_state = wrReqParam->handleValPair.value.val[0];
                 
                 CyBle_GattsWriteRsp(cyBle_connHandle);                
             }

@@ -30,7 +30,7 @@
 #define TOLERANCE 0.02
 
 static uint8 PWM_duty_cycles[] = {0, 0, 0};
-static float voltage_thresholds[] = {1.5, 1.7, 2.0};
+static float voltage_thresholds[] = {1.5, 1.7, 1.8};
 
 void init_PWM(void) {
     

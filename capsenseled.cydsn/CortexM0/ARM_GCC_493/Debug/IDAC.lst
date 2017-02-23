@@ -1,0 +1,1269 @@
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 1
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"IDAC.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.set_IDAC_current,"ax",%progbits
+  18              		.align	2
+  19              		.global	set_IDAC_current
+  20              		.code	16
+  21              		.thumb_func
+  22              		.type	set_IDAC_current, %function
+  23              	set_IDAC_current:
+  24              	.LFB36:
+  25              		.file 1 "IDAC.c"
+   1:IDAC.c        **** /* ========================================
+   2:IDAC.c        ****  *
+   3:IDAC.c        ****  * Copyright YOUR COMPANY, THE YEAR
+   4:IDAC.c        ****  * All Rights Reserved
+   5:IDAC.c        ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:IDAC.c        ****  *
+   7:IDAC.c        ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:IDAC.c        ****  * WHICH IS THE PROPERTY OF your company.
+   9:IDAC.c        ****  *
+  10:IDAC.c        ****  * ========================================
+  11:IDAC.c        **** */
+  12:IDAC.c        **** 
+  13:IDAC.c        **** #include "project.h"
+  14:IDAC.c        **** #include "IDAC.h"
+  15:IDAC.c        **** #include "adc.h"
+  16:IDAC.c        **** 
+  17:IDAC.c        **** #define MAX_VOLTAGE 5.0
+  18:IDAC.c        **** #define MIN_VOLTAGE 0.0
+  19:IDAC.c        **** 
+  20:IDAC.c        **** #define MAX_CURRENT_VAL 255
+  21:IDAC.c        **** 
+  22:IDAC.c        **** #define RESISTOR 15000
+  23:IDAC.c        **** #define MAX_CURR 0.000306
+  24:IDAC.c        **** 
+  25:IDAC.c        **** #define FEEDBACK_GAIN 1.0
+  26:IDAC.c        **** #define CONTROLLER_THRESH 0.02
+  27:IDAC.c        **** 
+  28:IDAC.c        **** #define FIRE_THRESH_INDEX 3
+  29:IDAC.c        **** 
+  30:IDAC.c        **** static uint8 IDAC_current = 0x00;
+  31:IDAC.c        **** static float voltage_threshold = 1.4;
+  32:IDAC.c        **** 
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 2
+
+
+  33:IDAC.c        **** void init_IDAC(void) {
+  34:IDAC.c        ****     
+  35:IDAC.c        ****     IDAC_Fire_Thresh_Enable();
+  36:IDAC.c        ****     
+  37:IDAC.c        ****     IDAC_Fire_Thresh_Start();
+  38:IDAC.c        ****     
+  39:IDAC.c        ****     set_IDAC_current();
+  40:IDAC.c        **** }
+  41:IDAC.c        **** 
+  42:IDAC.c        **** void set_IDAC_current(void) {
+  26              		.loc 1 42 0
+  27              		.cfi_startproc
+  28 0000 08B5     		push	{r3, lr}
+  29              		.cfi_def_cfa_offset 8
+  30              		.cfi_offset 3, -8
+  31              		.cfi_offset 14, -4
+  43:IDAC.c        ****     
+  44:IDAC.c        ****     IDAC_Fire_Thresh_SetValue(IDAC_current);
+  32              		.loc 1 44 0
+  33 0002 024B     		ldr	r3, .L2
+  34 0004 1878     		ldrb	r0, [r3]
+  35 0006 FFF7FEFF 		bl	IDAC_Fire_Thresh_SetValue
+  36              	.LVL0:
+  45:IDAC.c        **** }
+  37              		.loc 1 45 0
+  38              		@ sp needed
+  39 000a 08BD     		pop	{r3, pc}
+  40              	.L3:
+  41              		.align	2
+  42              	.L2:
+  43 000c 00000000 		.word	.LANCHOR0
+  44              		.cfi_endproc
+  45              	.LFE36:
+  46              		.size	set_IDAC_current, .-set_IDAC_current
+  47              		.section	.text.init_IDAC,"ax",%progbits
+  48              		.align	2
+  49              		.global	init_IDAC
+  50              		.code	16
+  51              		.thumb_func
+  52              		.type	init_IDAC, %function
+  53              	init_IDAC:
+  54              	.LFB35:
+  33:IDAC.c        ****     
+  55              		.loc 1 33 0
+  56              		.cfi_startproc
+  57 0000 08B5     		push	{r3, lr}
+  58              		.cfi_def_cfa_offset 8
+  59              		.cfi_offset 3, -8
+  60              		.cfi_offset 14, -4
+  35:IDAC.c        ****     
+  61              		.loc 1 35 0
+  62 0002 FFF7FEFF 		bl	IDAC_Fire_Thresh_Enable
+  63              	.LVL1:
+  37:IDAC.c        ****     
+  64              		.loc 1 37 0
+  65 0006 FFF7FEFF 		bl	IDAC_Fire_Thresh_Start
+  66              	.LVL2:
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 3
+
+
+  39:IDAC.c        **** }
+  67              		.loc 1 39 0
+  68 000a FFF7FEFF 		bl	set_IDAC_current
+  69              	.LVL3:
+  40:IDAC.c        **** 
+  70              		.loc 1 40 0
+  71              		@ sp needed
+  72 000e 08BD     		pop	{r3, pc}
+  73              		.cfi_endproc
+  74              	.LFE35:
+  75              		.size	init_IDAC, .-init_IDAC
+  76              		.global	__aeabi_fsub
+  77              		.global	__aeabi_dmul
+  78              		.global	__aeabi_ddiv
+  79              		.global	__aeabi_d2iz
+  80              		.global	__aeabi_f2d
+  81              		.global	__aeabi_dcmpgt
+  82              		.global	__aeabi_dcmplt
+  83              		.section	.text.set_IDAC_threshold,"ax",%progbits
+  84              		.align	2
+  85              		.global	set_IDAC_threshold
+  86              		.code	16
+  87              		.thumb_func
+  88              		.type	set_IDAC_threshold, %function
+  89              	set_IDAC_threshold:
+  90              	.LFB38:
+  46:IDAC.c        **** 
+  47:IDAC.c        **** void update_IDAC_threshold(float volt_val) {
+  48:IDAC.c        ****     
+  49:IDAC.c        ****     /* call function to set value based on feedback*/
+  50:IDAC.c        ****     if (volt_val < MAX_VOLTAGE && volt_val > 0) {
+  51:IDAC.c        ****         voltage_threshold = volt_val;
+  52:IDAC.c        ****     }
+  53:IDAC.c        ****     else if (volt_val > MAX_VOLTAGE) {
+  54:IDAC.c        ****         voltage_threshold = MAX_VOLTAGE;
+  55:IDAC.c        ****     }
+  56:IDAC.c        ****     else {
+  57:IDAC.c        ****         voltage_threshold = 0;
+  58:IDAC.c        ****     }
+  59:IDAC.c        ****     
+  60:IDAC.c        ****     set_IDAC_threshold();
+  61:IDAC.c        ****     
+  62:IDAC.c        **** }
+  63:IDAC.c        **** 
+  64:IDAC.c        **** void set_IDAC_threshold(void) {
+  91              		.loc 1 64 0
+  92              		.cfi_startproc
+  93 0000 38B5     		push	{r3, r4, r5, lr}
+  94              		.cfi_def_cfa_offset 16
+  95              		.cfi_offset 3, -16
+  96              		.cfi_offset 4, -12
+  97              		.cfi_offset 5, -8
+  98              		.cfi_offset 14, -4
+  65:IDAC.c        **** 
+  66:IDAC.c        ****     int delta;
+  67:IDAC.c        ****     int new_current;
+  68:IDAC.c        ****     float current_out = ADC_read(FIRE_THRESH_INDEX);
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 4
+
+
+  99              		.loc 1 68 0
+ 100 0002 0320     		mov	r0, #3
+ 101 0004 FFF7FEFF 		bl	ADC_read
+ 102              	.LVL4:
+ 103 0008 011C     		add	r1, r0, #0
+ 104              	.LVL5:
+  69:IDAC.c        ****     float error = voltage_threshold - current_out;
+ 105              		.loc 1 69 0
+ 106 000a 214B     		ldr	r3, .L11
+ 107 000c 1868     		ldr	r0, [r3]
+ 108              	.LVL6:
+ 109 000e FFF7FEFF 		bl	__aeabi_fsub
+ 110              	.LVL7:
+  70:IDAC.c        ****     
+  71:IDAC.c        ****     while (error > CONTROLLER_THRESH || error < -CONTROLLER_THRESH) {
+ 111              		.loc 1 71 0
+ 112 0012 2AE0     		b	.L6
+ 113              	.LVL8:
+ 114              	.L10:
+  72:IDAC.c        ****         
+  73:IDAC.c        ****         delta = (int)(error*FEEDBACK_GAIN*MAX_CURRENT_VAL/(RESISTOR*MAX_CURR));
+ 115              		.loc 1 73 0
+ 116 0014 201C     		mov	r0, r4
+ 117 0016 291C     		mov	r1, r5
+ 118 0018 0022     		mov	r2, #0
+ 119 001a 1E4B     		ldr	r3, .L11+4
+ 120 001c FFF7FEFF 		bl	__aeabi_dmul
+ 121              	.LVL9:
+ 122 0020 1D4A     		ldr	r2, .L11+8
+ 123 0022 1E4B     		ldr	r3, .L11+12
+ 124 0024 FFF7FEFF 		bl	__aeabi_ddiv
+ 125              	.LVL10:
+ 126 0028 FFF7FEFF 		bl	__aeabi_d2iz
+ 127              	.LVL11:
+  74:IDAC.c        ****         new_current = IDAC_current + delta;
+ 128              		.loc 1 74 0
+ 129 002c 1C4B     		ldr	r3, .L11+16
+ 130 002e 1B78     		ldrb	r3, [r3]
+ 131 0030 1818     		add	r0, r3, r0
+ 132              	.LVL12:
+  75:IDAC.c        ****     
+  76:IDAC.c        ****         if (new_current <= MAX_CURRENT_VAL && new_current >= 0) {
+ 133              		.loc 1 76 0
+ 134 0032 FF28     		cmp	r0, #255
+ 135 0034 02D8     		bhi	.L7
+  77:IDAC.c        ****             IDAC_current = new_current;
+ 136              		.loc 1 77 0
+ 137 0036 1A4B     		ldr	r3, .L11+16
+ 138 0038 1870     		strb	r0, [r3]
+ 139 003a 08E0     		b	.L8
+ 140              	.L7:
+  78:IDAC.c        ****         }
+  79:IDAC.c        ****         else if (new_current > MAX_CURRENT_VAL) {
+ 141              		.loc 1 79 0
+ 142 003c FF28     		cmp	r0, #255
+ 143 003e 03DD     		ble	.L9
+  80:IDAC.c        ****             IDAC_current = MAX_CURRENT_VAL;
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 5
+
+
+ 144              		.loc 1 80 0
+ 145 0040 FF22     		mov	r2, #255
+ 146 0042 174B     		ldr	r3, .L11+16
+ 147 0044 1A70     		strb	r2, [r3]
+ 148 0046 02E0     		b	.L8
+ 149              	.L9:
+  81:IDAC.c        ****         }
+  82:IDAC.c        ****         else {
+  83:IDAC.c        ****             IDAC_current = 0;
+ 150              		.loc 1 83 0
+ 151 0048 0022     		mov	r2, #0
+ 152 004a 154B     		ldr	r3, .L11+16
+ 153 004c 1A70     		strb	r2, [r3]
+ 154              	.L8:
+  84:IDAC.c        ****         }
+  85:IDAC.c        ****     
+  86:IDAC.c        ****    
+  87:IDAC.c        ****     
+  88:IDAC.c        ****         set_IDAC_current();
+ 155              		.loc 1 88 0
+ 156 004e FFF7FEFF 		bl	set_IDAC_current
+ 157              	.LVL13:
+  89:IDAC.c        ****         CyDelay(500);
+ 158              		.loc 1 89 0
+ 159 0052 FA20     		mov	r0, #250
+ 160 0054 4000     		lsl	r0, r0, #1
+ 161 0056 FFF7FEFF 		bl	CyDelay
+ 162              	.LVL14:
+  90:IDAC.c        ****         
+  91:IDAC.c        ****         current_out = ADC_read(FIRE_THRESH_INDEX);
+ 163              		.loc 1 91 0
+ 164 005a 0320     		mov	r0, #3
+ 165 005c FFF7FEFF 		bl	ADC_read
+ 166              	.LVL15:
+ 167 0060 011C     		add	r1, r0, #0
+ 168              	.LVL16:
+  92:IDAC.c        ****         error = voltage_threshold - current_out;
+ 169              		.loc 1 92 0
+ 170 0062 0B4B     		ldr	r3, .L11
+ 171 0064 1868     		ldr	r0, [r3]
+ 172              	.LVL17:
+ 173 0066 FFF7FEFF 		bl	__aeabi_fsub
+ 174              	.LVL18:
+ 175              	.L6:
+  71:IDAC.c        ****         
+ 176              		.loc 1 71 0
+ 177 006a FFF7FEFF 		bl	__aeabi_f2d
+ 178              	.LVL19:
+ 179 006e 041C     		mov	r4, r0
+ 180 0070 0D1C     		mov	r5, r1
+ 181 0072 0C4A     		ldr	r2, .L11+20
+ 182 0074 0C4B     		ldr	r3, .L11+24
+ 183 0076 FFF7FEFF 		bl	__aeabi_dcmpgt
+ 184              	.LVL20:
+ 185 007a 0028     		cmp	r0, #0
+ 186 007c CAD1     		bne	.L10
+  71:IDAC.c        ****         
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 6
+
+
+ 187              		.loc 1 71 0 is_stmt 0 discriminator 1
+ 188 007e 201C     		mov	r0, r4
+ 189 0080 291C     		mov	r1, r5
+ 190 0082 084A     		ldr	r2, .L11+20
+ 191 0084 094B     		ldr	r3, .L11+28
+ 192 0086 FFF7FEFF 		bl	__aeabi_dcmplt
+ 193              	.LVL21:
+ 194 008a 0028     		cmp	r0, #0
+ 195 008c C2D1     		bne	.L10
+  93:IDAC.c        ****     }
+  94:IDAC.c        **** 
+  95:IDAC.c        **** }    
+ 196              		.loc 1 95 0 is_stmt 1
+ 197              		@ sp needed
+ 198 008e 38BD     		pop	{r3, r4, r5, pc}
+ 199              	.L12:
+ 200              		.align	2
+ 201              	.L11:
+ 202 0090 00000000 		.word	.LANCHOR1
+ 203 0094 00E06F40 		.word	1081073664
+ 204 0098 5C8FC2F5 		.word	-171798692
+ 205 009c 285C1240 		.word	1074945064
+ 206 00a0 00000000 		.word	.LANCHOR0
+ 207 00a4 7B14AE47 		.word	1202590843
+ 208 00a8 E17A943F 		.word	1066695393
+ 209 00ac E17A94BF 		.word	-1080788255
+ 210              		.cfi_endproc
+ 211              	.LFE38:
+ 212              		.size	set_IDAC_threshold, .-set_IDAC_threshold
+ 213              		.global	__aeabi_fcmplt
+ 214              		.global	__aeabi_fcmpgt
+ 215              		.section	.text.update_IDAC_threshold,"ax",%progbits
+ 216              		.align	2
+ 217              		.global	update_IDAC_threshold
+ 218              		.code	16
+ 219              		.thumb_func
+ 220              		.type	update_IDAC_threshold, %function
+ 221              	update_IDAC_threshold:
+ 222              	.LFB37:
+  47:IDAC.c        ****     
+ 223              		.loc 1 47 0
+ 224              		.cfi_startproc
+ 225              	.LVL22:
+ 226 0000 10B5     		push	{r4, lr}
+ 227              		.cfi_def_cfa_offset 8
+ 228              		.cfi_offset 4, -8
+ 229              		.cfi_offset 14, -4
+ 230 0002 041C     		add	r4, r0, #0
+  50:IDAC.c        ****         voltage_threshold = volt_val;
+ 231              		.loc 1 50 0
+ 232 0004 0E49     		ldr	r1, .L24
+ 233 0006 FFF7FEFF 		bl	__aeabi_fcmplt
+ 234              	.LVL23:
+ 235 000a 0028     		cmp	r0, #0
+ 236 000c 08D0     		beq	.L14
+  50:IDAC.c        ****         voltage_threshold = volt_val;
+ 237              		.loc 1 50 0 is_stmt 0 discriminator 1
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 7
+
+
+ 238 000e 201C     		add	r0, r4, #0
+ 239 0010 0021     		mov	r1, #0
+ 240 0012 FFF7FEFF 		bl	__aeabi_fcmpgt
+ 241              	.LVL24:
+ 242 0016 0028     		cmp	r0, #0
+ 243 0018 02D0     		beq	.L14
+  51:IDAC.c        ****     }
+ 244              		.loc 1 51 0 is_stmt 1
+ 245 001a 0A4B     		ldr	r3, .L24+4
+ 246 001c 1C60     		str	r4, [r3]
+ 247 001e 0CE0     		b	.L17
+ 248              	.L14:
+  53:IDAC.c        ****         voltage_threshold = MAX_VOLTAGE;
+ 249              		.loc 1 53 0
+ 250 0020 201C     		add	r0, r4, #0
+ 251 0022 0749     		ldr	r1, .L24
+ 252 0024 FFF7FEFF 		bl	__aeabi_fcmpgt
+ 253              	.LVL25:
+ 254 0028 0028     		cmp	r0, #0
+ 255 002a 03D0     		beq	.L23
+  54:IDAC.c        ****     }
+ 256              		.loc 1 54 0
+ 257 002c 044A     		ldr	r2, .L24
+ 258 002e 054B     		ldr	r3, .L24+4
+ 259 0030 1A60     		str	r2, [r3]
+ 260 0032 02E0     		b	.L17
+ 261              	.L23:
+  57:IDAC.c        ****     }
+ 262              		.loc 1 57 0
+ 263 0034 0022     		mov	r2, #0
+ 264 0036 034B     		ldr	r3, .L24+4
+ 265 0038 1A60     		str	r2, [r3]
+ 266              	.L17:
+  60:IDAC.c        ****     
+ 267              		.loc 1 60 0
+ 268 003a FFF7FEFF 		bl	set_IDAC_threshold
+ 269              	.LVL26:
+  62:IDAC.c        **** 
+ 270              		.loc 1 62 0
+ 271              		@ sp needed
+ 272              	.LVL27:
+ 273 003e 10BD     		pop	{r4, pc}
+ 274              	.L25:
+ 275              		.align	2
+ 276              	.L24:
+ 277 0040 0000A040 		.word	1084227584
+ 278 0044 00000000 		.word	.LANCHOR1
+ 279              		.cfi_endproc
+ 280              	.LFE37:
+ 281              		.size	update_IDAC_threshold, .-update_IDAC_threshold
+ 282              		.data
+ 283              		.align	2
+ 284              		.set	.LANCHOR1,. + 0
+ 285              		.type	voltage_threshold, %object
+ 286              		.size	voltage_threshold, 4
+ 287              	voltage_threshold:
+ 288 0000 3333B33F 		.word	1068708659
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 8
+
+
+ 289              		.bss
+ 290              		.set	.LANCHOR0,. + 0
+ 291              		.type	IDAC_current, %object
+ 292              		.size	IDAC_current, 1
+ 293              	IDAC_current:
+ 294 0000 00       		.space	1
+ 295              		.text
+ 296              	.Letext0:
+ 297              		.file 2 "Generated_Source\\PSoC4/cytypes.h"
+ 298              		.file 3 "Generated_Source\\PSoC4/IDAC_Fire_Thresh.h"
+ 299              		.file 4 "adc.h"
+ 300              		.file 5 "Generated_Source\\PSoC4/CyLib.h"
+ 301              		.section	.debug_info,"",%progbits
+ 302              	.Ldebug_info0:
+ 303 0000 0D020000 		.4byte	0x20d
+ 304 0004 0400     		.2byte	0x4
+ 305 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 306 000a 04       		.byte	0x4
+ 307 000b 01       		.uleb128 0x1
+ 308 000c B6010000 		.4byte	.LASF27
+ 309 0010 01       		.byte	0x1
+ 310 0011 57020000 		.4byte	.LASF28
+ 311 0015 32010000 		.4byte	.LASF29
+ 312 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 313 001d 00000000 		.4byte	0
+ 314 0021 00000000 		.4byte	.Ldebug_line0
+ 315 0025 02       		.uleb128 0x2
+ 316 0026 04       		.byte	0x4
+ 317 0027 04       		.byte	0x4
+ 318 0028 83000000 		.4byte	.LASF0
+ 319 002c 02       		.uleb128 0x2
+ 320 002d 01       		.byte	0x1
+ 321 002e 06       		.byte	0x6
+ 322 002f 67020000 		.4byte	.LASF1
+ 323 0033 02       		.uleb128 0x2
+ 324 0034 01       		.byte	0x1
+ 325 0035 08       		.byte	0x8
+ 326 0036 89000000 		.4byte	.LASF2
+ 327 003a 02       		.uleb128 0x2
+ 328 003b 02       		.byte	0x2
+ 329 003c 05       		.byte	0x5
+ 330 003d 44020000 		.4byte	.LASF3
+ 331 0041 02       		.uleb128 0x2
+ 332 0042 02       		.byte	0x2
+ 333 0043 07       		.byte	0x7
+ 334 0044 36000000 		.4byte	.LASF4
+ 335 0048 02       		.uleb128 0x2
+ 336 0049 04       		.byte	0x4
+ 337 004a 05       		.byte	0x5
+ 338 004b 4E020000 		.4byte	.LASF5
+ 339 004f 02       		.uleb128 0x2
+ 340 0050 04       		.byte	0x4
+ 341 0051 07       		.byte	0x7
+ 342 0052 97000000 		.4byte	.LASF6
+ 343 0056 02       		.uleb128 0x2
+ 344 0057 08       		.byte	0x8
+ 345 0058 05       		.byte	0x5
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 9
+
+
+ 346 0059 91010000 		.4byte	.LASF7
+ 347 005d 02       		.uleb128 0x2
+ 348 005e 08       		.byte	0x8
+ 349 005f 07       		.byte	0x7
+ 350 0060 1B010000 		.4byte	.LASF8
+ 351 0064 03       		.uleb128 0x3
+ 352 0065 04       		.byte	0x4
+ 353 0066 05       		.byte	0x5
+ 354 0067 696E7400 		.ascii	"int\000"
+ 355 006b 02       		.uleb128 0x2
+ 356 006c 04       		.byte	0x4
+ 357 006d 07       		.byte	0x7
+ 358 006e 05010000 		.4byte	.LASF9
+ 359 0072 04       		.uleb128 0x4
+ 360 0073 A9000000 		.4byte	.LASF10
+ 361 0077 02       		.byte	0x2
+ 362 0078 C2       		.byte	0xc2
+ 363 0079 33000000 		.4byte	0x33
+ 364 007d 04       		.uleb128 0x4
+ 365 007e FE000000 		.4byte	.LASF11
+ 366 0082 02       		.byte	0x2
+ 367 0083 C4       		.byte	0xc4
+ 368 0084 4F000000 		.4byte	0x4f
+ 369 0088 02       		.uleb128 0x2
+ 370 0089 08       		.byte	0x8
+ 371 008a 04       		.byte	0x4
+ 372 008b ED000000 		.4byte	.LASF12
+ 373 008f 02       		.uleb128 0x2
+ 374 0090 01       		.byte	0x1
+ 375 0091 08       		.byte	0x8
+ 376 0092 B1010000 		.4byte	.LASF13
+ 377 0096 02       		.uleb128 0x2
+ 378 0097 04       		.byte	0x4
+ 379 0098 07       		.byte	0x7
+ 380 0099 82010000 		.4byte	.LASF14
+ 381 009d 05       		.uleb128 0x5
+ 382 009e 00000000 		.4byte	.LASF15
+ 383 00a2 01       		.byte	0x1
+ 384 00a3 2A       		.byte	0x2a
+ 385 00a4 00000000 		.4byte	.LFB36
+ 386 00a8 10000000 		.4byte	.LFE36-.LFB36
+ 387 00ac 01       		.uleb128 0x1
+ 388 00ad 9C       		.byte	0x9c
+ 389 00ae BC000000 		.4byte	0xbc
+ 390 00b2 06       		.uleb128 0x6
+ 391 00b3 0A000000 		.4byte	.LVL0
+ 392 00b7 CF010000 		.4byte	0x1cf
+ 393 00bb 00       		.byte	0
+ 394 00bc 05       		.uleb128 0x5
+ 395 00bd F4000000 		.4byte	.LASF16
+ 396 00c1 01       		.byte	0x1
+ 397 00c2 21       		.byte	0x21
+ 398 00c3 00000000 		.4byte	.LFB35
+ 399 00c7 10000000 		.4byte	.LFE35-.LFB35
+ 400 00cb 01       		.uleb128 0x1
+ 401 00cc 9C       		.byte	0x9c
+ 402 00cd ED000000 		.4byte	0xed
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 10
+
+
+ 403 00d1 06       		.uleb128 0x6
+ 404 00d2 06000000 		.4byte	.LVL1
+ 405 00d6 E0010000 		.4byte	0x1e0
+ 406 00da 06       		.uleb128 0x6
+ 407 00db 0A000000 		.4byte	.LVL2
+ 408 00df E7010000 		.4byte	0x1e7
+ 409 00e3 06       		.uleb128 0x6
+ 410 00e4 0E000000 		.4byte	.LVL3
+ 411 00e8 9D000000 		.4byte	0x9d
+ 412 00ec 00       		.byte	0
+ 413 00ed 07       		.uleb128 0x7
+ 414 00ee 11000000 		.4byte	.LASF17
+ 415 00f2 01       		.byte	0x1
+ 416 00f3 40       		.byte	0x40
+ 417 00f4 00000000 		.4byte	.LFB38
+ 418 00f8 B0000000 		.4byte	.LFE38-.LFB38
+ 419 00fc 01       		.uleb128 0x1
+ 420 00fd 9C       		.byte	0x9c
+ 421 00fe 7F010000 		.4byte	0x17f
+ 422 0102 08       		.uleb128 0x8
+ 423 0103 30000000 		.4byte	.LASF18
+ 424 0107 01       		.byte	0x1
+ 425 0108 42       		.byte	0x42
+ 426 0109 64000000 		.4byte	0x64
+ 427 010d 00000000 		.4byte	.LLST0
+ 428 0111 08       		.uleb128 0x8
+ 429 0112 24000000 		.4byte	.LASF19
+ 430 0116 01       		.byte	0x1
+ 431 0117 43       		.byte	0x43
+ 432 0118 64000000 		.4byte	0x64
+ 433 011c 13000000 		.4byte	.LLST1
+ 434 0120 08       		.uleb128 0x8
+ 435 0121 C7000000 		.4byte	.LASF20
+ 436 0125 01       		.byte	0x1
+ 437 0126 44       		.byte	0x44
+ 438 0127 25000000 		.4byte	0x25
+ 439 012b 26000000 		.4byte	.LLST2
+ 440 012f 08       		.uleb128 0x8
+ 441 0130 8B010000 		.4byte	.LASF21
+ 442 0134 01       		.byte	0x1
+ 443 0135 45       		.byte	0x45
+ 444 0136 25000000 		.4byte	0x25
+ 445 013a 5A000000 		.4byte	.LLST3
+ 446 013e 09       		.uleb128 0x9
+ 447 013f 08000000 		.4byte	.LVL4
+ 448 0143 EE010000 		.4byte	0x1ee
+ 449 0147 51010000 		.4byte	0x151
+ 450 014b 0A       		.uleb128 0xa
+ 451 014c 01       		.uleb128 0x1
+ 452 014d 50       		.byte	0x50
+ 453 014e 01       		.uleb128 0x1
+ 454 014f 33       		.byte	0x33
+ 455 0150 00       		.byte	0
+ 456 0151 06       		.uleb128 0x6
+ 457 0152 52000000 		.4byte	.LVL13
+ 458 0156 9D000000 		.4byte	0x9d
+ 459 015a 09       		.uleb128 0x9
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 11
+
+
+ 460 015b 5A000000 		.4byte	.LVL14
+ 461 015f 03020000 		.4byte	0x203
+ 462 0163 6F010000 		.4byte	0x16f
+ 463 0167 0A       		.uleb128 0xa
+ 464 0168 01       		.uleb128 0x1
+ 465 0169 50       		.byte	0x50
+ 466 016a 03       		.uleb128 0x3
+ 467 016b 0A       		.byte	0xa
+ 468 016c F401     		.2byte	0x1f4
+ 469 016e 00       		.byte	0
+ 470 016f 0B       		.uleb128 0xb
+ 471 0170 60000000 		.4byte	.LVL15
+ 472 0174 EE010000 		.4byte	0x1ee
+ 473 0178 0A       		.uleb128 0xa
+ 474 0179 01       		.uleb128 0x1
+ 475 017a 50       		.byte	0x50
+ 476 017b 01       		.uleb128 0x1
+ 477 017c 33       		.byte	0x33
+ 478 017d 00       		.byte	0
+ 479 017e 00       		.byte	0
+ 480 017f 07       		.uleb128 0x7
+ 481 0180 60000000 		.4byte	.LASF22
+ 482 0184 01       		.byte	0x1
+ 483 0185 2F       		.byte	0x2f
+ 484 0186 00000000 		.4byte	.LFB37
+ 485 018a 48000000 		.4byte	.LFE37-.LFB37
+ 486 018e 01       		.uleb128 0x1
+ 487 018f 9C       		.byte	0x9c
+ 488 0190 AD010000 		.4byte	0x1ad
+ 489 0194 0C       		.uleb128 0xc
+ 490 0195 12010000 		.4byte	.LASF30
+ 491 0199 01       		.byte	0x1
+ 492 019a 2F       		.byte	0x2f
+ 493 019b 25000000 		.4byte	0x25
+ 494 019f 78000000 		.4byte	.LLST4
+ 495 01a3 06       		.uleb128 0x6
+ 496 01a4 3E000000 		.4byte	.LVL26
+ 497 01a8 ED000000 		.4byte	0xed
+ 498 01ac 00       		.byte	0
+ 499 01ad 0D       		.uleb128 0xd
+ 500 01ae 76000000 		.4byte	.LASF23
+ 501 01b2 01       		.byte	0x1
+ 502 01b3 1E       		.byte	0x1e
+ 503 01b4 72000000 		.4byte	0x72
+ 504 01b8 05       		.uleb128 0x5
+ 505 01b9 03       		.byte	0x3
+ 506 01ba 00000000 		.4byte	IDAC_current
+ 507 01be 0D       		.uleb128 0xd
+ 508 01bf 9F010000 		.4byte	.LASF24
+ 509 01c3 01       		.byte	0x1
+ 510 01c4 1F       		.byte	0x1f
+ 511 01c5 25000000 		.4byte	0x25
+ 512 01c9 05       		.uleb128 0x5
+ 513 01ca 03       		.byte	0x3
+ 514 01cb 00000000 		.4byte	voltage_threshold
+ 515 01cf 0E       		.uleb128 0xe
+ 516 01d0 D3000000 		.4byte	.LASF31
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 12
+
+
+ 517 01d4 03       		.byte	0x3
+ 518 01d5 54       		.byte	0x54
+ 519 01d6 E0010000 		.4byte	0x1e0
+ 520 01da 0F       		.uleb128 0xf
+ 521 01db 7D000000 		.4byte	0x7d
+ 522 01df 00       		.byte	0
+ 523 01e0 10       		.uleb128 0x10
+ 524 01e1 AF000000 		.4byte	.LASF25
+ 525 01e5 03       		.byte	0x3
+ 526 01e6 51       		.byte	0x51
+ 527 01e7 10       		.uleb128 0x10
+ 528 01e8 49000000 		.4byte	.LASF26
+ 529 01ec 03       		.byte	0x3
+ 530 01ed 52       		.byte	0x52
+ 531 01ee 11       		.uleb128 0x11
+ 532 01ef 5E020000 		.4byte	.LASF32
+ 533 01f3 04       		.byte	0x4
+ 534 01f4 14       		.byte	0x14
+ 535 01f5 25000000 		.4byte	0x25
+ 536 01f9 03020000 		.4byte	0x203
+ 537 01fd 0F       		.uleb128 0xf
+ 538 01fe 64000000 		.4byte	0x64
+ 539 0202 00       		.byte	0
+ 540 0203 12       		.uleb128 0x12
+ 541 0204 73020000 		.4byte	.LASF33
+ 542 0208 05       		.byte	0x5
+ 543 0209 57       		.byte	0x57
+ 544 020a 0F       		.uleb128 0xf
+ 545 020b 7D000000 		.4byte	0x7d
+ 546 020f 00       		.byte	0
+ 547 0210 00       		.byte	0
+ 548              		.section	.debug_abbrev,"",%progbits
+ 549              	.Ldebug_abbrev0:
+ 550 0000 01       		.uleb128 0x1
+ 551 0001 11       		.uleb128 0x11
+ 552 0002 01       		.byte	0x1
+ 553 0003 25       		.uleb128 0x25
+ 554 0004 0E       		.uleb128 0xe
+ 555 0005 13       		.uleb128 0x13
+ 556 0006 0B       		.uleb128 0xb
+ 557 0007 03       		.uleb128 0x3
+ 558 0008 0E       		.uleb128 0xe
+ 559 0009 1B       		.uleb128 0x1b
+ 560 000a 0E       		.uleb128 0xe
+ 561 000b 55       		.uleb128 0x55
+ 562 000c 17       		.uleb128 0x17
+ 563 000d 11       		.uleb128 0x11
+ 564 000e 01       		.uleb128 0x1
+ 565 000f 10       		.uleb128 0x10
+ 566 0010 17       		.uleb128 0x17
+ 567 0011 00       		.byte	0
+ 568 0012 00       		.byte	0
+ 569 0013 02       		.uleb128 0x2
+ 570 0014 24       		.uleb128 0x24
+ 571 0015 00       		.byte	0
+ 572 0016 0B       		.uleb128 0xb
+ 573 0017 0B       		.uleb128 0xb
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 13
+
+
+ 574 0018 3E       		.uleb128 0x3e
+ 575 0019 0B       		.uleb128 0xb
+ 576 001a 03       		.uleb128 0x3
+ 577 001b 0E       		.uleb128 0xe
+ 578 001c 00       		.byte	0
+ 579 001d 00       		.byte	0
+ 580 001e 03       		.uleb128 0x3
+ 581 001f 24       		.uleb128 0x24
+ 582 0020 00       		.byte	0
+ 583 0021 0B       		.uleb128 0xb
+ 584 0022 0B       		.uleb128 0xb
+ 585 0023 3E       		.uleb128 0x3e
+ 586 0024 0B       		.uleb128 0xb
+ 587 0025 03       		.uleb128 0x3
+ 588 0026 08       		.uleb128 0x8
+ 589 0027 00       		.byte	0
+ 590 0028 00       		.byte	0
+ 591 0029 04       		.uleb128 0x4
+ 592 002a 16       		.uleb128 0x16
+ 593 002b 00       		.byte	0
+ 594 002c 03       		.uleb128 0x3
+ 595 002d 0E       		.uleb128 0xe
+ 596 002e 3A       		.uleb128 0x3a
+ 597 002f 0B       		.uleb128 0xb
+ 598 0030 3B       		.uleb128 0x3b
+ 599 0031 0B       		.uleb128 0xb
+ 600 0032 49       		.uleb128 0x49
+ 601 0033 13       		.uleb128 0x13
+ 602 0034 00       		.byte	0
+ 603 0035 00       		.byte	0
+ 604 0036 05       		.uleb128 0x5
+ 605 0037 2E       		.uleb128 0x2e
+ 606 0038 01       		.byte	0x1
+ 607 0039 3F       		.uleb128 0x3f
+ 608 003a 19       		.uleb128 0x19
+ 609 003b 03       		.uleb128 0x3
+ 610 003c 0E       		.uleb128 0xe
+ 611 003d 3A       		.uleb128 0x3a
+ 612 003e 0B       		.uleb128 0xb
+ 613 003f 3B       		.uleb128 0x3b
+ 614 0040 0B       		.uleb128 0xb
+ 615 0041 27       		.uleb128 0x27
+ 616 0042 19       		.uleb128 0x19
+ 617 0043 11       		.uleb128 0x11
+ 618 0044 01       		.uleb128 0x1
+ 619 0045 12       		.uleb128 0x12
+ 620 0046 06       		.uleb128 0x6
+ 621 0047 40       		.uleb128 0x40
+ 622 0048 18       		.uleb128 0x18
+ 623 0049 9742     		.uleb128 0x2117
+ 624 004b 19       		.uleb128 0x19
+ 625 004c 01       		.uleb128 0x1
+ 626 004d 13       		.uleb128 0x13
+ 627 004e 00       		.byte	0
+ 628 004f 00       		.byte	0
+ 629 0050 06       		.uleb128 0x6
+ 630 0051 898201   		.uleb128 0x4109
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 14
+
+
+ 631 0054 00       		.byte	0
+ 632 0055 11       		.uleb128 0x11
+ 633 0056 01       		.uleb128 0x1
+ 634 0057 31       		.uleb128 0x31
+ 635 0058 13       		.uleb128 0x13
+ 636 0059 00       		.byte	0
+ 637 005a 00       		.byte	0
+ 638 005b 07       		.uleb128 0x7
+ 639 005c 2E       		.uleb128 0x2e
+ 640 005d 01       		.byte	0x1
+ 641 005e 3F       		.uleb128 0x3f
+ 642 005f 19       		.uleb128 0x19
+ 643 0060 03       		.uleb128 0x3
+ 644 0061 0E       		.uleb128 0xe
+ 645 0062 3A       		.uleb128 0x3a
+ 646 0063 0B       		.uleb128 0xb
+ 647 0064 3B       		.uleb128 0x3b
+ 648 0065 0B       		.uleb128 0xb
+ 649 0066 27       		.uleb128 0x27
+ 650 0067 19       		.uleb128 0x19
+ 651 0068 11       		.uleb128 0x11
+ 652 0069 01       		.uleb128 0x1
+ 653 006a 12       		.uleb128 0x12
+ 654 006b 06       		.uleb128 0x6
+ 655 006c 40       		.uleb128 0x40
+ 656 006d 18       		.uleb128 0x18
+ 657 006e 9642     		.uleb128 0x2116
+ 658 0070 19       		.uleb128 0x19
+ 659 0071 01       		.uleb128 0x1
+ 660 0072 13       		.uleb128 0x13
+ 661 0073 00       		.byte	0
+ 662 0074 00       		.byte	0
+ 663 0075 08       		.uleb128 0x8
+ 664 0076 34       		.uleb128 0x34
+ 665 0077 00       		.byte	0
+ 666 0078 03       		.uleb128 0x3
+ 667 0079 0E       		.uleb128 0xe
+ 668 007a 3A       		.uleb128 0x3a
+ 669 007b 0B       		.uleb128 0xb
+ 670 007c 3B       		.uleb128 0x3b
+ 671 007d 0B       		.uleb128 0xb
+ 672 007e 49       		.uleb128 0x49
+ 673 007f 13       		.uleb128 0x13
+ 674 0080 02       		.uleb128 0x2
+ 675 0081 17       		.uleb128 0x17
+ 676 0082 00       		.byte	0
+ 677 0083 00       		.byte	0
+ 678 0084 09       		.uleb128 0x9
+ 679 0085 898201   		.uleb128 0x4109
+ 680 0088 01       		.byte	0x1
+ 681 0089 11       		.uleb128 0x11
+ 682 008a 01       		.uleb128 0x1
+ 683 008b 31       		.uleb128 0x31
+ 684 008c 13       		.uleb128 0x13
+ 685 008d 01       		.uleb128 0x1
+ 686 008e 13       		.uleb128 0x13
+ 687 008f 00       		.byte	0
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 15
+
+
+ 688 0090 00       		.byte	0
+ 689 0091 0A       		.uleb128 0xa
+ 690 0092 8A8201   		.uleb128 0x410a
+ 691 0095 00       		.byte	0
+ 692 0096 02       		.uleb128 0x2
+ 693 0097 18       		.uleb128 0x18
+ 694 0098 9142     		.uleb128 0x2111
+ 695 009a 18       		.uleb128 0x18
+ 696 009b 00       		.byte	0
+ 697 009c 00       		.byte	0
+ 698 009d 0B       		.uleb128 0xb
+ 699 009e 898201   		.uleb128 0x4109
+ 700 00a1 01       		.byte	0x1
+ 701 00a2 11       		.uleb128 0x11
+ 702 00a3 01       		.uleb128 0x1
+ 703 00a4 31       		.uleb128 0x31
+ 704 00a5 13       		.uleb128 0x13
+ 705 00a6 00       		.byte	0
+ 706 00a7 00       		.byte	0
+ 707 00a8 0C       		.uleb128 0xc
+ 708 00a9 05       		.uleb128 0x5
+ 709 00aa 00       		.byte	0
+ 710 00ab 03       		.uleb128 0x3
+ 711 00ac 0E       		.uleb128 0xe
+ 712 00ad 3A       		.uleb128 0x3a
+ 713 00ae 0B       		.uleb128 0xb
+ 714 00af 3B       		.uleb128 0x3b
+ 715 00b0 0B       		.uleb128 0xb
+ 716 00b1 49       		.uleb128 0x49
+ 717 00b2 13       		.uleb128 0x13
+ 718 00b3 02       		.uleb128 0x2
+ 719 00b4 17       		.uleb128 0x17
+ 720 00b5 00       		.byte	0
+ 721 00b6 00       		.byte	0
+ 722 00b7 0D       		.uleb128 0xd
+ 723 00b8 34       		.uleb128 0x34
+ 724 00b9 00       		.byte	0
+ 725 00ba 03       		.uleb128 0x3
+ 726 00bb 0E       		.uleb128 0xe
+ 727 00bc 3A       		.uleb128 0x3a
+ 728 00bd 0B       		.uleb128 0xb
+ 729 00be 3B       		.uleb128 0x3b
+ 730 00bf 0B       		.uleb128 0xb
+ 731 00c0 49       		.uleb128 0x49
+ 732 00c1 13       		.uleb128 0x13
+ 733 00c2 02       		.uleb128 0x2
+ 734 00c3 18       		.uleb128 0x18
+ 735 00c4 00       		.byte	0
+ 736 00c5 00       		.byte	0
+ 737 00c6 0E       		.uleb128 0xe
+ 738 00c7 2E       		.uleb128 0x2e
+ 739 00c8 01       		.byte	0x1
+ 740 00c9 3F       		.uleb128 0x3f
+ 741 00ca 19       		.uleb128 0x19
+ 742 00cb 03       		.uleb128 0x3
+ 743 00cc 0E       		.uleb128 0xe
+ 744 00cd 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 16
+
+
+ 745 00ce 0B       		.uleb128 0xb
+ 746 00cf 3B       		.uleb128 0x3b
+ 747 00d0 0B       		.uleb128 0xb
+ 748 00d1 27       		.uleb128 0x27
+ 749 00d2 19       		.uleb128 0x19
+ 750 00d3 3C       		.uleb128 0x3c
+ 751 00d4 19       		.uleb128 0x19
+ 752 00d5 01       		.uleb128 0x1
+ 753 00d6 13       		.uleb128 0x13
+ 754 00d7 00       		.byte	0
+ 755 00d8 00       		.byte	0
+ 756 00d9 0F       		.uleb128 0xf
+ 757 00da 05       		.uleb128 0x5
+ 758 00db 00       		.byte	0
+ 759 00dc 49       		.uleb128 0x49
+ 760 00dd 13       		.uleb128 0x13
+ 761 00de 00       		.byte	0
+ 762 00df 00       		.byte	0
+ 763 00e0 10       		.uleb128 0x10
+ 764 00e1 2E       		.uleb128 0x2e
+ 765 00e2 00       		.byte	0
+ 766 00e3 3F       		.uleb128 0x3f
+ 767 00e4 19       		.uleb128 0x19
+ 768 00e5 03       		.uleb128 0x3
+ 769 00e6 0E       		.uleb128 0xe
+ 770 00e7 3A       		.uleb128 0x3a
+ 771 00e8 0B       		.uleb128 0xb
+ 772 00e9 3B       		.uleb128 0x3b
+ 773 00ea 0B       		.uleb128 0xb
+ 774 00eb 27       		.uleb128 0x27
+ 775 00ec 19       		.uleb128 0x19
+ 776 00ed 3C       		.uleb128 0x3c
+ 777 00ee 19       		.uleb128 0x19
+ 778 00ef 00       		.byte	0
+ 779 00f0 00       		.byte	0
+ 780 00f1 11       		.uleb128 0x11
+ 781 00f2 2E       		.uleb128 0x2e
+ 782 00f3 01       		.byte	0x1
+ 783 00f4 3F       		.uleb128 0x3f
+ 784 00f5 19       		.uleb128 0x19
+ 785 00f6 03       		.uleb128 0x3
+ 786 00f7 0E       		.uleb128 0xe
+ 787 00f8 3A       		.uleb128 0x3a
+ 788 00f9 0B       		.uleb128 0xb
+ 789 00fa 3B       		.uleb128 0x3b
+ 790 00fb 0B       		.uleb128 0xb
+ 791 00fc 27       		.uleb128 0x27
+ 792 00fd 19       		.uleb128 0x19
+ 793 00fe 49       		.uleb128 0x49
+ 794 00ff 13       		.uleb128 0x13
+ 795 0100 3C       		.uleb128 0x3c
+ 796 0101 19       		.uleb128 0x19
+ 797 0102 01       		.uleb128 0x1
+ 798 0103 13       		.uleb128 0x13
+ 799 0104 00       		.byte	0
+ 800 0105 00       		.byte	0
+ 801 0106 12       		.uleb128 0x12
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 17
+
+
+ 802 0107 2E       		.uleb128 0x2e
+ 803 0108 01       		.byte	0x1
+ 804 0109 3F       		.uleb128 0x3f
+ 805 010a 19       		.uleb128 0x19
+ 806 010b 03       		.uleb128 0x3
+ 807 010c 0E       		.uleb128 0xe
+ 808 010d 3A       		.uleb128 0x3a
+ 809 010e 0B       		.uleb128 0xb
+ 810 010f 3B       		.uleb128 0x3b
+ 811 0110 0B       		.uleb128 0xb
+ 812 0111 27       		.uleb128 0x27
+ 813 0112 19       		.uleb128 0x19
+ 814 0113 3C       		.uleb128 0x3c
+ 815 0114 19       		.uleb128 0x19
+ 816 0115 00       		.byte	0
+ 817 0116 00       		.byte	0
+ 818 0117 00       		.byte	0
+ 819              		.section	.debug_loc,"",%progbits
+ 820              	.Ldebug_loc0:
+ 821              	.LLST0:
+ 822 0000 2C000000 		.4byte	.LVL11
+ 823 0004 32000000 		.4byte	.LVL12
+ 824 0008 0100     		.2byte	0x1
+ 825 000a 50       		.byte	0x50
+ 826 000b 00000000 		.4byte	0
+ 827 000f 00000000 		.4byte	0
+ 828              	.LLST1:
+ 829 0013 32000000 		.4byte	.LVL12
+ 830 0017 51000000 		.4byte	.LVL13-1
+ 831 001b 0100     		.2byte	0x1
+ 832 001d 50       		.byte	0x50
+ 833 001e 00000000 		.4byte	0
+ 834 0022 00000000 		.4byte	0
+ 835              	.LLST2:
+ 836 0026 0A000000 		.4byte	.LVL5
+ 837 002a 0E000000 		.4byte	.LVL6
+ 838 002e 0100     		.2byte	0x1
+ 839 0030 50       		.byte	0x50
+ 840 0031 0E000000 		.4byte	.LVL6
+ 841 0035 11000000 		.4byte	.LVL7-1
+ 842 0039 0100     		.2byte	0x1
+ 843 003b 51       		.byte	0x51
+ 844 003c 62000000 		.4byte	.LVL16
+ 845 0040 66000000 		.4byte	.LVL17
+ 846 0044 0100     		.2byte	0x1
+ 847 0046 50       		.byte	0x50
+ 848 0047 66000000 		.4byte	.LVL17
+ 849 004b 69000000 		.4byte	.LVL18-1
+ 850 004f 0100     		.2byte	0x1
+ 851 0051 51       		.byte	0x51
+ 852 0052 00000000 		.4byte	0
+ 853 0056 00000000 		.4byte	0
+ 854              	.LLST3:
+ 855 005a 12000000 		.4byte	.LVL7
+ 856 005e 14000000 		.4byte	.LVL8
+ 857 0062 0100     		.2byte	0x1
+ 858 0064 50       		.byte	0x50
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 18
+
+
+ 859 0065 6A000000 		.4byte	.LVL18
+ 860 0069 6D000000 		.4byte	.LVL19-1
+ 861 006d 0100     		.2byte	0x1
+ 862 006f 50       		.byte	0x50
+ 863 0070 00000000 		.4byte	0
+ 864 0074 00000000 		.4byte	0
+ 865              	.LLST4:
+ 866 0078 00000000 		.4byte	.LVL22
+ 867 007c 09000000 		.4byte	.LVL23-1
+ 868 0080 0100     		.2byte	0x1
+ 869 0082 50       		.byte	0x50
+ 870 0083 09000000 		.4byte	.LVL23-1
+ 871 0087 3E000000 		.4byte	.LVL27
+ 872 008b 0100     		.2byte	0x1
+ 873 008d 54       		.byte	0x54
+ 874 008e 3E000000 		.4byte	.LVL27
+ 875 0092 48000000 		.4byte	.LFE37
+ 876 0096 0600     		.2byte	0x6
+ 877 0098 F3       		.byte	0xf3
+ 878 0099 03       		.uleb128 0x3
+ 879 009a F5       		.byte	0xf5
+ 880 009b 00       		.uleb128 0
+ 881 009c 25       		.uleb128 0x25
+ 882 009d 9F       		.byte	0x9f
+ 883 009e 00000000 		.4byte	0
+ 884 00a2 00000000 		.4byte	0
+ 885              		.section	.debug_aranges,"",%progbits
+ 886 0000 34000000 		.4byte	0x34
+ 887 0004 0200     		.2byte	0x2
+ 888 0006 00000000 		.4byte	.Ldebug_info0
+ 889 000a 04       		.byte	0x4
+ 890 000b 00       		.byte	0
+ 891 000c 0000     		.2byte	0
+ 892 000e 0000     		.2byte	0
+ 893 0010 00000000 		.4byte	.LFB36
+ 894 0014 10000000 		.4byte	.LFE36-.LFB36
+ 895 0018 00000000 		.4byte	.LFB35
+ 896 001c 10000000 		.4byte	.LFE35-.LFB35
+ 897 0020 00000000 		.4byte	.LFB38
+ 898 0024 B0000000 		.4byte	.LFE38-.LFB38
+ 899 0028 00000000 		.4byte	.LFB37
+ 900 002c 48000000 		.4byte	.LFE37-.LFB37
+ 901 0030 00000000 		.4byte	0
+ 902 0034 00000000 		.4byte	0
+ 903              		.section	.debug_ranges,"",%progbits
+ 904              	.Ldebug_ranges0:
+ 905 0000 00000000 		.4byte	.LFB36
+ 906 0004 10000000 		.4byte	.LFE36
+ 907 0008 00000000 		.4byte	.LFB35
+ 908 000c 10000000 		.4byte	.LFE35
+ 909 0010 00000000 		.4byte	.LFB38
+ 910 0014 B0000000 		.4byte	.LFE38
+ 911 0018 00000000 		.4byte	.LFB37
+ 912 001c 48000000 		.4byte	.LFE37
+ 913 0020 00000000 		.4byte	0
+ 914 0024 00000000 		.4byte	0
+ 915              		.section	.debug_line,"",%progbits
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 19
+
+
+ 916              	.Ldebug_line0:
+ 917 0000 DB000000 		.section	.debug_str,"MS",%progbits,1
+ 917      02006B00 
+ 917      00000201 
+ 917      FB0E0D00 
+ 917      01010101 
+ 918              	.LASF15:
+ 919 0000 7365745F 		.ascii	"set_IDAC_current\000"
+ 919      49444143 
+ 919      5F637572 
+ 919      72656E74 
+ 919      00
+ 920              	.LASF17:
+ 921 0011 7365745F 		.ascii	"set_IDAC_threshold\000"
+ 921      49444143 
+ 921      5F746872 
+ 921      6573686F 
+ 921      6C6400
+ 922              	.LASF19:
+ 923 0024 6E65775F 		.ascii	"new_current\000"
+ 923      63757272 
+ 923      656E7400 
+ 924              	.LASF18:
+ 925 0030 64656C74 		.ascii	"delta\000"
+ 925      6100
+ 926              	.LASF4:
+ 927 0036 73686F72 		.ascii	"short unsigned int\000"
+ 927      7420756E 
+ 927      7369676E 
+ 927      65642069 
+ 927      6E7400
+ 928              	.LASF26:
+ 929 0049 49444143 		.ascii	"IDAC_Fire_Thresh_Start\000"
+ 929      5F466972 
+ 929      655F5468 
+ 929      72657368 
+ 929      5F537461 
+ 930              	.LASF22:
+ 931 0060 75706461 		.ascii	"update_IDAC_threshold\000"
+ 931      74655F49 
+ 931      4441435F 
+ 931      74687265 
+ 931      73686F6C 
+ 932              	.LASF23:
+ 933 0076 49444143 		.ascii	"IDAC_current\000"
+ 933      5F637572 
+ 933      72656E74 
+ 933      00
+ 934              	.LASF0:
+ 935 0083 666C6F61 		.ascii	"float\000"
+ 935      7400
+ 936              	.LASF2:
+ 937 0089 756E7369 		.ascii	"unsigned char\000"
+ 937      676E6564 
+ 937      20636861 
+ 937      7200
+ 938              	.LASF6:
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 20
+
+
+ 939 0097 6C6F6E67 		.ascii	"long unsigned int\000"
+ 939      20756E73 
+ 939      69676E65 
+ 939      6420696E 
+ 939      7400
+ 940              	.LASF10:
+ 941 00a9 75696E74 		.ascii	"uint8\000"
+ 941      3800
+ 942              	.LASF25:
+ 943 00af 49444143 		.ascii	"IDAC_Fire_Thresh_Enable\000"
+ 943      5F466972 
+ 943      655F5468 
+ 943      72657368 
+ 943      5F456E61 
+ 944              	.LASF20:
+ 945 00c7 63757272 		.ascii	"current_out\000"
+ 945      656E745F 
+ 945      6F757400 
+ 946              	.LASF31:
+ 947 00d3 49444143 		.ascii	"IDAC_Fire_Thresh_SetValue\000"
+ 947      5F466972 
+ 947      655F5468 
+ 947      72657368 
+ 947      5F536574 
+ 948              	.LASF12:
+ 949 00ed 646F7562 		.ascii	"double\000"
+ 949      6C6500
+ 950              	.LASF16:
+ 951 00f4 696E6974 		.ascii	"init_IDAC\000"
+ 951      5F494441 
+ 951      4300
+ 952              	.LASF11:
+ 953 00fe 75696E74 		.ascii	"uint32\000"
+ 953      333200
+ 954              	.LASF9:
+ 955 0105 756E7369 		.ascii	"unsigned int\000"
+ 955      676E6564 
+ 955      20696E74 
+ 955      00
+ 956              	.LASF30:
+ 957 0112 766F6C74 		.ascii	"volt_val\000"
+ 957      5F76616C 
+ 957      00
+ 958              	.LASF8:
+ 959 011b 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 959      206C6F6E 
+ 959      6720756E 
+ 959      7369676E 
+ 959      65642069 
+ 960              	.LASF29:
+ 961 0132 433A5C55 		.ascii	"C:\\Users\\Nick\\Documents\\PSoC Creator\\capsensel"
+ 961      73657273 
+ 961      5C4E6963 
+ 961      6B5C446F 
+ 961      63756D65 
+ 962 0160 6564315C 		.ascii	"ed1\\capsenseled\\capsenseled.cydsn\000"
+ 962      63617073 
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 21
+
+
+ 962      656E7365 
+ 962      6C65645C 
+ 962      63617073 
+ 963              	.LASF14:
+ 964 0182 73697A65 		.ascii	"sizetype\000"
+ 964      74797065 
+ 964      00
+ 965              	.LASF21:
+ 966 018b 6572726F 		.ascii	"error\000"
+ 966      7200
+ 967              	.LASF7:
+ 968 0191 6C6F6E67 		.ascii	"long long int\000"
+ 968      206C6F6E 
+ 968      6720696E 
+ 968      7400
+ 969              	.LASF24:
+ 970 019f 766F6C74 		.ascii	"voltage_threshold\000"
+ 970      6167655F 
+ 970      74687265 
+ 970      73686F6C 
+ 970      6400
+ 971              	.LASF13:
+ 972 01b1 63686172 		.ascii	"char\000"
+ 972      00
+ 973              	.LASF27:
+ 974 01b6 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 974      4320342E 
+ 974      392E3320 
+ 974      32303135 
+ 974      30333033 
+ 975 01e9 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0 -mthumb -g -O"
+ 975      20726576 
+ 975      6973696F 
+ 975      6E203232 
+ 975      31323230 
+ 976 021c 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 976      66756E63 
+ 976      74696F6E 
+ 976      2D736563 
+ 976      74696F6E 
+ 977              	.LASF3:
+ 978 0244 73686F72 		.ascii	"short int\000"
+ 978      7420696E 
+ 978      7400
+ 979              	.LASF5:
+ 980 024e 6C6F6E67 		.ascii	"long int\000"
+ 980      20696E74 
+ 980      00
+ 981              	.LASF28:
+ 982 0257 49444143 		.ascii	"IDAC.c\000"
+ 982      2E6300
+ 983              	.LASF32:
+ 984 025e 4144435F 		.ascii	"ADC_read\000"
+ 984      72656164 
+ 984      00
+ 985              	.LASF1:
+ 986 0267 7369676E 		.ascii	"signed char\000"
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 22
+
+
+ 986      65642063 
+ 986      68617200 
+ 987              	.LASF33:
+ 988 0273 43794465 		.ascii	"CyDelay\000"
+ 988      6C617900 
+ 989              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

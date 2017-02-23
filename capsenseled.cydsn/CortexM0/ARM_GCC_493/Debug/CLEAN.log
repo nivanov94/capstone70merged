@@ -1,0 +1,6 @@
+--------------- Clean Started: 01/24/2017 14:58:51 Project: capsenseled, Configuration: ARM GCC 4.9-2015-q1-update Debug ---------------
+Deleting file ".\capsenseled.cycdx"
+Deleting file ".\capsenseled.svd"
+Deleting file ".\capsenseled.rpt"
+Deleting file ".\capsenseled_timing.html"
+--------------- Clean Succeeded: 01/24/2017 14:58:51 ---------------

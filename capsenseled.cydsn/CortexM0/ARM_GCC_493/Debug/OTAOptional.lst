@@ -1,0 +1,1640 @@
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccjkzJa5.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 1
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"OTAOptional.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.Timer_Interrupt,"ax",%progbits
+  18              		.align	2
+  19              		.global	Timer_Interrupt
+  20              		.code	16
+  21              		.thumb_func
+  22              		.type	Timer_Interrupt, %function
+  23              	Timer_Interrupt:
+  24              	.LFB35:
+  25              		.file 1 "OTAOptional.c"
+   1:OTAOptional.c **** /*******************************************************************************
+   2:OTAOptional.c **** * File Name: OTAOptional.c
+   3:OTAOptional.c **** *
+   4:OTAOptional.c **** * Version: 1.30
+   5:OTAOptional.c **** *
+   6:OTAOptional.c **** * Description:
+   7:OTAOptional.c **** *  Provides an API that implement optional functionality of OTA.
+   8:OTAOptional.c **** *
+   9:OTAOptional.c **** * Hardware Dependency:
+  10:OTAOptional.c **** *  CY8CKIT-042 BLE
+  11:OTAOptional.c **** *
+  12:OTAOptional.c **** ********************************************************************************
+  13:OTAOptional.c **** * Copyright 2014-2015, Cypress Semiconductor Corporation. All rights reserved.
+  14:OTAOptional.c **** * This software is owned by Cypress Semiconductor Corporation and is protected
+  15:OTAOptional.c **** * by and subject to worldwide patent and copyright laws and treaties.
+  16:OTAOptional.c **** * Therefore, you may use this software only as provided in the license agreement
+  17:OTAOptional.c **** * accompanying the software package from which you obtained this software.
+  18:OTAOptional.c **** * CYPRESS AND ITS SUPPLIERS MAKE NO WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+  19:OTAOptional.c **** * WITH REGARD TO THIS SOFTWARE, INCLUDING, BUT NOT LIMITED TO, NONINFRINGEMENT,
+  20:OTAOptional.c **** * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+  21:OTAOptional.c **** *******************************************************************************/
+  22:OTAOptional.c **** #include "OTAOptional.h"
+  23:OTAOptional.c **** #include "common.h"
+  24:OTAOptional.c **** 
+  25:OTAOptional.c **** /*******************************************************************************
+  26:OTAOptional.c **** * Function Name: Timer_Interrupt
+  27:OTAOptional.c **** ********************************************************************************
+  28:OTAOptional.c **** *
+  29:OTAOptional.c **** * Summary:
+  30:OTAOptional.c **** *  Handles the Interrupt Service Routine for the WDT timer.
+  31:OTAOptional.c **** *
+  32:OTAOptional.c **** *******************************************************************************/
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccjkzJa5.s 			page 2
+
+
+  33:OTAOptional.c **** CY_ISR(Timer_Interrupt)
+  34:OTAOptional.c **** {
+  26              		.loc 1 34 0
+  27              		.cfi_startproc
+  28 0000 08B5     		push	{r3, lr}
+  29              		.cfi_def_cfa_offset 8
+  30              		.cfi_offset 3, -8
+  31              		.cfi_offset 14, -4
+  35:OTAOptional.c ****     if(CySysWdtGetInterruptSource() & WDT_INTERRUPT_SOURCE)
+  32              		.loc 1 35 0
+  33 0002 FFF7FEFF 		bl	CySysWdtGetInterruptSource
+  34              	.LVL0:
+  35 0006 4305     		lsl	r3, r0, #21
+  36 0008 19D5     		bpl	.L1
+  37              	.LBB2:
+  36:OTAOptional.c ****     {
+  37:OTAOptional.c ****         static uint8 led = LED_OFF;
+  38:OTAOptional.c ****         static uint32 ledTimer = LED_TIMEOUT;
+  39:OTAOptional.c ****     
+  40:OTAOptional.c ****         /* Blink green LED to indicate that device advertises */
+  41:OTAOptional.c ****         if(CyBle_GetState() == CYBLE_STATE_ADVERTISING)
+  38              		.loc 1 41 0
+  39 000a 0D4B     		ldr	r3, .L4
+  40 000c 1B78     		ldrb	r3, [r3]
+  41 000e 032B     		cmp	r3, #3
+  42 0010 0DD1     		bne	.L3
+  42:OTAOptional.c ****         {
+  43:OTAOptional.c ****             if(--ledTimer == 0u) 
+  43              		.loc 1 43 0
+  44 0012 0C4A     		ldr	r2, .L4+4
+  45 0014 1368     		ldr	r3, [r2]
+  46 0016 013B     		sub	r3, r3, #1
+  47 0018 1360     		str	r3, [r2]
+  48 001a 002B     		cmp	r3, #0
+  49 001c 07D1     		bne	.L3
+  44:OTAOptional.c ****             {
+  45:OTAOptional.c ****                 ledTimer = LED_TIMEOUT;
+  50              		.loc 1 45 0
+  51 001e 0A33     		add	r3, r3, #10
+  52 0020 1360     		str	r3, [r2]
+  46:OTAOptional.c ****                 led ^= LED_OFF;
+  53              		.loc 1 46 0
+  54 0022 1079     		ldrb	r0, [r2, #4]
+  55 0024 093B     		sub	r3, r3, #9
+  56 0026 5840     		eor	r0, r3
+  57 0028 1071     		strb	r0, [r2, #4]
+  47:OTAOptional.c ****                 Advertising_LED_Write(led);
+  58              		.loc 1 47 0
+  59 002a FFF7FEFF 		bl	Advertising_LED_1_Write
+  60              	.LVL1:
+  61              	.L3:
+  48:OTAOptional.c ****             }
+  49:OTAOptional.c ****         }
+  50:OTAOptional.c ****         
+  51:OTAOptional.c ****         /* Indicate that timer is raised to the main loop */
+  52:OTAOptional.c ****         mainTimer++;
+  62              		.loc 1 52 0
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccjkzJa5.s 			page 3
+
+
+  63 002e 064A     		ldr	r2, .L4+8
+  64 0030 1368     		ldr	r3, [r2]
+  65 0032 0133     		add	r3, r3, #1
+  66 0034 1360     		str	r3, [r2]
+  53:OTAOptional.c ****         
+  54:OTAOptional.c ****         /* Clears interrupt request  */
+  55:OTAOptional.c ****         CySysWdtClearInterrupt(WDT_INTERRUPT_SOURCE);
+  67              		.loc 1 55 0
+  68 0036 8020     		mov	r0, #128
+  69 0038 C000     		lsl	r0, r0, #3
+  70 003a FFF7FEFF 		bl	CySysWdtClearInterrupt
+  71              	.LVL2:
+  72              	.L1:
+  73              	.LBE2:
+  56:OTAOptional.c ****     }
+  57:OTAOptional.c **** }
+  74              		.loc 1 57 0
+  75              		@ sp needed
+  76 003e 08BD     		pop	{r3, pc}
+  77              	.L5:
+  78              		.align	2
+  79              	.L4:
+  80 0040 00000000 		.word	cyBle_state
+  81 0044 00000000 		.word	.LANCHOR0
+  82 0048 00000000 		.word	mainTimer
+  83              		.cfi_endproc
+  84              	.LFE35:
+  85              		.size	Timer_Interrupt, .-Timer_Interrupt
+  86              		.section	.text.WDT_Start,"ax",%progbits
+  87              		.align	2
+  88              		.global	WDT_Start
+  89              		.code	16
+  90              		.thumb_func
+  91              		.type	WDT_Start, %function
+  92              	WDT_Start:
+  93              	.LFB36:
+  58:OTAOptional.c **** 
+  59:OTAOptional.c **** /*******************************************************************************
+  60:OTAOptional.c **** * Function Name: WDT_Start
+  61:OTAOptional.c **** ********************************************************************************
+  62:OTAOptional.c **** *
+  63:OTAOptional.c **** * Summary:
+  64:OTAOptional.c **** *  Configures WDT to trigger an interrupt with period 100ms for keyboard
+  65:OTAOptional.c **** *  activity simulation.
+  66:OTAOptional.c **** *
+  67:OTAOptional.c **** *******************************************************************************/
+  68:OTAOptional.c **** 
+  69:OTAOptional.c **** void WDT_Start(void)
+  70:OTAOptional.c **** {
+  94              		.loc 1 70 0
+  95              		.cfi_startproc
+  96 0000 08B5     		push	{r3, lr}
+  97              		.cfi_def_cfa_offset 8
+  98              		.cfi_offset 3, -8
+  99              		.cfi_offset 14, -4
+  71:OTAOptional.c ****     /* Unlock the WDT registers for modification */
+  72:OTAOptional.c ****     CySysWdtUnlock(); 
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccjkzJa5.s 			page 4
+
+
+ 100              		.loc 1 72 0
+ 101 0002 FFF7FEFF 		bl	CySysWdtUnlock
+ 102              	.LVL3:
+  73:OTAOptional.c ****     /* Setup ISR */
+  74:OTAOptional.c ****     WDT_Interrupt_StartEx(&Timer_Interrupt);
+ 103              		.loc 1 74 0
+ 104 0006 0C48     		ldr	r0, .L7
+ 105 0008 FFF7FEFF 		bl	WDT_Interrupt_StartEx
+ 106              	.LVL4:
+  75:OTAOptional.c ****     /* Write the mode to generate interrupt on match */
+  76:OTAOptional.c ****     CySysWdtWriteMode(WDT_COUNTER, CY_SYS_WDT_MODE_INT);
+ 107              		.loc 1 76 0
+ 108 000c 0120     		mov	r0, #1
+ 109 000e 0121     		mov	r1, #1
+ 110 0010 FFF7FEFF 		bl	CySysWdtSetMode
+ 111              	.LVL5:
+  77:OTAOptional.c ****     /* Configure the WDT counter clear on a match setting */
+  78:OTAOptional.c ****     CySysWdtWriteClearOnMatch(WDT_COUNTER, WDT_COUNTER_ENABLE);
+ 112              		.loc 1 78 0
+ 113 0014 0120     		mov	r0, #1
+ 114 0016 0121     		mov	r1, #1
+ 115 0018 FFF7FEFF 		bl	CySysWdtSetClearOnMatch
+ 116              	.LVL6:
+  79:OTAOptional.c ****     /* Configure the WDT counter match comparison value */
+  80:OTAOptional.c ****     CySysWdtWriteMatch(WDT_COUNTER, WDT_TIMEOUT);
+ 117              		.loc 1 80 0
+ 118 001c 0120     		mov	r0, #1
+ 119 001e 0749     		ldr	r1, .L7+4
+ 120 0020 FFF7FEFF 		bl	CySysWdtSetMatch
+ 121              	.LVL7:
+  81:OTAOptional.c ****     /* Reset WDT counter */
+  82:OTAOptional.c ****     CySysWdtResetCounters(WDT_COUNTER);
+ 122              		.loc 1 82 0
+ 123 0024 0120     		mov	r0, #1
+ 124 0026 FFF7FEFF 		bl	CySysWdtResetCounters
+ 125              	.LVL8:
+  83:OTAOptional.c ****     /* Enable the specified WDT counter */
+  84:OTAOptional.c ****     CySysWdtEnable(WDT_COUNTER_MASK);
+ 126              		.loc 1 84 0
+ 127 002a 8020     		mov	r0, #128
+ 128 002c 4000     		lsl	r0, r0, #1
+ 129 002e FFF7FEFF 		bl	CySysWdtEnable
+ 130              	.LVL9:
+  85:OTAOptional.c ****     /* Lock out configuration changes to the Watchdog timer registers */
+  86:OTAOptional.c ****     CySysWdtLock();    
+ 131              		.loc 1 86 0
+ 132 0032 FFF7FEFF 		bl	CySysWdtLock
+ 133              	.LVL10:
+  87:OTAOptional.c **** }
+ 134              		.loc 1 87 0
+ 135              		@ sp needed
+ 136 0036 08BD     		pop	{r3, pc}
+ 137              	.L8:
+ 138              		.align	2
+ 139              	.L7:
+ 140 0038 00000000 		.word	Timer_Interrupt
+ 141 003c CC0C0000 		.word	3276
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccjkzJa5.s 			page 5
+
+
+ 142              		.cfi_endproc
+ 143              	.LFE36:
+ 144              		.size	WDT_Start, .-WDT_Start
+ 145              		.section	.text.WDT_Stop,"ax",%progbits
+ 146              		.align	2
+ 147              		.global	WDT_Stop
+ 148              		.code	16
+ 149              		.thumb_func
+ 150              		.type	WDT_Stop, %function
+ 151              	WDT_Stop:
+ 152              	.LFB37:
+  88:OTAOptional.c **** 
+  89:OTAOptional.c **** 
+  90:OTAOptional.c **** /*******************************************************************************
+  91:OTAOptional.c **** * Function Name: WDT_Stop
+  92:OTAOptional.c **** ********************************************************************************
+  93:OTAOptional.c **** *
+  94:OTAOptional.c **** * Summary:
+  95:OTAOptional.c **** *  This API stops the WDT timer.
+  96:OTAOptional.c **** *
+  97:OTAOptional.c **** *******************************************************************************/
+  98:OTAOptional.c **** void WDT_Stop(void)
+  99:OTAOptional.c **** {
+ 153              		.loc 1 99 0
+ 154              		.cfi_startproc
+ 155 0000 08B5     		push	{r3, lr}
+ 156              		.cfi_def_cfa_offset 8
+ 157              		.cfi_offset 3, -8
+ 158              		.cfi_offset 14, -4
+ 100:OTAOptional.c ****     /* Unlock the WDT registers for modification */
+ 101:OTAOptional.c ****     CySysWdtUnlock(); 
+ 159              		.loc 1 101 0
+ 160 0002 FFF7FEFF 		bl	CySysWdtUnlock
+ 161              	.LVL11:
+ 102:OTAOptional.c ****     /* Disable the specified WDT counter */
+ 103:OTAOptional.c ****     CySysWdtDisable(WDT_COUNTER_MASK);
+ 162              		.loc 1 103 0
+ 163 0006 8020     		mov	r0, #128
+ 164 0008 4000     		lsl	r0, r0, #1
+ 165 000a FFF7FEFF 		bl	CySysWdtDisable
+ 166              	.LVL12:
+ 104:OTAOptional.c ****     /* Locks out configuration changes to the Watchdog timer registers */
+ 105:OTAOptional.c ****     CySysWdtLock();    
+ 167              		.loc 1 105 0
+ 168 000e FFF7FEFF 		bl	CySysWdtLock
+ 169              	.LVL13:
+ 106:OTAOptional.c **** }
+ 170              		.loc 1 106 0
+ 171              		@ sp needed
+ 172 0012 08BD     		pop	{r3, pc}
+ 173              		.cfi_endproc
+ 174              	.LFE37:
+ 175              		.size	WDT_Stop, .-WDT_Stop
+ 176              		.section	.text.PrintProjectHeader,"ax",%progbits
+ 177              		.align	2
+ 178              		.global	PrintProjectHeader
+ 179              		.code	16
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccjkzJa5.s 			page 6
+
+
+ 180              		.thumb_func
+ 181              		.type	PrintProjectHeader, %function
+ 182              	PrintProjectHeader:
+ 183              	.LFB38:
+ 107:OTAOptional.c **** 
+ 108:OTAOptional.c **** 
+ 109:OTAOptional.c **** /*******************************************************************************
+ 110:OTAOptional.c **** * Function Name: PrintProjectHeader
+ 111:OTAOptional.c **** ********************************************************************************
+ 112:OTAOptional.c **** *
+ 113:OTAOptional.c **** * Summary:
+ 114:OTAOptional.c **** *  Prints project header to UART.
+ 115:OTAOptional.c **** *
+ 116:OTAOptional.c **** *******************************************************************************/
+ 117:OTAOptional.c **** void PrintProjectHeader()
+ 118:OTAOptional.c **** {
+ 184              		.loc 1 118 0
+ 185              		.cfi_startproc
+ 186 0000 10B5     		push	{r4, lr}
+ 187              		.cfi_def_cfa_offset 8
+ 188              		.cfi_offset 4, -8
+ 189              		.cfi_offset 14, -4
+ 119:OTAOptional.c ****     DBG_PRINT_TEXT("\r\n");
+ 190              		.loc 1 119 0
+ 191 0002 0D4C     		ldr	r4, .L11
+ 192 0004 201C     		mov	r0, r4
+ 193 0006 FFF7FEFF 		bl	puts
+ 194              	.LVL14:
+ 120:OTAOptional.c ****     DBG_PRINT_TEXT("\r\n");
+ 195              		.loc 1 120 0
+ 196 000a 201C     		mov	r0, r4
+ 197 000c FFF7FEFF 		bl	puts
+ 198              	.LVL15:
+ 121:OTAOptional.c ****     DBG_PRINT_TEXT("> BLE OTA Fixed Stack Bootloadable   Application Started\r\n");
+ 199              		.loc 1 121 0
+ 200 0010 0A48     		ldr	r0, .L11+4
+ 201 0012 FFF7FEFF 		bl	puts
+ 202              	.LVL16:
+ 122:OTAOptional.c ****     DBG_PRINT_TEXT("> Based on BLE HID Keyboard Example Project\r\n");
+ 203              		.loc 1 122 0
+ 204 0016 0A48     		ldr	r0, .L11+8
+ 205 0018 FFF7FEFF 		bl	puts
+ 206              	.LVL17:
+ 123:OTAOptional.c ****     DBG_PRINT_TEXT("> Version: 1.30\r\n");
+ 207              		.loc 1 123 0
+ 208 001c 0948     		ldr	r0, .L11+12
+ 209 001e FFF7FEFF 		bl	puts
+ 210              	.LVL18:
+ 124:OTAOptional.c ****     DBG_PRINT_TEXT("> Compile Date and Time : " __DATE__ " " __TIME__ "\r\n");
+ 211              		.loc 1 124 0
+ 212 0022 0948     		ldr	r0, .L11+16
+ 213 0024 FFF7FEFF 		bl	puts
+ 214              	.LVL19:
+ 125:OTAOptional.c ****     DBG_PRINT_TEXT("\r\n"); 
+ 215              		.loc 1 125 0
+ 216 0028 201C     		mov	r0, r4
+ 217 002a FFF7FEFF 		bl	puts
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccjkzJa5.s 			page 7
+
+
+ 218              	.LVL20:
+ 126:OTAOptional.c ****     DBG_PRINT_TEXT("\r\n");
+ 219              		.loc 1 126 0
+ 220 002e 201C     		mov	r0, r4
+ 221 0030 FFF7FEFF 		bl	puts
+ 222              	.LVL21:
+ 127:OTAOptional.c **** }
+ 223              		.loc 1 127 0
+ 224              		@ sp needed
+ 225 0034 10BD     		pop	{r4, pc}
+ 226              	.L12:
+ 227 0036 C046     		.align	2
+ 228              	.L11:
+ 229 0038 00000000 		.word	.LC4
+ 230 003c 04000000 		.word	.LC6
+ 231 0040 40000000 		.word	.LC8
+ 232 0044 70000000 		.word	.LC10
+ 233 0048 84000000 		.word	.LC12
+ 234              		.cfi_endproc
+ 235              	.LFE38:
+ 236              		.size	PrintProjectHeader, .-PrintProjectHeader
+ 237              		.data
+ 238              		.align	2
+ 239              		.set	.LANCHOR0,. + 0
+ 240              		.type	ledTimer.7680, %object
+ 241              		.size	ledTimer.7680, 4
+ 242              	ledTimer.7680:
+ 243 0000 0A000000 		.word	10
+ 244              		.type	led.7679, %object
+ 245              		.size	led.7679, 1
+ 246              	led.7679:
+ 247 0004 01       		.byte	1
+ 248 0005 000000   		.section	.rodata.str1.4,"aMS",%progbits,1
+ 249              		.align	2
+ 250              	.LC4:
+ 251 0000 0D00     		.ascii	"\015\000"
+ 252 0002 0000     		.space	2
+ 253              	.LC6:
+ 254 0004 3E20424C 		.ascii	"> BLE OTA Fixed Stack Bootloadable   Application St"
+ 254      45204F54 
+ 254      41204669 
+ 254      78656420 
+ 254      53746163 
+ 255 0037 61727465 		.ascii	"arted\015\000"
+ 255      640D00
+ 256 003e 0000     		.space	2
+ 257              	.LC8:
+ 258 0040 3E204261 		.ascii	"> Based on BLE HID Keyboard Example Project\015\000"
+ 258      73656420 
+ 258      6F6E2042 
+ 258      4C452048 
+ 258      4944204B 
+ 259 006d 000000   		.space	3
+ 260              	.LC10:
+ 261 0070 3E205665 		.ascii	"> Version: 1.30\015\000"
+ 261      7273696F 
+ 261      6E3A2031 
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccjkzJa5.s 			page 8
+
+
+ 261      2E33300D 
+ 261      00
+ 262 0081 000000   		.space	3
+ 263              	.LC12:
+ 264 0084 3E20436F 		.ascii	"> Compile Date and Time : Feb 22 2017 17:05:33\015\000"
+ 264      6D70696C 
+ 264      65204461 
+ 264      74652061 
+ 264      6E642054 
+ 265              		.text
+ 266              	.Letext0:
+ 267              		.file 2 "Generated_Source\\PSoC4/cytypes.h"
+ 268              		.file 3 "OTAMandatory.h"
+ 269              		.file 4 "OTAOptional.h"
+ 270              		.file 5 "Generated_Source\\PSoC4/CyLFClk.h"
+ 271              		.file 6 "Generated_Source\\PSoC4/WDT_Interrupt.h"
+ 272              		.file 7 "<built-in>"
+ 273              		.section	.debug_info,"",%progbits
+ 274              	.Ldebug_info0:
+ 275 0000 F4030000 		.4byte	0x3f4
+ 276 0004 0400     		.2byte	0x4
+ 277 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 278 000a 04       		.byte	0x4
+ 279 000b 01       		.uleb128 0x1
+ 280 000c 26020000 		.4byte	.LASF40
+ 281 0010 01       		.byte	0x1
+ 282 0011 04030000 		.4byte	.LASF41
+ 283 0015 92010000 		.4byte	.LASF42
+ 284 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 285 001d 00000000 		.4byte	0
+ 286 0021 00000000 		.4byte	.Ldebug_line0
+ 287 0025 02       		.uleb128 0x2
+ 288 0026 01       		.byte	0x1
+ 289 0027 06       		.byte	0x6
+ 290 0028 12030000 		.4byte	.LASF0
+ 291 002c 02       		.uleb128 0x2
+ 292 002d 01       		.byte	0x1
+ 293 002e 08       		.byte	0x8
+ 294 002f 77000000 		.4byte	.LASF1
+ 295 0033 02       		.uleb128 0x2
+ 296 0034 02       		.byte	0x2
+ 297 0035 05       		.byte	0x5
+ 298 0036 C4020000 		.4byte	.LASF2
+ 299 003a 02       		.uleb128 0x2
+ 300 003b 02       		.byte	0x2
+ 301 003c 07       		.byte	0x7
+ 302 003d 3F000000 		.4byte	.LASF3
+ 303 0041 02       		.uleb128 0x2
+ 304 0042 04       		.byte	0x4
+ 305 0043 05       		.byte	0x5
+ 306 0044 F6020000 		.4byte	.LASF4
+ 307 0048 02       		.uleb128 0x2
+ 308 0049 04       		.byte	0x4
+ 309 004a 07       		.byte	0x7
+ 310 004b 23010000 		.4byte	.LASF5
+ 311 004f 02       		.uleb128 0x2
+ 312 0050 08       		.byte	0x8
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccjkzJa5.s 			page 9
+
+
+ 313 0051 05       		.byte	0x5
+ 314 0052 18020000 		.4byte	.LASF6
+ 315 0056 02       		.uleb128 0x2
+ 316 0057 08       		.byte	0x8
+ 317 0058 07       		.byte	0x7
+ 318 0059 4D030000 		.4byte	.LASF7
+ 319 005d 03       		.uleb128 0x3
+ 320 005e 04       		.byte	0x4
+ 321 005f 05       		.byte	0x5
+ 322 0060 696E7400 		.ascii	"int\000"
+ 323 0064 02       		.uleb128 0x2
+ 324 0065 04       		.byte	0x4
+ 325 0066 07       		.byte	0x7
+ 326 0067 68010000 		.4byte	.LASF8
+ 327 006b 04       		.uleb128 0x4
+ 328 006c C1000000 		.4byte	.LASF9
+ 329 0070 02       		.byte	0x2
+ 330 0071 C2       		.byte	0xc2
+ 331 0072 2C000000 		.4byte	0x2c
+ 332 0076 04       		.uleb128 0x4
+ 333 0077 54010000 		.4byte	.LASF10
+ 334 007b 02       		.byte	0x2
+ 335 007c C4       		.byte	0xc4
+ 336 007d 48000000 		.4byte	0x48
+ 337 0081 02       		.uleb128 0x2
+ 338 0082 04       		.byte	0x4
+ 339 0083 04       		.byte	0x4
+ 340 0084 62000000 		.4byte	.LASF11
+ 341 0088 02       		.uleb128 0x2
+ 342 0089 08       		.byte	0x8
+ 343 008a 04       		.byte	0x4
+ 344 008b 52000000 		.4byte	.LASF12
+ 345 008f 02       		.uleb128 0x2
+ 346 0090 01       		.byte	0x1
+ 347 0091 08       		.byte	0x8
+ 348 0092 75010000 		.4byte	.LASF13
+ 349 0096 05       		.uleb128 0x5
+ 350 0097 76000000 		.4byte	0x76
+ 351 009b 06       		.uleb128 0x6
+ 352 009c F6010000 		.4byte	.LASF14
+ 353 00a0 02       		.byte	0x2
+ 354 00a1 7E01     		.2byte	0x17e
+ 355 00a3 A7000000 		.4byte	0xa7
+ 356 00a7 07       		.uleb128 0x7
+ 357 00a8 04       		.byte	0x4
+ 358 00a9 AD000000 		.4byte	0xad
+ 359 00ad 08       		.uleb128 0x8
+ 360 00ae 02       		.uleb128 0x2
+ 361 00af 04       		.byte	0x4
+ 362 00b0 07       		.byte	0x7
+ 363 00b1 0F020000 		.4byte	.LASF15
+ 364 00b5 07       		.uleb128 0x7
+ 365 00b6 04       		.byte	0x4
+ 366 00b7 BB000000 		.4byte	0xbb
+ 367 00bb 09       		.uleb128 0x9
+ 368 00bc 8F000000 		.4byte	0x8f
+ 369 00c0 0A       		.uleb128 0xa
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccjkzJa5.s 			page 10
+
+
+ 370 00c1 01       		.byte	0x1
+ 371 00c2 03       		.byte	0x3
+ 372 00c3 5B02     		.2byte	0x25b
+ 373 00c5 E8000000 		.4byte	0xe8
+ 374 00c9 0B       		.uleb128 0xb
+ 375 00ca E2010000 		.4byte	.LASF16
+ 376 00ce 00       		.sleb128 0
+ 377 00cf 0B       		.uleb128 0xb
+ 378 00d0 34030000 		.4byte	.LASF17
+ 379 00d4 01       		.sleb128 1
+ 380 00d5 0B       		.uleb128 0xb
+ 381 00d6 0D010000 		.4byte	.LASF18
+ 382 00da 02       		.sleb128 2
+ 383 00db 0B       		.uleb128 0xb
+ 384 00dc A9000000 		.4byte	.LASF19
+ 385 00e0 03       		.sleb128 3
+ 386 00e1 0B       		.uleb128 0xb
+ 387 00e2 17000000 		.4byte	.LASF20
+ 388 00e6 04       		.sleb128 4
+ 389 00e7 00       		.byte	0
+ 390 00e8 06       		.uleb128 0x6
+ 391 00e9 84010000 		.4byte	.LASF21
+ 392 00ed 03       		.byte	0x3
+ 393 00ee 6102     		.2byte	0x261
+ 394 00f0 C0000000 		.4byte	0xc0
+ 395 00f4 0C       		.uleb128 0xc
+ 396 00f5 B4020000 		.4byte	.LASF23
+ 397 00f9 01       		.byte	0x1
+ 398 00fa 21       		.byte	0x21
+ 399 00fb 00000000 		.4byte	.LFB35
+ 400 00ff 4C000000 		.4byte	.LFE35-.LFB35
+ 401 0103 01       		.uleb128 0x1
+ 402 0104 9C       		.byte	0x9c
+ 403 0105 5D010000 		.4byte	0x15d
+ 404 0109 0D       		.uleb128 0xd
+ 405 010a 0A000000 		.4byte	.LBB2
+ 406 010e 34000000 		.4byte	.LBE2-.LBB2
+ 407 0112 53010000 		.4byte	0x153
+ 408 0116 0E       		.uleb128 0xe
+ 409 0117 6C656400 		.ascii	"led\000"
+ 410 011b 01       		.byte	0x1
+ 411 011c 25       		.byte	0x25
+ 412 011d 6B000000 		.4byte	0x6b
+ 413 0121 05       		.uleb128 0x5
+ 414 0122 03       		.byte	0x3
+ 415 0123 04000000 		.4byte	led.7679
+ 416 0127 0F       		.uleb128 0xf
+ 417 0128 85000000 		.4byte	.LASF22
+ 418 012c 01       		.byte	0x1
+ 419 012d 26       		.byte	0x26
+ 420 012e 76000000 		.4byte	0x76
+ 421 0132 05       		.uleb128 0x5
+ 422 0133 03       		.byte	0x3
+ 423 0134 00000000 		.4byte	ledTimer.7680
+ 424 0138 10       		.uleb128 0x10
+ 425 0139 2E000000 		.4byte	.LVL1
+ 426 013d 20030000 		.4byte	0x320
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccjkzJa5.s 			page 11
+
+
+ 427 0141 11       		.uleb128 0x11
+ 428 0142 3E000000 		.4byte	.LVL2
+ 429 0146 32030000 		.4byte	0x332
+ 430 014a 12       		.uleb128 0x12
+ 431 014b 01       		.uleb128 0x1
+ 432 014c 50       		.byte	0x50
+ 433 014d 03       		.uleb128 0x3
+ 434 014e 0A       		.byte	0xa
+ 435 014f 0004     		.2byte	0x400
+ 436 0151 00       		.byte	0
+ 437 0152 00       		.byte	0
+ 438 0153 10       		.uleb128 0x10
+ 439 0154 06000000 		.4byte	.LVL0
+ 440 0158 43030000 		.4byte	0x343
+ 441 015c 00       		.byte	0
+ 442 015d 0C       		.uleb128 0xc
+ 443 015e 7A010000 		.4byte	.LASF24
+ 444 0162 01       		.byte	0x1
+ 445 0163 45       		.byte	0x45
+ 446 0164 00000000 		.4byte	.LFB36
+ 447 0168 40000000 		.4byte	.LFE36-.LFB36
+ 448 016c 01       		.uleb128 0x1
+ 449 016d 9C       		.byte	0x9c
+ 450 016e 0E020000 		.4byte	0x20e
+ 451 0172 10       		.uleb128 0x10
+ 452 0173 06000000 		.4byte	.LVL3
+ 453 0177 4E030000 		.4byte	0x34e
+ 454 017b 13       		.uleb128 0x13
+ 455 017c 0C000000 		.4byte	.LVL4
+ 456 0180 55030000 		.4byte	0x355
+ 457 0184 92010000 		.4byte	0x192
+ 458 0188 12       		.uleb128 0x12
+ 459 0189 01       		.uleb128 0x1
+ 460 018a 50       		.byte	0x50
+ 461 018b 05       		.uleb128 0x5
+ 462 018c 03       		.byte	0x3
+ 463 018d 00000000 		.4byte	Timer_Interrupt
+ 464 0191 00       		.byte	0
+ 465 0192 13       		.uleb128 0x13
+ 466 0193 14000000 		.4byte	.LVL5
+ 467 0197 66030000 		.4byte	0x366
+ 468 019b AA010000 		.4byte	0x1aa
+ 469 019f 12       		.uleb128 0x12
+ 470 01a0 01       		.uleb128 0x1
+ 471 01a1 51       		.byte	0x51
+ 472 01a2 01       		.uleb128 0x1
+ 473 01a3 31       		.byte	0x31
+ 474 01a4 12       		.uleb128 0x12
+ 475 01a5 01       		.uleb128 0x1
+ 476 01a6 50       		.byte	0x50
+ 477 01a7 01       		.uleb128 0x1
+ 478 01a8 31       		.byte	0x31
+ 479 01a9 00       		.byte	0
+ 480 01aa 13       		.uleb128 0x13
+ 481 01ab 1C000000 		.4byte	.LVL6
+ 482 01af 7C030000 		.4byte	0x37c
+ 483 01b3 C2010000 		.4byte	0x1c2
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccjkzJa5.s 			page 12
+
+
+ 484 01b7 12       		.uleb128 0x12
+ 485 01b8 01       		.uleb128 0x1
+ 486 01b9 51       		.byte	0x51
+ 487 01ba 01       		.uleb128 0x1
+ 488 01bb 31       		.byte	0x31
+ 489 01bc 12       		.uleb128 0x12
+ 490 01bd 01       		.uleb128 0x1
+ 491 01be 50       		.byte	0x50
+ 492 01bf 01       		.uleb128 0x1
+ 493 01c0 31       		.byte	0x31
+ 494 01c1 00       		.byte	0
+ 495 01c2 13       		.uleb128 0x13
+ 496 01c3 24000000 		.4byte	.LVL7
+ 497 01c7 92030000 		.4byte	0x392
+ 498 01cb DC010000 		.4byte	0x1dc
+ 499 01cf 12       		.uleb128 0x12
+ 500 01d0 01       		.uleb128 0x1
+ 501 01d1 51       		.byte	0x51
+ 502 01d2 03       		.uleb128 0x3
+ 503 01d3 0A       		.byte	0xa
+ 504 01d4 CC0C     		.2byte	0xccc
+ 505 01d6 12       		.uleb128 0x12
+ 506 01d7 01       		.uleb128 0x1
+ 507 01d8 50       		.byte	0x50
+ 508 01d9 01       		.uleb128 0x1
+ 509 01da 31       		.byte	0x31
+ 510 01db 00       		.byte	0
+ 511 01dc 13       		.uleb128 0x13
+ 512 01dd 2A000000 		.4byte	.LVL8
+ 513 01e1 A8030000 		.4byte	0x3a8
+ 514 01e5 EF010000 		.4byte	0x1ef
+ 515 01e9 12       		.uleb128 0x12
+ 516 01ea 01       		.uleb128 0x1
+ 517 01eb 50       		.byte	0x50
+ 518 01ec 01       		.uleb128 0x1
+ 519 01ed 31       		.byte	0x31
+ 520 01ee 00       		.byte	0
+ 521 01ef 13       		.uleb128 0x13
+ 522 01f0 32000000 		.4byte	.LVL9
+ 523 01f4 B9030000 		.4byte	0x3b9
+ 524 01f8 04020000 		.4byte	0x204
+ 525 01fc 12       		.uleb128 0x12
+ 526 01fd 01       		.uleb128 0x1
+ 527 01fe 50       		.byte	0x50
+ 528 01ff 03       		.uleb128 0x3
+ 529 0200 0A       		.byte	0xa
+ 530 0201 0001     		.2byte	0x100
+ 531 0203 00       		.byte	0
+ 532 0204 10       		.uleb128 0x10
+ 533 0205 36000000 		.4byte	.LVL10
+ 534 0209 CA030000 		.4byte	0x3ca
+ 535 020d 00       		.byte	0
+ 536 020e 0C       		.uleb128 0xc
+ 537 020f 59000000 		.4byte	.LASF25
+ 538 0213 01       		.byte	0x1
+ 539 0214 62       		.byte	0x62
+ 540 0215 00000000 		.4byte	.LFB37
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccjkzJa5.s 			page 13
+
+
+ 541 0219 14000000 		.4byte	.LFE37-.LFB37
+ 542 021d 01       		.uleb128 0x1
+ 543 021e 9C       		.byte	0x9c
+ 544 021f 4B020000 		.4byte	0x24b
+ 545 0223 10       		.uleb128 0x10
+ 546 0224 06000000 		.4byte	.LVL11
+ 547 0228 4E030000 		.4byte	0x34e
+ 548 022c 13       		.uleb128 0x13
+ 549 022d 0E000000 		.4byte	.LVL12
+ 550 0231 D1030000 		.4byte	0x3d1
+ 551 0235 41020000 		.4byte	0x241
+ 552 0239 12       		.uleb128 0x12
+ 553 023a 01       		.uleb128 0x1
+ 554 023b 50       		.byte	0x50
+ 555 023c 03       		.uleb128 0x3
+ 556 023d 0A       		.byte	0xa
+ 557 023e 0001     		.2byte	0x100
+ 558 0240 00       		.byte	0
+ 559 0241 10       		.uleb128 0x10
+ 560 0242 12000000 		.4byte	.LVL13
+ 561 0246 CA030000 		.4byte	0x3ca
+ 562 024a 00       		.byte	0
+ 563 024b 0C       		.uleb128 0xc
+ 564 024c DF000000 		.4byte	.LASF26
+ 565 0250 01       		.byte	0x1
+ 566 0251 75       		.byte	0x75
+ 567 0252 00000000 		.4byte	.LFB38
+ 568 0256 4C000000 		.4byte	.LFE38-.LFB38
+ 569 025a 01       		.uleb128 0x1
+ 570 025b 9C       		.byte	0x9c
+ 571 025c 09030000 		.4byte	0x309
+ 572 0260 13       		.uleb128 0x13
+ 573 0261 0A000000 		.4byte	.LVL14
+ 574 0265 E2030000 		.4byte	0x3e2
+ 575 0269 74020000 		.4byte	0x274
+ 576 026d 12       		.uleb128 0x12
+ 577 026e 01       		.uleb128 0x1
+ 578 026f 50       		.byte	0x50
+ 579 0270 02       		.uleb128 0x2
+ 580 0271 74       		.byte	0x74
+ 581 0272 00       		.sleb128 0
+ 582 0273 00       		.byte	0
+ 583 0274 13       		.uleb128 0x13
+ 584 0275 10000000 		.4byte	.LVL15
+ 585 0279 E2030000 		.4byte	0x3e2
+ 586 027d 88020000 		.4byte	0x288
+ 587 0281 12       		.uleb128 0x12
+ 588 0282 01       		.uleb128 0x1
+ 589 0283 50       		.byte	0x50
+ 590 0284 02       		.uleb128 0x2
+ 591 0285 74       		.byte	0x74
+ 592 0286 00       		.sleb128 0
+ 593 0287 00       		.byte	0
+ 594 0288 13       		.uleb128 0x13
+ 595 0289 16000000 		.4byte	.LVL16
+ 596 028d E2030000 		.4byte	0x3e2
+ 597 0291 9F020000 		.4byte	0x29f
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccjkzJa5.s 			page 14
+
+
+ 598 0295 12       		.uleb128 0x12
+ 599 0296 01       		.uleb128 0x1
+ 600 0297 50       		.byte	0x50
+ 601 0298 05       		.uleb128 0x5
+ 602 0299 03       		.byte	0x3
+ 603 029a 04000000 		.4byte	.LC6
+ 604 029e 00       		.byte	0
+ 605 029f 13       		.uleb128 0x13
+ 606 02a0 1C000000 		.4byte	.LVL17
+ 607 02a4 E2030000 		.4byte	0x3e2
+ 608 02a8 B6020000 		.4byte	0x2b6
+ 609 02ac 12       		.uleb128 0x12
+ 610 02ad 01       		.uleb128 0x1
+ 611 02ae 50       		.byte	0x50
+ 612 02af 05       		.uleb128 0x5
+ 613 02b0 03       		.byte	0x3
+ 614 02b1 40000000 		.4byte	.LC8
+ 615 02b5 00       		.byte	0
+ 616 02b6 13       		.uleb128 0x13
+ 617 02b7 22000000 		.4byte	.LVL18
+ 618 02bb E2030000 		.4byte	0x3e2
+ 619 02bf CD020000 		.4byte	0x2cd
+ 620 02c3 12       		.uleb128 0x12
+ 621 02c4 01       		.uleb128 0x1
+ 622 02c5 50       		.byte	0x50
+ 623 02c6 05       		.uleb128 0x5
+ 624 02c7 03       		.byte	0x3
+ 625 02c8 70000000 		.4byte	.LC10
+ 626 02cc 00       		.byte	0
+ 627 02cd 13       		.uleb128 0x13
+ 628 02ce 28000000 		.4byte	.LVL19
+ 629 02d2 E2030000 		.4byte	0x3e2
+ 630 02d6 E4020000 		.4byte	0x2e4
+ 631 02da 12       		.uleb128 0x12
+ 632 02db 01       		.uleb128 0x1
+ 633 02dc 50       		.byte	0x50
+ 634 02dd 05       		.uleb128 0x5
+ 635 02de 03       		.byte	0x3
+ 636 02df 84000000 		.4byte	.LC12
+ 637 02e3 00       		.byte	0
+ 638 02e4 13       		.uleb128 0x13
+ 639 02e5 2E000000 		.4byte	.LVL20
+ 640 02e9 E2030000 		.4byte	0x3e2
+ 641 02ed F8020000 		.4byte	0x2f8
+ 642 02f1 12       		.uleb128 0x12
+ 643 02f2 01       		.uleb128 0x1
+ 644 02f3 50       		.byte	0x50
+ 645 02f4 02       		.uleb128 0x2
+ 646 02f5 74       		.byte	0x74
+ 647 02f6 00       		.sleb128 0
+ 648 02f7 00       		.byte	0
+ 649 02f8 11       		.uleb128 0x11
+ 650 02f9 34000000 		.4byte	.LVL21
+ 651 02fd E2030000 		.4byte	0x3e2
+ 652 0301 12       		.uleb128 0x12
+ 653 0302 01       		.uleb128 0x1
+ 654 0303 50       		.byte	0x50
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccjkzJa5.s 			page 15
+
+
+ 655 0304 02       		.uleb128 0x2
+ 656 0305 74       		.byte	0x74
+ 657 0306 00       		.sleb128 0
+ 658 0307 00       		.byte	0
+ 659 0308 00       		.byte	0
+ 660 0309 14       		.uleb128 0x14
+ 661 030a 03020000 		.4byte	.LASF27
+ 662 030e 03       		.byte	0x3
+ 663 030f A00C     		.2byte	0xca0
+ 664 0311 E8000000 		.4byte	0xe8
+ 665 0315 15       		.uleb128 0x15
+ 666 0316 03010000 		.4byte	.LASF28
+ 667 031a 04       		.byte	0x4
+ 668 031b 1C       		.byte	0x1c
+ 669 031c 96000000 		.4byte	0x96
+ 670 0320 16       		.uleb128 0x16
+ 671 0321 CE020000 		.4byte	.LASF29
+ 672 0325 03       		.byte	0x3
+ 673 0326 CA0C     		.2byte	0xcca
+ 674 0328 32030000 		.4byte	0x332
+ 675 032c 17       		.uleb128 0x17
+ 676 032d 6B000000 		.4byte	0x6b
+ 677 0331 00       		.byte	0
+ 678 0332 18       		.uleb128 0x18
+ 679 0333 00000000 		.4byte	.LASF30
+ 680 0337 05       		.byte	0x5
+ 681 0338 42       		.byte	0x42
+ 682 0339 43030000 		.4byte	0x343
+ 683 033d 17       		.uleb128 0x17
+ 684 033e 76000000 		.4byte	0x76
+ 685 0342 00       		.byte	0
+ 686 0343 19       		.uleb128 0x19
+ 687 0344 8E000000 		.4byte	.LASF43
+ 688 0348 05       		.byte	0x5
+ 689 0349 41       		.byte	0x41
+ 690 034a 76000000 		.4byte	0x76
+ 691 034e 1A       		.uleb128 0x1a
+ 692 034f 30000000 		.4byte	.LASF37
+ 693 0353 05       		.byte	0x5
+ 694 0354 32       		.byte	0x32
+ 695 0355 18       		.uleb128 0x18
+ 696 0356 64030000 		.4byte	.LASF31
+ 697 035a 06       		.byte	0x6
+ 698 035b 18       		.byte	0x18
+ 699 035c 66030000 		.4byte	0x366
+ 700 0360 17       		.uleb128 0x17
+ 701 0361 9B000000 		.4byte	0x9b
+ 702 0365 00       		.byte	0
+ 703 0366 18       		.uleb128 0x18
+ 704 0367 E6020000 		.4byte	.LASF32
+ 705 036b 05       		.byte	0x5
+ 706 036c 33       		.byte	0x33
+ 707 036d 7C030000 		.4byte	0x37c
+ 708 0371 17       		.uleb128 0x17
+ 709 0372 76000000 		.4byte	0x76
+ 710 0376 17       		.uleb128 0x17
+ 711 0377 76000000 		.4byte	0x76
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccjkzJa5.s 			page 16
+
+
+ 712 037b 00       		.byte	0
+ 713 037c 18       		.uleb128 0x18
+ 714 037d C7000000 		.4byte	.LASF33
+ 715 0381 05       		.byte	0x5
+ 716 0382 36       		.byte	0x36
+ 717 0383 92030000 		.4byte	0x392
+ 718 0387 17       		.uleb128 0x17
+ 719 0388 76000000 		.4byte	0x76
+ 720 038c 17       		.uleb128 0x17
+ 721 038d 76000000 		.4byte	0x76
+ 722 0391 00       		.byte	0
+ 723 0392 18       		.uleb128 0x18
+ 724 0393 F2000000 		.4byte	.LASF34
+ 725 0397 05       		.byte	0x5
+ 726 0398 3C       		.byte	0x3c
+ 727 0399 A8030000 		.4byte	0x3a8
+ 728 039d 17       		.uleb128 0x17
+ 729 039e 76000000 		.4byte	0x76
+ 730 03a2 17       		.uleb128 0x17
+ 731 03a3 76000000 		.4byte	0x76
+ 732 03a7 00       		.byte	0
+ 733 03a8 18       		.uleb128 0x18
+ 734 03a9 1E030000 		.4byte	.LASF35
+ 735 03ad 05       		.byte	0x5
+ 736 03ae 43       		.byte	0x43
+ 737 03af B9030000 		.4byte	0x3b9
+ 738 03b3 17       		.uleb128 0x17
+ 739 03b4 76000000 		.4byte	0x76
+ 740 03b8 00       		.byte	0
+ 741 03b9 18       		.uleb128 0x18
+ 742 03ba 45010000 		.4byte	.LASF36
+ 743 03be 05       		.byte	0x5
+ 744 03bf 38       		.byte	0x38
+ 745 03c0 CA030000 		.4byte	0x3ca
+ 746 03c4 17       		.uleb128 0x17
+ 747 03c5 76000000 		.4byte	0x76
+ 748 03c9 00       		.byte	0
+ 749 03ca 1A       		.uleb128 0x1a
+ 750 03cb 5B010000 		.4byte	.LASF38
+ 751 03cf 05       		.byte	0x5
+ 752 03d0 31       		.byte	0x31
+ 753 03d1 18       		.uleb128 0x18
+ 754 03d2 35010000 		.4byte	.LASF39
+ 755 03d6 05       		.byte	0x5
+ 756 03d7 39       		.byte	0x39
+ 757 03d8 E2030000 		.4byte	0x3e2
+ 758 03dc 17       		.uleb128 0x17
+ 759 03dd 76000000 		.4byte	0x76
+ 760 03e1 00       		.byte	0
+ 761 03e2 1B       		.uleb128 0x1b
+ 762 03e3 68000000 		.4byte	.LASF44
+ 763 03e7 07       		.byte	0x7
+ 764 03e8 00       		.byte	0
+ 765 03e9 FF020000 		.4byte	.LASF45
+ 766 03ed 5D000000 		.4byte	0x5d
+ 767 03f1 17       		.uleb128 0x17
+ 768 03f2 B5000000 		.4byte	0xb5
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccjkzJa5.s 			page 17
+
+
+ 769 03f6 00       		.byte	0
+ 770 03f7 00       		.byte	0
+ 771              		.section	.debug_abbrev,"",%progbits
+ 772              	.Ldebug_abbrev0:
+ 773 0000 01       		.uleb128 0x1
+ 774 0001 11       		.uleb128 0x11
+ 775 0002 01       		.byte	0x1
+ 776 0003 25       		.uleb128 0x25
+ 777 0004 0E       		.uleb128 0xe
+ 778 0005 13       		.uleb128 0x13
+ 779 0006 0B       		.uleb128 0xb
+ 780 0007 03       		.uleb128 0x3
+ 781 0008 0E       		.uleb128 0xe
+ 782 0009 1B       		.uleb128 0x1b
+ 783 000a 0E       		.uleb128 0xe
+ 784 000b 55       		.uleb128 0x55
+ 785 000c 17       		.uleb128 0x17
+ 786 000d 11       		.uleb128 0x11
+ 787 000e 01       		.uleb128 0x1
+ 788 000f 10       		.uleb128 0x10
+ 789 0010 17       		.uleb128 0x17
+ 790 0011 00       		.byte	0
+ 791 0012 00       		.byte	0
+ 792 0013 02       		.uleb128 0x2
+ 793 0014 24       		.uleb128 0x24
+ 794 0015 00       		.byte	0
+ 795 0016 0B       		.uleb128 0xb
+ 796 0017 0B       		.uleb128 0xb
+ 797 0018 3E       		.uleb128 0x3e
+ 798 0019 0B       		.uleb128 0xb
+ 799 001a 03       		.uleb128 0x3
+ 800 001b 0E       		.uleb128 0xe
+ 801 001c 00       		.byte	0
+ 802 001d 00       		.byte	0
+ 803 001e 03       		.uleb128 0x3
+ 804 001f 24       		.uleb128 0x24
+ 805 0020 00       		.byte	0
+ 806 0021 0B       		.uleb128 0xb
+ 807 0022 0B       		.uleb128 0xb
+ 808 0023 3E       		.uleb128 0x3e
+ 809 0024 0B       		.uleb128 0xb
+ 810 0025 03       		.uleb128 0x3
+ 811 0026 08       		.uleb128 0x8
+ 812 0027 00       		.byte	0
+ 813 0028 00       		.byte	0
+ 814 0029 04       		.uleb128 0x4
+ 815 002a 16       		.uleb128 0x16
+ 816 002b 00       		.byte	0
+ 817 002c 03       		.uleb128 0x3
+ 818 002d 0E       		.uleb128 0xe
+ 819 002e 3A       		.uleb128 0x3a
+ 820 002f 0B       		.uleb128 0xb
+ 821 0030 3B       		.uleb128 0x3b
+ 822 0031 0B       		.uleb128 0xb
+ 823 0032 49       		.uleb128 0x49
+ 824 0033 13       		.uleb128 0x13
+ 825 0034 00       		.byte	0
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccjkzJa5.s 			page 18
+
+
+ 826 0035 00       		.byte	0
+ 827 0036 05       		.uleb128 0x5
+ 828 0037 35       		.uleb128 0x35
+ 829 0038 00       		.byte	0
+ 830 0039 49       		.uleb128 0x49
+ 831 003a 13       		.uleb128 0x13
+ 832 003b 00       		.byte	0
+ 833 003c 00       		.byte	0
+ 834 003d 06       		.uleb128 0x6
+ 835 003e 16       		.uleb128 0x16
+ 836 003f 00       		.byte	0
+ 837 0040 03       		.uleb128 0x3
+ 838 0041 0E       		.uleb128 0xe
+ 839 0042 3A       		.uleb128 0x3a
+ 840 0043 0B       		.uleb128 0xb
+ 841 0044 3B       		.uleb128 0x3b
+ 842 0045 05       		.uleb128 0x5
+ 843 0046 49       		.uleb128 0x49
+ 844 0047 13       		.uleb128 0x13
+ 845 0048 00       		.byte	0
+ 846 0049 00       		.byte	0
+ 847 004a 07       		.uleb128 0x7
+ 848 004b 0F       		.uleb128 0xf
+ 849 004c 00       		.byte	0
+ 850 004d 0B       		.uleb128 0xb
+ 851 004e 0B       		.uleb128 0xb
+ 852 004f 49       		.uleb128 0x49
+ 853 0050 13       		.uleb128 0x13
+ 854 0051 00       		.byte	0
+ 855 0052 00       		.byte	0
+ 856 0053 08       		.uleb128 0x8
+ 857 0054 15       		.uleb128 0x15
+ 858 0055 00       		.byte	0
+ 859 0056 27       		.uleb128 0x27
+ 860 0057 19       		.uleb128 0x19
+ 861 0058 00       		.byte	0
+ 862 0059 00       		.byte	0
+ 863 005a 09       		.uleb128 0x9
+ 864 005b 26       		.uleb128 0x26
+ 865 005c 00       		.byte	0
+ 866 005d 49       		.uleb128 0x49
+ 867 005e 13       		.uleb128 0x13
+ 868 005f 00       		.byte	0
+ 869 0060 00       		.byte	0
+ 870 0061 0A       		.uleb128 0xa
+ 871 0062 04       		.uleb128 0x4
+ 872 0063 01       		.byte	0x1
+ 873 0064 0B       		.uleb128 0xb
+ 874 0065 0B       		.uleb128 0xb
+ 875 0066 3A       		.uleb128 0x3a
+ 876 0067 0B       		.uleb128 0xb
+ 877 0068 3B       		.uleb128 0x3b
+ 878 0069 05       		.uleb128 0x5
+ 879 006a 01       		.uleb128 0x1
+ 880 006b 13       		.uleb128 0x13
+ 881 006c 00       		.byte	0
+ 882 006d 00       		.byte	0
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccjkzJa5.s 			page 19
+
+
+ 883 006e 0B       		.uleb128 0xb
+ 884 006f 28       		.uleb128 0x28
+ 885 0070 00       		.byte	0
+ 886 0071 03       		.uleb128 0x3
+ 887 0072 0E       		.uleb128 0xe
+ 888 0073 1C       		.uleb128 0x1c
+ 889 0074 0D       		.uleb128 0xd
+ 890 0075 00       		.byte	0
+ 891 0076 00       		.byte	0
+ 892 0077 0C       		.uleb128 0xc
+ 893 0078 2E       		.uleb128 0x2e
+ 894 0079 01       		.byte	0x1
+ 895 007a 3F       		.uleb128 0x3f
+ 896 007b 19       		.uleb128 0x19
+ 897 007c 03       		.uleb128 0x3
+ 898 007d 0E       		.uleb128 0xe
+ 899 007e 3A       		.uleb128 0x3a
+ 900 007f 0B       		.uleb128 0xb
+ 901 0080 3B       		.uleb128 0x3b
+ 902 0081 0B       		.uleb128 0xb
+ 903 0082 27       		.uleb128 0x27
+ 904 0083 19       		.uleb128 0x19
+ 905 0084 11       		.uleb128 0x11
+ 906 0085 01       		.uleb128 0x1
+ 907 0086 12       		.uleb128 0x12
+ 908 0087 06       		.uleb128 0x6
+ 909 0088 40       		.uleb128 0x40
+ 910 0089 18       		.uleb128 0x18
+ 911 008a 9742     		.uleb128 0x2117
+ 912 008c 19       		.uleb128 0x19
+ 913 008d 01       		.uleb128 0x1
+ 914 008e 13       		.uleb128 0x13
+ 915 008f 00       		.byte	0
+ 916 0090 00       		.byte	0
+ 917 0091 0D       		.uleb128 0xd
+ 918 0092 0B       		.uleb128 0xb
+ 919 0093 01       		.byte	0x1
+ 920 0094 11       		.uleb128 0x11
+ 921 0095 01       		.uleb128 0x1
+ 922 0096 12       		.uleb128 0x12
+ 923 0097 06       		.uleb128 0x6
+ 924 0098 01       		.uleb128 0x1
+ 925 0099 13       		.uleb128 0x13
+ 926 009a 00       		.byte	0
+ 927 009b 00       		.byte	0
+ 928 009c 0E       		.uleb128 0xe
+ 929 009d 34       		.uleb128 0x34
+ 930 009e 00       		.byte	0
+ 931 009f 03       		.uleb128 0x3
+ 932 00a0 08       		.uleb128 0x8
+ 933 00a1 3A       		.uleb128 0x3a
+ 934 00a2 0B       		.uleb128 0xb
+ 935 00a3 3B       		.uleb128 0x3b
+ 936 00a4 0B       		.uleb128 0xb
+ 937 00a5 49       		.uleb128 0x49
+ 938 00a6 13       		.uleb128 0x13
+ 939 00a7 02       		.uleb128 0x2
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccjkzJa5.s 			page 20
+
+
+ 940 00a8 18       		.uleb128 0x18
+ 941 00a9 00       		.byte	0
+ 942 00aa 00       		.byte	0
+ 943 00ab 0F       		.uleb128 0xf
+ 944 00ac 34       		.uleb128 0x34
+ 945 00ad 00       		.byte	0
+ 946 00ae 03       		.uleb128 0x3
+ 947 00af 0E       		.uleb128 0xe
+ 948 00b0 3A       		.uleb128 0x3a
+ 949 00b1 0B       		.uleb128 0xb
+ 950 00b2 3B       		.uleb128 0x3b
+ 951 00b3 0B       		.uleb128 0xb
+ 952 00b4 49       		.uleb128 0x49
+ 953 00b5 13       		.uleb128 0x13
+ 954 00b6 02       		.uleb128 0x2
+ 955 00b7 18       		.uleb128 0x18
+ 956 00b8 00       		.byte	0
+ 957 00b9 00       		.byte	0
+ 958 00ba 10       		.uleb128 0x10
+ 959 00bb 898201   		.uleb128 0x4109
+ 960 00be 00       		.byte	0
+ 961 00bf 11       		.uleb128 0x11
+ 962 00c0 01       		.uleb128 0x1
+ 963 00c1 31       		.uleb128 0x31
+ 964 00c2 13       		.uleb128 0x13
+ 965 00c3 00       		.byte	0
+ 966 00c4 00       		.byte	0
+ 967 00c5 11       		.uleb128 0x11
+ 968 00c6 898201   		.uleb128 0x4109
+ 969 00c9 01       		.byte	0x1
+ 970 00ca 11       		.uleb128 0x11
+ 971 00cb 01       		.uleb128 0x1
+ 972 00cc 31       		.uleb128 0x31
+ 973 00cd 13       		.uleb128 0x13
+ 974 00ce 00       		.byte	0
+ 975 00cf 00       		.byte	0
+ 976 00d0 12       		.uleb128 0x12
+ 977 00d1 8A8201   		.uleb128 0x410a
+ 978 00d4 00       		.byte	0
+ 979 00d5 02       		.uleb128 0x2
+ 980 00d6 18       		.uleb128 0x18
+ 981 00d7 9142     		.uleb128 0x2111
+ 982 00d9 18       		.uleb128 0x18
+ 983 00da 00       		.byte	0
+ 984 00db 00       		.byte	0
+ 985 00dc 13       		.uleb128 0x13
+ 986 00dd 898201   		.uleb128 0x4109
+ 987 00e0 01       		.byte	0x1
+ 988 00e1 11       		.uleb128 0x11
+ 989 00e2 01       		.uleb128 0x1
+ 990 00e3 31       		.uleb128 0x31
+ 991 00e4 13       		.uleb128 0x13
+ 992 00e5 01       		.uleb128 0x1
+ 993 00e6 13       		.uleb128 0x13
+ 994 00e7 00       		.byte	0
+ 995 00e8 00       		.byte	0
+ 996 00e9 14       		.uleb128 0x14
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccjkzJa5.s 			page 21
+
+
+ 997 00ea 34       		.uleb128 0x34
+ 998 00eb 00       		.byte	0
+ 999 00ec 03       		.uleb128 0x3
+ 1000 00ed 0E       		.uleb128 0xe
+ 1001 00ee 3A       		.uleb128 0x3a
+ 1002 00ef 0B       		.uleb128 0xb
+ 1003 00f0 3B       		.uleb128 0x3b
+ 1004 00f1 05       		.uleb128 0x5
+ 1005 00f2 49       		.uleb128 0x49
+ 1006 00f3 13       		.uleb128 0x13
+ 1007 00f4 3F       		.uleb128 0x3f
+ 1008 00f5 19       		.uleb128 0x19
+ 1009 00f6 3C       		.uleb128 0x3c
+ 1010 00f7 19       		.uleb128 0x19
+ 1011 00f8 00       		.byte	0
+ 1012 00f9 00       		.byte	0
+ 1013 00fa 15       		.uleb128 0x15
+ 1014 00fb 34       		.uleb128 0x34
+ 1015 00fc 00       		.byte	0
+ 1016 00fd 03       		.uleb128 0x3
+ 1017 00fe 0E       		.uleb128 0xe
+ 1018 00ff 3A       		.uleb128 0x3a
+ 1019 0100 0B       		.uleb128 0xb
+ 1020 0101 3B       		.uleb128 0x3b
+ 1021 0102 0B       		.uleb128 0xb
+ 1022 0103 49       		.uleb128 0x49
+ 1023 0104 13       		.uleb128 0x13
+ 1024 0105 3F       		.uleb128 0x3f
+ 1025 0106 19       		.uleb128 0x19
+ 1026 0107 3C       		.uleb128 0x3c
+ 1027 0108 19       		.uleb128 0x19
+ 1028 0109 00       		.byte	0
+ 1029 010a 00       		.byte	0
+ 1030 010b 16       		.uleb128 0x16
+ 1031 010c 2E       		.uleb128 0x2e
+ 1032 010d 01       		.byte	0x1
+ 1033 010e 3F       		.uleb128 0x3f
+ 1034 010f 19       		.uleb128 0x19
+ 1035 0110 03       		.uleb128 0x3
+ 1036 0111 0E       		.uleb128 0xe
+ 1037 0112 3A       		.uleb128 0x3a
+ 1038 0113 0B       		.uleb128 0xb
+ 1039 0114 3B       		.uleb128 0x3b
+ 1040 0115 05       		.uleb128 0x5
+ 1041 0116 27       		.uleb128 0x27
+ 1042 0117 19       		.uleb128 0x19
+ 1043 0118 3C       		.uleb128 0x3c
+ 1044 0119 19       		.uleb128 0x19
+ 1045 011a 01       		.uleb128 0x1
+ 1046 011b 13       		.uleb128 0x13
+ 1047 011c 00       		.byte	0
+ 1048 011d 00       		.byte	0
+ 1049 011e 17       		.uleb128 0x17
+ 1050 011f 05       		.uleb128 0x5
+ 1051 0120 00       		.byte	0
+ 1052 0121 49       		.uleb128 0x49
+ 1053 0122 13       		.uleb128 0x13
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccjkzJa5.s 			page 22
+
+
+ 1054 0123 00       		.byte	0
+ 1055 0124 00       		.byte	0
+ 1056 0125 18       		.uleb128 0x18
+ 1057 0126 2E       		.uleb128 0x2e
+ 1058 0127 01       		.byte	0x1
+ 1059 0128 3F       		.uleb128 0x3f
+ 1060 0129 19       		.uleb128 0x19
+ 1061 012a 03       		.uleb128 0x3
+ 1062 012b 0E       		.uleb128 0xe
+ 1063 012c 3A       		.uleb128 0x3a
+ 1064 012d 0B       		.uleb128 0xb
+ 1065 012e 3B       		.uleb128 0x3b
+ 1066 012f 0B       		.uleb128 0xb
+ 1067 0130 27       		.uleb128 0x27
+ 1068 0131 19       		.uleb128 0x19
+ 1069 0132 3C       		.uleb128 0x3c
+ 1070 0133 19       		.uleb128 0x19
+ 1071 0134 01       		.uleb128 0x1
+ 1072 0135 13       		.uleb128 0x13
+ 1073 0136 00       		.byte	0
+ 1074 0137 00       		.byte	0
+ 1075 0138 19       		.uleb128 0x19
+ 1076 0139 2E       		.uleb128 0x2e
+ 1077 013a 00       		.byte	0
+ 1078 013b 3F       		.uleb128 0x3f
+ 1079 013c 19       		.uleb128 0x19
+ 1080 013d 03       		.uleb128 0x3
+ 1081 013e 0E       		.uleb128 0xe
+ 1082 013f 3A       		.uleb128 0x3a
+ 1083 0140 0B       		.uleb128 0xb
+ 1084 0141 3B       		.uleb128 0x3b
+ 1085 0142 0B       		.uleb128 0xb
+ 1086 0143 27       		.uleb128 0x27
+ 1087 0144 19       		.uleb128 0x19
+ 1088 0145 49       		.uleb128 0x49
+ 1089 0146 13       		.uleb128 0x13
+ 1090 0147 3C       		.uleb128 0x3c
+ 1091 0148 19       		.uleb128 0x19
+ 1092 0149 00       		.byte	0
+ 1093 014a 00       		.byte	0
+ 1094 014b 1A       		.uleb128 0x1a
+ 1095 014c 2E       		.uleb128 0x2e
+ 1096 014d 00       		.byte	0
+ 1097 014e 3F       		.uleb128 0x3f
+ 1098 014f 19       		.uleb128 0x19
+ 1099 0150 03       		.uleb128 0x3
+ 1100 0151 0E       		.uleb128 0xe
+ 1101 0152 3A       		.uleb128 0x3a
+ 1102 0153 0B       		.uleb128 0xb
+ 1103 0154 3B       		.uleb128 0x3b
+ 1104 0155 0B       		.uleb128 0xb
+ 1105 0156 27       		.uleb128 0x27
+ 1106 0157 19       		.uleb128 0x19
+ 1107 0158 3C       		.uleb128 0x3c
+ 1108 0159 19       		.uleb128 0x19
+ 1109 015a 00       		.byte	0
+ 1110 015b 00       		.byte	0
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccjkzJa5.s 			page 23
+
+
+ 1111 015c 1B       		.uleb128 0x1b
+ 1112 015d 2E       		.uleb128 0x2e
+ 1113 015e 01       		.byte	0x1
+ 1114 015f 3F       		.uleb128 0x3f
+ 1115 0160 19       		.uleb128 0x19
+ 1116 0161 03       		.uleb128 0x3
+ 1117 0162 0E       		.uleb128 0xe
+ 1118 0163 3A       		.uleb128 0x3a
+ 1119 0164 0B       		.uleb128 0xb
+ 1120 0165 3B       		.uleb128 0x3b
+ 1121 0166 0B       		.uleb128 0xb
+ 1122 0167 6E       		.uleb128 0x6e
+ 1123 0168 0E       		.uleb128 0xe
+ 1124 0169 27       		.uleb128 0x27
+ 1125 016a 19       		.uleb128 0x19
+ 1126 016b 49       		.uleb128 0x49
+ 1127 016c 13       		.uleb128 0x13
+ 1128 016d 3C       		.uleb128 0x3c
+ 1129 016e 19       		.uleb128 0x19
+ 1130 016f 00       		.byte	0
+ 1131 0170 00       		.byte	0
+ 1132 0171 00       		.byte	0
+ 1133              		.section	.debug_aranges,"",%progbits
+ 1134 0000 34000000 		.4byte	0x34
+ 1135 0004 0200     		.2byte	0x2
+ 1136 0006 00000000 		.4byte	.Ldebug_info0
+ 1137 000a 04       		.byte	0x4
+ 1138 000b 00       		.byte	0
+ 1139 000c 0000     		.2byte	0
+ 1140 000e 0000     		.2byte	0
+ 1141 0010 00000000 		.4byte	.LFB35
+ 1142 0014 4C000000 		.4byte	.LFE35-.LFB35
+ 1143 0018 00000000 		.4byte	.LFB36
+ 1144 001c 40000000 		.4byte	.LFE36-.LFB36
+ 1145 0020 00000000 		.4byte	.LFB37
+ 1146 0024 14000000 		.4byte	.LFE37-.LFB37
+ 1147 0028 00000000 		.4byte	.LFB38
+ 1148 002c 4C000000 		.4byte	.LFE38-.LFB38
+ 1149 0030 00000000 		.4byte	0
+ 1150 0034 00000000 		.4byte	0
+ 1151              		.section	.debug_ranges,"",%progbits
+ 1152              	.Ldebug_ranges0:
+ 1153 0000 00000000 		.4byte	.LFB35
+ 1154 0004 4C000000 		.4byte	.LFE35
+ 1155 0008 00000000 		.4byte	.LFB36
+ 1156 000c 40000000 		.4byte	.LFE36
+ 1157 0010 00000000 		.4byte	.LFB37
+ 1158 0014 14000000 		.4byte	.LFE37
+ 1159 0018 00000000 		.4byte	.LFB38
+ 1160 001c 4C000000 		.4byte	.LFE38
+ 1161 0020 00000000 		.4byte	0
+ 1162 0024 00000000 		.4byte	0
+ 1163              		.section	.debug_line,"",%progbits
+ 1164              	.Ldebug_line0:
+ 1165 0000 FD000000 		.section	.debug_str,"MS",%progbits,1
+ 1165      02009900 
+ 1165      00000201 
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccjkzJa5.s 			page 24
+
+
+ 1165      FB0E0D00 
+ 1165      01010101 
+ 1166              	.LASF30:
+ 1167 0000 43795379 		.ascii	"CySysWdtClearInterrupt\000"
+ 1167      73576474 
+ 1167      436C6561 
+ 1167      72496E74 
+ 1167      65727275 
+ 1168              	.LASF20:
+ 1169 0017 4359424C 		.ascii	"CYBLE_STATE_DISCONNECTED\000"
+ 1169      455F5354 
+ 1169      4154455F 
+ 1169      44495343 
+ 1169      4F4E4E45 
+ 1170              	.LASF37:
+ 1171 0030 43795379 		.ascii	"CySysWdtUnlock\000"
+ 1171      73576474 
+ 1171      556E6C6F 
+ 1171      636B00
+ 1172              	.LASF3:
+ 1173 003f 73686F72 		.ascii	"short unsigned int\000"
+ 1173      7420756E 
+ 1173      7369676E 
+ 1173      65642069 
+ 1173      6E7400
+ 1174              	.LASF12:
+ 1175 0052 646F7562 		.ascii	"double\000"
+ 1175      6C6500
+ 1176              	.LASF25:
+ 1177 0059 5744545F 		.ascii	"WDT_Stop\000"
+ 1177      53746F70 
+ 1177      00
+ 1178              	.LASF11:
+ 1179 0062 666C6F61 		.ascii	"float\000"
+ 1179      7400
+ 1180              	.LASF44:
+ 1181 0068 5F5F6275 		.ascii	"__builtin_puts\000"
+ 1181      696C7469 
+ 1181      6E5F7075 
+ 1181      747300
+ 1182              	.LASF1:
+ 1183 0077 756E7369 		.ascii	"unsigned char\000"
+ 1183      676E6564 
+ 1183      20636861 
+ 1183      7200
+ 1184              	.LASF22:
+ 1185 0085 6C656454 		.ascii	"ledTimer\000"
+ 1185      696D6572 
+ 1185      00
+ 1186              	.LASF43:
+ 1187 008e 43795379 		.ascii	"CySysWdtGetInterruptSource\000"
+ 1187      73576474 
+ 1187      47657449 
+ 1187      6E746572 
+ 1187      72757074 
+ 1188              	.LASF19:
+ 1189 00a9 4359424C 		.ascii	"CYBLE_STATE_ADVERTISING\000"
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccjkzJa5.s 			page 25
+
+
+ 1189      455F5354 
+ 1189      4154455F 
+ 1189      41445645 
+ 1189      52544953 
+ 1190              	.LASF9:
+ 1191 00c1 75696E74 		.ascii	"uint8\000"
+ 1191      3800
+ 1192              	.LASF33:
+ 1193 00c7 43795379 		.ascii	"CySysWdtSetClearOnMatch\000"
+ 1193      73576474 
+ 1193      53657443 
+ 1193      6C656172 
+ 1193      4F6E4D61 
+ 1194              	.LASF26:
+ 1195 00df 5072696E 		.ascii	"PrintProjectHeader\000"
+ 1195      7450726F 
+ 1195      6A656374 
+ 1195      48656164 
+ 1195      657200
+ 1196              	.LASF34:
+ 1197 00f2 43795379 		.ascii	"CySysWdtSetMatch\000"
+ 1197      73576474 
+ 1197      5365744D 
+ 1197      61746368 
+ 1197      00
+ 1198              	.LASF28:
+ 1199 0103 6D61696E 		.ascii	"mainTimer\000"
+ 1199      54696D65 
+ 1199      7200
+ 1200              	.LASF18:
+ 1201 010d 4359424C 		.ascii	"CYBLE_STATE_CONNECTED\000"
+ 1201      455F5354 
+ 1201      4154455F 
+ 1201      434F4E4E 
+ 1201      45435445 
+ 1202              	.LASF5:
+ 1203 0123 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1203      20756E73 
+ 1203      69676E65 
+ 1203      6420696E 
+ 1203      7400
+ 1204              	.LASF39:
+ 1205 0135 43795379 		.ascii	"CySysWdtDisable\000"
+ 1205      73576474 
+ 1205      44697361 
+ 1205      626C6500 
+ 1206              	.LASF36:
+ 1207 0145 43795379 		.ascii	"CySysWdtEnable\000"
+ 1207      73576474 
+ 1207      456E6162 
+ 1207      6C6500
+ 1208              	.LASF10:
+ 1209 0154 75696E74 		.ascii	"uint32\000"
+ 1209      333200
+ 1210              	.LASF38:
+ 1211 015b 43795379 		.ascii	"CySysWdtLock\000"
+ 1211      73576474 
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccjkzJa5.s 			page 26
+
+
+ 1211      4C6F636B 
+ 1211      00
+ 1212              	.LASF8:
+ 1213 0168 756E7369 		.ascii	"unsigned int\000"
+ 1213      676E6564 
+ 1213      20696E74 
+ 1213      00
+ 1214              	.LASF13:
+ 1215 0175 63686172 		.ascii	"char\000"
+ 1215      00
+ 1216              	.LASF24:
+ 1217 017a 5744545F 		.ascii	"WDT_Start\000"
+ 1217      53746172 
+ 1217      7400
+ 1218              	.LASF21:
+ 1219 0184 4359424C 		.ascii	"CYBLE_STATE_T\000"
+ 1219      455F5354 
+ 1219      4154455F 
+ 1219      5400
+ 1220              	.LASF42:
+ 1221 0192 433A5C55 		.ascii	"C:\\Users\\Nick\\Documents\\PSoC Creator\\capsensel"
+ 1221      73657273 
+ 1221      5C4E6963 
+ 1221      6B5C446F 
+ 1221      63756D65 
+ 1222 01c0 6564315C 		.ascii	"ed1\\capsenseled\\capsenseled.cydsn\000"
+ 1222      63617073 
+ 1222      656E7365 
+ 1222      6C65645C 
+ 1222      63617073 
+ 1223              	.LASF16:
+ 1224 01e2 4359424C 		.ascii	"CYBLE_STATE_STOPPED\000"
+ 1224      455F5354 
+ 1224      4154455F 
+ 1224      53544F50 
+ 1224      50454400 
+ 1225              	.LASF14:
+ 1226 01f6 63796973 		.ascii	"cyisraddress\000"
+ 1226      72616464 
+ 1226      72657373 
+ 1226      00
+ 1227              	.LASF27:
+ 1228 0203 6379426C 		.ascii	"cyBle_state\000"
+ 1228      655F7374 
+ 1228      61746500 
+ 1229              	.LASF15:
+ 1230 020f 73697A65 		.ascii	"sizetype\000"
+ 1230      74797065 
+ 1230      00
+ 1231              	.LASF6:
+ 1232 0218 6C6F6E67 		.ascii	"long long int\000"
+ 1232      206C6F6E 
+ 1232      6720696E 
+ 1232      7400
+ 1233              	.LASF40:
+ 1234 0226 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 1234      4320342E 
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccjkzJa5.s 			page 27
+
+
+ 1234      392E3320 
+ 1234      32303135 
+ 1234      30333033 
+ 1235 0259 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0 -mthumb -g -O"
+ 1235      20726576 
+ 1235      6973696F 
+ 1235      6E203232 
+ 1235      31323230 
+ 1236 028c 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1236      66756E63 
+ 1236      74696F6E 
+ 1236      2D736563 
+ 1236      74696F6E 
+ 1237              	.LASF23:
+ 1238 02b4 54696D65 		.ascii	"Timer_Interrupt\000"
+ 1238      725F496E 
+ 1238      74657272 
+ 1238      75707400 
+ 1239              	.LASF2:
+ 1240 02c4 73686F72 		.ascii	"short int\000"
+ 1240      7420696E 
+ 1240      7400
+ 1241              	.LASF29:
+ 1242 02ce 41647665 		.ascii	"Advertising_LED_1_Write\000"
+ 1242      72746973 
+ 1242      696E675F 
+ 1242      4C45445F 
+ 1242      315F5772 
+ 1243              	.LASF32:
+ 1244 02e6 43795379 		.ascii	"CySysWdtSetMode\000"
+ 1244      73576474 
+ 1244      5365744D 
+ 1244      6F646500 
+ 1245              	.LASF4:
+ 1246 02f6 6C6F6E67 		.ascii	"long int\000"
+ 1246      20696E74 
+ 1246      00
+ 1247              	.LASF45:
+ 1248 02ff 70757473 		.ascii	"puts\000"
+ 1248      00
+ 1249              	.LASF41:
+ 1250 0304 4F54414F 		.ascii	"OTAOptional.c\000"
+ 1250      7074696F 
+ 1250      6E616C2E 
+ 1250      6300
+ 1251              	.LASF0:
+ 1252 0312 7369676E 		.ascii	"signed char\000"
+ 1252      65642063 
+ 1252      68617200 
+ 1253              	.LASF35:
+ 1254 031e 43795379 		.ascii	"CySysWdtResetCounters\000"
+ 1254      73576474 
+ 1254      52657365 
+ 1254      74436F75 
+ 1254      6E746572 
+ 1255              	.LASF17:
+ 1256 0334 4359424C 		.ascii	"CYBLE_STATE_INITIALIZING\000"
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccjkzJa5.s 			page 28
+
+
+ 1256      455F5354 
+ 1256      4154455F 
+ 1256      494E4954 
+ 1256      49414C49 
+ 1257              	.LASF7:
+ 1258 034d 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1258      206C6F6E 
+ 1258      6720756E 
+ 1258      7369676E 
+ 1258      65642069 
+ 1259              	.LASF31:
+ 1260 0364 5744545F 		.ascii	"WDT_Interrupt_StartEx\000"
+ 1260      496E7465 
+ 1260      72727570 
+ 1260      745F5374 
+ 1260      61727445 
+ 1261              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

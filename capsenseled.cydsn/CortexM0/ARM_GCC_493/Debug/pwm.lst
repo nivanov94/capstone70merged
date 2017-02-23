@@ -1,0 +1,1755 @@
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccsYirPU.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 1
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"PWM.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.init_PWM,"ax",%progbits
+  18              		.align	2
+  19              		.global	init_PWM
+  20              		.code	16
+  21              		.thumb_func
+  22              		.type	init_PWM, %function
+  23              	init_PWM:
+  24              	.LFB35:
+  25              		.file 1 "PWM.c"
+   1:PWM.c         **** /* ========================================
+   2:PWM.c         ****  *
+   3:PWM.c         ****  * Copyright YOUR COMPANY, THE YEAR
+   4:PWM.c         ****  * All Rights Reserved
+   5:PWM.c         ****  * UNPUBLISHED, LICENSED SOFTWARE.
+   6:PWM.c         ****  *
+   7:PWM.c         ****  * CONFIDENTIAL AND PROPRIETARY INFORMATION
+   8:PWM.c         ****  * WHICH IS THE PROPERTY OF your company.
+   9:PWM.c         ****  *
+  10:PWM.c         ****  * ========================================
+  11:PWM.c         **** */
+  12:PWM.c         **** 
+  13:PWM.c         **** 
+  14:PWM.c         **** 
+  15:PWM.c         **** #include "PWM.h"
+  16:PWM.c         **** #include <project.h>
+  17:PWM.c         **** #include "adc.h"
+  18:PWM.c         **** 
+  19:PWM.c         **** #define MAX_VOLTAGE 5.0
+  20:PWM.c         **** #define MIN_VOLTAGE 0.0
+  21:PWM.c         **** 
+  22:PWM.c         **** #define PWM_PERIOD 200.0
+  23:PWM.c         **** 
+  24:PWM.c         **** #define LOW_FILT  0
+  25:PWM.c         **** #define MID_FILT  1
+  26:PWM.c         **** #define HIGH_FILT 2
+  27:PWM.c         **** 
+  28:PWM.c         **** #define FEEDBACK_GAIN 0.9
+  29:PWM.c         **** #define CONTROLLER_THRESH 0.08
+  30:PWM.c         **** #define TOLERANCE 0.02
+  31:PWM.c         **** 
+  32:PWM.c         **** static uint8 PWM_duty_cycles[] = {0, 0, 0};
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccsYirPU.s 			page 2
+
+
+  33:PWM.c         **** static float voltage_thresholds[] = {1.5, 1.7, 1.8};
+  34:PWM.c         **** 
+  35:PWM.c         **** void init_PWM(void) {
+  26              		.loc 1 35 0
+  27              		.cfi_startproc
+  28 0000 08B5     		push	{r3, lr}
+  29              		.cfi_def_cfa_offset 8
+  30              		.cfi_offset 3, -8
+  31              		.cfi_offset 14, -4
+  36:PWM.c         ****     
+  37:PWM.c         ****     PWM_Low_Thresh_Start();
+  32              		.loc 1 37 0
+  33 0002 FFF7FEFF 		bl	PWM_Low_Thresh_Start
+  34              	.LVL0:
+  38:PWM.c         ****     PWM_Mid_Thresh_Start();
+  35              		.loc 1 38 0
+  36 0006 FFF7FEFF 		bl	PWM_Mid_Thresh_Start
+  37              	.LVL1:
+  39:PWM.c         ****     PWM_High_Thresh_Start();
+  38              		.loc 1 39 0
+  39 000a FFF7FEFF 		bl	PWM_High_Thresh_Start
+  40              	.LVL2:
+  40:PWM.c         ****     
+  41:PWM.c         ****     Clock_PWM_Start();
+  41              		.loc 1 41 0
+  42 000e FF20     		mov	r0, #255
+  43 0010 FFF7FEFF 		bl	Clock_PWM_StartEx
+  44              	.LVL3:
+  42:PWM.c         **** }
+  45              		.loc 1 42 0
+  46              		@ sp needed
+  47 0014 08BD     		pop	{r3, pc}
+  48              		.cfi_endproc
+  49              	.LFE35:
+  50              		.size	init_PWM, .-init_PWM
+  51 0016 C046     		.section	.text.set_PWM_duty_cycles,"ax",%progbits
+  52              		.align	2
+  53              		.global	set_PWM_duty_cycles
+  54              		.code	16
+  55              		.thumb_func
+  56              		.type	set_PWM_duty_cycles, %function
+  57              	set_PWM_duty_cycles:
+  58              	.LFB36:
+  43:PWM.c         **** 
+  44:PWM.c         **** void set_PWM_duty_cycles(int thresh_index) {
+  59              		.loc 1 44 0
+  60              		.cfi_startproc
+  61              	.LVL4:
+  62 0000 08B5     		push	{r3, lr}
+  63              		.cfi_def_cfa_offset 8
+  64              		.cfi_offset 3, -8
+  65              		.cfi_offset 14, -4
+  45:PWM.c         ****     
+  46:PWM.c         ****     if (thresh_index == LOW_FILT) {
+  66              		.loc 1 46 0
+  67 0002 0028     		cmp	r0, #0
+  68 0004 04D1     		bne	.L3
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccsYirPU.s 			page 3
+
+
+  47:PWM.c         ****         PWM_Low_Thresh_WriteCompare(PWM_duty_cycles[LOW_FILT]);
+  69              		.loc 1 47 0
+  70 0006 084B     		ldr	r3, .L6
+  71 0008 1878     		ldrb	r0, [r3]
+  72              	.LVL5:
+  73 000a FFF7FEFF 		bl	PWM_Low_Thresh_WriteCompare
+  74              	.LVL6:
+  75 000e 0AE0     		b	.L2
+  76              	.LVL7:
+  77              	.L3:
+  48:PWM.c         ****     }
+  49:PWM.c         ****     else if (thresh_index == MID_FILT) {
+  78              		.loc 1 49 0
+  79 0010 0128     		cmp	r0, #1
+  80 0012 04D1     		bne	.L5
+  50:PWM.c         ****         PWM_Mid_Thresh_WriteCompare(PWM_duty_cycles[MID_FILT]);
+  81              		.loc 1 50 0
+  82 0014 044B     		ldr	r3, .L6
+  83 0016 5878     		ldrb	r0, [r3, #1]
+  84              	.LVL8:
+  85 0018 FFF7FEFF 		bl	PWM_Mid_Thresh_WriteCompare
+  86              	.LVL9:
+  87 001c 03E0     		b	.L2
+  88              	.LVL10:
+  89              	.L5:
+  51:PWM.c         ****     }
+  52:PWM.c         ****     else {
+  53:PWM.c         ****         PWM_High_Thresh_WriteCompare(PWM_duty_cycles[HIGH_FILT]);
+  90              		.loc 1 53 0
+  91 001e 024B     		ldr	r3, .L6
+  92 0020 9878     		ldrb	r0, [r3, #2]
+  93              	.LVL11:
+  94 0022 FFF7FEFF 		bl	PWM_High_Thresh_WriteCompare
+  95              	.LVL12:
+  96              	.L2:
+  54:PWM.c         ****     }
+  55:PWM.c         **** }
+  97              		.loc 1 55 0
+  98              		@ sp needed
+  99 0026 08BD     		pop	{r3, pc}
+ 100              	.L7:
+ 101              		.align	2
+ 102              	.L6:
+ 103 0028 00000000 		.word	.LANCHOR0
+ 104              		.cfi_endproc
+ 105              	.LFE36:
+ 106              		.size	set_PWM_duty_cycles, .-set_PWM_duty_cycles
+ 107              		.global	__aeabi_fsub
+ 108              		.global	__aeabi_dmul
+ 109              		.global	__aeabi_ddiv
+ 110              		.global	__aeabi_d2iz
+ 111              		.global	__aeabi_i2d
+ 112              		.global	__aeabi_dcmple
+ 113              		.global	__aeabi_dcmpgt
+ 114              		.global	__aeabi_f2d
+ 115              		.global	__aeabi_dcmplt
+ 116              		.global	__aeabi_fcmpgt
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccsYirPU.s 			page 4
+
+
+ 117              		.section	.text.set_PWM_threshold,"ax",%progbits
+ 118              		.align	2
+ 119              		.global	set_PWM_threshold
+ 120              		.code	16
+ 121              		.thumb_func
+ 122              		.type	set_PWM_threshold, %function
+ 123              	set_PWM_threshold:
+ 124              	.LFB38:
+  56:PWM.c         **** 
+  57:PWM.c         **** void update_PWM_threshold(float volt_val, int thresh_index) {
+  58:PWM.c         ****     
+  59:PWM.c         ****     if (volt_val < MAX_VOLTAGE && volt_val > MIN_VOLTAGE) {
+  60:PWM.c         ****         voltage_thresholds[thresh_index] = volt_val;
+  61:PWM.c         ****     }
+  62:PWM.c         ****     else if (volt_val > MAX_VOLTAGE) {
+  63:PWM.c         ****         voltage_thresholds[thresh_index] = MAX_VOLTAGE;
+  64:PWM.c         ****     }
+  65:PWM.c         ****     else {
+  66:PWM.c         ****         voltage_thresholds[thresh_index] = MIN_VOLTAGE;
+  67:PWM.c         ****     }
+  68:PWM.c         ****     
+  69:PWM.c         ****     set_PWM_threshold(thresh_index);
+  70:PWM.c         **** }
+  71:PWM.c         **** 
+  72:PWM.c         **** void set_PWM_threshold(int thresh_index) {
+ 125              		.loc 1 72 0
+ 126              		.cfi_startproc
+ 127              	.LVL13:
+ 128 0000 F8B5     		push	{r3, r4, r5, r6, r7, lr}
+ 129              		.cfi_def_cfa_offset 24
+ 130              		.cfi_offset 3, -24
+ 131              		.cfi_offset 4, -20
+ 132              		.cfi_offset 5, -16
+ 133              		.cfi_offset 6, -12
+ 134              		.cfi_offset 7, -8
+ 135              		.cfi_offset 14, -4
+ 136 0002 051C     		mov	r5, r0
+  73:PWM.c         ****    
+  74:PWM.c         ****     int delta;
+  75:PWM.c         ****     int new_duty_cycle;
+  76:PWM.c         ****     float current_out = ADC_read(thresh_index);
+ 137              		.loc 1 76 0
+ 138 0004 FFF7FEFF 		bl	ADC_read
+ 139              	.LVL14:
+ 140 0008 011C     		add	r1, r0, #0
+ 141              	.LVL15:
+  77:PWM.c         ****     float error = voltage_thresholds[thresh_index] - current_out;
+ 142              		.loc 1 77 0
+ 143 000a AA00     		lsl	r2, r5, #2
+ 144 000c 4A4B     		ldr	r3, .L25
+ 145 000e D058     		ldr	r0, [r2, r3]
+ 146              	.LVL16:
+ 147 0010 FFF7FEFF 		bl	__aeabi_fsub
+ 148              	.LVL17:
+ 149 0014 041C     		add	r4, r0, #0
+ 150              	.LVL18:
+  78:PWM.c         ****     
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccsYirPU.s 			page 5
+
+
+  79:PWM.c         ****     while (error > CONTROLLER_THRESH || error < -CONTROLLER_THRESH) {
+ 151              		.loc 1 79 0
+ 152 0016 41E0     		b	.L9
+ 153              	.LVL19:
+ 154              	.L15:
+  80:PWM.c         ****         
+  81:PWM.c         ****         delta = (int)(error*FEEDBACK_GAIN*PWM_PERIOD/MAX_VOLTAGE);
+ 155              		.loc 1 81 0
+ 156 0018 301C     		mov	r0, r6
+ 157 001a 391C     		mov	r1, r7
+ 158 001c 474A     		ldr	r2, .L25+4
+ 159 001e 484B     		ldr	r3, .L25+8
+ 160 0020 FFF7FEFF 		bl	__aeabi_dmul
+ 161              	.LVL20:
+ 162 0024 0022     		mov	r2, #0
+ 163 0026 474B     		ldr	r3, .L25+12
+ 164 0028 FFF7FEFF 		bl	__aeabi_dmul
+ 165              	.LVL21:
+ 166 002c 0022     		mov	r2, #0
+ 167 002e 464B     		ldr	r3, .L25+16
+ 168 0030 FFF7FEFF 		bl	__aeabi_ddiv
+ 169              	.LVL22:
+ 170 0034 FFF7FEFF 		bl	__aeabi_d2iz
+ 171              	.LVL23:
+  82:PWM.c         ****         new_duty_cycle = PWM_duty_cycles[thresh_index] + delta;
+ 172              		.loc 1 82 0
+ 173 0038 444B     		ldr	r3, .L25+20
+ 174 003a 5C5D     		ldrb	r4, [r3, r5]
+ 175              	.LVL24:
+ 176 003c 2418     		add	r4, r4, r0
+ 177              	.LVL25:
+  83:PWM.c         ****     
+  84:PWM.c         ****         if (new_duty_cycle <= PWM_PERIOD && new_duty_cycle >= 0) {
+ 178              		.loc 1 84 0
+ 179 003e 201C     		mov	r0, r4
+ 180              	.LVL26:
+ 181 0040 FFF7FEFF 		bl	__aeabi_i2d
+ 182              	.LVL27:
+ 183 0044 061C     		mov	r6, r0
+ 184 0046 0F1C     		mov	r7, r1
+ 185 0048 0022     		mov	r2, #0
+ 186 004a 3E4B     		ldr	r3, .L25+12
+ 187 004c FFF7FEFF 		bl	__aeabi_dcmple
+ 188              	.LVL28:
+ 189 0050 0028     		cmp	r0, #0
+ 190 0052 04D0     		beq	.L10
+ 191              		.loc 1 84 0 is_stmt 0 discriminator 1
+ 192 0054 002C     		cmp	r4, #0
+ 193 0056 02DB     		blt	.L10
+  85:PWM.c         ****             PWM_duty_cycles[thresh_index] = new_duty_cycle;
+ 194              		.loc 1 85 0 is_stmt 1
+ 195 0058 3C4B     		ldr	r3, .L25+20
+ 196 005a 5C55     		strb	r4, [r3, r5]
+ 197 005c 0EE0     		b	.L12
+ 198              	.L10:
+  86:PWM.c         ****         }
+  87:PWM.c         ****         else if (new_duty_cycle > PWM_PERIOD) {
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccsYirPU.s 			page 6
+
+
+ 199              		.loc 1 87 0
+ 200 005e 301C     		mov	r0, r6
+ 201 0060 391C     		mov	r1, r7
+ 202 0062 0022     		mov	r2, #0
+ 203 0064 374B     		ldr	r3, .L25+12
+ 204 0066 FFF7FEFF 		bl	__aeabi_dcmpgt
+ 205              	.LVL29:
+ 206 006a 0028     		cmp	r0, #0
+ 207 006c 03D0     		beq	.L24
+  88:PWM.c         ****             PWM_duty_cycles[thresh_index] = 100;
+ 208              		.loc 1 88 0
+ 209 006e 6422     		mov	r2, #100
+ 210 0070 364B     		ldr	r3, .L25+20
+ 211 0072 5A55     		strb	r2, [r3, r5]
+ 212 0074 02E0     		b	.L12
+ 213              	.L24:
+  89:PWM.c         ****         }
+  90:PWM.c         ****         else {
+  91:PWM.c         ****             PWM_duty_cycles[thresh_index] = 0;
+ 214              		.loc 1 91 0
+ 215 0076 0022     		mov	r2, #0
+ 216 0078 344B     		ldr	r3, .L25+20
+ 217 007a 5A55     		strb	r2, [r3, r5]
+ 218              	.L12:
+  92:PWM.c         ****         }
+  93:PWM.c         ****  
+  94:PWM.c         ****     
+  95:PWM.c         ****         set_PWM_duty_cycles(thresh_index);
+ 219              		.loc 1 95 0
+ 220 007c 281C     		mov	r0, r5
+ 221 007e FFF7FEFF 		bl	set_PWM_duty_cycles
+ 222              	.LVL30:
+  96:PWM.c         ****         CyDelay(100);
+ 223              		.loc 1 96 0
+ 224 0082 6420     		mov	r0, #100
+ 225 0084 FFF7FEFF 		bl	CyDelay
+ 226              	.LVL31:
+  97:PWM.c         ****         
+  98:PWM.c         ****         current_out = ADC_read(thresh_index);
+ 227              		.loc 1 98 0
+ 228 0088 281C     		mov	r0, r5
+ 229 008a FFF7FEFF 		bl	ADC_read
+ 230              	.LVL32:
+ 231 008e 011C     		add	r1, r0, #0
+ 232              	.LVL33:
+  99:PWM.c         ****         error = voltage_thresholds[thresh_index] - current_out;
+ 233              		.loc 1 99 0
+ 234 0090 AB00     		lsl	r3, r5, #2
+ 235 0092 294A     		ldr	r2, .L25
+ 236 0094 9858     		ldr	r0, [r3, r2]
+ 237              	.LVL34:
+ 238 0096 FFF7FEFF 		bl	__aeabi_fsub
+ 239              	.LVL35:
+ 240 009a 041C     		add	r4, r0, #0
+ 241              	.LVL36:
+ 242              	.L9:
+  79:PWM.c         ****         
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccsYirPU.s 			page 7
+
+
+ 243              		.loc 1 79 0
+ 244 009c 201C     		add	r0, r4, #0
+ 245 009e FFF7FEFF 		bl	__aeabi_f2d
+ 246              	.LVL37:
+ 247 00a2 061C     		mov	r6, r0
+ 248 00a4 0F1C     		mov	r7, r1
+ 249 00a6 2A4A     		ldr	r2, .L25+24
+ 250 00a8 2A4B     		ldr	r3, .L25+28
+ 251 00aa FFF7FEFF 		bl	__aeabi_dcmpgt
+ 252              	.LVL38:
+ 253 00ae 0028     		cmp	r0, #0
+ 254 00b0 B2D1     		bne	.L15
+  79:PWM.c         ****         
+ 255              		.loc 1 79 0 is_stmt 0 discriminator 1
+ 256 00b2 301C     		mov	r0, r6
+ 257 00b4 391C     		mov	r1, r7
+ 258 00b6 264A     		ldr	r2, .L25+24
+ 259 00b8 274B     		ldr	r3, .L25+32
+ 260 00ba FFF7FEFF 		bl	__aeabi_dcmplt
+ 261              	.LVL39:
+ 262 00be 0028     		cmp	r0, #0
+ 263 00c0 AAD1     		bne	.L15
+ 264 00c2 24E0     		b	.L16
+ 265              	.L20:
+ 100:PWM.c         ****     }
+ 101:PWM.c         **** 
+ 102:PWM.c         ****     
+ 103:PWM.c         ****     while (error > TOLERANCE || error < -TOLERANCE) {
+ 104:PWM.c         ****         if (error > 0 && PWM_duty_cycles[thresh_index] < 200 ) {
+ 266              		.loc 1 104 0 is_stmt 1
+ 267 00c4 201C     		add	r0, r4, #0
+ 268 00c6 0021     		mov	r1, #0
+ 269 00c8 FFF7FEFF 		bl	__aeabi_fcmpgt
+ 270              	.LVL40:
+ 271 00cc 0028     		cmp	r0, #0
+ 272 00ce 07D0     		beq	.L17
+ 273              		.loc 1 104 0 is_stmt 0 discriminator 1
+ 274 00d0 1E4B     		ldr	r3, .L25+20
+ 275 00d2 5B5D     		ldrb	r3, [r3, r5]
+ 276 00d4 C72B     		cmp	r3, #199
+ 277 00d6 03D8     		bhi	.L17
+ 105:PWM.c         ****             PWM_duty_cycles[thresh_index]++;
+ 278              		.loc 1 105 0 is_stmt 1
+ 279 00d8 0133     		add	r3, r3, #1
+ 280 00da 1C4A     		ldr	r2, .L25+20
+ 281 00dc 5355     		strb	r3, [r2, r5]
+ 282 00de 06E0     		b	.L19
+ 283              	.L17:
+ 106:PWM.c         ****         }
+ 107:PWM.c         ****         else if (PWM_duty_cycles[thresh_index] > 0) {
+ 284              		.loc 1 107 0
+ 285 00e0 1A4B     		ldr	r3, .L25+20
+ 286 00e2 5B5D     		ldrb	r3, [r3, r5]
+ 287 00e4 002B     		cmp	r3, #0
+ 288 00e6 02D0     		beq	.L19
+ 108:PWM.c         ****             PWM_duty_cycles[thresh_index]--;
+ 289              		.loc 1 108 0
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccsYirPU.s 			page 8
+
+
+ 290 00e8 013B     		sub	r3, r3, #1
+ 291 00ea 184A     		ldr	r2, .L25+20
+ 292 00ec 5355     		strb	r3, [r2, r5]
+ 293              	.L19:
+ 109:PWM.c         ****         }
+ 110:PWM.c         **** 
+ 111:PWM.c         ****         set_PWM_duty_cycles(thresh_index);
+ 294              		.loc 1 111 0
+ 295 00ee 281C     		mov	r0, r5
+ 296 00f0 FFF7FEFF 		bl	set_PWM_duty_cycles
+ 297              	.LVL41:
+ 112:PWM.c         ****         CyDelay(100);
+ 298              		.loc 1 112 0
+ 299 00f4 6420     		mov	r0, #100
+ 300 00f6 FFF7FEFF 		bl	CyDelay
+ 301              	.LVL42:
+ 113:PWM.c         ****         current_out = ADC_read(thresh_index);
+ 302              		.loc 1 113 0
+ 303 00fa 281C     		mov	r0, r5
+ 304 00fc FFF7FEFF 		bl	ADC_read
+ 305              	.LVL43:
+ 306 0100 011C     		add	r1, r0, #0
+ 307              	.LVL44:
+ 114:PWM.c         ****         error = voltage_thresholds[thresh_index] - current_out;
+ 308              		.loc 1 114 0
+ 309 0102 AB00     		lsl	r3, r5, #2
+ 310 0104 0C4A     		ldr	r2, .L25
+ 311 0106 9858     		ldr	r0, [r3, r2]
+ 312              	.LVL45:
+ 313 0108 FFF7FEFF 		bl	__aeabi_fsub
+ 314              	.LVL46:
+ 315 010c 041C     		add	r4, r0, #0
+ 316              	.LVL47:
+ 317              	.L16:
+ 103:PWM.c         ****         if (error > 0 && PWM_duty_cycles[thresh_index] < 200 ) {
+ 318              		.loc 1 103 0
+ 319 010e 201C     		add	r0, r4, #0
+ 320 0110 FFF7FEFF 		bl	__aeabi_f2d
+ 321              	.LVL48:
+ 322 0114 061C     		mov	r6, r0
+ 323 0116 0F1C     		mov	r7, r1
+ 324 0118 0D4A     		ldr	r2, .L25+24
+ 325 011a 104B     		ldr	r3, .L25+36
+ 326 011c FFF7FEFF 		bl	__aeabi_dcmpgt
+ 327              	.LVL49:
+ 328 0120 0028     		cmp	r0, #0
+ 329 0122 CFD1     		bne	.L20
+ 103:PWM.c         ****         if (error > 0 && PWM_duty_cycles[thresh_index] < 200 ) {
+ 330              		.loc 1 103 0 is_stmt 0 discriminator 1
+ 331 0124 301C     		mov	r0, r6
+ 332 0126 391C     		mov	r1, r7
+ 333 0128 094A     		ldr	r2, .L25+24
+ 334 012a 0D4B     		ldr	r3, .L25+40
+ 335 012c FFF7FEFF 		bl	__aeabi_dcmplt
+ 336              	.LVL50:
+ 337 0130 0028     		cmp	r0, #0
+ 338 0132 C7D1     		bne	.L20
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccsYirPU.s 			page 9
+
+
+ 115:PWM.c         ****     }
+ 116:PWM.c         **** 
+ 117:PWM.c         **** }
+ 339              		.loc 1 117 0 is_stmt 1
+ 340              		@ sp needed
+ 341              	.LVL51:
+ 342              	.LVL52:
+ 343 0134 F8BD     		pop	{r3, r4, r5, r6, r7, pc}
+ 344              	.L26:
+ 345 0136 C046     		.align	2
+ 346              	.L25:
+ 347 0138 00000000 		.word	.LANCHOR1
+ 348 013c CDCCCCCC 		.word	-858993459
+ 349 0140 CCCCEC3F 		.word	1072483532
+ 350 0144 00006940 		.word	1080623104
+ 351 0148 00001440 		.word	1075052544
+ 352 014c 00000000 		.word	.LANCHOR0
+ 353 0150 7B14AE47 		.word	1202590843
+ 354 0154 E17AB43F 		.word	1068792545
+ 355 0158 E17AB4BF 		.word	-1078691103
+ 356 015c E17A943F 		.word	1066695393
+ 357 0160 E17A94BF 		.word	-1080788255
+ 358              		.cfi_endproc
+ 359              	.LFE38:
+ 360              		.size	set_PWM_threshold, .-set_PWM_threshold
+ 361              		.global	__aeabi_fcmplt
+ 362              		.section	.text.update_PWM_threshold,"ax",%progbits
+ 363              		.align	2
+ 364              		.global	update_PWM_threshold
+ 365              		.code	16
+ 366              		.thumb_func
+ 367              		.type	update_PWM_threshold, %function
+ 368              	update_PWM_threshold:
+ 369              	.LFB37:
+  57:PWM.c         ****     
+ 370              		.loc 1 57 0
+ 371              		.cfi_startproc
+ 372              	.LVL53:
+ 373 0000 38B5     		push	{r3, r4, r5, lr}
+ 374              		.cfi_def_cfa_offset 16
+ 375              		.cfi_offset 3, -16
+ 376              		.cfi_offset 4, -12
+ 377              		.cfi_offset 5, -8
+ 378              		.cfi_offset 14, -4
+ 379 0002 041C     		add	r4, r0, #0
+ 380 0004 0D1C     		mov	r5, r1
+  59:PWM.c         ****         voltage_thresholds[thresh_index] = volt_val;
+ 381              		.loc 1 59 0
+ 382 0006 1149     		ldr	r1, .L38
+ 383              	.LVL54:
+ 384 0008 FFF7FEFF 		bl	__aeabi_fcmplt
+ 385              	.LVL55:
+ 386 000c 0028     		cmp	r0, #0
+ 387 000e 09D0     		beq	.L28
+  59:PWM.c         ****         voltage_thresholds[thresh_index] = volt_val;
+ 388              		.loc 1 59 0 is_stmt 0 discriminator 1
+ 389 0010 201C     		add	r0, r4, #0
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccsYirPU.s 			page 10
+
+
+ 390 0012 0021     		mov	r1, #0
+ 391 0014 FFF7FEFF 		bl	__aeabi_fcmpgt
+ 392              	.LVL56:
+ 393 0018 0028     		cmp	r0, #0
+ 394 001a 03D0     		beq	.L28
+  60:PWM.c         ****     }
+ 395              		.loc 1 60 0 is_stmt 1
+ 396 001c AB00     		lsl	r3, r5, #2
+ 397 001e 0C4A     		ldr	r2, .L38+4
+ 398 0020 9C50     		str	r4, [r3, r2]
+ 399 0022 0EE0     		b	.L31
+ 400              	.L28:
+  62:PWM.c         ****         voltage_thresholds[thresh_index] = MAX_VOLTAGE;
+ 401              		.loc 1 62 0
+ 402 0024 201C     		add	r0, r4, #0
+ 403 0026 0949     		ldr	r1, .L38
+ 404 0028 FFF7FEFF 		bl	__aeabi_fcmpgt
+ 405              	.LVL57:
+ 406 002c 0028     		cmp	r0, #0
+ 407 002e 04D0     		beq	.L37
+  63:PWM.c         ****     }
+ 408              		.loc 1 63 0
+ 409 0030 AB00     		lsl	r3, r5, #2
+ 410 0032 0649     		ldr	r1, .L38
+ 411 0034 064A     		ldr	r2, .L38+4
+ 412 0036 9950     		str	r1, [r3, r2]
+ 413 0038 03E0     		b	.L31
+ 414              	.L37:
+  66:PWM.c         ****     }
+ 415              		.loc 1 66 0
+ 416 003a AB00     		lsl	r3, r5, #2
+ 417 003c 0021     		mov	r1, #0
+ 418 003e 044A     		ldr	r2, .L38+4
+ 419 0040 9950     		str	r1, [r3, r2]
+ 420              	.L31:
+  69:PWM.c         **** }
+ 421              		.loc 1 69 0
+ 422 0042 281C     		mov	r0, r5
+ 423 0044 FFF7FEFF 		bl	set_PWM_threshold
+ 424              	.LVL58:
+  70:PWM.c         **** 
+ 425              		.loc 1 70 0
+ 426              		@ sp needed
+ 427              	.LVL59:
+ 428              	.LVL60:
+ 429 0048 38BD     		pop	{r3, r4, r5, pc}
+ 430              	.L39:
+ 431 004a C046     		.align	2
+ 432              	.L38:
+ 433 004c 0000A040 		.word	1084227584
+ 434 0050 00000000 		.word	.LANCHOR1
+ 435              		.cfi_endproc
+ 436              	.LFE37:
+ 437              		.size	update_PWM_threshold, .-update_PWM_threshold
+ 438              		.data
+ 439              		.align	2
+ 440              		.set	.LANCHOR1,. + 0
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccsYirPU.s 			page 11
+
+
+ 441              		.type	voltage_thresholds, %object
+ 442              		.size	voltage_thresholds, 12
+ 443              	voltage_thresholds:
+ 444 0000 0000C03F 		.word	1069547520
+ 445 0004 9A99D93F 		.word	1071225242
+ 446 0008 6666E63F 		.word	1072064102
+ 447              		.bss
+ 448              		.align	2
+ 449              		.set	.LANCHOR0,. + 0
+ 450              		.type	PWM_duty_cycles, %object
+ 451              		.size	PWM_duty_cycles, 3
+ 452              	PWM_duty_cycles:
+ 453 0000 000000   		.space	3
+ 454 0003 00       		.text
+ 455              	.Letext0:
+ 456              		.file 2 "Generated_Source\\PSoC4/cytypes.h"
+ 457              		.file 3 "Generated_Source\\PSoC4/PWM_Low_Thresh.h"
+ 458              		.file 4 "Generated_Source\\PSoC4/PWM_Mid_Thresh.h"
+ 459              		.file 5 "Generated_Source\\PSoC4/PWM_High_Thresh.h"
+ 460              		.file 6 "Generated_Source\\PSoC4/Clock_PWM.h"
+ 461              		.file 7 "adc.h"
+ 462              		.file 8 "Generated_Source\\PSoC4/CyLib.h"
+ 463              		.section	.debug_info,"",%progbits
+ 464              	.Ldebug_info0:
+ 465 0000 0B030000 		.4byte	0x30b
+ 466 0004 0400     		.2byte	0x4
+ 467 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 468 000a 04       		.byte	0x4
+ 469 000b 01       		.uleb128 0x1
+ 470 000c EC010000 		.4byte	.LASF34
+ 471 0010 01       		.byte	0x1
+ 472 0011 46010000 		.4byte	.LASF35
+ 473 0015 4C010000 		.4byte	.LASF36
+ 474 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 475 001d 00000000 		.4byte	0
+ 476 0021 00000000 		.4byte	.Ldebug_line0
+ 477 0025 02       		.uleb128 0x2
+ 478 0026 04       		.byte	0x4
+ 479 0027 04       		.byte	0x4
+ 480 0028 6A000000 		.4byte	.LASF0
+ 481 002c 02       		.uleb128 0x2
+ 482 002d 01       		.byte	0x1
+ 483 002e 06       		.byte	0x6
+ 484 002f C5020000 		.4byte	.LASF1
+ 485 0033 02       		.uleb128 0x2
+ 486 0034 01       		.byte	0x1
+ 487 0035 08       		.byte	0x8
+ 488 0036 84000000 		.4byte	.LASF2
+ 489 003a 02       		.uleb128 0x2
+ 490 003b 02       		.byte	0x2
+ 491 003c 05       		.byte	0x5
+ 492 003d 97020000 		.4byte	.LASF3
+ 493 0041 02       		.uleb128 0x2
+ 494 0042 02       		.byte	0x2
+ 495 0043 07       		.byte	0x7
+ 496 0044 D1020000 		.4byte	.LASF4
+ 497 0048 02       		.uleb128 0x2
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccsYirPU.s 			page 12
+
+
+ 498 0049 04       		.byte	0x4
+ 499 004a 05       		.byte	0x5
+ 500 004b B3020000 		.4byte	.LASF5
+ 501 004f 02       		.uleb128 0x2
+ 502 0050 04       		.byte	0x4
+ 503 0051 07       		.byte	0x7
+ 504 0052 92000000 		.4byte	.LASF6
+ 505 0056 02       		.uleb128 0x2
+ 506 0057 08       		.byte	0x8
+ 507 0058 05       		.byte	0x5
+ 508 0059 D9010000 		.4byte	.LASF7
+ 509 005d 02       		.uleb128 0x2
+ 510 005e 08       		.byte	0x8
+ 511 005f 07       		.byte	0x7
+ 512 0060 1F010000 		.4byte	.LASF8
+ 513 0064 03       		.uleb128 0x3
+ 514 0065 04       		.byte	0x4
+ 515 0066 05       		.byte	0x5
+ 516 0067 696E7400 		.ascii	"int\000"
+ 517 006b 02       		.uleb128 0x2
+ 518 006c 04       		.byte	0x4
+ 519 006d 07       		.byte	0x7
+ 520 006e 09010000 		.4byte	.LASF9
+ 521 0072 04       		.uleb128 0x4
+ 522 0073 A4000000 		.4byte	.LASF10
+ 523 0077 02       		.byte	0x2
+ 524 0078 C2       		.byte	0xc2
+ 525 0079 33000000 		.4byte	0x33
+ 526 007d 04       		.uleb128 0x4
+ 527 007e 02010000 		.4byte	.LASF11
+ 528 0082 02       		.byte	0x2
+ 529 0083 C4       		.byte	0xc4
+ 530 0084 4F000000 		.4byte	0x4f
+ 531 0088 02       		.uleb128 0x2
+ 532 0089 08       		.byte	0x8
+ 533 008a 04       		.byte	0x4
+ 534 008b E8000000 		.4byte	.LASF12
+ 535 008f 02       		.uleb128 0x2
+ 536 0090 01       		.byte	0x1
+ 537 0091 08       		.byte	0x8
+ 538 0092 E7010000 		.4byte	.LASF13
+ 539 0096 02       		.uleb128 0x2
+ 540 0097 04       		.byte	0x4
+ 541 0098 07       		.byte	0x7
+ 542 0099 AE010000 		.4byte	.LASF14
+ 543 009d 05       		.uleb128 0x5
+ 544 009e 61000000 		.4byte	.LASF15
+ 545 00a2 01       		.byte	0x1
+ 546 00a3 23       		.byte	0x23
+ 547 00a4 00000000 		.4byte	.LFB35
+ 548 00a8 16000000 		.4byte	.LFE35-.LFB35
+ 549 00ac 01       		.uleb128 0x1
+ 550 00ad 9C       		.byte	0x9c
+ 551 00ae DE000000 		.4byte	0xde
+ 552 00b2 06       		.uleb128 0x6
+ 553 00b3 06000000 		.4byte	.LVL0
+ 554 00b7 8D020000 		.4byte	0x28d
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccsYirPU.s 			page 13
+
+
+ 555 00bb 06       		.uleb128 0x6
+ 556 00bc 0A000000 		.4byte	.LVL1
+ 557 00c0 95020000 		.4byte	0x295
+ 558 00c4 06       		.uleb128 0x6
+ 559 00c5 0E000000 		.4byte	.LVL2
+ 560 00c9 9D020000 		.4byte	0x29d
+ 561 00cd 07       		.uleb128 0x7
+ 562 00ce 14000000 		.4byte	.LVL3
+ 563 00d2 A5020000 		.4byte	0x2a5
+ 564 00d6 08       		.uleb128 0x8
+ 565 00d7 01       		.uleb128 0x1
+ 566 00d8 50       		.byte	0x50
+ 567 00d9 02       		.uleb128 0x2
+ 568 00da 08       		.byte	0x8
+ 569 00db FF       		.byte	0xff
+ 570 00dc 00       		.byte	0
+ 571 00dd 00       		.byte	0
+ 572 00de 05       		.uleb128 0x5
+ 573 00df 70000000 		.4byte	.LASF16
+ 574 00e3 01       		.byte	0x1
+ 575 00e4 2C       		.byte	0x2c
+ 576 00e5 00000000 		.4byte	.LFB36
+ 577 00e9 2C000000 		.4byte	.LFE36-.LFB36
+ 578 00ed 01       		.uleb128 0x1
+ 579 00ee 9C       		.byte	0x9c
+ 580 00ef 1E010000 		.4byte	0x11e
+ 581 00f3 09       		.uleb128 0x9
+ 582 00f4 3F000000 		.4byte	.LASF18
+ 583 00f8 01       		.byte	0x1
+ 584 00f9 2C       		.byte	0x2c
+ 585 00fa 64000000 		.4byte	0x64
+ 586 00fe 00000000 		.4byte	.LLST0
+ 587 0102 06       		.uleb128 0x6
+ 588 0103 0E000000 		.4byte	.LVL6
+ 589 0107 B6020000 		.4byte	0x2b6
+ 590 010b 06       		.uleb128 0x6
+ 591 010c 1C000000 		.4byte	.LVL9
+ 592 0110 C8020000 		.4byte	0x2c8
+ 593 0114 06       		.uleb128 0x6
+ 594 0115 26000000 		.4byte	.LVL12
+ 595 0119 DA020000 		.4byte	0x2da
+ 596 011d 00       		.byte	0
+ 597 011e 0A       		.uleb128 0xa
+ 598 011f A1020000 		.4byte	.LASF17
+ 599 0123 01       		.byte	0x1
+ 600 0124 48       		.byte	0x48
+ 601 0125 00000000 		.4byte	.LFB38
+ 602 0129 64010000 		.4byte	.LFE38-.LFB38
+ 603 012d 01       		.uleb128 0x1
+ 604 012e 9C       		.byte	0x9c
+ 605 012f 07020000 		.4byte	0x207
+ 606 0133 09       		.uleb128 0x9
+ 607 0134 3F000000 		.4byte	.LASF18
+ 608 0138 01       		.byte	0x1
+ 609 0139 48       		.byte	0x48
+ 610 013a 64000000 		.4byte	0x64
+ 611 013e 53000000 		.4byte	.LLST1
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccsYirPU.s 			page 14
+
+
+ 612 0142 0B       		.uleb128 0xb
+ 613 0143 0F000000 		.4byte	.LASF19
+ 614 0147 01       		.byte	0x1
+ 615 0148 4A       		.byte	0x4a
+ 616 0149 64000000 		.4byte	0x64
+ 617 014d 7F000000 		.4byte	.LLST2
+ 618 0151 0B       		.uleb128 0xb
+ 619 0152 00000000 		.4byte	.LASF20
+ 620 0156 01       		.byte	0x1
+ 621 0157 4B       		.byte	0x4b
+ 622 0158 64000000 		.4byte	0x64
+ 623 015c 92000000 		.4byte	.LLST3
+ 624 0160 0B       		.uleb128 0xb
+ 625 0161 AA000000 		.4byte	.LASF21
+ 626 0165 01       		.byte	0x1
+ 627 0166 4C       		.byte	0x4c
+ 628 0167 25000000 		.4byte	0x25
+ 629 016b A5000000 		.4byte	.LLST4
+ 630 016f 0B       		.uleb128 0xb
+ 631 0170 D3010000 		.4byte	.LASF22
+ 632 0174 01       		.byte	0x1
+ 633 0175 4D       		.byte	0x4d
+ 634 0176 25000000 		.4byte	0x25
+ 635 017a EF000000 		.4byte	.LLST5
+ 636 017e 0C       		.uleb128 0xc
+ 637 017f 08000000 		.4byte	.LVL14
+ 638 0183 EC020000 		.4byte	0x2ec
+ 639 0187 92010000 		.4byte	0x192
+ 640 018b 08       		.uleb128 0x8
+ 641 018c 01       		.uleb128 0x1
+ 642 018d 50       		.byte	0x50
+ 643 018e 02       		.uleb128 0x2
+ 644 018f 75       		.byte	0x75
+ 645 0190 00       		.sleb128 0
+ 646 0191 00       		.byte	0
+ 647 0192 0C       		.uleb128 0xc
+ 648 0193 82000000 		.4byte	.LVL30
+ 649 0197 DE000000 		.4byte	0xde
+ 650 019b A6010000 		.4byte	0x1a6
+ 651 019f 08       		.uleb128 0x8
+ 652 01a0 01       		.uleb128 0x1
+ 653 01a1 50       		.byte	0x50
+ 654 01a2 02       		.uleb128 0x2
+ 655 01a3 75       		.byte	0x75
+ 656 01a4 00       		.sleb128 0
+ 657 01a5 00       		.byte	0
+ 658 01a6 0C       		.uleb128 0xc
+ 659 01a7 88000000 		.4byte	.LVL31
+ 660 01ab 01030000 		.4byte	0x301
+ 661 01af BA010000 		.4byte	0x1ba
+ 662 01b3 08       		.uleb128 0x8
+ 663 01b4 01       		.uleb128 0x1
+ 664 01b5 50       		.byte	0x50
+ 665 01b6 02       		.uleb128 0x2
+ 666 01b7 08       		.byte	0x8
+ 667 01b8 64       		.byte	0x64
+ 668 01b9 00       		.byte	0
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccsYirPU.s 			page 15
+
+
+ 669 01ba 0C       		.uleb128 0xc
+ 670 01bb 8E000000 		.4byte	.LVL32
+ 671 01bf EC020000 		.4byte	0x2ec
+ 672 01c3 CE010000 		.4byte	0x1ce
+ 673 01c7 08       		.uleb128 0x8
+ 674 01c8 01       		.uleb128 0x1
+ 675 01c9 50       		.byte	0x50
+ 676 01ca 02       		.uleb128 0x2
+ 677 01cb 75       		.byte	0x75
+ 678 01cc 00       		.sleb128 0
+ 679 01cd 00       		.byte	0
+ 680 01ce 0C       		.uleb128 0xc
+ 681 01cf F4000000 		.4byte	.LVL41
+ 682 01d3 DE000000 		.4byte	0xde
+ 683 01d7 E2010000 		.4byte	0x1e2
+ 684 01db 08       		.uleb128 0x8
+ 685 01dc 01       		.uleb128 0x1
+ 686 01dd 50       		.byte	0x50
+ 687 01de 02       		.uleb128 0x2
+ 688 01df 75       		.byte	0x75
+ 689 01e0 00       		.sleb128 0
+ 690 01e1 00       		.byte	0
+ 691 01e2 0C       		.uleb128 0xc
+ 692 01e3 FA000000 		.4byte	.LVL42
+ 693 01e7 01030000 		.4byte	0x301
+ 694 01eb F6010000 		.4byte	0x1f6
+ 695 01ef 08       		.uleb128 0x8
+ 696 01f0 01       		.uleb128 0x1
+ 697 01f1 50       		.byte	0x50
+ 698 01f2 02       		.uleb128 0x2
+ 699 01f3 08       		.byte	0x8
+ 700 01f4 64       		.byte	0x64
+ 701 01f5 00       		.byte	0
+ 702 01f6 07       		.uleb128 0x7
+ 703 01f7 00010000 		.4byte	.LVL43
+ 704 01fb EC020000 		.4byte	0x2ec
+ 705 01ff 08       		.uleb128 0x8
+ 706 0200 01       		.uleb128 0x1
+ 707 0201 50       		.byte	0x50
+ 708 0202 02       		.uleb128 0x2
+ 709 0203 75       		.byte	0x75
+ 710 0204 00       		.sleb128 0
+ 711 0205 00       		.byte	0
+ 712 0206 00       		.byte	0
+ 713 0207 0A       		.uleb128 0xa
+ 714 0208 4C000000 		.4byte	.LASF23
+ 715 020c 01       		.byte	0x1
+ 716 020d 39       		.byte	0x39
+ 717 020e 00000000 		.4byte	.LFB37
+ 718 0212 54000000 		.4byte	.LFE37-.LFB37
+ 719 0216 01       		.uleb128 0x1
+ 720 0217 9C       		.byte	0x9c
+ 721 0218 4B020000 		.4byte	0x24b
+ 722 021c 09       		.uleb128 0x9
+ 723 021d 16010000 		.4byte	.LASF24
+ 724 0221 01       		.byte	0x1
+ 725 0222 39       		.byte	0x39
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccsYirPU.s 			page 16
+
+
+ 726 0223 25000000 		.4byte	0x25
+ 727 0227 23010000 		.4byte	.LLST6
+ 728 022b 09       		.uleb128 0x9
+ 729 022c 3F000000 		.4byte	.LASF18
+ 730 0230 01       		.byte	0x1
+ 731 0231 39       		.byte	0x39
+ 732 0232 64000000 		.4byte	0x64
+ 733 0236 51010000 		.4byte	.LLST7
+ 734 023a 07       		.uleb128 0x7
+ 735 023b 48000000 		.4byte	.LVL58
+ 736 023f 1E010000 		.4byte	0x11e
+ 737 0243 08       		.uleb128 0x8
+ 738 0244 01       		.uleb128 0x1
+ 739 0245 50       		.byte	0x50
+ 740 0246 02       		.uleb128 0x2
+ 741 0247 75       		.byte	0x75
+ 742 0248 00       		.sleb128 0
+ 743 0249 00       		.byte	0
+ 744 024a 00       		.byte	0
+ 745 024b 0D       		.uleb128 0xd
+ 746 024c 72000000 		.4byte	0x72
+ 747 0250 5B020000 		.4byte	0x25b
+ 748 0254 0E       		.uleb128 0xe
+ 749 0255 96000000 		.4byte	0x96
+ 750 0259 02       		.byte	0x2
+ 751 025a 00       		.byte	0
+ 752 025b 0F       		.uleb128 0xf
+ 753 025c 36010000 		.4byte	.LASF25
+ 754 0260 01       		.byte	0x1
+ 755 0261 20       		.byte	0x20
+ 756 0262 4B020000 		.4byte	0x24b
+ 757 0266 05       		.uleb128 0x5
+ 758 0267 03       		.byte	0x3
+ 759 0268 00000000 		.4byte	PWM_duty_cycles
+ 760 026c 0D       		.uleb128 0xd
+ 761 026d 25000000 		.4byte	0x25
+ 762 0271 7C020000 		.4byte	0x27c
+ 763 0275 0E       		.uleb128 0xe
+ 764 0276 96000000 		.4byte	0x96
+ 765 027a 02       		.byte	0x2
+ 766 027b 00       		.byte	0
+ 767 027c 0F       		.uleb128 0xf
+ 768 027d EF000000 		.4byte	.LASF26
+ 769 0281 01       		.byte	0x1
+ 770 0282 21       		.byte	0x21
+ 771 0283 6C020000 		.4byte	0x26c
+ 772 0287 05       		.uleb128 0x5
+ 773 0288 03       		.byte	0x3
+ 774 0289 00000000 		.4byte	voltage_thresholds
+ 775 028d 10       		.uleb128 0x10
+ 776 028e 2A000000 		.4byte	.LASF27
+ 777 0292 03       		.byte	0x3
+ 778 0293 3201     		.2byte	0x132
+ 779 0295 10       		.uleb128 0x10
+ 780 0296 15000000 		.4byte	.LASF28
+ 781 029a 04       		.byte	0x4
+ 782 029b 3201     		.2byte	0x132
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccsYirPU.s 			page 17
+
+
+ 783 029d 10       		.uleb128 0x10
+ 784 029e B6000000 		.4byte	.LASF29
+ 785 02a2 05       		.byte	0x5
+ 786 02a3 3201     		.2byte	0x132
+ 787 02a5 11       		.uleb128 0x11
+ 788 02a6 9C010000 		.4byte	.LASF30
+ 789 02aa 06       		.byte	0x6
+ 790 02ab 1D       		.byte	0x1d
+ 791 02ac B6020000 		.4byte	0x2b6
+ 792 02b0 12       		.uleb128 0x12
+ 793 02b1 7D000000 		.4byte	0x7d
+ 794 02b5 00       		.byte	0
+ 795 02b6 13       		.uleb128 0x13
+ 796 02b7 B7010000 		.4byte	.LASF31
+ 797 02bb 03       		.byte	0x3
+ 798 02bc 5501     		.2byte	0x155
+ 799 02be C8020000 		.4byte	0x2c8
+ 800 02c2 12       		.uleb128 0x12
+ 801 02c3 7D000000 		.4byte	0x7d
+ 802 02c7 00       		.byte	0
+ 803 02c8 13       		.uleb128 0x13
+ 804 02c9 CC000000 		.4byte	.LASF32
+ 805 02cd 04       		.byte	0x4
+ 806 02ce 5501     		.2byte	0x155
+ 807 02d0 DA020000 		.4byte	0x2da
+ 808 02d4 12       		.uleb128 0x12
+ 809 02d5 7D000000 		.4byte	0x7d
+ 810 02d9 00       		.byte	0
+ 811 02da 13       		.uleb128 0x13
+ 812 02db 7A020000 		.4byte	.LASF33
+ 813 02df 05       		.byte	0x5
+ 814 02e0 5501     		.2byte	0x155
+ 815 02e2 EC020000 		.4byte	0x2ec
+ 816 02e6 12       		.uleb128 0x12
+ 817 02e7 7D000000 		.4byte	0x7d
+ 818 02eb 00       		.byte	0
+ 819 02ec 14       		.uleb128 0x14
+ 820 02ed BC020000 		.4byte	.LASF37
+ 821 02f1 07       		.byte	0x7
+ 822 02f2 14       		.byte	0x14
+ 823 02f3 25000000 		.4byte	0x25
+ 824 02f7 01030000 		.4byte	0x301
+ 825 02fb 12       		.uleb128 0x12
+ 826 02fc 64000000 		.4byte	0x64
+ 827 0300 00       		.byte	0
+ 828 0301 15       		.uleb128 0x15
+ 829 0302 E4020000 		.4byte	.LASF38
+ 830 0306 08       		.byte	0x8
+ 831 0307 57       		.byte	0x57
+ 832 0308 12       		.uleb128 0x12
+ 833 0309 7D000000 		.4byte	0x7d
+ 834 030d 00       		.byte	0
+ 835 030e 00       		.byte	0
+ 836              		.section	.debug_abbrev,"",%progbits
+ 837              	.Ldebug_abbrev0:
+ 838 0000 01       		.uleb128 0x1
+ 839 0001 11       		.uleb128 0x11
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccsYirPU.s 			page 18
+
+
+ 840 0002 01       		.byte	0x1
+ 841 0003 25       		.uleb128 0x25
+ 842 0004 0E       		.uleb128 0xe
+ 843 0005 13       		.uleb128 0x13
+ 844 0006 0B       		.uleb128 0xb
+ 845 0007 03       		.uleb128 0x3
+ 846 0008 0E       		.uleb128 0xe
+ 847 0009 1B       		.uleb128 0x1b
+ 848 000a 0E       		.uleb128 0xe
+ 849 000b 55       		.uleb128 0x55
+ 850 000c 17       		.uleb128 0x17
+ 851 000d 11       		.uleb128 0x11
+ 852 000e 01       		.uleb128 0x1
+ 853 000f 10       		.uleb128 0x10
+ 854 0010 17       		.uleb128 0x17
+ 855 0011 00       		.byte	0
+ 856 0012 00       		.byte	0
+ 857 0013 02       		.uleb128 0x2
+ 858 0014 24       		.uleb128 0x24
+ 859 0015 00       		.byte	0
+ 860 0016 0B       		.uleb128 0xb
+ 861 0017 0B       		.uleb128 0xb
+ 862 0018 3E       		.uleb128 0x3e
+ 863 0019 0B       		.uleb128 0xb
+ 864 001a 03       		.uleb128 0x3
+ 865 001b 0E       		.uleb128 0xe
+ 866 001c 00       		.byte	0
+ 867 001d 00       		.byte	0
+ 868 001e 03       		.uleb128 0x3
+ 869 001f 24       		.uleb128 0x24
+ 870 0020 00       		.byte	0
+ 871 0021 0B       		.uleb128 0xb
+ 872 0022 0B       		.uleb128 0xb
+ 873 0023 3E       		.uleb128 0x3e
+ 874 0024 0B       		.uleb128 0xb
+ 875 0025 03       		.uleb128 0x3
+ 876 0026 08       		.uleb128 0x8
+ 877 0027 00       		.byte	0
+ 878 0028 00       		.byte	0
+ 879 0029 04       		.uleb128 0x4
+ 880 002a 16       		.uleb128 0x16
+ 881 002b 00       		.byte	0
+ 882 002c 03       		.uleb128 0x3
+ 883 002d 0E       		.uleb128 0xe
+ 884 002e 3A       		.uleb128 0x3a
+ 885 002f 0B       		.uleb128 0xb
+ 886 0030 3B       		.uleb128 0x3b
+ 887 0031 0B       		.uleb128 0xb
+ 888 0032 49       		.uleb128 0x49
+ 889 0033 13       		.uleb128 0x13
+ 890 0034 00       		.byte	0
+ 891 0035 00       		.byte	0
+ 892 0036 05       		.uleb128 0x5
+ 893 0037 2E       		.uleb128 0x2e
+ 894 0038 01       		.byte	0x1
+ 895 0039 3F       		.uleb128 0x3f
+ 896 003a 19       		.uleb128 0x19
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccsYirPU.s 			page 19
+
+
+ 897 003b 03       		.uleb128 0x3
+ 898 003c 0E       		.uleb128 0xe
+ 899 003d 3A       		.uleb128 0x3a
+ 900 003e 0B       		.uleb128 0xb
+ 901 003f 3B       		.uleb128 0x3b
+ 902 0040 0B       		.uleb128 0xb
+ 903 0041 27       		.uleb128 0x27
+ 904 0042 19       		.uleb128 0x19
+ 905 0043 11       		.uleb128 0x11
+ 906 0044 01       		.uleb128 0x1
+ 907 0045 12       		.uleb128 0x12
+ 908 0046 06       		.uleb128 0x6
+ 909 0047 40       		.uleb128 0x40
+ 910 0048 18       		.uleb128 0x18
+ 911 0049 9742     		.uleb128 0x2117
+ 912 004b 19       		.uleb128 0x19
+ 913 004c 01       		.uleb128 0x1
+ 914 004d 13       		.uleb128 0x13
+ 915 004e 00       		.byte	0
+ 916 004f 00       		.byte	0
+ 917 0050 06       		.uleb128 0x6
+ 918 0051 898201   		.uleb128 0x4109
+ 919 0054 00       		.byte	0
+ 920 0055 11       		.uleb128 0x11
+ 921 0056 01       		.uleb128 0x1
+ 922 0057 31       		.uleb128 0x31
+ 923 0058 13       		.uleb128 0x13
+ 924 0059 00       		.byte	0
+ 925 005a 00       		.byte	0
+ 926 005b 07       		.uleb128 0x7
+ 927 005c 898201   		.uleb128 0x4109
+ 928 005f 01       		.byte	0x1
+ 929 0060 11       		.uleb128 0x11
+ 930 0061 01       		.uleb128 0x1
+ 931 0062 31       		.uleb128 0x31
+ 932 0063 13       		.uleb128 0x13
+ 933 0064 00       		.byte	0
+ 934 0065 00       		.byte	0
+ 935 0066 08       		.uleb128 0x8
+ 936 0067 8A8201   		.uleb128 0x410a
+ 937 006a 00       		.byte	0
+ 938 006b 02       		.uleb128 0x2
+ 939 006c 18       		.uleb128 0x18
+ 940 006d 9142     		.uleb128 0x2111
+ 941 006f 18       		.uleb128 0x18
+ 942 0070 00       		.byte	0
+ 943 0071 00       		.byte	0
+ 944 0072 09       		.uleb128 0x9
+ 945 0073 05       		.uleb128 0x5
+ 946 0074 00       		.byte	0
+ 947 0075 03       		.uleb128 0x3
+ 948 0076 0E       		.uleb128 0xe
+ 949 0077 3A       		.uleb128 0x3a
+ 950 0078 0B       		.uleb128 0xb
+ 951 0079 3B       		.uleb128 0x3b
+ 952 007a 0B       		.uleb128 0xb
+ 953 007b 49       		.uleb128 0x49
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccsYirPU.s 			page 20
+
+
+ 954 007c 13       		.uleb128 0x13
+ 955 007d 02       		.uleb128 0x2
+ 956 007e 17       		.uleb128 0x17
+ 957 007f 00       		.byte	0
+ 958 0080 00       		.byte	0
+ 959 0081 0A       		.uleb128 0xa
+ 960 0082 2E       		.uleb128 0x2e
+ 961 0083 01       		.byte	0x1
+ 962 0084 3F       		.uleb128 0x3f
+ 963 0085 19       		.uleb128 0x19
+ 964 0086 03       		.uleb128 0x3
+ 965 0087 0E       		.uleb128 0xe
+ 966 0088 3A       		.uleb128 0x3a
+ 967 0089 0B       		.uleb128 0xb
+ 968 008a 3B       		.uleb128 0x3b
+ 969 008b 0B       		.uleb128 0xb
+ 970 008c 27       		.uleb128 0x27
+ 971 008d 19       		.uleb128 0x19
+ 972 008e 11       		.uleb128 0x11
+ 973 008f 01       		.uleb128 0x1
+ 974 0090 12       		.uleb128 0x12
+ 975 0091 06       		.uleb128 0x6
+ 976 0092 40       		.uleb128 0x40
+ 977 0093 18       		.uleb128 0x18
+ 978 0094 9642     		.uleb128 0x2116
+ 979 0096 19       		.uleb128 0x19
+ 980 0097 01       		.uleb128 0x1
+ 981 0098 13       		.uleb128 0x13
+ 982 0099 00       		.byte	0
+ 983 009a 00       		.byte	0
+ 984 009b 0B       		.uleb128 0xb
+ 985 009c 34       		.uleb128 0x34
+ 986 009d 00       		.byte	0
+ 987 009e 03       		.uleb128 0x3
+ 988 009f 0E       		.uleb128 0xe
+ 989 00a0 3A       		.uleb128 0x3a
+ 990 00a1 0B       		.uleb128 0xb
+ 991 00a2 3B       		.uleb128 0x3b
+ 992 00a3 0B       		.uleb128 0xb
+ 993 00a4 49       		.uleb128 0x49
+ 994 00a5 13       		.uleb128 0x13
+ 995 00a6 02       		.uleb128 0x2
+ 996 00a7 17       		.uleb128 0x17
+ 997 00a8 00       		.byte	0
+ 998 00a9 00       		.byte	0
+ 999 00aa 0C       		.uleb128 0xc
+ 1000 00ab 898201   		.uleb128 0x4109
+ 1001 00ae 01       		.byte	0x1
+ 1002 00af 11       		.uleb128 0x11
+ 1003 00b0 01       		.uleb128 0x1
+ 1004 00b1 31       		.uleb128 0x31
+ 1005 00b2 13       		.uleb128 0x13
+ 1006 00b3 01       		.uleb128 0x1
+ 1007 00b4 13       		.uleb128 0x13
+ 1008 00b5 00       		.byte	0
+ 1009 00b6 00       		.byte	0
+ 1010 00b7 0D       		.uleb128 0xd
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccsYirPU.s 			page 21
+
+
+ 1011 00b8 01       		.uleb128 0x1
+ 1012 00b9 01       		.byte	0x1
+ 1013 00ba 49       		.uleb128 0x49
+ 1014 00bb 13       		.uleb128 0x13
+ 1015 00bc 01       		.uleb128 0x1
+ 1016 00bd 13       		.uleb128 0x13
+ 1017 00be 00       		.byte	0
+ 1018 00bf 00       		.byte	0
+ 1019 00c0 0E       		.uleb128 0xe
+ 1020 00c1 21       		.uleb128 0x21
+ 1021 00c2 00       		.byte	0
+ 1022 00c3 49       		.uleb128 0x49
+ 1023 00c4 13       		.uleb128 0x13
+ 1024 00c5 2F       		.uleb128 0x2f
+ 1025 00c6 0B       		.uleb128 0xb
+ 1026 00c7 00       		.byte	0
+ 1027 00c8 00       		.byte	0
+ 1028 00c9 0F       		.uleb128 0xf
+ 1029 00ca 34       		.uleb128 0x34
+ 1030 00cb 00       		.byte	0
+ 1031 00cc 03       		.uleb128 0x3
+ 1032 00cd 0E       		.uleb128 0xe
+ 1033 00ce 3A       		.uleb128 0x3a
+ 1034 00cf 0B       		.uleb128 0xb
+ 1035 00d0 3B       		.uleb128 0x3b
+ 1036 00d1 0B       		.uleb128 0xb
+ 1037 00d2 49       		.uleb128 0x49
+ 1038 00d3 13       		.uleb128 0x13
+ 1039 00d4 02       		.uleb128 0x2
+ 1040 00d5 18       		.uleb128 0x18
+ 1041 00d6 00       		.byte	0
+ 1042 00d7 00       		.byte	0
+ 1043 00d8 10       		.uleb128 0x10
+ 1044 00d9 2E       		.uleb128 0x2e
+ 1045 00da 00       		.byte	0
+ 1046 00db 3F       		.uleb128 0x3f
+ 1047 00dc 19       		.uleb128 0x19
+ 1048 00dd 03       		.uleb128 0x3
+ 1049 00de 0E       		.uleb128 0xe
+ 1050 00df 3A       		.uleb128 0x3a
+ 1051 00e0 0B       		.uleb128 0xb
+ 1052 00e1 3B       		.uleb128 0x3b
+ 1053 00e2 05       		.uleb128 0x5
+ 1054 00e3 27       		.uleb128 0x27
+ 1055 00e4 19       		.uleb128 0x19
+ 1056 00e5 3C       		.uleb128 0x3c
+ 1057 00e6 19       		.uleb128 0x19
+ 1058 00e7 00       		.byte	0
+ 1059 00e8 00       		.byte	0
+ 1060 00e9 11       		.uleb128 0x11
+ 1061 00ea 2E       		.uleb128 0x2e
+ 1062 00eb 01       		.byte	0x1
+ 1063 00ec 3F       		.uleb128 0x3f
+ 1064 00ed 19       		.uleb128 0x19
+ 1065 00ee 03       		.uleb128 0x3
+ 1066 00ef 0E       		.uleb128 0xe
+ 1067 00f0 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccsYirPU.s 			page 22
+
+
+ 1068 00f1 0B       		.uleb128 0xb
+ 1069 00f2 3B       		.uleb128 0x3b
+ 1070 00f3 0B       		.uleb128 0xb
+ 1071 00f4 27       		.uleb128 0x27
+ 1072 00f5 19       		.uleb128 0x19
+ 1073 00f6 3C       		.uleb128 0x3c
+ 1074 00f7 19       		.uleb128 0x19
+ 1075 00f8 01       		.uleb128 0x1
+ 1076 00f9 13       		.uleb128 0x13
+ 1077 00fa 00       		.byte	0
+ 1078 00fb 00       		.byte	0
+ 1079 00fc 12       		.uleb128 0x12
+ 1080 00fd 05       		.uleb128 0x5
+ 1081 00fe 00       		.byte	0
+ 1082 00ff 49       		.uleb128 0x49
+ 1083 0100 13       		.uleb128 0x13
+ 1084 0101 00       		.byte	0
+ 1085 0102 00       		.byte	0
+ 1086 0103 13       		.uleb128 0x13
+ 1087 0104 2E       		.uleb128 0x2e
+ 1088 0105 01       		.byte	0x1
+ 1089 0106 3F       		.uleb128 0x3f
+ 1090 0107 19       		.uleb128 0x19
+ 1091 0108 03       		.uleb128 0x3
+ 1092 0109 0E       		.uleb128 0xe
+ 1093 010a 3A       		.uleb128 0x3a
+ 1094 010b 0B       		.uleb128 0xb
+ 1095 010c 3B       		.uleb128 0x3b
+ 1096 010d 05       		.uleb128 0x5
+ 1097 010e 27       		.uleb128 0x27
+ 1098 010f 19       		.uleb128 0x19
+ 1099 0110 3C       		.uleb128 0x3c
+ 1100 0111 19       		.uleb128 0x19
+ 1101 0112 01       		.uleb128 0x1
+ 1102 0113 13       		.uleb128 0x13
+ 1103 0114 00       		.byte	0
+ 1104 0115 00       		.byte	0
+ 1105 0116 14       		.uleb128 0x14
+ 1106 0117 2E       		.uleb128 0x2e
+ 1107 0118 01       		.byte	0x1
+ 1108 0119 3F       		.uleb128 0x3f
+ 1109 011a 19       		.uleb128 0x19
+ 1110 011b 03       		.uleb128 0x3
+ 1111 011c 0E       		.uleb128 0xe
+ 1112 011d 3A       		.uleb128 0x3a
+ 1113 011e 0B       		.uleb128 0xb
+ 1114 011f 3B       		.uleb128 0x3b
+ 1115 0120 0B       		.uleb128 0xb
+ 1116 0121 27       		.uleb128 0x27
+ 1117 0122 19       		.uleb128 0x19
+ 1118 0123 49       		.uleb128 0x49
+ 1119 0124 13       		.uleb128 0x13
+ 1120 0125 3C       		.uleb128 0x3c
+ 1121 0126 19       		.uleb128 0x19
+ 1122 0127 01       		.uleb128 0x1
+ 1123 0128 13       		.uleb128 0x13
+ 1124 0129 00       		.byte	0
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccsYirPU.s 			page 23
+
+
+ 1125 012a 00       		.byte	0
+ 1126 012b 15       		.uleb128 0x15
+ 1127 012c 2E       		.uleb128 0x2e
+ 1128 012d 01       		.byte	0x1
+ 1129 012e 3F       		.uleb128 0x3f
+ 1130 012f 19       		.uleb128 0x19
+ 1131 0130 03       		.uleb128 0x3
+ 1132 0131 0E       		.uleb128 0xe
+ 1133 0132 3A       		.uleb128 0x3a
+ 1134 0133 0B       		.uleb128 0xb
+ 1135 0134 3B       		.uleb128 0x3b
+ 1136 0135 0B       		.uleb128 0xb
+ 1137 0136 27       		.uleb128 0x27
+ 1138 0137 19       		.uleb128 0x19
+ 1139 0138 3C       		.uleb128 0x3c
+ 1140 0139 19       		.uleb128 0x19
+ 1141 013a 00       		.byte	0
+ 1142 013b 00       		.byte	0
+ 1143 013c 00       		.byte	0
+ 1144              		.section	.debug_loc,"",%progbits
+ 1145              	.Ldebug_loc0:
+ 1146              	.LLST0:
+ 1147 0000 00000000 		.4byte	.LVL4
+ 1148 0004 0A000000 		.4byte	.LVL5
+ 1149 0008 0100     		.2byte	0x1
+ 1150 000a 50       		.byte	0x50
+ 1151 000b 0A000000 		.4byte	.LVL5
+ 1152 000f 10000000 		.4byte	.LVL7
+ 1153 0013 0400     		.2byte	0x4
+ 1154 0015 F3       		.byte	0xf3
+ 1155 0016 01       		.uleb128 0x1
+ 1156 0017 50       		.byte	0x50
+ 1157 0018 9F       		.byte	0x9f
+ 1158 0019 10000000 		.4byte	.LVL7
+ 1159 001d 18000000 		.4byte	.LVL8
+ 1160 0021 0100     		.2byte	0x1
+ 1161 0023 50       		.byte	0x50
+ 1162 0024 18000000 		.4byte	.LVL8
+ 1163 0028 1E000000 		.4byte	.LVL10
+ 1164 002c 0400     		.2byte	0x4
+ 1165 002e F3       		.byte	0xf3
+ 1166 002f 01       		.uleb128 0x1
+ 1167 0030 50       		.byte	0x50
+ 1168 0031 9F       		.byte	0x9f
+ 1169 0032 1E000000 		.4byte	.LVL10
+ 1170 0036 22000000 		.4byte	.LVL11
+ 1171 003a 0100     		.2byte	0x1
+ 1172 003c 50       		.byte	0x50
+ 1173 003d 22000000 		.4byte	.LVL11
+ 1174 0041 2C000000 		.4byte	.LFE36
+ 1175 0045 0400     		.2byte	0x4
+ 1176 0047 F3       		.byte	0xf3
+ 1177 0048 01       		.uleb128 0x1
+ 1178 0049 50       		.byte	0x50
+ 1179 004a 9F       		.byte	0x9f
+ 1180 004b 00000000 		.4byte	0
+ 1181 004f 00000000 		.4byte	0
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccsYirPU.s 			page 24
+
+
+ 1182              	.LLST1:
+ 1183 0053 00000000 		.4byte	.LVL13
+ 1184 0057 07000000 		.4byte	.LVL14-1
+ 1185 005b 0100     		.2byte	0x1
+ 1186 005d 50       		.byte	0x50
+ 1187 005e 07000000 		.4byte	.LVL14-1
+ 1188 0062 34010000 		.4byte	.LVL52
+ 1189 0066 0100     		.2byte	0x1
+ 1190 0068 55       		.byte	0x55
+ 1191 0069 34010000 		.4byte	.LVL52
+ 1192 006d 64010000 		.4byte	.LFE38
+ 1193 0071 0400     		.2byte	0x4
+ 1194 0073 F3       		.byte	0xf3
+ 1195 0074 01       		.uleb128 0x1
+ 1196 0075 50       		.byte	0x50
+ 1197 0076 9F       		.byte	0x9f
+ 1198 0077 00000000 		.4byte	0
+ 1199 007b 00000000 		.4byte	0
+ 1200              	.LLST2:
+ 1201 007f 38000000 		.4byte	.LVL23
+ 1202 0083 40000000 		.4byte	.LVL26
+ 1203 0087 0100     		.2byte	0x1
+ 1204 0089 50       		.byte	0x50
+ 1205 008a 00000000 		.4byte	0
+ 1206 008e 00000000 		.4byte	0
+ 1207              	.LLST3:
+ 1208 0092 3E000000 		.4byte	.LVL25
+ 1209 0096 9C000000 		.4byte	.LVL36
+ 1210 009a 0100     		.2byte	0x1
+ 1211 009c 54       		.byte	0x54
+ 1212 009d 00000000 		.4byte	0
+ 1213 00a1 00000000 		.4byte	0
+ 1214              	.LLST4:
+ 1215 00a5 0A000000 		.4byte	.LVL15
+ 1216 00a9 10000000 		.4byte	.LVL16
+ 1217 00ad 0100     		.2byte	0x1
+ 1218 00af 50       		.byte	0x50
+ 1219 00b0 10000000 		.4byte	.LVL16
+ 1220 00b4 13000000 		.4byte	.LVL17-1
+ 1221 00b8 0100     		.2byte	0x1
+ 1222 00ba 51       		.byte	0x51
+ 1223 00bb 90000000 		.4byte	.LVL33
+ 1224 00bf 96000000 		.4byte	.LVL34
+ 1225 00c3 0100     		.2byte	0x1
+ 1226 00c5 50       		.byte	0x50
+ 1227 00c6 96000000 		.4byte	.LVL34
+ 1228 00ca 99000000 		.4byte	.LVL35-1
+ 1229 00ce 0100     		.2byte	0x1
+ 1230 00d0 51       		.byte	0x51
+ 1231 00d1 02010000 		.4byte	.LVL44
+ 1232 00d5 08010000 		.4byte	.LVL45
+ 1233 00d9 0100     		.2byte	0x1
+ 1234 00db 50       		.byte	0x50
+ 1235 00dc 08010000 		.4byte	.LVL45
+ 1236 00e0 0B010000 		.4byte	.LVL46-1
+ 1237 00e4 0100     		.2byte	0x1
+ 1238 00e6 51       		.byte	0x51
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccsYirPU.s 			page 25
+
+
+ 1239 00e7 00000000 		.4byte	0
+ 1240 00eb 00000000 		.4byte	0
+ 1241              	.LLST5:
+ 1242 00ef 16000000 		.4byte	.LVL18
+ 1243 00f3 18000000 		.4byte	.LVL19
+ 1244 00f7 0100     		.2byte	0x1
+ 1245 00f9 50       		.byte	0x50
+ 1246 00fa 18000000 		.4byte	.LVL19
+ 1247 00fe 3C000000 		.4byte	.LVL24
+ 1248 0102 0100     		.2byte	0x1
+ 1249 0104 54       		.byte	0x54
+ 1250 0105 9C000000 		.4byte	.LVL36
+ 1251 0109 A1000000 		.4byte	.LVL37-1
+ 1252 010d 0100     		.2byte	0x1
+ 1253 010f 50       		.byte	0x50
+ 1254 0110 A1000000 		.4byte	.LVL37-1
+ 1255 0114 34010000 		.4byte	.LVL51
+ 1256 0118 0100     		.2byte	0x1
+ 1257 011a 54       		.byte	0x54
+ 1258 011b 00000000 		.4byte	0
+ 1259 011f 00000000 		.4byte	0
+ 1260              	.LLST6:
+ 1261 0123 00000000 		.4byte	.LVL53
+ 1262 0127 0B000000 		.4byte	.LVL55-1
+ 1263 012b 0100     		.2byte	0x1
+ 1264 012d 50       		.byte	0x50
+ 1265 012e 0B000000 		.4byte	.LVL55-1
+ 1266 0132 48000000 		.4byte	.LVL59
+ 1267 0136 0100     		.2byte	0x1
+ 1268 0138 54       		.byte	0x54
+ 1269 0139 48000000 		.4byte	.LVL59
+ 1270 013d 54000000 		.4byte	.LFE37
+ 1271 0141 0600     		.2byte	0x6
+ 1272 0143 F3       		.byte	0xf3
+ 1273 0144 03       		.uleb128 0x3
+ 1274 0145 F5       		.byte	0xf5
+ 1275 0146 00       		.uleb128 0
+ 1276 0147 25       		.uleb128 0x25
+ 1277 0148 9F       		.byte	0x9f
+ 1278 0149 00000000 		.4byte	0
+ 1279 014d 00000000 		.4byte	0
+ 1280              	.LLST7:
+ 1281 0151 00000000 		.4byte	.LVL53
+ 1282 0155 08000000 		.4byte	.LVL54
+ 1283 0159 0100     		.2byte	0x1
+ 1284 015b 51       		.byte	0x51
+ 1285 015c 08000000 		.4byte	.LVL54
+ 1286 0160 48000000 		.4byte	.LVL60
+ 1287 0164 0100     		.2byte	0x1
+ 1288 0166 55       		.byte	0x55
+ 1289 0167 48000000 		.4byte	.LVL60
+ 1290 016b 54000000 		.4byte	.LFE37
+ 1291 016f 0400     		.2byte	0x4
+ 1292 0171 F3       		.byte	0xf3
+ 1293 0172 01       		.uleb128 0x1
+ 1294 0173 51       		.byte	0x51
+ 1295 0174 9F       		.byte	0x9f
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccsYirPU.s 			page 26
+
+
+ 1296 0175 00000000 		.4byte	0
+ 1297 0179 00000000 		.4byte	0
+ 1298              		.section	.debug_aranges,"",%progbits
+ 1299 0000 34000000 		.4byte	0x34
+ 1300 0004 0200     		.2byte	0x2
+ 1301 0006 00000000 		.4byte	.Ldebug_info0
+ 1302 000a 04       		.byte	0x4
+ 1303 000b 00       		.byte	0
+ 1304 000c 0000     		.2byte	0
+ 1305 000e 0000     		.2byte	0
+ 1306 0010 00000000 		.4byte	.LFB35
+ 1307 0014 16000000 		.4byte	.LFE35-.LFB35
+ 1308 0018 00000000 		.4byte	.LFB36
+ 1309 001c 2C000000 		.4byte	.LFE36-.LFB36
+ 1310 0020 00000000 		.4byte	.LFB38
+ 1311 0024 64010000 		.4byte	.LFE38-.LFB38
+ 1312 0028 00000000 		.4byte	.LFB37
+ 1313 002c 54000000 		.4byte	.LFE37-.LFB37
+ 1314 0030 00000000 		.4byte	0
+ 1315 0034 00000000 		.4byte	0
+ 1316              		.section	.debug_ranges,"",%progbits
+ 1317              	.Ldebug_ranges0:
+ 1318 0000 00000000 		.4byte	.LFB35
+ 1319 0004 16000000 		.4byte	.LFE35
+ 1320 0008 00000000 		.4byte	.LFB36
+ 1321 000c 2C000000 		.4byte	.LFE36
+ 1322 0010 00000000 		.4byte	.LFB38
+ 1323 0014 64010000 		.4byte	.LFE38
+ 1324 0018 00000000 		.4byte	.LFB37
+ 1325 001c 54000000 		.4byte	.LFE37
+ 1326 0020 00000000 		.4byte	0
+ 1327 0024 00000000 		.4byte	0
+ 1328              		.section	.debug_line,"",%progbits
+ 1329              	.Ldebug_line0:
+ 1330 0000 39010000 		.section	.debug_str,"MS",%progbits,1
+ 1330      0200A000 
+ 1330      00000201 
+ 1330      FB0E0D00 
+ 1330      01010101 
+ 1331              	.LASF20:
+ 1332 0000 6E65775F 		.ascii	"new_duty_cycle\000"
+ 1332      64757479 
+ 1332      5F637963 
+ 1332      6C6500
+ 1333              	.LASF19:
+ 1334 000f 64656C74 		.ascii	"delta\000"
+ 1334      6100
+ 1335              	.LASF28:
+ 1336 0015 50574D5F 		.ascii	"PWM_Mid_Thresh_Start\000"
+ 1336      4D69645F 
+ 1336      54687265 
+ 1336      73685F53 
+ 1336      74617274 
+ 1337              	.LASF27:
+ 1338 002a 50574D5F 		.ascii	"PWM_Low_Thresh_Start\000"
+ 1338      4C6F775F 
+ 1338      54687265 
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccsYirPU.s 			page 27
+
+
+ 1338      73685F53 
+ 1338      74617274 
+ 1339              	.LASF18:
+ 1340 003f 74687265 		.ascii	"thresh_index\000"
+ 1340      73685F69 
+ 1340      6E646578 
+ 1340      00
+ 1341              	.LASF23:
+ 1342 004c 75706461 		.ascii	"update_PWM_threshold\000"
+ 1342      74655F50 
+ 1342      574D5F74 
+ 1342      68726573 
+ 1342      686F6C64 
+ 1343              	.LASF15:
+ 1344 0061 696E6974 		.ascii	"init_PWM\000"
+ 1344      5F50574D 
+ 1344      00
+ 1345              	.LASF0:
+ 1346 006a 666C6F61 		.ascii	"float\000"
+ 1346      7400
+ 1347              	.LASF16:
+ 1348 0070 7365745F 		.ascii	"set_PWM_duty_cycles\000"
+ 1348      50574D5F 
+ 1348      64757479 
+ 1348      5F637963 
+ 1348      6C657300 
+ 1349              	.LASF2:
+ 1350 0084 756E7369 		.ascii	"unsigned char\000"
+ 1350      676E6564 
+ 1350      20636861 
+ 1350      7200
+ 1351              	.LASF6:
+ 1352 0092 6C6F6E67 		.ascii	"long unsigned int\000"
+ 1352      20756E73 
+ 1352      69676E65 
+ 1352      6420696E 
+ 1352      7400
+ 1353              	.LASF10:
+ 1354 00a4 75696E74 		.ascii	"uint8\000"
+ 1354      3800
+ 1355              	.LASF21:
+ 1356 00aa 63757272 		.ascii	"current_out\000"
+ 1356      656E745F 
+ 1356      6F757400 
+ 1357              	.LASF29:
+ 1358 00b6 50574D5F 		.ascii	"PWM_High_Thresh_Start\000"
+ 1358      48696768 
+ 1358      5F546872 
+ 1358      6573685F 
+ 1358      53746172 
+ 1359              	.LASF32:
+ 1360 00cc 50574D5F 		.ascii	"PWM_Mid_Thresh_WriteCompare\000"
+ 1360      4D69645F 
+ 1360      54687265 
+ 1360      73685F57 
+ 1360      72697465 
+ 1361              	.LASF12:
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccsYirPU.s 			page 28
+
+
+ 1362 00e8 646F7562 		.ascii	"double\000"
+ 1362      6C6500
+ 1363              	.LASF26:
+ 1364 00ef 766F6C74 		.ascii	"voltage_thresholds\000"
+ 1364      6167655F 
+ 1364      74687265 
+ 1364      73686F6C 
+ 1364      647300
+ 1365              	.LASF11:
+ 1366 0102 75696E74 		.ascii	"uint32\000"
+ 1366      333200
+ 1367              	.LASF9:
+ 1368 0109 756E7369 		.ascii	"unsigned int\000"
+ 1368      676E6564 
+ 1368      20696E74 
+ 1368      00
+ 1369              	.LASF24:
+ 1370 0116 766F6C74 		.ascii	"volt_val\000"
+ 1370      5F76616C 
+ 1370      00
+ 1371              	.LASF8:
+ 1372 011f 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 1372      206C6F6E 
+ 1372      6720756E 
+ 1372      7369676E 
+ 1372      65642069 
+ 1373              	.LASF25:
+ 1374 0136 50574D5F 		.ascii	"PWM_duty_cycles\000"
+ 1374      64757479 
+ 1374      5F637963 
+ 1374      6C657300 
+ 1375              	.LASF35:
+ 1376 0146 50574D2E 		.ascii	"PWM.c\000"
+ 1376      6300
+ 1377              	.LASF36:
+ 1378 014c 433A5C55 		.ascii	"C:\\Users\\Nick\\Documents\\PSoC Creator\\capsensel"
+ 1378      73657273 
+ 1378      5C4E6963 
+ 1378      6B5C446F 
+ 1378      63756D65 
+ 1379 017a 6564315C 		.ascii	"ed1\\capsenseled\\capsenseled.cydsn\000"
+ 1379      63617073 
+ 1379      656E7365 
+ 1379      6C65645C 
+ 1379      63617073 
+ 1380              	.LASF30:
+ 1381 019c 436C6F63 		.ascii	"Clock_PWM_StartEx\000"
+ 1381      6B5F5057 
+ 1381      4D5F5374 
+ 1381      61727445 
+ 1381      7800
+ 1382              	.LASF14:
+ 1383 01ae 73697A65 		.ascii	"sizetype\000"
+ 1383      74797065 
+ 1383      00
+ 1384              	.LASF31:
+ 1385 01b7 50574D5F 		.ascii	"PWM_Low_Thresh_WriteCompare\000"
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccsYirPU.s 			page 29
+
+
+ 1385      4C6F775F 
+ 1385      54687265 
+ 1385      73685F57 
+ 1385      72697465 
+ 1386              	.LASF22:
+ 1387 01d3 6572726F 		.ascii	"error\000"
+ 1387      7200
+ 1388              	.LASF7:
+ 1389 01d9 6C6F6E67 		.ascii	"long long int\000"
+ 1389      206C6F6E 
+ 1389      6720696E 
+ 1389      7400
+ 1390              	.LASF13:
+ 1391 01e7 63686172 		.ascii	"char\000"
+ 1391      00
+ 1392              	.LASF34:
+ 1393 01ec 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 1393      4320342E 
+ 1393      392E3320 
+ 1393      32303135 
+ 1393      30333033 
+ 1394 021f 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0 -mthumb -g -O"
+ 1394      20726576 
+ 1394      6973696F 
+ 1394      6E203232 
+ 1394      31323230 
+ 1395 0252 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1395      66756E63 
+ 1395      74696F6E 
+ 1395      2D736563 
+ 1395      74696F6E 
+ 1396              	.LASF33:
+ 1397 027a 50574D5F 		.ascii	"PWM_High_Thresh_WriteCompare\000"
+ 1397      48696768 
+ 1397      5F546872 
+ 1397      6573685F 
+ 1397      57726974 
+ 1398              	.LASF3:
+ 1399 0297 73686F72 		.ascii	"short int\000"
+ 1399      7420696E 
+ 1399      7400
+ 1400              	.LASF17:
+ 1401 02a1 7365745F 		.ascii	"set_PWM_threshold\000"
+ 1401      50574D5F 
+ 1401      74687265 
+ 1401      73686F6C 
+ 1401      6400
+ 1402              	.LASF5:
+ 1403 02b3 6C6F6E67 		.ascii	"long int\000"
+ 1403      20696E74 
+ 1403      00
+ 1404              	.LASF37:
+ 1405 02bc 4144435F 		.ascii	"ADC_read\000"
+ 1405      72656164 
+ 1405      00
+ 1406              	.LASF1:
+ 1407 02c5 7369676E 		.ascii	"signed char\000"
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccsYirPU.s 			page 30
+
+
+ 1407      65642063 
+ 1407      68617200 
+ 1408              	.LASF4:
+ 1409 02d1 73686F72 		.ascii	"short unsigned int\000"
+ 1409      7420756E 
+ 1409      7369676E 
+ 1409      65642069 
+ 1409      6E7400
+ 1410              	.LASF38:
+ 1411 02e4 43794465 		.ascii	"CyDelay\000"
+ 1411      6C617900 
+ 1412              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

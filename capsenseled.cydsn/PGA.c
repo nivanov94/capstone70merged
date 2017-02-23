@@ -34,7 +34,7 @@ void PGA_set_gain(float gain) {
 
 void PGA_program_resistor(float resistance) {
 
-    uint8 new_tap_pos = resistance*(TAP_POSITIONS-1)/MAX_RESISTANCE;
+    uint8 new_tap_pos = resistance*(TAP_POSITIONS-1)/MAX_RESISTANCE + 1;
     int tap_pos_diff = new_tap_pos - current_tap_pos;
     int i;
     
