@@ -1,0 +1,1360 @@
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccOdxH6U.s 			page 1
+
+
+   1              		.cpu cortex-m0
+   2              		.fpu softvfp
+   3              		.eabi_attribute 20, 1
+   4              		.eabi_attribute 21, 1
+   5              		.eabi_attribute 23, 3
+   6              		.eabi_attribute 24, 1
+   7              		.eabi_attribute 25, 1
+   8              		.eabi_attribute 26, 1
+   9              		.eabi_attribute 30, 1
+  10              		.eabi_attribute 34, 0
+  11              		.eabi_attribute 18, 4
+  12              		.code	16
+  13              		.file	"OTAOptional.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.WDT_Start,"ax",%progbits
+  18              		.align	2
+  19              		.global	WDT_Start
+  20              		.code	16
+  21              		.thumb_func
+  22              		.type	WDT_Start, %function
+  23              	WDT_Start:
+  24              	.LFB37:
+  25              		.file 1 "OTAOptional.c"
+   1:OTAOptional.c **** /*******************************************************************************
+   2:OTAOptional.c **** * File Name: OTAOptional.c
+   3:OTAOptional.c **** *
+   4:OTAOptional.c **** * Version: 1.30
+   5:OTAOptional.c **** *
+   6:OTAOptional.c **** * Description:
+   7:OTAOptional.c **** *  Provides an API that implement optional functionality of OTA.
+   8:OTAOptional.c **** *
+   9:OTAOptional.c **** * Hardware Dependency:
+  10:OTAOptional.c **** *  CY8CKIT-042 BLE
+  11:OTAOptional.c **** *
+  12:OTAOptional.c **** ********************************************************************************
+  13:OTAOptional.c **** * Copyright 2014-2015, Cypress Semiconductor Corporation. All rights reserved.
+  14:OTAOptional.c **** * This software is owned by Cypress Semiconductor Corporation and is protected
+  15:OTAOptional.c **** * by and subject to worldwide patent and copyright laws and treaties.
+  16:OTAOptional.c **** * Therefore, you may use this software only as provided in the license agreement
+  17:OTAOptional.c **** * accompanying the software package from which you obtained this software.
+  18:OTAOptional.c **** * CYPRESS AND ITS SUPPLIERS MAKE NO WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+  19:OTAOptional.c **** * WITH REGARD TO THIS SOFTWARE, INCLUDING, BUT NOT LIMITED TO, NONINFRINGEMENT,
+  20:OTAOptional.c **** * IMPLIED WARRANTIES OF MERCHANTABILITY AND FITNESS FOR A PARTICULAR PURPOSE.
+  21:OTAOptional.c **** *******************************************************************************/
+  22:OTAOptional.c **** #include "OTAOptional.h"
+  23:OTAOptional.c **** 
+  24:OTAOptional.c **** 
+  25:OTAOptional.c **** /*******************************************************************************
+  26:OTAOptional.c **** * Function Name: WDT_Start
+  27:OTAOptional.c **** ********************************************************************************
+  28:OTAOptional.c **** *
+  29:OTAOptional.c **** * Summary:
+  30:OTAOptional.c **** *  Configures WDT to trigger an interrupt.
+  31:OTAOptional.c **** *
+  32:OTAOptional.c **** *******************************************************************************/
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccOdxH6U.s 			page 2
+
+
+  33:OTAOptional.c **** void WDT_Start(void)
+  34:OTAOptional.c **** {
+  26              		.loc 1 34 0
+  27              		.cfi_startproc
+  28 0000 08B5     		push	{r3, lr}
+  29              		.cfi_def_cfa_offset 8
+  30              		.cfi_offset 3, -8
+  31              		.cfi_offset 14, -4
+  35:OTAOptional.c ****     /* Unlock the WDT registers for modification */
+  36:OTAOptional.c ****     CySysWdtUnlock(); 
+  32              		.loc 1 36 0
+  33 0002 FFF7FEFF 		bl	CySysWdtUnlock
+  34              	.LVL0:
+  37:OTAOptional.c ****     /* Setup ISR */
+  38:OTAOptional.c ****     WDT_Interrupt_StartEx(&Timer_Interrupt);
+  35              		.loc 1 38 0
+  36 0006 0C48     		ldr	r0, .L2
+  37 0008 FFF7FEFF 		bl	WDT_Interrupt_StartEx
+  38              	.LVL1:
+  39:OTAOptional.c ****     /* Write the mode to generate interrupt on match */
+  40:OTAOptional.c ****     CySysWdtWriteMode(WDT_COUNTER, CY_SYS_WDT_MODE_INT);
+  39              		.loc 1 40 0
+  40 000c 0120     		mov	r0, #1
+  41 000e 0121     		mov	r1, #1
+  42 0010 FFF7FEFF 		bl	CySysWdtSetMode
+  43              	.LVL2:
+  41:OTAOptional.c ****     /* Configure the WDT counter clear on a match setting */
+  42:OTAOptional.c ****     CySysWdtWriteClearOnMatch(WDT_COUNTER, WDT_COUNTER_ENABLE);
+  44              		.loc 1 42 0
+  45 0014 0120     		mov	r0, #1
+  46 0016 0121     		mov	r1, #1
+  47 0018 FFF7FEFF 		bl	CySysWdtSetClearOnMatch
+  48              	.LVL3:
+  43:OTAOptional.c ****     /* Configure the WDT counter match comparison value */
+  44:OTAOptional.c ****     CySysWdtWriteMatch(WDT_COUNTER, WDT_TIMEOUT);
+  49              		.loc 1 44 0
+  50 001c 0120     		mov	r0, #1
+  51 001e 2021     		mov	r1, #32
+  52 0020 FFF7FEFF 		bl	CySysWdtSetMatch
+  53              	.LVL4:
+  45:OTAOptional.c ****     /* Reset WDT counter */
+  46:OTAOptional.c ****     CySysWdtResetCounters(WDT_COUNTER);
+  54              		.loc 1 46 0
+  55 0024 0120     		mov	r0, #1
+  56 0026 FFF7FEFF 		bl	CySysWdtResetCounters
+  57              	.LVL5:
+  47:OTAOptional.c ****     /* Enable the specified WDT counter */
+  48:OTAOptional.c ****     CySysWdtEnable(WDT_COUNTER_MASK);
+  58              		.loc 1 48 0
+  59 002a 8020     		mov	r0, #128
+  60 002c 4000     		lsl	r0, r0, #1
+  61 002e FFF7FEFF 		bl	CySysWdtEnable
+  62              	.LVL6:
+  49:OTAOptional.c ****     /* Lock out configuration changes to the Watchdog timer registers */
+  50:OTAOptional.c ****     CySysWdtLock();    
+  63              		.loc 1 50 0
+  64 0032 FFF7FEFF 		bl	CySysWdtLock
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccOdxH6U.s 			page 3
+
+
+  65              	.LVL7:
+  51:OTAOptional.c **** }
+  66              		.loc 1 51 0
+  67              		@ sp needed
+  68 0036 08BD     		pop	{r3, pc}
+  69              	.L3:
+  70              		.align	2
+  71              	.L2:
+  72 0038 00000000 		.word	Timer_Interrupt
+  73              		.cfi_endproc
+  74              	.LFE37:
+  75              		.size	WDT_Start, .-WDT_Start
+  76              		.section	.text.WDT_Stop,"ax",%progbits
+  77              		.align	2
+  78              		.global	WDT_Stop
+  79              		.code	16
+  80              		.thumb_func
+  81              		.type	WDT_Stop, %function
+  82              	WDT_Stop:
+  83              	.LFB38:
+  52:OTAOptional.c **** 
+  53:OTAOptional.c **** 
+  54:OTAOptional.c **** /*******************************************************************************
+  55:OTAOptional.c **** * Function Name: WDT_Stop
+  56:OTAOptional.c **** ********************************************************************************
+  57:OTAOptional.c **** *
+  58:OTAOptional.c **** * Summary:
+  59:OTAOptional.c **** *  This API stops the WDT timer.
+  60:OTAOptional.c **** *
+  61:OTAOptional.c **** *******************************************************************************/
+  62:OTAOptional.c **** void WDT_Stop(void)
+  63:OTAOptional.c **** {
+  84              		.loc 1 63 0
+  85              		.cfi_startproc
+  86 0000 08B5     		push	{r3, lr}
+  87              		.cfi_def_cfa_offset 8
+  88              		.cfi_offset 3, -8
+  89              		.cfi_offset 14, -4
+  64:OTAOptional.c ****     /* Unlock the WDT registers for modification */
+  65:OTAOptional.c ****     CySysWdtUnlock(); 
+  90              		.loc 1 65 0
+  91 0002 FFF7FEFF 		bl	CySysWdtUnlock
+  92              	.LVL8:
+  66:OTAOptional.c ****     /* Disable the specified WDT counter */
+  67:OTAOptional.c ****     CySysWdtDisable(WDT_COUNTER_MASK);
+  93              		.loc 1 67 0
+  94 0006 8020     		mov	r0, #128
+  95 0008 4000     		lsl	r0, r0, #1
+  96 000a FFF7FEFF 		bl	CySysWdtDisable
+  97              	.LVL9:
+  68:OTAOptional.c ****     /* Locks out configuration changes to the Watchdog timer registers */
+  69:OTAOptional.c ****     CySysWdtLock();    
+  98              		.loc 1 69 0
+  99 000e FFF7FEFF 		bl	CySysWdtLock
+ 100              	.LVL10:
+  70:OTAOptional.c **** }
+ 101              		.loc 1 70 0
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccOdxH6U.s 			page 4
+
+
+ 102              		@ sp needed
+ 103 0012 08BD     		pop	{r3, pc}
+ 104              		.cfi_endproc
+ 105              	.LFE38:
+ 106              		.size	WDT_Stop, .-WDT_Stop
+ 107              		.section	.text.HandleLeds,"ax",%progbits
+ 108              		.align	2
+ 109              		.global	HandleLeds
+ 110              		.code	16
+ 111              		.thumb_func
+ 112              		.type	HandleLeds, %function
+ 113              	HandleLeds:
+ 114              	.LFB40:
+  71:OTAOptional.c **** 
+  72:OTAOptional.c **** 
+  73:OTAOptional.c **** /*******************************************************************************
+  74:OTAOptional.c **** * Function Name: Timer_Interrupt
+  75:OTAOptional.c **** ********************************************************************************
+  76:OTAOptional.c **** *
+  77:OTAOptional.c **** * Summary:
+  78:OTAOptional.c **** *  Handles the Interrupt Service Routine for the WDT timer.
+  79:OTAOptional.c **** *
+  80:OTAOptional.c **** *******************************************************************************/
+  81:OTAOptional.c **** CY_ISR(Timer_Interrupt)
+  82:OTAOptional.c **** {
+  83:OTAOptional.c ****     if(CySysWdtGetInterruptSource() & WDT_INTERRUPT_SOURCE)
+  84:OTAOptional.c ****     {
+  85:OTAOptional.c ****         HandleLeds();
+  86:OTAOptional.c ****         
+  87:OTAOptional.c ****         /* Clears interrupt request  */
+  88:OTAOptional.c ****         CySysWdtClearInterrupt(WDT_INTERRUPT_SOURCE);
+  89:OTAOptional.c ****     }
+  90:OTAOptional.c **** }
+  91:OTAOptional.c **** 
+  92:OTAOptional.c **** 
+  93:OTAOptional.c **** /*******************************************************************************
+  94:OTAOptional.c **** * Function Name: HandleLeds()
+  95:OTAOptional.c **** ********************************************************************************
+  96:OTAOptional.c **** *
+  97:OTAOptional.c **** * Summary:
+  98:OTAOptional.c **** *   This function handles LEDs operation depending on the project operation
+  99:OTAOptional.c **** *   mode.
+ 100:OTAOptional.c **** *
+ 101:OTAOptional.c **** * Parameters:
+ 102:OTAOptional.c **** *   None
+ 103:OTAOptional.c **** *
+ 104:OTAOptional.c **** * Return:
+ 105:OTAOptional.c **** *   None
+ 106:OTAOptional.c **** *
+ 107:OTAOptional.c **** *******************************************************************************/
+ 108:OTAOptional.c **** void HandleLeds(void)
+ 109:OTAOptional.c **** {
+ 115              		.loc 1 109 0
+ 116              		.cfi_startproc
+ 117 0000 08B5     		push	{r3, lr}
+ 118              		.cfi_def_cfa_offset 8
+ 119              		.cfi_offset 3, -8
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccOdxH6U.s 			page 5
+
+
+ 120              		.cfi_offset 14, -4
+ 110:OTAOptional.c ****     static uint32 ledTimer = LED_TIMEOUT;
+ 111:OTAOptional.c ****     static uint8 advLed = LED_OFF;
+ 112:OTAOptional.c **** 
+ 113:OTAOptional.c ****    /* Blink blue LED to indicate that the device advertises */
+ 114:OTAOptional.c ****     if(connHandle.bdHandle == 0u)
+ 121              		.loc 1 114 0
+ 122 0002 0D4B     		ldr	r3, .L8
+ 123 0004 1B78     		ldrb	r3, [r3]
+ 124 0006 002B     		cmp	r3, #0
+ 125 0008 12D1     		bne	.L6
+ 115:OTAOptional.c ****     {
+ 116:OTAOptional.c ****         if(--ledTimer == 0u)
+ 126              		.loc 1 116 0
+ 127 000a 0C4A     		ldr	r2, .L8+4
+ 128 000c 1368     		ldr	r3, [r2]
+ 129 000e 013B     		sub	r3, r3, #1
+ 130 0010 1360     		str	r3, [r2]
+ 131 0012 002B     		cmp	r3, #0
+ 132 0014 0FD1     		bne	.L5
+ 117:OTAOptional.c ****         {
+ 118:OTAOptional.c ****             ledTimer = LED_TIMEOUT;
+ 133              		.loc 1 118 0
+ 134 0016 FA23     		mov	r3, #250
+ 135 0018 9B00     		lsl	r3, r3, #2
+ 136 001a 1360     		str	r3, [r2]
+ 119:OTAOptional.c ****             advLed ^= LED_OFF;
+ 137              		.loc 1 119 0
+ 138 001c 1079     		ldrb	r0, [r2, #4]
+ 139 001e 0123     		mov	r3, #1
+ 140 0020 5840     		eor	r0, r3
+ 141 0022 1071     		strb	r0, [r2, #4]
+ 120:OTAOptional.c ****             Bootloading_LED_Write(advLed);
+ 142              		.loc 1 120 0
+ 143 0024 FFF7FEFF 		bl	Bootloading_LED_Write
+ 144              	.LVL11:
+ 121:OTAOptional.c ****             CyDelay(1u);
+ 145              		.loc 1 121 0
+ 146 0028 0120     		mov	r0, #1
+ 147 002a FFF7FEFF 		bl	CyDelay
+ 148              	.LVL12:
+ 149 002e 02E0     		b	.L5
+ 150              	.L6:
+ 122:OTAOptional.c ****         }
+ 123:OTAOptional.c ****     }
+ 124:OTAOptional.c ****     else
+ 125:OTAOptional.c ****     {
+ 126:OTAOptional.c ****         Bootloading_LED_Write(LED_ON);
+ 151              		.loc 1 126 0
+ 152 0030 0020     		mov	r0, #0
+ 153 0032 FFF7FEFF 		bl	Bootloading_LED_Write
+ 154              	.LVL13:
+ 155              	.L5:
+ 127:OTAOptional.c ****     }
+ 128:OTAOptional.c **** }
+ 156              		.loc 1 128 0
+ 157              		@ sp needed
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccOdxH6U.s 			page 6
+
+
+ 158 0036 08BD     		pop	{r3, pc}
+ 159              	.L9:
+ 160              		.align	2
+ 161              	.L8:
+ 162 0038 00000000 		.word	connHandle
+ 163 003c 00000000 		.word	.LANCHOR0
+ 164              		.cfi_endproc
+ 165              	.LFE40:
+ 166              		.size	HandleLeds, .-HandleLeds
+ 167              		.section	.text.Timer_Interrupt,"ax",%progbits
+ 168              		.align	2
+ 169              		.global	Timer_Interrupt
+ 170              		.code	16
+ 171              		.thumb_func
+ 172              		.type	Timer_Interrupt, %function
+ 173              	Timer_Interrupt:
+ 174              	.LFB39:
+  82:OTAOptional.c ****     if(CySysWdtGetInterruptSource() & WDT_INTERRUPT_SOURCE)
+ 175              		.loc 1 82 0
+ 176              		.cfi_startproc
+ 177 0000 08B5     		push	{r3, lr}
+ 178              		.cfi_def_cfa_offset 8
+ 179              		.cfi_offset 3, -8
+ 180              		.cfi_offset 14, -4
+  83:OTAOptional.c ****     {
+ 181              		.loc 1 83 0
+ 182 0002 FFF7FEFF 		bl	CySysWdtGetInterruptSource
+ 183              	.LVL14:
+ 184 0006 4305     		lsl	r3, r0, #21
+ 185 0008 05D5     		bpl	.L10
+  85:OTAOptional.c ****         
+ 186              		.loc 1 85 0
+ 187 000a FFF7FEFF 		bl	HandleLeds
+ 188              	.LVL15:
+  88:OTAOptional.c ****     }
+ 189              		.loc 1 88 0
+ 190 000e 8020     		mov	r0, #128
+ 191 0010 C000     		lsl	r0, r0, #3
+ 192 0012 FFF7FEFF 		bl	CySysWdtClearInterrupt
+ 193              	.LVL16:
+ 194              	.L10:
+  90:OTAOptional.c **** 
+ 195              		.loc 1 90 0
+ 196              		@ sp needed
+ 197 0016 08BD     		pop	{r3, pc}
+ 198              		.cfi_endproc
+ 199              	.LFE39:
+ 200              		.size	Timer_Interrupt, .-Timer_Interrupt
+ 201              		.data
+ 202              		.align	2
+ 203              		.set	.LANCHOR0,. + 0
+ 204              		.type	ledTimer.6861, %object
+ 205              		.size	ledTimer.6861, 4
+ 206              	ledTimer.6861:
+ 207 0000 E8030000 		.word	1000
+ 208              		.type	advLed.6862, %object
+ 209              		.size	advLed.6862, 1
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccOdxH6U.s 			page 7
+
+
+ 210              	advLed.6862:
+ 211 0004 01       		.byte	1
+ 212 0005 000000   		.text
+ 213              	.Letext0:
+ 214              		.file 2 "Generated_Source\\PSoC4/cytypes.h"
+ 215              		.file 3 "Generated_Source\\PSoC4/CyBLE_StackGatt.h"
+ 216              		.file 4 "Generated_Source\\PSoC4/WDT_Interrupt.h"
+ 217              		.file 5 "Generated_Source\\PSoC4/CyLFClk.h"
+ 218              		.file 6 "Generated_Source\\PSoC4/Bootloading_LED.h"
+ 219              		.file 7 "Generated_Source\\PSoC4/CyLib.h"
+ 220              		.file 8 "OTAOptional.h"
+ 221              		.section	.debug_info,"",%progbits
+ 222              	.Ldebug_info0:
+ 223 0000 41030000 		.4byte	0x341
+ 224 0004 0400     		.2byte	0x4
+ 225 0006 00000000 		.4byte	.Ldebug_abbrev0
+ 226 000a 04       		.byte	0x4
+ 227 000b 01       		.uleb128 0x1
+ 228 000c E7010000 		.4byte	.LASF36
+ 229 0010 01       		.byte	0x1
+ 230 0011 C7020000 		.4byte	.LASF37
+ 231 0015 4F010000 		.4byte	.LASF38
+ 232 0019 00000000 		.4byte	.Ldebug_ranges0+0
+ 233 001d 00000000 		.4byte	0
+ 234 0021 00000000 		.4byte	.Ldebug_line0
+ 235 0025 02       		.uleb128 0x2
+ 236 0026 01       		.byte	0x1
+ 237 0027 06       		.byte	0x6
+ 238 0028 D5020000 		.4byte	.LASF0
+ 239 002c 02       		.uleb128 0x2
+ 240 002d 01       		.byte	0x1
+ 241 002e 08       		.byte	0x8
+ 242 002f 78000000 		.4byte	.LASF1
+ 243 0033 02       		.uleb128 0x2
+ 244 0034 02       		.byte	0x2
+ 245 0035 05       		.byte	0x5
+ 246 0036 85020000 		.4byte	.LASF2
+ 247 003a 02       		.uleb128 0x2
+ 248 003b 02       		.byte	0x2
+ 249 003c 07       		.byte	0x7
+ 250 003d 2F000000 		.4byte	.LASF3
+ 251 0041 02       		.uleb128 0x2
+ 252 0042 04       		.byte	0x4
+ 253 0043 05       		.byte	0x5
+ 254 0044 B3020000 		.4byte	.LASF4
+ 255 0048 02       		.uleb128 0x2
+ 256 0049 04       		.byte	0x4
+ 257 004a 07       		.byte	0x7
+ 258 004b AA000000 		.4byte	.LASF5
+ 259 004f 02       		.uleb128 0x2
+ 260 0050 08       		.byte	0x8
+ 261 0051 05       		.byte	0x5
+ 262 0052 D2010000 		.4byte	.LASF6
+ 263 0056 02       		.uleb128 0x2
+ 264 0057 08       		.byte	0x8
+ 265 0058 07       		.byte	0x7
+ 266 0059 61000000 		.4byte	.LASF7
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccOdxH6U.s 			page 8
+
+
+ 267 005d 03       		.uleb128 0x3
+ 268 005e 04       		.byte	0x4
+ 269 005f 05       		.byte	0x5
+ 270 0060 696E7400 		.ascii	"int\000"
+ 271 0064 02       		.uleb128 0x2
+ 272 0065 04       		.byte	0x4
+ 273 0066 07       		.byte	0x7
+ 274 0067 26010000 		.4byte	.LASF8
+ 275 006b 04       		.uleb128 0x4
+ 276 006c BC000000 		.4byte	.LASF9
+ 277 0070 02       		.byte	0x2
+ 278 0071 9801     		.2byte	0x198
+ 279 0073 2C000000 		.4byte	0x2c
+ 280 0077 04       		.uleb128 0x4
+ 281 0078 12010000 		.4byte	.LASF10
+ 282 007c 02       		.byte	0x2
+ 283 007d 9A01     		.2byte	0x19a
+ 284 007f 48000000 		.4byte	0x48
+ 285 0083 02       		.uleb128 0x2
+ 286 0084 04       		.byte	0x4
+ 287 0085 04       		.byte	0x4
+ 288 0086 4B000000 		.4byte	.LASF11
+ 289 008a 02       		.uleb128 0x2
+ 290 008b 08       		.byte	0x8
+ 291 008c 04       		.byte	0x4
+ 292 008d F6000000 		.4byte	.LASF12
+ 293 0091 02       		.uleb128 0x2
+ 294 0092 01       		.byte	0x1
+ 295 0093 08       		.byte	0x8
+ 296 0094 33010000 		.4byte	.LASF13
+ 297 0098 04       		.uleb128 0x4
+ 298 0099 42010000 		.4byte	.LASF14
+ 299 009d 02       		.byte	0x2
+ 300 009e 5402     		.2byte	0x254
+ 301 00a0 A4000000 		.4byte	0xa4
+ 302 00a4 05       		.uleb128 0x5
+ 303 00a5 04       		.byte	0x4
+ 304 00a6 AA000000 		.4byte	0xaa
+ 305 00aa 06       		.uleb128 0x6
+ 306 00ab 02       		.uleb128 0x2
+ 307 00ac 04       		.byte	0x4
+ 308 00ad 07       		.byte	0x7
+ 309 00ae C9010000 		.4byte	.LASF15
+ 310 00b2 07       		.uleb128 0x7
+ 311 00b3 02       		.byte	0x2
+ 312 00b4 03       		.byte	0x3
+ 313 00b5 9C01     		.2byte	0x19c
+ 314 00b7 D6000000 		.4byte	0xd6
+ 315 00bb 08       		.uleb128 0x8
+ 316 00bc 17000000 		.4byte	.LASF16
+ 317 00c0 03       		.byte	0x3
+ 318 00c1 A301     		.2byte	0x1a3
+ 319 00c3 6B000000 		.4byte	0x6b
+ 320 00c7 00       		.byte	0
+ 321 00c8 08       		.uleb128 0x8
+ 322 00c9 FD000000 		.4byte	.LASF17
+ 323 00cd 03       		.byte	0x3
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccOdxH6U.s 			page 9
+
+
+ 324 00ce A901     		.2byte	0x1a9
+ 325 00d0 6B000000 		.4byte	0x6b
+ 326 00d4 01       		.byte	0x1
+ 327 00d5 00       		.byte	0
+ 328 00d6 04       		.uleb128 0x4
+ 329 00d7 8F020000 		.4byte	.LASF18
+ 330 00db 03       		.byte	0x3
+ 331 00dc AB01     		.2byte	0x1ab
+ 332 00de B2000000 		.4byte	0xb2
+ 333 00e2 09       		.uleb128 0x9
+ 334 00e3 38010000 		.4byte	.LASF19
+ 335 00e7 01       		.byte	0x1
+ 336 00e8 21       		.byte	0x21
+ 337 00e9 00000000 		.4byte	.LFB37
+ 338 00ed 3C000000 		.4byte	.LFE37-.LFB37
+ 339 00f1 01       		.uleb128 0x1
+ 340 00f2 9C       		.byte	0x9c
+ 341 00f3 92010000 		.4byte	0x192
+ 342 00f7 0A       		.uleb128 0xa
+ 343 00f8 06000000 		.4byte	.LVL0
+ 344 00fc 76020000 		.4byte	0x276
+ 345 0100 0B       		.uleb128 0xb
+ 346 0101 0C000000 		.4byte	.LVL1
+ 347 0105 7D020000 		.4byte	0x27d
+ 348 0109 17010000 		.4byte	0x117
+ 349 010d 0C       		.uleb128 0xc
+ 350 010e 01       		.uleb128 0x1
+ 351 010f 50       		.byte	0x50
+ 352 0110 05       		.uleb128 0x5
+ 353 0111 03       		.byte	0x3
+ 354 0112 00000000 		.4byte	Timer_Interrupt
+ 355 0116 00       		.byte	0
+ 356 0117 0B       		.uleb128 0xb
+ 357 0118 14000000 		.4byte	.LVL2
+ 358 011c 8E020000 		.4byte	0x28e
+ 359 0120 2F010000 		.4byte	0x12f
+ 360 0124 0C       		.uleb128 0xc
+ 361 0125 01       		.uleb128 0x1
+ 362 0126 51       		.byte	0x51
+ 363 0127 01       		.uleb128 0x1
+ 364 0128 31       		.byte	0x31
+ 365 0129 0C       		.uleb128 0xc
+ 366 012a 01       		.uleb128 0x1
+ 367 012b 50       		.byte	0x50
+ 368 012c 01       		.uleb128 0x1
+ 369 012d 31       		.byte	0x31
+ 370 012e 00       		.byte	0
+ 371 012f 0B       		.uleb128 0xb
+ 372 0130 1C000000 		.4byte	.LVL3
+ 373 0134 A4020000 		.4byte	0x2a4
+ 374 0138 47010000 		.4byte	0x147
+ 375 013c 0C       		.uleb128 0xc
+ 376 013d 01       		.uleb128 0x1
+ 377 013e 51       		.byte	0x51
+ 378 013f 01       		.uleb128 0x1
+ 379 0140 31       		.byte	0x31
+ 380 0141 0C       		.uleb128 0xc
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccOdxH6U.s 			page 10
+
+
+ 381 0142 01       		.uleb128 0x1
+ 382 0143 50       		.byte	0x50
+ 383 0144 01       		.uleb128 0x1
+ 384 0145 31       		.byte	0x31
+ 385 0146 00       		.byte	0
+ 386 0147 0B       		.uleb128 0xb
+ 387 0148 24000000 		.4byte	.LVL4
+ 388 014c BA020000 		.4byte	0x2ba
+ 389 0150 60010000 		.4byte	0x160
+ 390 0154 0C       		.uleb128 0xc
+ 391 0155 01       		.uleb128 0x1
+ 392 0156 51       		.byte	0x51
+ 393 0157 02       		.uleb128 0x2
+ 394 0158 08       		.byte	0x8
+ 395 0159 20       		.byte	0x20
+ 396 015a 0C       		.uleb128 0xc
+ 397 015b 01       		.uleb128 0x1
+ 398 015c 50       		.byte	0x50
+ 399 015d 01       		.uleb128 0x1
+ 400 015e 31       		.byte	0x31
+ 401 015f 00       		.byte	0
+ 402 0160 0B       		.uleb128 0xb
+ 403 0161 2A000000 		.4byte	.LVL5
+ 404 0165 D0020000 		.4byte	0x2d0
+ 405 0169 73010000 		.4byte	0x173
+ 406 016d 0C       		.uleb128 0xc
+ 407 016e 01       		.uleb128 0x1
+ 408 016f 50       		.byte	0x50
+ 409 0170 01       		.uleb128 0x1
+ 410 0171 31       		.byte	0x31
+ 411 0172 00       		.byte	0
+ 412 0173 0B       		.uleb128 0xb
+ 413 0174 32000000 		.4byte	.LVL6
+ 414 0178 E1020000 		.4byte	0x2e1
+ 415 017c 88010000 		.4byte	0x188
+ 416 0180 0C       		.uleb128 0xc
+ 417 0181 01       		.uleb128 0x1
+ 418 0182 50       		.byte	0x50
+ 419 0183 03       		.uleb128 0x3
+ 420 0184 0A       		.byte	0xa
+ 421 0185 0001     		.2byte	0x100
+ 422 0187 00       		.byte	0
+ 423 0188 0A       		.uleb128 0xa
+ 424 0189 36000000 		.4byte	.LVL7
+ 425 018d F2020000 		.4byte	0x2f2
+ 426 0191 00       		.byte	0
+ 427 0192 09       		.uleb128 0x9
+ 428 0193 42000000 		.4byte	.LASF20
+ 429 0197 01       		.byte	0x1
+ 430 0198 3E       		.byte	0x3e
+ 431 0199 00000000 		.4byte	.LFB38
+ 432 019d 14000000 		.4byte	.LFE38-.LFB38
+ 433 01a1 01       		.uleb128 0x1
+ 434 01a2 9C       		.byte	0x9c
+ 435 01a3 CF010000 		.4byte	0x1cf
+ 436 01a7 0A       		.uleb128 0xa
+ 437 01a8 06000000 		.4byte	.LVL8
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccOdxH6U.s 			page 11
+
+
+ 438 01ac 76020000 		.4byte	0x276
+ 439 01b0 0B       		.uleb128 0xb
+ 440 01b1 0E000000 		.4byte	.LVL9
+ 441 01b5 F9020000 		.4byte	0x2f9
+ 442 01b9 C5010000 		.4byte	0x1c5
+ 443 01bd 0C       		.uleb128 0xc
+ 444 01be 01       		.uleb128 0x1
+ 445 01bf 50       		.byte	0x50
+ 446 01c0 03       		.uleb128 0x3
+ 447 01c1 0A       		.byte	0xa
+ 448 01c2 0001     		.2byte	0x100
+ 449 01c4 00       		.byte	0
+ 450 01c5 0A       		.uleb128 0xa
+ 451 01c6 12000000 		.4byte	.LVL10
+ 452 01ca F2020000 		.4byte	0x2f2
+ 453 01ce 00       		.byte	0
+ 454 01cf 09       		.uleb128 0x9
+ 455 01d0 C2000000 		.4byte	.LASF21
+ 456 01d4 01       		.byte	0x1
+ 457 01d5 6C       		.byte	0x6c
+ 458 01d6 00000000 		.4byte	.LFB40
+ 459 01da 40000000 		.4byte	.LFE40-.LFB40
+ 460 01de 01       		.uleb128 0x1
+ 461 01df 9C       		.byte	0x9c
+ 462 01e0 32020000 		.4byte	0x232
+ 463 01e4 0D       		.uleb128 0xd
+ 464 01e5 86000000 		.4byte	.LASF22
+ 465 01e9 01       		.byte	0x1
+ 466 01ea 6E       		.byte	0x6e
+ 467 01eb 77000000 		.4byte	0x77
+ 468 01ef 05       		.uleb128 0x5
+ 469 01f0 03       		.byte	0x3
+ 470 01f1 00000000 		.4byte	ledTimer.6861
+ 471 01f5 0D       		.uleb128 0xd
+ 472 01f6 E0010000 		.4byte	.LASF23
+ 473 01fa 01       		.byte	0x1
+ 474 01fb 6F       		.byte	0x6f
+ 475 01fc 6B000000 		.4byte	0x6b
+ 476 0200 05       		.uleb128 0x5
+ 477 0201 03       		.byte	0x3
+ 478 0202 04000000 		.4byte	advLed.6862
+ 479 0206 0A       		.uleb128 0xa
+ 480 0207 28000000 		.4byte	.LVL11
+ 481 020b 0A030000 		.4byte	0x30a
+ 482 020f 0B       		.uleb128 0xb
+ 483 0210 2E000000 		.4byte	.LVL12
+ 484 0214 1B030000 		.4byte	0x31b
+ 485 0218 22020000 		.4byte	0x222
+ 486 021c 0C       		.uleb128 0xc
+ 487 021d 01       		.uleb128 0x1
+ 488 021e 50       		.byte	0x50
+ 489 021f 01       		.uleb128 0x1
+ 490 0220 31       		.byte	0x31
+ 491 0221 00       		.byte	0
+ 492 0222 0E       		.uleb128 0xe
+ 493 0223 36000000 		.4byte	.LVL13
+ 494 0227 0A030000 		.4byte	0x30a
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccOdxH6U.s 			page 12
+
+
+ 495 022b 0C       		.uleb128 0xc
+ 496 022c 01       		.uleb128 0x1
+ 497 022d 50       		.byte	0x50
+ 498 022e 01       		.uleb128 0x1
+ 499 022f 30       		.byte	0x30
+ 500 0230 00       		.byte	0
+ 501 0231 00       		.byte	0
+ 502 0232 09       		.uleb128 0x9
+ 503 0233 75020000 		.4byte	.LASF24
+ 504 0237 01       		.byte	0x1
+ 505 0238 51       		.byte	0x51
+ 506 0239 00000000 		.4byte	.LFB39
+ 507 023d 18000000 		.4byte	.LFE39-.LFB39
+ 508 0241 01       		.uleb128 0x1
+ 509 0242 9C       		.byte	0x9c
+ 510 0243 6B020000 		.4byte	0x26b
+ 511 0247 0A       		.uleb128 0xa
+ 512 0248 06000000 		.4byte	.LVL14
+ 513 024c 2C030000 		.4byte	0x32c
+ 514 0250 0A       		.uleb128 0xa
+ 515 0251 0E000000 		.4byte	.LVL15
+ 516 0255 CF010000 		.4byte	0x1cf
+ 517 0259 0E       		.uleb128 0xe
+ 518 025a 16000000 		.4byte	.LVL16
+ 519 025e 37030000 		.4byte	0x337
+ 520 0262 0C       		.uleb128 0xc
+ 521 0263 01       		.uleb128 0x1
+ 522 0264 50       		.byte	0x50
+ 523 0265 03       		.uleb128 0x3
+ 524 0266 0A       		.byte	0xa
+ 525 0267 0004     		.2byte	0x400
+ 526 0269 00       		.byte	0
+ 527 026a 00       		.byte	0
+ 528 026b 0F       		.uleb128 0xf
+ 529 026c BC020000 		.4byte	.LASF39
+ 530 0270 08       		.byte	0x8
+ 531 0271 28       		.byte	0x28
+ 532 0272 D6000000 		.4byte	0xd6
+ 533 0276 10       		.uleb128 0x10
+ 534 0277 20000000 		.4byte	.LASF31
+ 535 027b 05       		.byte	0x5
+ 536 027c 66       		.byte	0x66
+ 537 027d 11       		.uleb128 0x11
+ 538 027e FF020000 		.4byte	.LASF25
+ 539 0282 04       		.byte	0x4
+ 540 0283 18       		.byte	0x18
+ 541 0284 8E020000 		.4byte	0x28e
+ 542 0288 12       		.uleb128 0x12
+ 543 0289 98000000 		.4byte	0x98
+ 544 028d 00       		.byte	0
+ 545 028e 11       		.uleb128 0x11
+ 546 028f A3020000 		.4byte	.LASF26
+ 547 0293 05       		.byte	0x5
+ 548 0294 67       		.byte	0x67
+ 549 0295 A4020000 		.4byte	0x2a4
+ 550 0299 12       		.uleb128 0x12
+ 551 029a 77000000 		.4byte	0x77
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccOdxH6U.s 			page 13
+
+
+ 552 029e 12       		.uleb128 0x12
+ 553 029f 77000000 		.4byte	0x77
+ 554 02a3 00       		.byte	0
+ 555 02a4 11       		.uleb128 0x11
+ 556 02a5 CD000000 		.4byte	.LASF27
+ 557 02a9 05       		.byte	0x5
+ 558 02aa 6A       		.byte	0x6a
+ 559 02ab BA020000 		.4byte	0x2ba
+ 560 02af 12       		.uleb128 0x12
+ 561 02b0 77000000 		.4byte	0x77
+ 562 02b4 12       		.uleb128 0x12
+ 563 02b5 77000000 		.4byte	0x77
+ 564 02b9 00       		.byte	0
+ 565 02ba 11       		.uleb128 0x11
+ 566 02bb E5000000 		.4byte	.LASF28
+ 567 02bf 05       		.byte	0x5
+ 568 02c0 70       		.byte	0x70
+ 569 02c1 D0020000 		.4byte	0x2d0
+ 570 02c5 12       		.uleb128 0x12
+ 571 02c6 77000000 		.4byte	0x77
+ 572 02ca 12       		.uleb128 0x12
+ 573 02cb 77000000 		.4byte	0x77
+ 574 02cf 00       		.byte	0
+ 575 02d0 11       		.uleb128 0x11
+ 576 02d1 E1020000 		.4byte	.LASF29
+ 577 02d5 05       		.byte	0x5
+ 578 02d6 77       		.byte	0x77
+ 579 02d7 E1020000 		.4byte	0x2e1
+ 580 02db 12       		.uleb128 0x12
+ 581 02dc 77000000 		.4byte	0x77
+ 582 02e0 00       		.byte	0
+ 583 02e1 11       		.uleb128 0x11
+ 584 02e2 03010000 		.4byte	.LASF30
+ 585 02e6 05       		.byte	0x5
+ 586 02e7 6C       		.byte	0x6c
+ 587 02e8 F2020000 		.4byte	0x2f2
+ 588 02ec 12       		.uleb128 0x12
+ 589 02ed 77000000 		.4byte	0x77
+ 590 02f1 00       		.byte	0
+ 591 02f2 10       		.uleb128 0x10
+ 592 02f3 19010000 		.4byte	.LASF32
+ 593 02f7 05       		.byte	0x5
+ 594 02f8 65       		.byte	0x65
+ 595 02f9 11       		.uleb128 0x11
+ 596 02fa 51000000 		.4byte	.LASF33
+ 597 02fe 05       		.byte	0x5
+ 598 02ff 6D       		.byte	0x6d
+ 599 0300 0A030000 		.4byte	0x30a
+ 600 0304 12       		.uleb128 0x12
+ 601 0305 77000000 		.4byte	0x77
+ 602 0309 00       		.byte	0
+ 603 030a 11       		.uleb128 0x11
+ 604 030b B3010000 		.4byte	.LASF34
+ 605 030f 06       		.byte	0x6
+ 606 0310 33       		.byte	0x33
+ 607 0311 1B030000 		.4byte	0x31b
+ 608 0315 12       		.uleb128 0x12
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccOdxH6U.s 			page 14
+
+
+ 609 0316 6B000000 		.4byte	0x6b
+ 610 031a 00       		.byte	0
+ 611 031b 11       		.uleb128 0x11
+ 612 031c F7020000 		.4byte	.LASF35
+ 613 0320 07       		.byte	0x7
+ 614 0321 D7       		.byte	0xd7
+ 615 0322 2C030000 		.4byte	0x32c
+ 616 0326 12       		.uleb128 0x12
+ 617 0327 77000000 		.4byte	0x77
+ 618 032b 00       		.byte	0
+ 619 032c 13       		.uleb128 0x13
+ 620 032d 8F000000 		.4byte	.LASF40
+ 621 0331 05       		.byte	0x5
+ 622 0332 75       		.byte	0x75
+ 623 0333 77000000 		.4byte	0x77
+ 624 0337 14       		.uleb128 0x14
+ 625 0338 00000000 		.4byte	.LASF41
+ 626 033c 05       		.byte	0x5
+ 627 033d 76       		.byte	0x76
+ 628 033e 12       		.uleb128 0x12
+ 629 033f 77000000 		.4byte	0x77
+ 630 0343 00       		.byte	0
+ 631 0344 00       		.byte	0
+ 632              		.section	.debug_abbrev,"",%progbits
+ 633              	.Ldebug_abbrev0:
+ 634 0000 01       		.uleb128 0x1
+ 635 0001 11       		.uleb128 0x11
+ 636 0002 01       		.byte	0x1
+ 637 0003 25       		.uleb128 0x25
+ 638 0004 0E       		.uleb128 0xe
+ 639 0005 13       		.uleb128 0x13
+ 640 0006 0B       		.uleb128 0xb
+ 641 0007 03       		.uleb128 0x3
+ 642 0008 0E       		.uleb128 0xe
+ 643 0009 1B       		.uleb128 0x1b
+ 644 000a 0E       		.uleb128 0xe
+ 645 000b 55       		.uleb128 0x55
+ 646 000c 17       		.uleb128 0x17
+ 647 000d 11       		.uleb128 0x11
+ 648 000e 01       		.uleb128 0x1
+ 649 000f 10       		.uleb128 0x10
+ 650 0010 17       		.uleb128 0x17
+ 651 0011 00       		.byte	0
+ 652 0012 00       		.byte	0
+ 653 0013 02       		.uleb128 0x2
+ 654 0014 24       		.uleb128 0x24
+ 655 0015 00       		.byte	0
+ 656 0016 0B       		.uleb128 0xb
+ 657 0017 0B       		.uleb128 0xb
+ 658 0018 3E       		.uleb128 0x3e
+ 659 0019 0B       		.uleb128 0xb
+ 660 001a 03       		.uleb128 0x3
+ 661 001b 0E       		.uleb128 0xe
+ 662 001c 00       		.byte	0
+ 663 001d 00       		.byte	0
+ 664 001e 03       		.uleb128 0x3
+ 665 001f 24       		.uleb128 0x24
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccOdxH6U.s 			page 15
+
+
+ 666 0020 00       		.byte	0
+ 667 0021 0B       		.uleb128 0xb
+ 668 0022 0B       		.uleb128 0xb
+ 669 0023 3E       		.uleb128 0x3e
+ 670 0024 0B       		.uleb128 0xb
+ 671 0025 03       		.uleb128 0x3
+ 672 0026 08       		.uleb128 0x8
+ 673 0027 00       		.byte	0
+ 674 0028 00       		.byte	0
+ 675 0029 04       		.uleb128 0x4
+ 676 002a 16       		.uleb128 0x16
+ 677 002b 00       		.byte	0
+ 678 002c 03       		.uleb128 0x3
+ 679 002d 0E       		.uleb128 0xe
+ 680 002e 3A       		.uleb128 0x3a
+ 681 002f 0B       		.uleb128 0xb
+ 682 0030 3B       		.uleb128 0x3b
+ 683 0031 05       		.uleb128 0x5
+ 684 0032 49       		.uleb128 0x49
+ 685 0033 13       		.uleb128 0x13
+ 686 0034 00       		.byte	0
+ 687 0035 00       		.byte	0
+ 688 0036 05       		.uleb128 0x5
+ 689 0037 0F       		.uleb128 0xf
+ 690 0038 00       		.byte	0
+ 691 0039 0B       		.uleb128 0xb
+ 692 003a 0B       		.uleb128 0xb
+ 693 003b 49       		.uleb128 0x49
+ 694 003c 13       		.uleb128 0x13
+ 695 003d 00       		.byte	0
+ 696 003e 00       		.byte	0
+ 697 003f 06       		.uleb128 0x6
+ 698 0040 15       		.uleb128 0x15
+ 699 0041 00       		.byte	0
+ 700 0042 27       		.uleb128 0x27
+ 701 0043 19       		.uleb128 0x19
+ 702 0044 00       		.byte	0
+ 703 0045 00       		.byte	0
+ 704 0046 07       		.uleb128 0x7
+ 705 0047 13       		.uleb128 0x13
+ 706 0048 01       		.byte	0x1
+ 707 0049 0B       		.uleb128 0xb
+ 708 004a 0B       		.uleb128 0xb
+ 709 004b 3A       		.uleb128 0x3a
+ 710 004c 0B       		.uleb128 0xb
+ 711 004d 3B       		.uleb128 0x3b
+ 712 004e 05       		.uleb128 0x5
+ 713 004f 01       		.uleb128 0x1
+ 714 0050 13       		.uleb128 0x13
+ 715 0051 00       		.byte	0
+ 716 0052 00       		.byte	0
+ 717 0053 08       		.uleb128 0x8
+ 718 0054 0D       		.uleb128 0xd
+ 719 0055 00       		.byte	0
+ 720 0056 03       		.uleb128 0x3
+ 721 0057 0E       		.uleb128 0xe
+ 722 0058 3A       		.uleb128 0x3a
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccOdxH6U.s 			page 16
+
+
+ 723 0059 0B       		.uleb128 0xb
+ 724 005a 3B       		.uleb128 0x3b
+ 725 005b 05       		.uleb128 0x5
+ 726 005c 49       		.uleb128 0x49
+ 727 005d 13       		.uleb128 0x13
+ 728 005e 38       		.uleb128 0x38
+ 729 005f 0B       		.uleb128 0xb
+ 730 0060 00       		.byte	0
+ 731 0061 00       		.byte	0
+ 732 0062 09       		.uleb128 0x9
+ 733 0063 2E       		.uleb128 0x2e
+ 734 0064 01       		.byte	0x1
+ 735 0065 3F       		.uleb128 0x3f
+ 736 0066 19       		.uleb128 0x19
+ 737 0067 03       		.uleb128 0x3
+ 738 0068 0E       		.uleb128 0xe
+ 739 0069 3A       		.uleb128 0x3a
+ 740 006a 0B       		.uleb128 0xb
+ 741 006b 3B       		.uleb128 0x3b
+ 742 006c 0B       		.uleb128 0xb
+ 743 006d 27       		.uleb128 0x27
+ 744 006e 19       		.uleb128 0x19
+ 745 006f 11       		.uleb128 0x11
+ 746 0070 01       		.uleb128 0x1
+ 747 0071 12       		.uleb128 0x12
+ 748 0072 06       		.uleb128 0x6
+ 749 0073 40       		.uleb128 0x40
+ 750 0074 18       		.uleb128 0x18
+ 751 0075 9742     		.uleb128 0x2117
+ 752 0077 19       		.uleb128 0x19
+ 753 0078 01       		.uleb128 0x1
+ 754 0079 13       		.uleb128 0x13
+ 755 007a 00       		.byte	0
+ 756 007b 00       		.byte	0
+ 757 007c 0A       		.uleb128 0xa
+ 758 007d 898201   		.uleb128 0x4109
+ 759 0080 00       		.byte	0
+ 760 0081 11       		.uleb128 0x11
+ 761 0082 01       		.uleb128 0x1
+ 762 0083 31       		.uleb128 0x31
+ 763 0084 13       		.uleb128 0x13
+ 764 0085 00       		.byte	0
+ 765 0086 00       		.byte	0
+ 766 0087 0B       		.uleb128 0xb
+ 767 0088 898201   		.uleb128 0x4109
+ 768 008b 01       		.byte	0x1
+ 769 008c 11       		.uleb128 0x11
+ 770 008d 01       		.uleb128 0x1
+ 771 008e 31       		.uleb128 0x31
+ 772 008f 13       		.uleb128 0x13
+ 773 0090 01       		.uleb128 0x1
+ 774 0091 13       		.uleb128 0x13
+ 775 0092 00       		.byte	0
+ 776 0093 00       		.byte	0
+ 777 0094 0C       		.uleb128 0xc
+ 778 0095 8A8201   		.uleb128 0x410a
+ 779 0098 00       		.byte	0
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccOdxH6U.s 			page 17
+
+
+ 780 0099 02       		.uleb128 0x2
+ 781 009a 18       		.uleb128 0x18
+ 782 009b 9142     		.uleb128 0x2111
+ 783 009d 18       		.uleb128 0x18
+ 784 009e 00       		.byte	0
+ 785 009f 00       		.byte	0
+ 786 00a0 0D       		.uleb128 0xd
+ 787 00a1 34       		.uleb128 0x34
+ 788 00a2 00       		.byte	0
+ 789 00a3 03       		.uleb128 0x3
+ 790 00a4 0E       		.uleb128 0xe
+ 791 00a5 3A       		.uleb128 0x3a
+ 792 00a6 0B       		.uleb128 0xb
+ 793 00a7 3B       		.uleb128 0x3b
+ 794 00a8 0B       		.uleb128 0xb
+ 795 00a9 49       		.uleb128 0x49
+ 796 00aa 13       		.uleb128 0x13
+ 797 00ab 02       		.uleb128 0x2
+ 798 00ac 18       		.uleb128 0x18
+ 799 00ad 00       		.byte	0
+ 800 00ae 00       		.byte	0
+ 801 00af 0E       		.uleb128 0xe
+ 802 00b0 898201   		.uleb128 0x4109
+ 803 00b3 01       		.byte	0x1
+ 804 00b4 11       		.uleb128 0x11
+ 805 00b5 01       		.uleb128 0x1
+ 806 00b6 31       		.uleb128 0x31
+ 807 00b7 13       		.uleb128 0x13
+ 808 00b8 00       		.byte	0
+ 809 00b9 00       		.byte	0
+ 810 00ba 0F       		.uleb128 0xf
+ 811 00bb 34       		.uleb128 0x34
+ 812 00bc 00       		.byte	0
+ 813 00bd 03       		.uleb128 0x3
+ 814 00be 0E       		.uleb128 0xe
+ 815 00bf 3A       		.uleb128 0x3a
+ 816 00c0 0B       		.uleb128 0xb
+ 817 00c1 3B       		.uleb128 0x3b
+ 818 00c2 0B       		.uleb128 0xb
+ 819 00c3 49       		.uleb128 0x49
+ 820 00c4 13       		.uleb128 0x13
+ 821 00c5 3F       		.uleb128 0x3f
+ 822 00c6 19       		.uleb128 0x19
+ 823 00c7 3C       		.uleb128 0x3c
+ 824 00c8 19       		.uleb128 0x19
+ 825 00c9 00       		.byte	0
+ 826 00ca 00       		.byte	0
+ 827 00cb 10       		.uleb128 0x10
+ 828 00cc 2E       		.uleb128 0x2e
+ 829 00cd 00       		.byte	0
+ 830 00ce 3F       		.uleb128 0x3f
+ 831 00cf 19       		.uleb128 0x19
+ 832 00d0 03       		.uleb128 0x3
+ 833 00d1 0E       		.uleb128 0xe
+ 834 00d2 3A       		.uleb128 0x3a
+ 835 00d3 0B       		.uleb128 0xb
+ 836 00d4 3B       		.uleb128 0x3b
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccOdxH6U.s 			page 18
+
+
+ 837 00d5 0B       		.uleb128 0xb
+ 838 00d6 27       		.uleb128 0x27
+ 839 00d7 19       		.uleb128 0x19
+ 840 00d8 3C       		.uleb128 0x3c
+ 841 00d9 19       		.uleb128 0x19
+ 842 00da 00       		.byte	0
+ 843 00db 00       		.byte	0
+ 844 00dc 11       		.uleb128 0x11
+ 845 00dd 2E       		.uleb128 0x2e
+ 846 00de 01       		.byte	0x1
+ 847 00df 3F       		.uleb128 0x3f
+ 848 00e0 19       		.uleb128 0x19
+ 849 00e1 03       		.uleb128 0x3
+ 850 00e2 0E       		.uleb128 0xe
+ 851 00e3 3A       		.uleb128 0x3a
+ 852 00e4 0B       		.uleb128 0xb
+ 853 00e5 3B       		.uleb128 0x3b
+ 854 00e6 0B       		.uleb128 0xb
+ 855 00e7 27       		.uleb128 0x27
+ 856 00e8 19       		.uleb128 0x19
+ 857 00e9 3C       		.uleb128 0x3c
+ 858 00ea 19       		.uleb128 0x19
+ 859 00eb 01       		.uleb128 0x1
+ 860 00ec 13       		.uleb128 0x13
+ 861 00ed 00       		.byte	0
+ 862 00ee 00       		.byte	0
+ 863 00ef 12       		.uleb128 0x12
+ 864 00f0 05       		.uleb128 0x5
+ 865 00f1 00       		.byte	0
+ 866 00f2 49       		.uleb128 0x49
+ 867 00f3 13       		.uleb128 0x13
+ 868 00f4 00       		.byte	0
+ 869 00f5 00       		.byte	0
+ 870 00f6 13       		.uleb128 0x13
+ 871 00f7 2E       		.uleb128 0x2e
+ 872 00f8 00       		.byte	0
+ 873 00f9 3F       		.uleb128 0x3f
+ 874 00fa 19       		.uleb128 0x19
+ 875 00fb 03       		.uleb128 0x3
+ 876 00fc 0E       		.uleb128 0xe
+ 877 00fd 3A       		.uleb128 0x3a
+ 878 00fe 0B       		.uleb128 0xb
+ 879 00ff 3B       		.uleb128 0x3b
+ 880 0100 0B       		.uleb128 0xb
+ 881 0101 27       		.uleb128 0x27
+ 882 0102 19       		.uleb128 0x19
+ 883 0103 49       		.uleb128 0x49
+ 884 0104 13       		.uleb128 0x13
+ 885 0105 3C       		.uleb128 0x3c
+ 886 0106 19       		.uleb128 0x19
+ 887 0107 00       		.byte	0
+ 888 0108 00       		.byte	0
+ 889 0109 14       		.uleb128 0x14
+ 890 010a 2E       		.uleb128 0x2e
+ 891 010b 01       		.byte	0x1
+ 892 010c 3F       		.uleb128 0x3f
+ 893 010d 19       		.uleb128 0x19
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccOdxH6U.s 			page 19
+
+
+ 894 010e 03       		.uleb128 0x3
+ 895 010f 0E       		.uleb128 0xe
+ 896 0110 3A       		.uleb128 0x3a
+ 897 0111 0B       		.uleb128 0xb
+ 898 0112 3B       		.uleb128 0x3b
+ 899 0113 0B       		.uleb128 0xb
+ 900 0114 27       		.uleb128 0x27
+ 901 0115 19       		.uleb128 0x19
+ 902 0116 3C       		.uleb128 0x3c
+ 903 0117 19       		.uleb128 0x19
+ 904 0118 00       		.byte	0
+ 905 0119 00       		.byte	0
+ 906 011a 00       		.byte	0
+ 907              		.section	.debug_aranges,"",%progbits
+ 908 0000 34000000 		.4byte	0x34
+ 909 0004 0200     		.2byte	0x2
+ 910 0006 00000000 		.4byte	.Ldebug_info0
+ 911 000a 04       		.byte	0x4
+ 912 000b 00       		.byte	0
+ 913 000c 0000     		.2byte	0
+ 914 000e 0000     		.2byte	0
+ 915 0010 00000000 		.4byte	.LFB37
+ 916 0014 3C000000 		.4byte	.LFE37-.LFB37
+ 917 0018 00000000 		.4byte	.LFB38
+ 918 001c 14000000 		.4byte	.LFE38-.LFB38
+ 919 0020 00000000 		.4byte	.LFB40
+ 920 0024 40000000 		.4byte	.LFE40-.LFB40
+ 921 0028 00000000 		.4byte	.LFB39
+ 922 002c 18000000 		.4byte	.LFE39-.LFB39
+ 923 0030 00000000 		.4byte	0
+ 924 0034 00000000 		.4byte	0
+ 925              		.section	.debug_ranges,"",%progbits
+ 926              	.Ldebug_ranges0:
+ 927 0000 00000000 		.4byte	.LFB37
+ 928 0004 3C000000 		.4byte	.LFE37
+ 929 0008 00000000 		.4byte	.LFB38
+ 930 000c 14000000 		.4byte	.LFE38
+ 931 0010 00000000 		.4byte	.LFB40
+ 932 0014 40000000 		.4byte	.LFE40
+ 933 0018 00000000 		.4byte	.LFB39
+ 934 001c 18000000 		.4byte	.LFE39
+ 935 0020 00000000 		.4byte	0
+ 936 0024 00000000 		.4byte	0
+ 937              		.section	.debug_line,"",%progbits
+ 938              	.Ldebug_line0:
+ 939 0000 0B010000 		.section	.debug_str,"MS",%progbits,1
+ 939      0200AE00 
+ 939      00000201 
+ 939      FB0E0D00 
+ 939      01010101 
+ 940              	.LASF41:
+ 941 0000 43795379 		.ascii	"CySysWdtClearInterrupt\000"
+ 941      73576474 
+ 941      436C6561 
+ 941      72496E74 
+ 941      65727275 
+ 942              	.LASF16:
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccOdxH6U.s 			page 20
+
+
+ 943 0017 62644861 		.ascii	"bdHandle\000"
+ 943      6E646C65 
+ 943      00
+ 944              	.LASF31:
+ 945 0020 43795379 		.ascii	"CySysWdtUnlock\000"
+ 945      73576474 
+ 945      556E6C6F 
+ 945      636B00
+ 946              	.LASF3:
+ 947 002f 73686F72 		.ascii	"short unsigned int\000"
+ 947      7420756E 
+ 947      7369676E 
+ 947      65642069 
+ 947      6E7400
+ 948              	.LASF20:
+ 949 0042 5744545F 		.ascii	"WDT_Stop\000"
+ 949      53746F70 
+ 949      00
+ 950              	.LASF11:
+ 951 004b 666C6F61 		.ascii	"float\000"
+ 951      7400
+ 952              	.LASF33:
+ 953 0051 43795379 		.ascii	"CySysWdtDisable\000"
+ 953      73576474 
+ 953      44697361 
+ 953      626C6500 
+ 954              	.LASF7:
+ 955 0061 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 955      206C6F6E 
+ 955      6720756E 
+ 955      7369676E 
+ 955      65642069 
+ 956              	.LASF1:
+ 957 0078 756E7369 		.ascii	"unsigned char\000"
+ 957      676E6564 
+ 957      20636861 
+ 957      7200
+ 958              	.LASF22:
+ 959 0086 6C656454 		.ascii	"ledTimer\000"
+ 959      696D6572 
+ 959      00
+ 960              	.LASF40:
+ 961 008f 43795379 		.ascii	"CySysWdtGetInterruptSource\000"
+ 961      73576474 
+ 961      47657449 
+ 961      6E746572 
+ 961      72757074 
+ 962              	.LASF5:
+ 963 00aa 6C6F6E67 		.ascii	"long unsigned int\000"
+ 963      20756E73 
+ 963      69676E65 
+ 963      6420696E 
+ 963      7400
+ 964              	.LASF9:
+ 965 00bc 75696E74 		.ascii	"uint8\000"
+ 965      3800
+ 966              	.LASF21:
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccOdxH6U.s 			page 21
+
+
+ 967 00c2 48616E64 		.ascii	"HandleLeds\000"
+ 967      6C654C65 
+ 967      647300
+ 968              	.LASF27:
+ 969 00cd 43795379 		.ascii	"CySysWdtSetClearOnMatch\000"
+ 969      73576474 
+ 969      53657443 
+ 969      6C656172 
+ 969      4F6E4D61 
+ 970              	.LASF28:
+ 971 00e5 43795379 		.ascii	"CySysWdtSetMatch\000"
+ 971      73576474 
+ 971      5365744D 
+ 971      61746368 
+ 971      00
+ 972              	.LASF12:
+ 973 00f6 646F7562 		.ascii	"double\000"
+ 973      6C6500
+ 974              	.LASF17:
+ 975 00fd 61747449 		.ascii	"attId\000"
+ 975      6400
+ 976              	.LASF30:
+ 977 0103 43795379 		.ascii	"CySysWdtEnable\000"
+ 977      73576474 
+ 977      456E6162 
+ 977      6C6500
+ 978              	.LASF10:
+ 979 0112 75696E74 		.ascii	"uint32\000"
+ 979      333200
+ 980              	.LASF32:
+ 981 0119 43795379 		.ascii	"CySysWdtLock\000"
+ 981      73576474 
+ 981      4C6F636B 
+ 981      00
+ 982              	.LASF8:
+ 983 0126 756E7369 		.ascii	"unsigned int\000"
+ 983      676E6564 
+ 983      20696E74 
+ 983      00
+ 984              	.LASF13:
+ 985 0133 63686172 		.ascii	"char\000"
+ 985      00
+ 986              	.LASF19:
+ 987 0138 5744545F 		.ascii	"WDT_Start\000"
+ 987      53746172 
+ 987      7400
+ 988              	.LASF14:
+ 989 0142 63796973 		.ascii	"cyisraddress\000"
+ 989      72616464 
+ 989      72657373 
+ 989      00
+ 990              	.LASF38:
+ 991 014f 433A5C55 		.ascii	"C:\\Users\\Nick\\Documents\\PSoC Creator\\capsensel"
+ 991      73657273 
+ 991      5C4E6963 
+ 991      6B5C446F 
+ 991      63756D65 
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccOdxH6U.s 			page 22
+
+
+ 992 017d 6564315C 		.ascii	"ed1\\capsenseled\\BLE_OTA_FixedStack_Bootloader01.c"
+ 992      63617073 
+ 992      656E7365 
+ 992      6C65645C 
+ 992      424C455F 
+ 993 01ae 7964736E 		.ascii	"ydsn\000"
+ 993      00
+ 994              	.LASF34:
+ 995 01b3 426F6F74 		.ascii	"Bootloading_LED_Write\000"
+ 995      6C6F6164 
+ 995      696E675F 
+ 995      4C45445F 
+ 995      57726974 
+ 996              	.LASF15:
+ 997 01c9 73697A65 		.ascii	"sizetype\000"
+ 997      74797065 
+ 997      00
+ 998              	.LASF6:
+ 999 01d2 6C6F6E67 		.ascii	"long long int\000"
+ 999      206C6F6E 
+ 999      6720696E 
+ 999      7400
+ 1000              	.LASF23:
+ 1001 01e0 6164764C 		.ascii	"advLed\000"
+ 1001      656400
+ 1002              	.LASF36:
+ 1003 01e7 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 1003      4320342E 
+ 1003      392E3320 
+ 1003      32303135 
+ 1003      30333033 
+ 1004 021a 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0 -mthumb -g -O"
+ 1004      20726576 
+ 1004      6973696F 
+ 1004      6E203232 
+ 1004      31323230 
+ 1005 024d 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 1005      66756E63 
+ 1005      74696F6E 
+ 1005      2D736563 
+ 1005      74696F6E 
+ 1006              	.LASF24:
+ 1007 0275 54696D65 		.ascii	"Timer_Interrupt\000"
+ 1007      725F496E 
+ 1007      74657272 
+ 1007      75707400 
+ 1008              	.LASF2:
+ 1009 0285 73686F72 		.ascii	"short int\000"
+ 1009      7420696E 
+ 1009      7400
+ 1010              	.LASF18:
+ 1011 028f 4359424C 		.ascii	"CYBLE_CONN_HANDLE_T\000"
+ 1011      455F434F 
+ 1011      4E4E5F48 
+ 1011      414E444C 
+ 1011      455F5400 
+ 1012              	.LASF26:
+ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccOdxH6U.s 			page 23
+
+
+ 1013 02a3 43795379 		.ascii	"CySysWdtSetMode\000"
+ 1013      73576474 
+ 1013      5365744D 
+ 1013      6F646500 
+ 1014              	.LASF4:
+ 1015 02b3 6C6F6E67 		.ascii	"long int\000"
+ 1015      20696E74 
+ 1015      00
+ 1016              	.LASF39:
+ 1017 02bc 636F6E6E 		.ascii	"connHandle\000"
+ 1017      48616E64 
+ 1017      6C6500
+ 1018              	.LASF37:
+ 1019 02c7 4F54414F 		.ascii	"OTAOptional.c\000"
+ 1019      7074696F 
+ 1019      6E616C2E 
+ 1019      6300
+ 1020              	.LASF0:
+ 1021 02d5 7369676E 		.ascii	"signed char\000"
+ 1021      65642063 
+ 1021      68617200 
+ 1022              	.LASF29:
+ 1023 02e1 43795379 		.ascii	"CySysWdtResetCounters\000"
+ 1023      73576474 
+ 1023      52657365 
+ 1023      74436F75 
+ 1023      6E746572 
+ 1024              	.LASF35:
+ 1025 02f7 43794465 		.ascii	"CyDelay\000"
+ 1025      6C617900 
+ 1026              	.LASF25:
+ 1027 02ff 5744545F 		.ascii	"WDT_Interrupt_StartEx\000"
+ 1027      496E7465 
+ 1027      72727570 
+ 1027      745F5374 
+ 1027      61727445 
+ 1028              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
