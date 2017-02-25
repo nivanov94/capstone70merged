@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccnQEpo3.s 			page 1
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccJYp65C.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccnQEpo3.s 			page 1
   30:Generated_Source\PSoC4/PWM_High_Thresh_PM.c **** *
   31:Generated_Source\PSoC4/PWM_High_Thresh_PM.c **** * Parameters:
   32:Generated_Source\PSoC4/PWM_High_Thresh_PM.c **** *  None
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccnQEpo3.s 			page 2
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccJYp65C.s 			page 2
 
 
   33:Generated_Source\PSoC4/PWM_High_Thresh_PM.c **** *
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccnQEpo3.s 			page 1
   52 0008 03D5     		bpl	.L3
   61:Generated_Source\PSoC4/PWM_High_Thresh_PM.c ****     {
   62:Generated_Source\PSoC4/PWM_High_Thresh_PM.c ****         PWM_High_Thresh_backup.enableState = 1u;
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccnQEpo3.s 			page 3
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccJYp65C.s 			page 3
 
 
   53              		.loc 1 62 0
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccnQEpo3.s 			page 1
   84:Generated_Source\PSoC4/PWM_High_Thresh_PM.c **** * Return:
   85:Generated_Source\PSoC4/PWM_High_Thresh_PM.c **** *  None
   86:Generated_Source\PSoC4/PWM_High_Thresh_PM.c **** *
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccnQEpo3.s 			page 4
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccJYp65C.s 			page 4
 
 
   87:Generated_Source\PSoC4/PWM_High_Thresh_PM.c **** *******************************************************************************/
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccnQEpo3.s 			page 1
  114:Generated_Source\PSoC4/PWM_High_Thresh_PM.c ****         PWM_High_Thresh_Enable();
  113              		.loc 1 114 0
  114 000a FFF7FEFF 		bl	PWM_High_Thresh_Enable
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccnQEpo3.s 			page 5
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccJYp65C.s 			page 5
 
 
  115              	.LVL1:
@@ -273,40 +273,40 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccnQEpo3.s 			page 1
  142 0006 00000000 		.4byte	.Ldebug_abbrev0
  143 000a 04       		.byte	0x4
  144 000b 01       		.uleb128 0x1
- 145 000c EE010000 		.4byte	.LASF23
+ 145 000c E9010000 		.4byte	.LASF23
  146 0010 01       		.byte	0x1
- 147 0011 A4010000 		.4byte	.LASF24
- 148 0015 8E000000 		.4byte	.LASF25
+ 147 0011 9F010000 		.4byte	.LASF24
+ 148 0015 EC000000 		.4byte	.LASF25
  149 0019 00000000 		.4byte	.Ldebug_ranges0+0
  150 001d 00000000 		.4byte	0
  151 0021 00000000 		.4byte	.Ldebug_line0
  152 0025 02       		.uleb128 0x2
  153 0026 01       		.byte	0x1
  154 0027 06       		.byte	0x6
- 155 0028 83010000 		.4byte	.LASF0
+ 155 0028 7E010000 		.4byte	.LASF0
  156 002c 02       		.uleb128 0x2
  157 002d 01       		.byte	0x1
  158 002e 08       		.byte	0x8
- 159 002f 13010000 		.4byte	.LASF1
+ 159 002f C3000000 		.4byte	.LASF1
  160 0033 02       		.uleb128 0x2
  161 0034 02       		.byte	0x2
  162 0035 05       		.byte	0x5
- 163 0036 7C020000 		.4byte	.LASF2
+ 163 0036 77020000 		.4byte	.LASF2
  164 003a 02       		.uleb128 0x2
  165 003b 02       		.byte	0x2
  166 003c 07       		.byte	0x7
- 167 003d 70010000 		.4byte	.LASF3
+ 167 003d 6B010000 		.4byte	.LASF3
  168 0041 02       		.uleb128 0x2
  169 0042 04       		.byte	0x4
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccnQEpo3.s 			page 6
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccJYp65C.s 			page 6
 
 
  170 0043 05       		.byte	0x5
- 171 0044 3C010000 		.4byte	.LASF4
+ 171 0044 37010000 		.4byte	.LASF4
  172 0048 02       		.uleb128 0x2
  173 0049 04       		.byte	0x4
  174 004a 07       		.byte	0x7
- 175 004b E4000000 		.4byte	.LASF5
+ 175 004b 94000000 		.4byte	.LASF5
  176 004f 02       		.uleb128 0x2
  177 0050 08       		.byte	0x8
  178 0051 05       		.byte	0x5
@@ -314,7 +314,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccnQEpo3.s 			page 1
  180 0056 02       		.uleb128 0x2
  181 0057 08       		.byte	0x8
  182 0058 07       		.byte	0x7
- 183 0059 F6000000 		.4byte	.LASF7
+ 183 0059 A6000000 		.4byte	.LASF7
  184 005d 03       		.uleb128 0x3
  185 005e 04       		.byte	0x4
  186 005f 05       		.byte	0x5
@@ -324,7 +324,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccnQEpo3.s 			page 1
  190 0066 07       		.byte	0x7
  191 0067 21000000 		.4byte	.LASF8
  192 006b 04       		.uleb128 0x4
- 193 006c DE000000 		.4byte	.LASF9
+ 193 006c 8E000000 		.4byte	.LASF9
  194 0070 02       		.byte	0x2
  195 0071 C2       		.byte	0xc2
  196 0072 2C000000 		.4byte	0x2c
@@ -336,17 +336,17 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccnQEpo3.s 			page 1
  202 0081 02       		.uleb128 0x2
  203 0082 04       		.byte	0x4
  204 0083 04       		.byte	0x4
- 205 0084 0D010000 		.4byte	.LASF11
+ 205 0084 BD000000 		.4byte	.LASF11
  206 0088 02       		.uleb128 0x2
  207 0089 08       		.byte	0x8
  208 008a 04       		.byte	0x4
- 209 008b 63010000 		.4byte	.LASF12
+ 209 008b 5E010000 		.4byte	.LASF12
  210 008f 02       		.uleb128 0x2
  211 0090 01       		.byte	0x1
  212 0091 08       		.byte	0x8
- 213 0092 37010000 		.4byte	.LASF13
+ 213 0092 E7000000 		.4byte	.LASF13
  214 0096 05       		.uleb128 0x5
- 215 0097 6A010000 		.4byte	.LASF14
+ 215 0097 65010000 		.4byte	.LASF14
  216 009b 02       		.byte	0x2
  217 009c 6E01     		.2byte	0x16e
  218 009e A2000000 		.4byte	0xa2
@@ -355,10 +355,10 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccnQEpo3.s 			page 1
  221 00a7 02       		.uleb128 0x2
  222 00a8 04       		.byte	0x4
  223 00a9 07       		.byte	0x7
- 224 00aa 86020000 		.4byte	.LASF15
+ 224 00aa 81020000 		.4byte	.LASF15
  225 00ae 07       		.uleb128 0x7
  226 00af 01       		.byte	0x1
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccnQEpo3.s 			page 7
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccJYp65C.s 			page 7
 
 
  227 00b0 03       		.byte	0x3
@@ -372,7 +372,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccnQEpo3.s 			page 1
  235 00c1 00       		.byte	0
  236 00c2 00       		.byte	0
  237 00c3 04       		.uleb128 0x4
- 238 00c4 45010000 		.4byte	.LASF16
+ 238 00c4 40010000 		.4byte	.LASF16
  239 00c8 03       		.byte	0x3
  240 00c9 24       		.byte	0x24
  241 00ca AE000000 		.4byte	0xae
@@ -385,7 +385,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccnQEpo3.s 			page 1
  248 00dd 01       		.uleb128 0x1
  249 00de 9C       		.byte	0x9c
  250 00df 0A       		.uleb128 0xa
- 251 00e0 21010000 		.4byte	.LASF19
+ 251 00e0 D1000000 		.4byte	.LASF19
  252 00e4 01       		.byte	0x1
  253 00e5 3A       		.byte	0x3a
  254 00e6 00000000 		.4byte	.LFB3
@@ -398,7 +398,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccnQEpo3.s 			page 1
  261 00f9 3F010000 		.4byte	0x13f
  262 00fd 00       		.byte	0
  263 00fe 09       		.uleb128 0x9
- 264 00ff D0010000 		.4byte	.LASF18
+ 264 00ff CB010000 		.4byte	.LASF18
  265 0103 01       		.byte	0x1
  266 0104 58       		.byte	0x58
  267 0105 00000000 		.4byte	.LFB4
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccnQEpo3.s 			page 1
  281 0125 0E000000 		.4byte	.LVL1
  282 0129 47010000 		.4byte	0x147
  283 012d 00       		.byte	0
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccnQEpo3.s 			page 8
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccJYp65C.s 			page 8
 
 
  284 012e 0C       		.uleb128 0xc
@@ -430,7 +430,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccnQEpo3.s 			page 1
  290 013a 03       		.byte	0x3
  291 013b 00000000 		.4byte	PWM_High_Thresh_backup
  292 013f 0D       		.uleb128 0xd
- 293 0140 8F010000 		.4byte	.LASF21
+ 293 0140 8A010000 		.4byte	.LASF21
  294 0144 03       		.byte	0x3
  295 0145 3301     		.2byte	0x133
  296 0147 0D       		.uleb128 0xd
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccnQEpo3.s 			page 1
  338 0023 3E       		.uleb128 0x3e
  339 0024 0B       		.uleb128 0xb
  340 0025 03       		.uleb128 0x3
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccnQEpo3.s 			page 9
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccJYp65C.s 			page 9
 
 
  341 0026 08       		.uleb128 0x8
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccnQEpo3.s 			page 1
  395 005c 3A       		.uleb128 0x3a
  396 005d 0B       		.uleb128 0xb
  397 005e 3B       		.uleb128 0x3b
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccnQEpo3.s 			page 10
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccJYp65C.s 			page 10
 
 
  398 005f 0B       		.uleb128 0xb
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccnQEpo3.s 			page 1
  452 0097 00       		.byte	0
  453 0098 0B       		.uleb128 0xb
  454 0099 898201   		.uleb128 0x4109
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccnQEpo3.s 			page 11
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccJYp65C.s 			page 11
 
 
  455 009c 00       		.byte	0
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccnQEpo3.s 			page 1
  509 0028 00000000 		.4byte	.LFB5
  510 002c 14000000 		.4byte	.LFE5-.LFB5
  511 0030 00000000 		.4byte	0
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccnQEpo3.s 			page 12
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccJYp65C.s 			page 12
 
 
  512 0034 00000000 		.4byte	0
@@ -718,127 +718,127 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccnQEpo3.s 			page 1
  541      53617665 
  542              	.LASF22:
  543 0077 50574D5F 		.ascii	"PWM_High_Thresh_Enable\000"
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccnQEpo3.s 			page 13
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccJYp65C.s 			page 13
 
 
  543      48696768 
  543      5F546872 
  543      6573685F 
  543      456E6162 
- 544              	.LASF25:
- 545 008e 433A5C55 		.ascii	"C:\\Users\\Nick\\Documents\\PSoC Creator\\capsensel"
- 545      73657273 
- 545      5C4E6963 
- 545      6B5C446F 
- 545      63756D65 
- 546 00bc 6564315C 		.ascii	"ed1\\capsenseled\\capsenseled.cydsn\000"
- 546      63617073 
- 546      656E7365 
- 546      6C65645C 
- 546      63617073 
- 547              	.LASF9:
- 548 00de 75696E74 		.ascii	"uint8\000"
- 548      3800
- 549              	.LASF5:
- 550 00e4 6C6F6E67 		.ascii	"long unsigned int\000"
- 550      20756E73 
- 550      69676E65 
- 550      6420696E 
- 550      7400
- 551              	.LASF7:
- 552 00f6 6C6F6E67 		.ascii	"long long unsigned int\000"
- 552      206C6F6E 
- 552      6720756E 
- 552      7369676E 
- 552      65642069 
- 553              	.LASF11:
- 554 010d 666C6F61 		.ascii	"float\000"
- 554      7400
- 555              	.LASF1:
- 556 0113 756E7369 		.ascii	"unsigned char\000"
- 556      676E6564 
- 556      20636861 
- 556      7200
- 557              	.LASF19:
- 558 0121 50574D5F 		.ascii	"PWM_High_Thresh_Sleep\000"
- 558      48696768 
- 558      5F546872 
- 558      6573685F 
- 558      536C6565 
- 559              	.LASF13:
- 560 0137 63686172 		.ascii	"char\000"
- 560      00
+ 544              	.LASF9:
+ 545 008e 75696E74 		.ascii	"uint8\000"
+ 545      3800
+ 546              	.LASF5:
+ 547 0094 6C6F6E67 		.ascii	"long unsigned int\000"
+ 547      20756E73 
+ 547      69676E65 
+ 547      6420696E 
+ 547      7400
+ 548              	.LASF7:
+ 549 00a6 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 549      206C6F6E 
+ 549      6720756E 
+ 549      7369676E 
+ 549      65642069 
+ 550              	.LASF11:
+ 551 00bd 666C6F61 		.ascii	"float\000"
+ 551      7400
+ 552              	.LASF1:
+ 553 00c3 756E7369 		.ascii	"unsigned char\000"
+ 553      676E6564 
+ 553      20636861 
+ 553      7200
+ 554              	.LASF19:
+ 555 00d1 50574D5F 		.ascii	"PWM_High_Thresh_Sleep\000"
+ 555      48696768 
+ 555      5F546872 
+ 555      6573685F 
+ 555      536C6565 
+ 556              	.LASF13:
+ 557 00e7 63686172 		.ascii	"char\000"
+ 557      00
+ 558              	.LASF25:
+ 559 00ec 433A5C55 		.ascii	"C:\\Users\\rdeiaco\\Documents\\PSoC Creator\\capsto"
+ 559      73657273 
+ 559      5C726465 
+ 559      6961636F 
+ 559      5C446F63 
+ 560 011a 6E653730 		.ascii	"ne70merged\\capsenseled.cydsn\000"
+ 560      6D657267 
+ 560      65645C63 
+ 560      61707365 
+ 560      6E73656C 
  561              	.LASF4:
- 562 013c 6C6F6E67 		.ascii	"long int\000"
+ 562 0137 6C6F6E67 		.ascii	"long int\000"
  562      20696E74 
  562      00
  563              	.LASF16:
- 564 0145 50574D5F 		.ascii	"PWM_High_Thresh_BACKUP_STRUCT\000"
+ 564 0140 50574D5F 		.ascii	"PWM_High_Thresh_BACKUP_STRUCT\000"
  564      48696768 
  564      5F546872 
  564      6573685F 
  564      4241434B 
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccnQEpo3.s 			page 14
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccJYp65C.s 			page 14
 
 
  565              	.LASF12:
- 566 0163 646F7562 		.ascii	"double\000"
+ 566 015e 646F7562 		.ascii	"double\000"
  566      6C6500
  567              	.LASF14:
- 568 016a 72656733 		.ascii	"reg32\000"
+ 568 0165 72656733 		.ascii	"reg32\000"
  568      3200
  569              	.LASF3:
- 570 0170 73686F72 		.ascii	"short unsigned int\000"
+ 570 016b 73686F72 		.ascii	"short unsigned int\000"
  570      7420756E 
  570      7369676E 
  570      65642069 
  570      6E7400
  571              	.LASF0:
- 572 0183 7369676E 		.ascii	"signed char\000"
+ 572 017e 7369676E 		.ascii	"signed char\000"
  572      65642063 
  572      68617200 
  573              	.LASF21:
- 574 018f 50574D5F 		.ascii	"PWM_High_Thresh_Stop\000"
+ 574 018a 50574D5F 		.ascii	"PWM_High_Thresh_Stop\000"
  574      48696768 
  574      5F546872 
  574      6573685F 
  574      53746F70 
  575              	.LASF24:
- 576 01a4 47656E65 		.ascii	"Generated_Source\\PSoC4\\PWM_High_Thresh_PM.c\000"
+ 576 019f 47656E65 		.ascii	"Generated_Source\\PSoC4\\PWM_High_Thresh_PM.c\000"
  576      72617465 
  576      645F536F 
  576      75726365 
  576      5C50536F 
  577              	.LASF18:
- 578 01d0 50574D5F 		.ascii	"PWM_High_Thresh_RestoreConfig\000"
+ 578 01cb 50574D5F 		.ascii	"PWM_High_Thresh_RestoreConfig\000"
  578      48696768 
  578      5F546872 
  578      6573685F 
  578      52657374 
  579              	.LASF23:
- 580 01ee 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 580 01e9 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
  580      4320342E 
  580      392E3320 
  580      32303135 
  580      30333033 
- 581 0221 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0 -mthumb -g -O"
+ 581 021c 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0 -mthumb -g -O"
  581      20726576 
  581      6973696F 
  581      6E203232 
  581      31323230 
- 582 0254 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 582 024f 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
  582      66756E63 
  582      74696F6E 
  582      2D736563 
  582      74696F6E 
  583              	.LASF2:
- 584 027c 73686F72 		.ascii	"short int\000"
+ 584 0277 73686F72 		.ascii	"short int\000"
  584      7420696E 
  584      7400
  585              	.LASF15:
- 586 0286 73697A65 		.ascii	"sizetype\000"
+ 586 0281 73697A65 		.ascii	"sizetype\000"
  586      74797065 
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccnQEpo3.s 			page 15
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccJYp65C.s 			page 15
 
 
  586      00

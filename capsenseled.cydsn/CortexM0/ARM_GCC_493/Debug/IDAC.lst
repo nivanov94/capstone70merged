@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 1
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccJSdnO6.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 1
   30:IDAC.c        **** static uint8 IDAC_current = 0x00;
   31:IDAC.c        **** static float voltage_threshold = 1.4;
   32:IDAC.c        **** 
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 2
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccJSdnO6.s 			page 2
 
 
   33:IDAC.c        **** void init_IDAC(void) {
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 1
   64              		.loc 1 37 0
   65 0006 FFF7FEFF 		bl	IDAC_Fire_Thresh_Start
   66              	.LVL2:
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 3
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccJSdnO6.s 			page 3
 
 
   39:IDAC.c        **** }
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 1
   66:IDAC.c        ****     int delta;
   67:IDAC.c        ****     int new_current;
   68:IDAC.c        ****     float current_out = ADC_read(FIRE_THRESH_INDEX);
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 4
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccJSdnO6.s 			page 4
 
 
   99              		.loc 1 68 0
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 1
  142 003c FF28     		cmp	r0, #255
  143 003e 03DD     		ble	.L9
   80:IDAC.c        ****             IDAC_current = MAX_CURRENT_VAL;
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 5
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccJSdnO6.s 			page 5
 
 
  144              		.loc 1 80 0
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 1
  185 007a 0028     		cmp	r0, #0
  186 007c CAD1     		bne	.L10
   71:IDAC.c        ****         
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 6
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccJSdnO6.s 			page 6
 
 
  187              		.loc 1 71 0 is_stmt 0 discriminator 1
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 1
  236 000c 08D0     		beq	.L14
   50:IDAC.c        ****         voltage_threshold = volt_val;
  237              		.loc 1 50 0 is_stmt 0 discriminator 1
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 7
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccJSdnO6.s 			page 7
 
 
  238 000e 201C     		add	r0, r4, #0
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 1
  286              		.size	voltage_threshold, 4
  287              	voltage_threshold:
  288 0000 3333B33F 		.word	1068708659
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 8
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccJSdnO6.s 			page 8
 
 
  289              		.bss
@@ -440,52 +440,52 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 1
  305 0006 00000000 		.4byte	.Ldebug_abbrev0
  306 000a 04       		.byte	0x4
  307 000b 01       		.uleb128 0x1
- 308 000c B6010000 		.4byte	.LASF27
+ 308 000c B1010000 		.4byte	.LASF27
  309 0010 01       		.byte	0x1
- 310 0011 57020000 		.4byte	.LASF28
- 311 0015 32010000 		.4byte	.LASF29
+ 310 0011 52020000 		.4byte	.LASF28
+ 311 0015 00000000 		.4byte	.LASF29
  312 0019 00000000 		.4byte	.Ldebug_ranges0+0
  313 001d 00000000 		.4byte	0
  314 0021 00000000 		.4byte	.Ldebug_line0
  315 0025 02       		.uleb128 0x2
  316 0026 04       		.byte	0x4
  317 0027 04       		.byte	0x4
- 318 0028 83000000 		.4byte	.LASF0
+ 318 0028 CE000000 		.4byte	.LASF0
  319 002c 02       		.uleb128 0x2
  320 002d 01       		.byte	0x1
  321 002e 06       		.byte	0x6
- 322 002f 67020000 		.4byte	.LASF1
+ 322 002f 62020000 		.4byte	.LASF1
  323 0033 02       		.uleb128 0x2
  324 0034 01       		.byte	0x1
  325 0035 08       		.byte	0x8
- 326 0036 89000000 		.4byte	.LASF2
+ 326 0036 D4000000 		.4byte	.LASF2
  327 003a 02       		.uleb128 0x2
  328 003b 02       		.byte	0x2
  329 003c 05       		.byte	0x5
- 330 003d 44020000 		.4byte	.LASF3
+ 330 003d 3F020000 		.4byte	.LASF3
  331 0041 02       		.uleb128 0x2
  332 0042 02       		.byte	0x2
  333 0043 07       		.byte	0x7
- 334 0044 36000000 		.4byte	.LASF4
+ 334 0044 81000000 		.4byte	.LASF4
  335 0048 02       		.uleb128 0x2
  336 0049 04       		.byte	0x4
  337 004a 05       		.byte	0x5
- 338 004b 4E020000 		.4byte	.LASF5
+ 338 004b 49020000 		.4byte	.LASF5
  339 004f 02       		.uleb128 0x2
  340 0050 04       		.byte	0x4
  341 0051 07       		.byte	0x7
- 342 0052 97000000 		.4byte	.LASF6
+ 342 0052 E2000000 		.4byte	.LASF6
  343 0056 02       		.uleb128 0x2
  344 0057 08       		.byte	0x8
  345 0058 05       		.byte	0x5
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 9
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccJSdnO6.s 			page 9
 
 
- 346 0059 91010000 		.4byte	.LASF7
+ 346 0059 8C010000 		.4byte	.LASF7
  347 005d 02       		.uleb128 0x2
  348 005e 08       		.byte	0x8
  349 005f 07       		.byte	0x7
- 350 0060 1B010000 		.4byte	.LASF8
+ 350 0060 66010000 		.4byte	.LASF8
  351 0064 03       		.uleb128 0x3
  352 0065 04       		.byte	0x4
  353 0066 05       		.byte	0x5
@@ -493,31 +493,31 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 1
  355 006b 02       		.uleb128 0x2
  356 006c 04       		.byte	0x4
  357 006d 07       		.byte	0x7
- 358 006e 05010000 		.4byte	.LASF9
+ 358 006e 50010000 		.4byte	.LASF9
  359 0072 04       		.uleb128 0x4
- 360 0073 A9000000 		.4byte	.LASF10
+ 360 0073 F4000000 		.4byte	.LASF10
  361 0077 02       		.byte	0x2
  362 0078 C2       		.byte	0xc2
  363 0079 33000000 		.4byte	0x33
  364 007d 04       		.uleb128 0x4
- 365 007e FE000000 		.4byte	.LASF11
+ 365 007e 49010000 		.4byte	.LASF11
  366 0082 02       		.byte	0x2
  367 0083 C4       		.byte	0xc4
  368 0084 4F000000 		.4byte	0x4f
  369 0088 02       		.uleb128 0x2
  370 0089 08       		.byte	0x8
  371 008a 04       		.byte	0x4
- 372 008b ED000000 		.4byte	.LASF12
+ 372 008b 38010000 		.4byte	.LASF12
  373 008f 02       		.uleb128 0x2
  374 0090 01       		.byte	0x1
  375 0091 08       		.byte	0x8
- 376 0092 B1010000 		.4byte	.LASF13
+ 376 0092 AC010000 		.4byte	.LASF13
  377 0096 02       		.uleb128 0x2
  378 0097 04       		.byte	0x4
  379 0098 07       		.byte	0x7
- 380 0099 82010000 		.4byte	.LASF14
+ 380 0099 7D010000 		.4byte	.LASF14
  381 009d 05       		.uleb128 0x5
- 382 009e 00000000 		.4byte	.LASF15
+ 382 009e 4B000000 		.4byte	.LASF15
  383 00a2 01       		.byte	0x1
  384 00a3 2A       		.byte	0x2a
  385 00a4 00000000 		.4byte	.LFB36
@@ -530,7 +530,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 1
  392 00b7 CF010000 		.4byte	0x1cf
  393 00bb 00       		.byte	0
  394 00bc 05       		.uleb128 0x5
- 395 00bd F4000000 		.4byte	.LASF16
+ 395 00bd 3F010000 		.4byte	.LASF16
  396 00c1 01       		.byte	0x1
  397 00c2 21       		.byte	0x21
  398 00c3 00000000 		.4byte	.LFB35
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 1
  400 00cb 01       		.uleb128 0x1
  401 00cc 9C       		.byte	0x9c
  402 00cd ED000000 		.4byte	0xed
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 10
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccJSdnO6.s 			page 10
 
 
  403 00d1 06       		.uleb128 0x6
@@ -552,7 +552,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 1
  411 00e8 9D000000 		.4byte	0x9d
  412 00ec 00       		.byte	0
  413 00ed 07       		.uleb128 0x7
- 414 00ee 11000000 		.4byte	.LASF17
+ 414 00ee 5C000000 		.4byte	.LASF17
  415 00f2 01       		.byte	0x1
  416 00f3 40       		.byte	0x40
  417 00f4 00000000 		.4byte	.LFB38
@@ -561,25 +561,25 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 1
  420 00fd 9C       		.byte	0x9c
  421 00fe 7F010000 		.4byte	0x17f
  422 0102 08       		.uleb128 0x8
- 423 0103 30000000 		.4byte	.LASF18
+ 423 0103 7B000000 		.4byte	.LASF18
  424 0107 01       		.byte	0x1
  425 0108 42       		.byte	0x42
  426 0109 64000000 		.4byte	0x64
  427 010d 00000000 		.4byte	.LLST0
  428 0111 08       		.uleb128 0x8
- 429 0112 24000000 		.4byte	.LASF19
+ 429 0112 6F000000 		.4byte	.LASF19
  430 0116 01       		.byte	0x1
  431 0117 43       		.byte	0x43
  432 0118 64000000 		.4byte	0x64
  433 011c 13000000 		.4byte	.LLST1
  434 0120 08       		.uleb128 0x8
- 435 0121 C7000000 		.4byte	.LASF20
+ 435 0121 12010000 		.4byte	.LASF20
  436 0125 01       		.byte	0x1
  437 0126 44       		.byte	0x44
  438 0127 25000000 		.4byte	0x25
  439 012b 26000000 		.4byte	.LLST2
  440 012f 08       		.uleb128 0x8
- 441 0130 8B010000 		.4byte	.LASF21
+ 441 0130 86010000 		.4byte	.LASF21
  442 0134 01       		.byte	0x1
  443 0135 45       		.byte	0x45
  444 0136 25000000 		.4byte	0x25
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 1
  457 0152 52000000 		.4byte	.LVL13
  458 0156 9D000000 		.4byte	0x9d
  459 015a 09       		.uleb128 0x9
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 11
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccJSdnO6.s 			page 11
 
 
  460 015b 5A000000 		.4byte	.LVL14
@@ -622,7 +622,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 1
  478 017d 00       		.byte	0
  479 017e 00       		.byte	0
  480 017f 07       		.uleb128 0x7
- 481 0180 60000000 		.4byte	.LASF22
+ 481 0180 AB000000 		.4byte	.LASF22
  482 0184 01       		.byte	0x1
  483 0185 2F       		.byte	0x2f
  484 0186 00000000 		.4byte	.LFB37
@@ -631,7 +631,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 1
  487 018f 9C       		.byte	0x9c
  488 0190 AD010000 		.4byte	0x1ad
  489 0194 0C       		.uleb128 0xc
- 490 0195 12010000 		.4byte	.LASF30
+ 490 0195 5D010000 		.4byte	.LASF30
  491 0199 01       		.byte	0x1
  492 019a 2F       		.byte	0x2f
  493 019b 25000000 		.4byte	0x25
@@ -641,7 +641,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 1
  497 01a8 ED000000 		.4byte	0xed
  498 01ac 00       		.byte	0
  499 01ad 0D       		.uleb128 0xd
- 500 01ae 76000000 		.4byte	.LASF23
+ 500 01ae C1000000 		.4byte	.LASF23
  501 01b2 01       		.byte	0x1
  502 01b3 1E       		.byte	0x1e
  503 01b4 72000000 		.4byte	0x72
@@ -649,7 +649,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 1
  505 01b9 03       		.byte	0x3
  506 01ba 00000000 		.4byte	IDAC_current
  507 01be 0D       		.uleb128 0xd
- 508 01bf 9F010000 		.4byte	.LASF24
+ 508 01bf 9A010000 		.4byte	.LASF24
  509 01c3 01       		.byte	0x1
  510 01c4 1F       		.byte	0x1f
  511 01c5 25000000 		.4byte	0x25
@@ -657,8 +657,8 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 1
  513 01ca 03       		.byte	0x3
  514 01cb 00000000 		.4byte	voltage_threshold
  515 01cf 0E       		.uleb128 0xe
- 516 01d0 D3000000 		.4byte	.LASF31
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 12
+ 516 01d0 1E010000 		.4byte	.LASF31
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccJSdnO6.s 			page 12
 
 
  517 01d4 03       		.byte	0x3
@@ -668,15 +668,15 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 1
  521 01db 7D000000 		.4byte	0x7d
  522 01df 00       		.byte	0
  523 01e0 10       		.uleb128 0x10
- 524 01e1 AF000000 		.4byte	.LASF25
+ 524 01e1 FA000000 		.4byte	.LASF25
  525 01e5 03       		.byte	0x3
  526 01e6 51       		.byte	0x51
  527 01e7 10       		.uleb128 0x10
- 528 01e8 49000000 		.4byte	.LASF26
+ 528 01e8 94000000 		.4byte	.LASF26
  529 01ec 03       		.byte	0x3
  530 01ed 52       		.byte	0x52
  531 01ee 11       		.uleb128 0x11
- 532 01ef 5E020000 		.4byte	.LASF32
+ 532 01ef 59020000 		.4byte	.LASF32
  533 01f3 04       		.byte	0x4
  534 01f4 14       		.byte	0x14
  535 01f5 25000000 		.4byte	0x25
@@ -685,7 +685,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 1
  538 01fe 64000000 		.4byte	0x64
  539 0202 00       		.byte	0
  540 0203 12       		.uleb128 0x12
- 541 0204 73020000 		.4byte	.LASF33
+ 541 0204 6E020000 		.4byte	.LASF33
  542 0208 05       		.byte	0x5
  543 0209 57       		.byte	0x57
  544 020a 0F       		.uleb128 0xf
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 1
  571 0015 00       		.byte	0
  572 0016 0B       		.uleb128 0xb
  573 0017 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 13
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccJSdnO6.s 			page 13
 
 
  574 0018 3E       		.uleb128 0x3e
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 1
  628 004f 00       		.byte	0
  629 0050 06       		.uleb128 0x6
  630 0051 898201   		.uleb128 0x4109
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 14
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccJSdnO6.s 			page 14
 
 
  631 0054 00       		.byte	0
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 1
  685 008d 01       		.uleb128 0x1
  686 008e 13       		.uleb128 0x13
  687 008f 00       		.byte	0
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 15
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccJSdnO6.s 			page 15
 
 
  688 0090 00       		.byte	0
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 1
  742 00cb 03       		.uleb128 0x3
  743 00cc 0E       		.uleb128 0xe
  744 00cd 3A       		.uleb128 0x3a
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 16
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccJSdnO6.s 			page 16
 
 
  745 00ce 0B       		.uleb128 0xb
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 1
  799 0104 00       		.byte	0
  800 0105 00       		.byte	0
  801 0106 12       		.uleb128 0x12
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 17
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccJSdnO6.s 			page 17
 
 
  802 0107 2E       		.uleb128 0x2e
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 1
  856 005e 14000000 		.4byte	.LVL8
  857 0062 0100     		.2byte	0x1
  858 0064 50       		.byte	0x50
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 18
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccJSdnO6.s 			page 18
 
 
  859 0065 6A000000 		.4byte	.LVL18
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 1
  913 0020 00000000 		.4byte	0
  914 0024 00000000 		.4byte	0
  915              		.section	.debug_line,"",%progbits
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 19
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccJSdnO6.s 			page 19
 
 
  916              	.Ldebug_line0:
@@ -1087,183 +1087,183 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 1
  917      00000201 
  917      FB0E0D00 
  917      01010101 
- 918              	.LASF15:
- 919 0000 7365745F 		.ascii	"set_IDAC_current\000"
- 919      49444143 
- 919      5F637572 
- 919      72656E74 
- 919      00
- 920              	.LASF17:
- 921 0011 7365745F 		.ascii	"set_IDAC_threshold\000"
- 921      49444143 
- 921      5F746872 
- 921      6573686F 
- 921      6C6400
- 922              	.LASF19:
- 923 0024 6E65775F 		.ascii	"new_current\000"
- 923      63757272 
- 923      656E7400 
- 924              	.LASF18:
- 925 0030 64656C74 		.ascii	"delta\000"
- 925      6100
- 926              	.LASF4:
- 927 0036 73686F72 		.ascii	"short unsigned int\000"
- 927      7420756E 
- 927      7369676E 
- 927      65642069 
- 927      6E7400
- 928              	.LASF26:
- 929 0049 49444143 		.ascii	"IDAC_Fire_Thresh_Start\000"
- 929      5F466972 
- 929      655F5468 
- 929      72657368 
- 929      5F537461 
- 930              	.LASF22:
- 931 0060 75706461 		.ascii	"update_IDAC_threshold\000"
- 931      74655F49 
- 931      4441435F 
- 931      74687265 
- 931      73686F6C 
- 932              	.LASF23:
- 933 0076 49444143 		.ascii	"IDAC_current\000"
- 933      5F637572 
- 933      72656E74 
- 933      00
- 934              	.LASF0:
- 935 0083 666C6F61 		.ascii	"float\000"
- 935      7400
- 936              	.LASF2:
- 937 0089 756E7369 		.ascii	"unsigned char\000"
- 937      676E6564 
- 937      20636861 
- 937      7200
- 938              	.LASF6:
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 20
+ 918              	.LASF29:
+ 919 0000 433A5C55 		.ascii	"C:\\Users\\rdeiaco\\Documents\\PSoC Creator\\capsto"
+ 919      73657273 
+ 919      5C726465 
+ 919      6961636F 
+ 919      5C446F63 
+ 920 002e 6E653730 		.ascii	"ne70merged\\capsenseled.cydsn\000"
+ 920      6D657267 
+ 920      65645C63 
+ 920      61707365 
+ 920      6E73656C 
+ 921              	.LASF15:
+ 922 004b 7365745F 		.ascii	"set_IDAC_current\000"
+ 922      49444143 
+ 922      5F637572 
+ 922      72656E74 
+ 922      00
+ 923              	.LASF17:
+ 924 005c 7365745F 		.ascii	"set_IDAC_threshold\000"
+ 924      49444143 
+ 924      5F746872 
+ 924      6573686F 
+ 924      6C6400
+ 925              	.LASF19:
+ 926 006f 6E65775F 		.ascii	"new_current\000"
+ 926      63757272 
+ 926      656E7400 
+ 927              	.LASF18:
+ 928 007b 64656C74 		.ascii	"delta\000"
+ 928      6100
+ 929              	.LASF4:
+ 930 0081 73686F72 		.ascii	"short unsigned int\000"
+ 930      7420756E 
+ 930      7369676E 
+ 930      65642069 
+ 930      6E7400
+ 931              	.LASF26:
+ 932 0094 49444143 		.ascii	"IDAC_Fire_Thresh_Start\000"
+ 932      5F466972 
+ 932      655F5468 
+ 932      72657368 
+ 932      5F537461 
+ 933              	.LASF22:
+ 934 00ab 75706461 		.ascii	"update_IDAC_threshold\000"
+ 934      74655F49 
+ 934      4441435F 
+ 934      74687265 
+ 934      73686F6C 
+ 935              	.LASF23:
+ 936 00c1 49444143 		.ascii	"IDAC_current\000"
+ 936      5F637572 
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccJSdnO6.s 			page 20
 
 
- 939 0097 6C6F6E67 		.ascii	"long unsigned int\000"
- 939      20756E73 
- 939      69676E65 
- 939      6420696E 
- 939      7400
- 940              	.LASF10:
- 941 00a9 75696E74 		.ascii	"uint8\000"
- 941      3800
- 942              	.LASF25:
- 943 00af 49444143 		.ascii	"IDAC_Fire_Thresh_Enable\000"
- 943      5F466972 
- 943      655F5468 
- 943      72657368 
- 943      5F456E61 
- 944              	.LASF20:
- 945 00c7 63757272 		.ascii	"current_out\000"
- 945      656E745F 
- 945      6F757400 
- 946              	.LASF31:
- 947 00d3 49444143 		.ascii	"IDAC_Fire_Thresh_SetValue\000"
- 947      5F466972 
- 947      655F5468 
- 947      72657368 
- 947      5F536574 
- 948              	.LASF12:
- 949 00ed 646F7562 		.ascii	"double\000"
- 949      6C6500
- 950              	.LASF16:
- 951 00f4 696E6974 		.ascii	"init_IDAC\000"
- 951      5F494441 
- 951      4300
- 952              	.LASF11:
- 953 00fe 75696E74 		.ascii	"uint32\000"
- 953      333200
- 954              	.LASF9:
- 955 0105 756E7369 		.ascii	"unsigned int\000"
- 955      676E6564 
- 955      20696E74 
- 955      00
- 956              	.LASF30:
- 957 0112 766F6C74 		.ascii	"volt_val\000"
- 957      5F76616C 
- 957      00
- 958              	.LASF8:
- 959 011b 6C6F6E67 		.ascii	"long long unsigned int\000"
- 959      206C6F6E 
- 959      6720756E 
- 959      7369676E 
- 959      65642069 
- 960              	.LASF29:
- 961 0132 433A5C55 		.ascii	"C:\\Users\\Nick\\Documents\\PSoC Creator\\capsensel"
- 961      73657273 
- 961      5C4E6963 
- 961      6B5C446F 
- 961      63756D65 
- 962 0160 6564315C 		.ascii	"ed1\\capsenseled\\capsenseled.cydsn\000"
- 962      63617073 
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 21
+ 936      72656E74 
+ 936      00
+ 937              	.LASF0:
+ 938 00ce 666C6F61 		.ascii	"float\000"
+ 938      7400
+ 939              	.LASF2:
+ 940 00d4 756E7369 		.ascii	"unsigned char\000"
+ 940      676E6564 
+ 940      20636861 
+ 940      7200
+ 941              	.LASF6:
+ 942 00e2 6C6F6E67 		.ascii	"long unsigned int\000"
+ 942      20756E73 
+ 942      69676E65 
+ 942      6420696E 
+ 942      7400
+ 943              	.LASF10:
+ 944 00f4 75696E74 		.ascii	"uint8\000"
+ 944      3800
+ 945              	.LASF25:
+ 946 00fa 49444143 		.ascii	"IDAC_Fire_Thresh_Enable\000"
+ 946      5F466972 
+ 946      655F5468 
+ 946      72657368 
+ 946      5F456E61 
+ 947              	.LASF20:
+ 948 0112 63757272 		.ascii	"current_out\000"
+ 948      656E745F 
+ 948      6F757400 
+ 949              	.LASF31:
+ 950 011e 49444143 		.ascii	"IDAC_Fire_Thresh_SetValue\000"
+ 950      5F466972 
+ 950      655F5468 
+ 950      72657368 
+ 950      5F536574 
+ 951              	.LASF12:
+ 952 0138 646F7562 		.ascii	"double\000"
+ 952      6C6500
+ 953              	.LASF16:
+ 954 013f 696E6974 		.ascii	"init_IDAC\000"
+ 954      5F494441 
+ 954      4300
+ 955              	.LASF11:
+ 956 0149 75696E74 		.ascii	"uint32\000"
+ 956      333200
+ 957              	.LASF9:
+ 958 0150 756E7369 		.ascii	"unsigned int\000"
+ 958      676E6564 
+ 958      20696E74 
+ 958      00
+ 959              	.LASF30:
+ 960 015d 766F6C74 		.ascii	"volt_val\000"
+ 960      5F76616C 
+ 960      00
+ 961              	.LASF8:
+ 962 0166 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 962      206C6F6E 
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccJSdnO6.s 			page 21
 
 
- 962      656E7365 
- 962      6C65645C 
- 962      63617073 
+ 962      6720756E 
+ 962      7369676E 
+ 962      65642069 
  963              	.LASF14:
- 964 0182 73697A65 		.ascii	"sizetype\000"
+ 964 017d 73697A65 		.ascii	"sizetype\000"
  964      74797065 
  964      00
  965              	.LASF21:
- 966 018b 6572726F 		.ascii	"error\000"
+ 966 0186 6572726F 		.ascii	"error\000"
  966      7200
  967              	.LASF7:
- 968 0191 6C6F6E67 		.ascii	"long long int\000"
+ 968 018c 6C6F6E67 		.ascii	"long long int\000"
  968      206C6F6E 
  968      6720696E 
  968      7400
  969              	.LASF24:
- 970 019f 766F6C74 		.ascii	"voltage_threshold\000"
+ 970 019a 766F6C74 		.ascii	"voltage_threshold\000"
  970      6167655F 
  970      74687265 
  970      73686F6C 
  970      6400
  971              	.LASF13:
- 972 01b1 63686172 		.ascii	"char\000"
+ 972 01ac 63686172 		.ascii	"char\000"
  972      00
  973              	.LASF27:
- 974 01b6 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 974 01b1 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
  974      4320342E 
  974      392E3320 
  974      32303135 
  974      30333033 
- 975 01e9 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0 -mthumb -g -O"
+ 975 01e4 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0 -mthumb -g -O"
  975      20726576 
  975      6973696F 
  975      6E203232 
  975      31323230 
- 976 021c 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 976 0217 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
  976      66756E63 
  976      74696F6E 
  976      2D736563 
  976      74696F6E 
  977              	.LASF3:
- 978 0244 73686F72 		.ascii	"short int\000"
+ 978 023f 73686F72 		.ascii	"short int\000"
  978      7420696E 
  978      7400
  979              	.LASF5:
- 980 024e 6C6F6E67 		.ascii	"long int\000"
+ 980 0249 6C6F6E67 		.ascii	"long int\000"
  980      20696E74 
  980      00
  981              	.LASF28:
- 982 0257 49444143 		.ascii	"IDAC.c\000"
+ 982 0252 49444143 		.ascii	"IDAC.c\000"
  982      2E6300
  983              	.LASF32:
- 984 025e 4144435F 		.ascii	"ADC_read\000"
+ 984 0259 4144435F 		.ascii	"ADC_read\000"
  984      72656164 
  984      00
  985              	.LASF1:
- 986 0267 7369676E 		.ascii	"signed char\000"
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccSbqZSo.s 			page 22
+ 986 0262 7369676E 		.ascii	"signed char\000"
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccJSdnO6.s 			page 22
 
 
  986      65642063 
  986      68617200 
  987              	.LASF33:
- 988 0273 43794465 		.ascii	"CyDelay\000"
+ 988 026e 43794465 		.ascii	"CyDelay\000"
  988      6C617900 
  989              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
   30:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** *
   31:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** * Parameters:
   32:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** *  None
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 2
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 2
 
 
   33:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** *
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
   87:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** 
   88:Generated_Source\PSoC4/PWM_Mid_Thresh.c ****     #if (PWM_Mid_Thresh__PWM_SEL == PWM_Mid_Thresh_CONFIG)
   89:Generated_Source\PSoC4/PWM_Mid_Thresh.c ****         PWM_Mid_Thresh_CONTROL_REG = PWM_Mid_Thresh_CTRL_PWM_BASE_CONFIG;
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 3
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 3
 
 
   90:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** 
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  144:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** 
  145:Generated_Source\PSoC4/PWM_Mid_Thresh.c ****         /* Set other values from customizer */
  146:Generated_Source\PSoC4/PWM_Mid_Thresh.c ****         PWM_Mid_Thresh_WritePeriod(PWM_Mid_Thresh_PWM_PERIOD_VALUE );
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 4
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 4
 
 
  147:Generated_Source\PSoC4/PWM_Mid_Thresh.c ****         PWM_Mid_Thresh_WriteCompare(PWM_Mid_Thresh_PWM_COMPARE_VALUE);
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
   43              	.LVL1:
  184:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** 
  185:Generated_Source\PSoC4/PWM_Mid_Thresh.c ****     /* Start Timer or PWM if start input is absent */
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 5
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 5
 
 
  186:Generated_Source\PSoC4/PWM_Mid_Thresh.c ****     #if (PWM_Mid_Thresh__PWM_SEL == PWM_Mid_Thresh_CONFIG)
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  222:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** * Global variables:
  223:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** *  PWM_Mid_Thresh_initVar: global variable is used to indicate initial
  224:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** *  configuration of this component.  The variable is initialized to zero and set
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 6
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 6
 
 
  225:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** *  to 1 the first time PWM_Mid_Thresh_Start() is called. This allows
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  264:Generated_Source\PSoC4/PWM_Mid_Thresh.c ****     CyExitCriticalSection(enableInterrupts);
   77              		.loc 1 264 0
   78 0010 FFF7FEFF 		bl	CyExitCriticalSection
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 7
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 7
 
 
   79              	.LVL3:
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  103              		.cfi_offset 4, -8
  104              		.cfi_offset 14, -4
  105 0002 041C     		mov	r4, r0
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 8
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 8
 
 
  295:Generated_Source\PSoC4/PWM_Mid_Thresh.c ****     uint8 enableInterrupts;
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  313:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** *
  314:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** * Parameters:
  315:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** *  qdMode: Quadrature Decoder mode
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 9
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 9
 
 
  316:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** *   Values:
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  175              		.cfi_endproc
  176              	.LFE7:
  177              		.size	PWM_Mid_Thresh_SetQDMode, .-PWM_Mid_Thresh_SetQDMode
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 10
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 10
 
 
  178              		.section	.text.PWM_Mid_Thresh_SetPrescaler,"ax",%progbits
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  199 000a 1968     		ldr	r1, [r3]
  200 000c 054A     		ldr	r2, .L14+4
  201 000e 0A40     		and	r2, r1
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 11
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 11
 
 
  202 0010 1A60     		str	r2, [r3]
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  396:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** {
  230              		.loc 1 396 0
  231              		.cfi_startproc
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 12
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 12
 
 
  232              	.LVL16:
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  276              	.LFB10:
  407:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** 
  408:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** 
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 13
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 13
 
 
  409:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** /*******************************************************************************
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  287              		@ sp needed
  288 0008 7047     		bx	lr
  289              	.L21:
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 14
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 14
 
 
  290 000a C046     		.align	2
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  310              		.cfi_offset 14, -4
  311 0002 041C     		mov	r4, r0
  487:Generated_Source\PSoC4/PWM_Mid_Thresh.c ****     uint8 enableInterrupts;
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 15
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 15
 
 
  488:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** 
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  504:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** *  Writes the register that controls whether the PWM kill signal (stop input)
  505:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** *  causes the PWM counter to stop.  By default the kill operation does not stop
  506:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** *  the counter.  This functionality is only applicable to the three PWM modes.
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 16
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 16
 
 
  507:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** *
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  380 0022 10BD     		pop	{r4, pc}
  381              	.L27:
  382              		.align	2
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 17
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 17
 
 
  383              	.L26:
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  409 000a 1968     		ldr	r1, [r3]
  410 000c 064A     		ldr	r2, .L29+4
  411 000e 0A40     		and	r2, r1
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 18
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 18
 
 
  412 0010 1A60     		str	r2, [r3]
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  583:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** *
  584:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** *******************************************************************************/
  585:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** void PWM_Mid_Thresh_SetPWMInvert(uint32 mask)
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 19
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 19
 
 
  586:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** {
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  596:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** 
  597:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** 
  598:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** 
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 20
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 20
 
 
  599:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** /*******************************************************************************
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  626:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** *  Reads the current counter value.
  627:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** *
  628:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** * Parameters:
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 21
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 21
 
 
  629:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** *  None
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  658:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** *                                         and period
  659:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** *
  660:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** * Return:
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 22
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 22
 
 
  661:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** *  None
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  578              		.thumb_func
  579              		.type	PWM_Mid_Thresh_WritePeriod, %function
  580              	PWM_Mid_Thresh_WritePeriod:
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 23
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 23
 
 
  581              	.LFB18:
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  701:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** ********************************************************************************
  702:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** *
  703:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** * Summary:
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 24
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 24
 
 
  704:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** *  Reads the 16 bit period register.
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  733:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** *     - 1 - Enable swap
  734:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** *
  735:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** * Return:
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 25
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 25
 
 
  736:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** *  None
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  674              		.thumb_func
  675              		.type	PWM_Mid_Thresh_WritePeriodBuf, %function
  676              	PWM_Mid_Thresh_WritePeriodBuf:
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 26
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 26
 
 
  677              	.LFB21:
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  776:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** * Summary:
  777:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** *  Reads the 16 bit period buf register.
  778:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** *
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 27
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 27
 
 
  779:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** * Parameters:
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  808:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** * Return:
  809:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** *  None
  810:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** *
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 28
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 28
 
 
  811:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** *******************************************************************************/
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  771              		.code	16
  772              		.thumb_func
  773              		.type	PWM_Mid_Thresh_WriteCompare, %function
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 29
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 29
 
 
  774              	PWM_Mid_Thresh_WriteCompare:
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  873:Generated_Source\PSoC4/PWM_Mid_Thresh.c ****     PWM_Mid_Thresh_COMP_CAP_REG = (compare & PWM_Mid_Thresh_16BIT_MASK);
  779              		.loc 1 873 0
  780 0000 0004     		lsl	r0, r0, #16
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 30
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 30
 
 
  781              	.LVL57:
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  904:Generated_Source\PSoC4/PWM_Mid_Thresh.c ****         uint32 regVal;
  905:Generated_Source\PSoC4/PWM_Mid_Thresh.c ****     #endif /* (PWM_Mid_Thresh_CY_TCPWM_4000) */
  906:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** 
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 31
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 31
 
 
  907:Generated_Source\PSoC4/PWM_Mid_Thresh.c ****     #if (PWM_Mid_Thresh_CY_TCPWM_4000)
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  938:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** *
  939:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** * Parameters:
  940:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** *  compareBuf: Compare value
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 32
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 32
 
 
  941:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** *
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  845              	.LFE26:
  846              		.size	PWM_Mid_Thresh_WriteCompareBuf, .-PWM_Mid_Thresh_WriteCompareBuf
  847              		.section	.text.PWM_Mid_Thresh_ReadCompareBuf,"ax",%progbits
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 33
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 33
 
 
  848              		.align	2
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
 1023:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** 
 1024:Generated_Source\PSoC4/PWM_Mid_Thresh.c ****         return (regVal & PWM_Mid_Thresh_16BIT_MASK);
 1025:Generated_Source\PSoC4/PWM_Mid_Thresh.c ****     #else
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 34
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 34
 
 
 1026:Generated_Source\PSoC4/PWM_Mid_Thresh.c ****         return (PWM_Mid_Thresh_COMP_CAP_BUF_REG & PWM_Mid_Thresh_16BIT_MASK);
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  887              		.loc 1 1049 0
  888              		@ sp needed
  889 0008 7047     		bx	lr
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 35
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 35
 
 
  890              	.L75:
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  923              		.align	2
  924              		.global	PWM_Mid_Thresh_SetCaptureMode
  925              		.code	16
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 36
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 36
 
 
  926              		.thumb_func
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  949 0014 1443     		orr	r4, r2
  950              	.LVL62:
  951 0016 1C60     		str	r4, [r3]
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 37
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 37
 
 
 1102:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** 
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  979              		.cfi_offset 14, -4
  980 0002 041C     		mov	r4, r0
 1129:Generated_Source\PSoC4/PWM_Mid_Thresh.c ****     uint8 enableInterrupts;
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 38
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 38
 
 
 1130:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** 
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
 1148:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** * Parameters:
 1149:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** *  triggerMode: Enumerated trigger mode value
 1150:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** *   Values:
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 39
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 39
 
 
 1151:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** *     - PWM_Mid_Thresh_TRIG_LEVEL     - Level
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  1051              		.cfi_endproc
  1052              	.LFE32:
  1053              		.size	PWM_Mid_Thresh_SetStartMode, .-PWM_Mid_Thresh_SetStartMode
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 40
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 40
 
 
  1054              		.section	.text.PWM_Mid_Thresh_SetStopMode,"ax",%progbits
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  1079              		.loc 1 1199 0
  1080 0012 1A68     		ldr	r2, [r3]
  1081 0014 A401     		lsl	r4, r4, #6
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 41
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 41
 
 
  1082              	.LVL74:
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  1109 0000 10B5     		push	{r4, lr}
  1110              		.cfi_def_cfa_offset 8
  1111              		.cfi_offset 4, -8
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 42
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 42
 
 
  1112              		.cfi_offset 14, -4
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
 1243:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** *  Triggers the designated command to occur on the designated TCPWM instances.
 1244:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** *  The mask can be used to apply this command simultaneously to more than one
 1245:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** *  instance.  This allows multiple TCPWM instances to be synchronized.
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 43
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 43
 
 
 1246:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** *
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  1175 0014 38BD     		pop	{r3, r4, r5, pc}
  1176              	.L96:
  1177 0016 C046     		.align	2
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 44
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 44
 
 
  1178              	.L95:
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  1207              		.align	2
  1208              	.L98:
  1209 0010 84012040 		.word	1075839364
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 45
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 45
 
 
  1210              		.cfi_endproc
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  1240              		.code	16
  1241              		.thumb_func
  1242              		.type	PWM_Mid_Thresh_Init, %function
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 46
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 46
 
 
  1243              	PWM_Mid_Thresh_Init:
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  160:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** 
  1287              		.loc 1 160 0
  1288              		@ sp needed
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 47
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 47
 
 
  1289 0038 10BD     		pop	{r4, pc}
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  1337              	.LFE4:
  1338              		.size	PWM_Mid_Thresh_Start, .-PWM_Mid_Thresh_Start
  1339              		.section	.text.PWM_Mid_Thresh_GetInterruptSourceMasked,"ax",%progbits
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 48
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 48
 
 
  1340              		.align	2
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
 1347:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** 
 1348:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** /*******************************************************************************
 1349:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** * Function Name: PWM_Mid_Thresh_GetInterruptSource
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 49
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 49
 
 
 1350:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** ********************************************************************************
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
 1381:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** *     - PWM_Mid_Thresh_INTR_MASK_TC       - Terminal count mask
 1382:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** *     - PWM_Mid_Thresh_INTR_MASK_CC_MATCH - Compare count / capture mask
 1383:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** *
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 50
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 50
 
 
 1384:Generated_Source\PSoC4/PWM_Mid_Thresh.c **** * Return:
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  1418              		.cfi_startproc
  1419              	.LVL93:
 1413:Generated_Source\PSoC4/PWM_Mid_Thresh.c ****     PWM_Mid_Thresh_INTERRUPT_SET_REG = interruptMask;
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 51
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 51
 
 
  1420              		.loc 1 1413 0
@@ -3033,10 +3033,10 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  1448 0006 00000000 		.4byte	.Ldebug_abbrev0
  1449 000a 04       		.byte	0x4
  1450 000b 01       		.uleb128 0x1
- 1451 000c 1D040000 		.4byte	.LASF76
+ 1451 000c 18040000 		.4byte	.LASF76
  1452 0010 01       		.byte	0x1
- 1453 0011 FB060000 		.4byte	.LASF77
- 1454 0015 03030000 		.4byte	.LASF78
+ 1453 0011 F6060000 		.4byte	.LASF77
+ 1454 0015 E0020000 		.4byte	.LASF78
  1455 0019 00000000 		.4byte	.Ldebug_ranges0+0
  1456 001d 00000000 		.4byte	0
  1457 0021 00000000 		.4byte	.Ldebug_line0
@@ -3047,18 +3047,18 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  1462 002c 02       		.uleb128 0x2
  1463 002d 01       		.byte	0x1
  1464 002e 08       		.byte	0x8
- 1465 002f F4040000 		.4byte	.LASF1
+ 1465 002f EF040000 		.4byte	.LASF1
  1466 0033 02       		.uleb128 0x2
  1467 0034 02       		.byte	0x2
  1468 0035 05       		.byte	0x5
- 1469 0036 4A050000 		.4byte	.LASF2
+ 1469 0036 45050000 		.4byte	.LASF2
  1470 003a 02       		.uleb128 0x2
  1471 003b 02       		.byte	0x2
  1472 003c 07       		.byte	0x7
- 1473 003d 53030000 		.4byte	.LASF3
+ 1473 003d 65030000 		.4byte	.LASF3
  1474 0041 02       		.uleb128 0x2
  1475 0042 04       		.byte	0x4
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 52
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 52
 
 
  1476 0043 05       		.byte	0x5
@@ -3066,7 +3066,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  1478 0048 02       		.uleb128 0x2
  1479 0049 04       		.byte	0x4
  1480 004a 07       		.byte	0x7
- 1481 004b E8020000 		.4byte	.LASF5
+ 1481 004b 33030000 		.4byte	.LASF5
  1482 004f 02       		.uleb128 0x2
  1483 0050 08       		.byte	0x8
  1484 0051 05       		.byte	0x5
@@ -3096,7 +3096,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  1508 0081 02       		.uleb128 0x2
  1509 0082 04       		.byte	0x4
  1510 0083 04       		.byte	0x4
- 1511 0084 E4040000 		.4byte	.LASF11
+ 1511 0084 DF040000 		.4byte	.LASF11
  1512 0088 02       		.uleb128 0x2
  1513 0089 08       		.byte	0x8
  1514 008a 04       		.byte	0x4
@@ -3104,9 +3104,9 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  1516 008f 02       		.uleb128 0x2
  1517 0090 01       		.byte	0x1
  1518 0091 08       		.byte	0x8
- 1519 0092 B1050000 		.4byte	.LASF13
+ 1519 0092 AC050000 		.4byte	.LASF13
  1520 0096 05       		.uleb128 0x5
- 1521 0097 A9030000 		.4byte	.LASF14
+ 1521 0097 A4030000 		.4byte	.LASF14
  1522 009b 02       		.byte	0x2
  1523 009c 6E01     		.2byte	0x16e
  1524 009e A2000000 		.4byte	0xa2
@@ -3115,10 +3115,10 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  1527 00a7 02       		.uleb128 0x2
  1528 00a8 04       		.byte	0x4
  1529 00a9 07       		.byte	0x7
- 1530 00aa CB030000 		.4byte	.LASF15
+ 1530 00aa C6030000 		.4byte	.LASF15
  1531 00ae 07       		.uleb128 0x7
- 1532 00af 54050000 		.4byte	.LASF16
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 53
+ 1532 00af 4F050000 		.4byte	.LASF16
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 53
 
 
  1533 00b3 01       		.byte	0x1
@@ -3129,7 +3129,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  1538 00be 9C       		.byte	0x9c
  1539 00bf E5000000 		.4byte	0xe5
  1540 00c3 08       		.uleb128 0x8
- 1541 00c4 44060000 		.4byte	.LASF18
+ 1541 00c4 3F060000 		.4byte	.LASF18
  1542 00c8 01       		.byte	0x1
  1543 00c9 B3       		.byte	0xb3
  1544 00ca 6B000000 		.4byte	0x6b
@@ -3142,7 +3142,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  1551 00e0 DF080000 		.4byte	0x8df
  1552 00e4 00       		.byte	0
  1553 00e5 0A       		.uleb128 0xa
- 1554 00e6 09040000 		.4byte	.LASF17
+ 1554 00e6 04040000 		.4byte	.LASF17
  1555 00ea 01       		.byte	0x1
  1556 00eb 0001     		.2byte	0x100
  1557 00ed 00000000 		.4byte	.LFB5
@@ -3151,7 +3151,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  1560 00f6 9C       		.byte	0x9c
  1561 00f7 1E010000 		.4byte	0x11e
  1562 00fb 0B       		.uleb128 0xb
- 1563 00fc 44060000 		.4byte	.LASF18
+ 1563 00fc 3F060000 		.4byte	.LASF18
  1564 0100 01       		.byte	0x1
  1565 0101 0201     		.2byte	0x102
  1566 0103 6B000000 		.4byte	0x6b
@@ -3164,7 +3164,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  1573 0119 DF080000 		.4byte	0x8df
  1574 011d 00       		.byte	0
  1575 011e 0A       		.uleb128 0xa
- 1576 011f AB060000 		.4byte	.LASF19
+ 1576 011f A6060000 		.4byte	.LASF19
  1577 0123 01       		.byte	0x1
  1578 0124 2501     		.2byte	0x125
  1579 0126 00000000 		.4byte	.LFB6
@@ -3173,16 +3173,16 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  1582 012f 9C       		.byte	0x9c
  1583 0130 67010000 		.4byte	0x167
  1584 0134 0C       		.uleb128 0xc
- 1585 0135 B6050000 		.4byte	.LASF21
+ 1585 0135 B1050000 		.4byte	.LASF21
  1586 0139 01       		.byte	0x1
  1587 013a 2501     		.2byte	0x125
  1588 013c 76000000 		.4byte	0x76
  1589 0140 26000000 		.4byte	.LLST2
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 54
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 54
 
 
  1590 0144 0B       		.uleb128 0xb
- 1591 0145 44060000 		.4byte	.LASF18
+ 1591 0145 3F060000 		.4byte	.LASF18
  1592 0149 01       		.byte	0x1
  1593 014a 2701     		.2byte	0x127
  1594 014c 6B000000 		.4byte	0x6b
@@ -3195,7 +3195,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  1601 0162 DF080000 		.4byte	0x8df
  1602 0166 00       		.byte	0
  1603 0167 0A       		.uleb128 0xa
- 1604 0168 CB040000 		.4byte	.LASF20
+ 1604 0168 C6040000 		.4byte	.LASF20
  1605 016c 01       		.byte	0x1
  1606 016d 4601     		.2byte	0x146
  1607 016f 00000000 		.4byte	.LFB7
@@ -3210,7 +3210,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  1616 0185 76000000 		.4byte	0x76
  1617 0189 65000000 		.4byte	.LLST4
  1618 018d 0B       		.uleb128 0xb
- 1619 018e 44060000 		.4byte	.LASF18
+ 1619 018e 3F060000 		.4byte	.LASF18
  1620 0192 01       		.byte	0x1
  1621 0193 4801     		.2byte	0x148
  1622 0195 6B000000 		.4byte	0x6b
@@ -3232,16 +3232,16 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  1638 01c1 9C       		.byte	0x9c
  1639 01c2 F9010000 		.4byte	0x1f9
  1640 01c6 0C       		.uleb128 0xc
- 1641 01c7 EA040000 		.4byte	.LASF24
+ 1641 01c7 E5040000 		.4byte	.LASF24
  1642 01cb 01       		.byte	0x1
  1643 01cc 6B01     		.2byte	0x16b
  1644 01ce 76000000 		.4byte	0x76
  1645 01d2 A4000000 		.4byte	.LLST6
  1646 01d6 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 55
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 55
 
 
- 1647 01d7 44060000 		.4byte	.LASF18
+ 1647 01d7 3F060000 		.4byte	.LASF18
  1648 01db 01       		.byte	0x1
  1649 01dc 6D01     		.2byte	0x16d
  1650 01de 6B000000 		.4byte	0x6b
@@ -3254,7 +3254,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  1657 01f4 DF080000 		.4byte	0x8df
  1658 01f8 00       		.byte	0
  1659 01f9 0A       		.uleb128 0xa
- 1660 01fa 97050000 		.4byte	.LASF25
+ 1660 01fa 92050000 		.4byte	.LASF25
  1661 01fe 01       		.byte	0x1
  1662 01ff 8B01     		.2byte	0x18b
  1663 0201 00000000 		.4byte	.LFB9
@@ -3263,13 +3263,13 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  1666 020a 9C       		.byte	0x9c
  1667 020b 42020000 		.4byte	0x242
  1668 020f 0C       		.uleb128 0xc
- 1669 0210 9B030000 		.4byte	.LASF26
+ 1669 0210 96030000 		.4byte	.LASF26
  1670 0214 01       		.byte	0x1
  1671 0215 8B01     		.2byte	0x18b
  1672 0217 76000000 		.4byte	0x76
  1673 021b E3000000 		.4byte	.LLST8
  1674 021f 0B       		.uleb128 0xb
- 1675 0220 44060000 		.4byte	.LASF18
+ 1675 0220 3F060000 		.4byte	.LASF18
  1676 0224 01       		.byte	0x1
  1677 0225 8D01     		.2byte	0x18d
  1678 0227 6B000000 		.4byte	0x6b
@@ -3291,14 +3291,14 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  1694 0253 9C       		.byte	0x9c
  1695 0254 69020000 		.4byte	0x269
  1696 0258 0C       		.uleb128 0xc
- 1697 0259 FA020000 		.4byte	.LASF28
+ 1697 0259 45030000 		.4byte	.LASF28
  1698 025d 01       		.byte	0x1
  1699 025e C101     		.2byte	0x1c1
  1700 0260 76000000 		.4byte	0x76
  1701 0264 22010000 		.4byte	.LLST10
  1702 0268 00       		.byte	0
  1703 0269 0A       		.uleb128 0xa
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 56
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 56
 
 
  1704 026a 93000000 		.4byte	.LASF29
@@ -3310,13 +3310,13 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  1710 027a 9C       		.byte	0x9c
  1711 027b B2020000 		.4byte	0x2b2
  1712 027f 0C       		.uleb128 0xc
- 1713 0280 F2030000 		.4byte	.LASF30
+ 1713 0280 ED030000 		.4byte	.LASF30
  1714 0284 01       		.byte	0x1
  1715 0285 E501     		.2byte	0x1e5
  1716 0287 76000000 		.4byte	0x76
  1717 028b 43010000 		.4byte	.LLST11
  1718 028f 0B       		.uleb128 0xb
- 1719 0290 44060000 		.4byte	.LASF18
+ 1719 0290 3F060000 		.4byte	.LASF18
  1720 0294 01       		.byte	0x1
  1721 0295 E701     		.2byte	0x1e7
  1722 0297 6B000000 		.4byte	0x6b
@@ -3338,13 +3338,13 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  1738 02c3 9C       		.byte	0x9c
  1739 02c4 FB020000 		.4byte	0x2fb
  1740 02c8 0C       		.uleb128 0xc
- 1741 02c9 02050000 		.4byte	.LASF32
+ 1741 02c9 FD040000 		.4byte	.LASF32
  1742 02cd 01       		.byte	0x1
  1743 02ce 0702     		.2byte	0x207
  1744 02d0 76000000 		.4byte	0x76
  1745 02d4 82010000 		.4byte	.LLST13
  1746 02d8 0B       		.uleb128 0xb
- 1747 02d9 44060000 		.4byte	.LASF18
+ 1747 02d9 3F060000 		.4byte	.LASF18
  1748 02dd 01       		.byte	0x1
  1749 02de 0902     		.2byte	0x209
  1750 02e0 6B000000 		.4byte	0x6b
@@ -3357,8 +3357,8 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  1757 02f6 DF080000 		.4byte	0x8df
  1758 02fa 00       		.byte	0
  1759 02fb 0A       		.uleb128 0xa
- 1760 02fc 66030000 		.4byte	.LASF33
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 57
+ 1760 02fc 78030000 		.4byte	.LASF33
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 57
 
 
  1761 0300 01       		.byte	0x1
@@ -3375,7 +3375,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  1772 0319 76000000 		.4byte	0x76
  1773 031d C1010000 		.4byte	.LLST15
  1774 0321 0B       		.uleb128 0xb
- 1775 0322 44060000 		.4byte	.LASF18
+ 1775 0322 3F060000 		.4byte	.LASF18
  1776 0326 01       		.byte	0x1
  1777 0327 2A02     		.2byte	0x22a
  1778 0329 6B000000 		.4byte	0x6b
@@ -3388,7 +3388,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  1785 033f DF080000 		.4byte	0x8df
  1786 0343 00       		.byte	0
  1787 0344 0A       		.uleb128 0xa
- 1788 0345 AF030000 		.4byte	.LASF35
+ 1788 0345 AA030000 		.4byte	.LASF35
  1789 0349 01       		.byte	0x1
  1790 034a 4902     		.2byte	0x249
  1791 034c 00000000 		.4byte	.LFB14
@@ -3403,7 +3403,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  1800 0362 76000000 		.4byte	0x76
  1801 0366 00020000 		.4byte	.LLST17
  1802 036a 0B       		.uleb128 0xb
- 1803 036b 44060000 		.4byte	.LASF18
+ 1803 036b 3F060000 		.4byte	.LASF18
  1804 036f 01       		.byte	0x1
  1805 0370 4B02     		.2byte	0x24b
  1806 0372 6B000000 		.4byte	0x6b
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  1815 038d 0A       		.uleb128 0xa
  1816 038e A0020000 		.4byte	.LASF37
  1817 0392 01       		.byte	0x1
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 58
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 58
 
 
  1818 0393 6702     		.2byte	0x267
@@ -3453,13 +3453,13 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  1847 03db 9C       		.byte	0x9c
  1848 03dc 13040000 		.4byte	0x413
  1849 03e0 0C       		.uleb128 0xc
- 1850 03e1 D7050000 		.4byte	.LASF40
+ 1850 03e1 D2050000 		.4byte	.LASF40
  1851 03e5 01       		.byte	0x1
  1852 03e6 9802     		.2byte	0x298
  1853 03e8 76000000 		.4byte	0x76
  1854 03ec 60020000 		.4byte	.LLST20
  1855 03f0 0B       		.uleb128 0xb
- 1856 03f1 44060000 		.4byte	.LASF18
+ 1856 03f1 3F060000 		.4byte	.LASF18
  1857 03f5 01       		.byte	0x1
  1858 03f6 9A02     		.2byte	0x29a
  1859 03f8 6B000000 		.4byte	0x6b
@@ -3472,13 +3472,13 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  1866 040e DF080000 		.4byte	0x8df
  1867 0412 00       		.byte	0
  1868 0413 0A       		.uleb128 0xa
- 1869 0414 13050000 		.4byte	.LASF41
+ 1869 0414 0E050000 		.4byte	.LASF41
  1870 0418 01       		.byte	0x1
  1871 0419 B502     		.2byte	0x2b5
  1872 041b 00000000 		.4byte	.LFB18
  1873 041f 10000000 		.4byte	.LFE18-.LFB18
  1874 0423 01       		.uleb128 0x1
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 59
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 59
 
 
  1875 0424 9C       		.byte	0x9c
@@ -3491,7 +3491,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  1882 0435 9F020000 		.4byte	.LLST22
  1883 0439 00       		.byte	0
  1884 043a 0D       		.uleb128 0xd
- 1885 043b E1060000 		.4byte	.LASF44
+ 1885 043b DC060000 		.4byte	.LASF44
  1886 043f 01       		.byte	0x1
  1887 0440 C902     		.2byte	0x2c9
  1888 0442 76000000 		.4byte	0x76
@@ -3509,13 +3509,13 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  1900 0461 9C       		.byte	0x9c
  1901 0462 99040000 		.4byte	0x499
  1902 0466 0C       		.uleb128 0xc
- 1903 0467 C2060000 		.4byte	.LASF46
+ 1903 0467 BD060000 		.4byte	.LASF46
  1904 046b 01       		.byte	0x1
  1905 046c E302     		.2byte	0x2e3
  1906 046e 76000000 		.4byte	0x76
  1907 0472 C0020000 		.4byte	.LLST23
  1908 0476 0B       		.uleb128 0xb
- 1909 0477 44060000 		.4byte	.LASF18
+ 1909 0477 3F060000 		.4byte	.LASF18
  1910 047b 01       		.byte	0x1
  1911 047c E502     		.2byte	0x2e5
  1912 047e 6B000000 		.4byte	0x6b
@@ -3528,7 +3528,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  1919 0494 DF080000 		.4byte	0x8df
  1920 0498 00       		.byte	0
  1921 0499 0A       		.uleb128 0xa
- 1922 049a E3050000 		.4byte	.LASF47
+ 1922 049a DE050000 		.4byte	.LASF47
  1923 049e 01       		.byte	0x1
  1924 049f FE02     		.2byte	0x2fe
  1925 04a1 00000000 		.4byte	.LFB21
@@ -3537,8 +3537,8 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  1928 04aa 9C       		.byte	0x9c
  1929 04ab C0040000 		.4byte	0x4c0
  1930 04af 0C       		.uleb128 0xc
- 1931 04b0 23070000 		.4byte	.LASF48
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 60
+ 1931 04b0 1E070000 		.4byte	.LASF48
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 60
 
 
  1932 04b4 01       		.byte	0x1
@@ -3547,7 +3547,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  1935 04bb FF020000 		.4byte	.LLST25
  1936 04bf 00       		.byte	0
  1937 04c0 0D       		.uleb128 0xd
- 1938 04c1 27060000 		.4byte	.LASF49
+ 1938 04c1 22060000 		.4byte	.LASF49
  1939 04c5 01       		.byte	0x1
  1940 04c6 1203     		.2byte	0x312
  1941 04c8 76000000 		.4byte	0x76
@@ -3556,7 +3556,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  1944 04d4 01       		.uleb128 0x1
  1945 04d5 9C       		.byte	0x9c
  1946 04d6 0A       		.uleb128 0xa
- 1947 04d7 8E060000 		.4byte	.LASF50
+ 1947 04d7 89060000 		.4byte	.LASF50
  1948 04db 01       		.byte	0x1
  1949 04dc 2C03     		.2byte	0x32c
  1950 04de 00000000 		.4byte	.LFB23
@@ -3565,13 +3565,13 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  1953 04e7 9C       		.byte	0x9c
  1954 04e8 1F050000 		.4byte	0x51f
  1955 04ec 0C       		.uleb128 0xc
- 1956 04ed C2060000 		.4byte	.LASF46
+ 1956 04ed BD060000 		.4byte	.LASF46
  1957 04f1 01       		.byte	0x1
  1958 04f2 2C03     		.2byte	0x32c
  1959 04f4 76000000 		.4byte	0x76
  1960 04f8 20030000 		.4byte	.LLST26
  1961 04fc 0B       		.uleb128 0xb
- 1962 04fd 44060000 		.4byte	.LASF18
+ 1962 04fd 3F060000 		.4byte	.LASF18
  1963 0501 01       		.byte	0x1
  1964 0502 2E03     		.2byte	0x32e
  1965 0504 6B000000 		.4byte	0x6b
@@ -3593,17 +3593,17 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  1981 0530 9C       		.byte	0x9c
  1982 0531 46050000 		.4byte	0x546
  1983 0535 0C       		.uleb128 0xc
- 1984 0536 01040000 		.4byte	.LASF52
+ 1984 0536 FC030000 		.4byte	.LASF52
  1985 053a 01       		.byte	0x1
  1986 053b 5103     		.2byte	0x351
  1987 053d 76000000 		.4byte	0x76
  1988 0541 5F030000 		.4byte	.LLST28
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 61
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 61
 
 
  1989 0545 00       		.byte	0
  1990 0546 0D       		.uleb128 0xd
- 1991 0547 55060000 		.4byte	.LASF53
+ 1991 0547 50060000 		.4byte	.LASF53
  1992 054b 01       		.byte	0x1
  1993 054c 8403     		.2byte	0x384
  1994 054e 76000000 		.4byte	0x76
@@ -3612,7 +3612,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  1997 055a 01       		.uleb128 0x1
  1998 055b 9C       		.byte	0x9c
  1999 055c 0A       		.uleb128 0xa
- 2000 055d 78050000 		.4byte	.LASF54
+ 2000 055d 73050000 		.4byte	.LASF54
  2001 0561 01       		.byte	0x1
  2002 0562 BA03     		.2byte	0x3ba
  2003 0564 00000000 		.4byte	.LFB26
@@ -3621,7 +3621,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  2006 056d 9C       		.byte	0x9c
  2007 056e 83050000 		.4byte	0x583
  2008 0572 0C       		.uleb128 0xc
- 2009 0573 1C060000 		.4byte	.LASF55
+ 2009 0573 17060000 		.4byte	.LASF55
  2010 0577 01       		.byte	0x1
  2011 0578 BA03     		.2byte	0x3ba
  2012 057a 76000000 		.4byte	0x76
@@ -3637,7 +3637,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  2022 0597 01       		.uleb128 0x1
  2023 0598 9C       		.byte	0x9c
  2024 0599 0D       		.uleb128 0xd
- 2025 059a 01060000 		.4byte	.LASF57
+ 2025 059a FC050000 		.4byte	.LASF57
  2026 059e 01       		.byte	0x1
  2027 059f 1604     		.2byte	0x416
  2028 05a1 76000000 		.4byte	0x76
@@ -3646,7 +3646,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  2031 05ad 01       		.uleb128 0x1
  2032 05ae 9C       		.byte	0x9c
  2033 05af 0D       		.uleb128 0xd
- 2034 05b0 70060000 		.4byte	.LASF58
+ 2034 05b0 6B060000 		.4byte	.LASF58
  2035 05b4 01       		.byte	0x1
  2036 05b5 2B04     		.2byte	0x42b
  2037 05b7 76000000 		.4byte	0x76
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  2043 05c6 47010000 		.4byte	.LASF59
  2044 05ca 01       		.byte	0x1
  2045 05cb 4604     		.2byte	0x446
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 62
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 62
 
 
  2046 05cd 00000000 		.4byte	.LFB30
@@ -3673,7 +3673,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  2055 05e3 76000000 		.4byte	0x76
  2056 05e7 A1030000 		.4byte	.LLST30
  2057 05eb 0B       		.uleb128 0xb
- 2058 05ec 44060000 		.4byte	.LASF18
+ 2058 05ec 3F060000 		.4byte	.LASF18
  2059 05f0 01       		.byte	0x1
  2060 05f1 4804     		.2byte	0x448
  2061 05f3 6B000000 		.4byte	0x6b
@@ -3701,7 +3701,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  2083 062c 76000000 		.4byte	0x76
  2084 0630 E0030000 		.4byte	.LLST32
  2085 0634 0B       		.uleb128 0xb
- 2086 0635 44060000 		.4byte	.LASF18
+ 2086 0635 3F060000 		.4byte	.LASF18
  2087 0639 01       		.byte	0x1
  2088 063a 6904     		.2byte	0x469
  2089 063c 6B000000 		.4byte	0x6b
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  2100 065c 01       		.byte	0x1
  2101 065d 8804     		.2byte	0x488
  2102 065f 00000000 		.4byte	.LFB32
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 63
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 63
 
 
  2103 0663 28000000 		.4byte	.LFE32-.LFB32
@@ -3732,7 +3732,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  2111 0675 76000000 		.4byte	0x76
  2112 0679 1F040000 		.4byte	.LLST34
  2113 067d 0B       		.uleb128 0xb
- 2114 067e 44060000 		.4byte	.LASF18
+ 2114 067e 3F060000 		.4byte	.LASF18
  2115 0682 01       		.byte	0x1
  2116 0683 8A04     		.2byte	0x48a
  2117 0685 6B000000 		.4byte	0x6b
@@ -3760,7 +3760,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  2139 06be 76000000 		.4byte	0x76
  2140 06c2 5E040000 		.4byte	.LLST36
  2141 06c6 0B       		.uleb128 0xb
- 2142 06c7 44060000 		.4byte	.LASF18
+ 2142 06c7 3F060000 		.4byte	.LASF18
  2143 06cb 01       		.byte	0x1
  2144 06cc AA04     		.2byte	0x4aa
  2145 06ce 6B000000 		.4byte	0x6b
@@ -3773,12 +3773,12 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  2152 06e4 DF080000 		.4byte	0x8df
  2153 06e8 00       		.byte	0
  2154 06e9 0A       		.uleb128 0xa
- 2155 06ea BB050000 		.4byte	.LASF64
+ 2155 06ea B6050000 		.4byte	.LASF64
  2156 06ee 01       		.byte	0x1
  2157 06ef C904     		.2byte	0x4c9
  2158 06f1 00000000 		.4byte	.LFB34
  2159 06f5 24000000 		.4byte	.LFE34-.LFB34
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 64
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 64
 
 
  2160 06f9 01       		.uleb128 0x1
@@ -3791,7 +3791,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  2167 0707 76000000 		.4byte	0x76
  2168 070b 9D040000 		.4byte	.LLST38
  2169 070f 0B       		.uleb128 0xb
- 2170 0710 44060000 		.4byte	.LASF18
+ 2170 0710 3F060000 		.4byte	.LASF18
  2171 0714 01       		.byte	0x1
  2172 0715 CB04     		.2byte	0x4cb
  2173 0717 6B000000 		.4byte	0x6b
@@ -3804,7 +3804,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  2180 072d DF080000 		.4byte	0x8df
  2181 0731 00       		.byte	0
  2182 0732 0A       		.uleb128 0xa
- 2183 0733 D4030000 		.4byte	.LASF65
+ 2183 0733 CF030000 		.4byte	.LASF65
  2184 0737 01       		.byte	0x1
  2185 0738 F104     		.2byte	0x4f1
  2186 073a 00000000 		.4byte	.LFB35
@@ -3819,13 +3819,13 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  2195 0750 76000000 		.4byte	0x76
  2196 0754 DC040000 		.4byte	.LLST40
  2197 0758 0C       		.uleb128 0xc
- 2198 0759 E0020000 		.4byte	.LASF66
+ 2198 0759 2B030000 		.4byte	.LASF66
  2199 075d 01       		.byte	0x1
  2200 075e F104     		.2byte	0x4f1
  2201 0760 76000000 		.4byte	0x76
  2202 0764 08050000 		.4byte	.LLST41
  2203 0768 0B       		.uleb128 0xb
- 2204 0769 44060000 		.4byte	.LASF18
+ 2204 0769 3F060000 		.4byte	.LASF18
  2205 076d 01       		.byte	0x1
  2206 076e F304     		.2byte	0x4f3
  2207 0770 6B000000 		.4byte	0x6b
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  2214 0786 DF080000 		.4byte	0x8df
  2215 078a 00       		.byte	0
  2216 078b 0D       		.uleb128 0xd
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 65
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 65
 
 
  2217 078c B2010000 		.4byte	.LASF67
@@ -3850,7 +3850,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  2223 079f 01       		.uleb128 0x1
  2224 07a0 9C       		.byte	0x9c
  2225 07a1 0A       		.uleb128 0xa
- 2226 07a2 AB040000 		.4byte	.LASF68
+ 2226 07a2 A6040000 		.4byte	.LASF68
  2227 07a6 01       		.byte	0x1
  2228 07a7 2705     		.2byte	0x527
  2229 07a9 00000000 		.4byte	.LFB37
@@ -3859,7 +3859,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  2232 07b2 9C       		.byte	0x9c
  2233 07b3 C6070000 		.4byte	0x7c6
  2234 07b7 0E       		.uleb128 0xe
- 2235 07b8 6A050000 		.4byte	.LASF69
+ 2235 07b8 65050000 		.4byte	.LASF69
  2236 07bc 01       		.byte	0x1
  2237 07bd 2705     		.2byte	0x527
  2238 07bf 76000000 		.4byte	0x76
@@ -3867,7 +3867,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  2240 07c4 50       		.byte	0x50
  2241 07c5 00       		.byte	0
  2242 07c6 07       		.uleb128 0x7
- 2243 07c7 CD060000 		.4byte	.LASF70
+ 2243 07c7 C8060000 		.4byte	.LASF70
  2244 07cb 01       		.byte	0x1
  2245 07cc 26       		.byte	0x26
  2246 07cd 00000000 		.4byte	.LFB2
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  2271 0801 0F       		.uleb128 0xf
  2272 0802 32000000 		.4byte	.LVL88
  2273 0806 13040000 		.4byte	0x413
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 66
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 66
 
 
  2274 080a 15080000 		.4byte	0x815
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  2328 087e 01       		.byte	0x1
  2329 087f 6C05     		.2byte	0x56c
  2330 0881 00000000 		.4byte	.LFB40
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 67
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 67
 
 
  2331 0885 0C000000 		.4byte	.LFE40-.LFB40
@@ -3966,7 +3966,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  2333 088a 9C       		.byte	0x9c
  2334 088b 9E080000 		.4byte	0x89e
  2335 088f 0E       		.uleb128 0xe
- 2336 0890 6A050000 		.4byte	.LASF69
+ 2336 0890 65050000 		.4byte	.LASF69
  2337 0894 01       		.byte	0x1
  2338 0895 6C05     		.2byte	0x56c
  2339 0897 76000000 		.4byte	0x76
@@ -3974,7 +3974,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  2341 089c 50       		.byte	0x50
  2342 089d 00       		.byte	0
  2343 089e 0A       		.uleb128 0xa
- 2344 089f 2E050000 		.4byte	.LASF75
+ 2344 089f 29050000 		.4byte	.LASF75
  2345 08a3 01       		.byte	0x1
  2346 08a4 8305     		.2byte	0x583
  2347 08a6 00000000 		.4byte	.LFB41
@@ -3983,7 +3983,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  2350 08af 9C       		.byte	0x9c
  2351 08b0 C3080000 		.4byte	0x8c3
  2352 08b4 0E       		.uleb128 0xe
- 2353 08b5 6A050000 		.4byte	.LASF69
+ 2353 08b5 65050000 		.4byte	.LASF69
  2354 08b9 01       		.byte	0x1
  2355 08ba 8305     		.2byte	0x583
  2356 08bc 76000000 		.4byte	0x76
@@ -3999,7 +3999,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  2366 08cf 03       		.byte	0x3
  2367 08d0 00000000 		.4byte	PWM_Mid_Thresh_initVar
  2368 08d4 13       		.uleb128 0x13
- 2369 08d5 84030000 		.4byte	.LASF80
+ 2369 08d5 4E030000 		.4byte	.LASF80
  2370 08d9 03       		.byte	0x3
  2371 08da 5E       		.byte	0x5e
  2372 08db 6B000000 		.4byte	0x6b
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  2385 0002 01       		.byte	0x1
  2386 0003 25       		.uleb128 0x25
  2387 0004 0E       		.uleb128 0xe
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 68
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 68
 
 
  2388 0005 13       		.uleb128 0x13
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  2442 003b 3A       		.uleb128 0x3a
  2443 003c 0B       		.uleb128 0xb
  2444 003d 3B       		.uleb128 0x3b
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 69
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 69
 
 
  2445 003e 05       		.uleb128 0x5
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  2499 0077 00       		.byte	0
  2500 0078 11       		.uleb128 0x11
  2501 0079 01       		.uleb128 0x1
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 70
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 70
 
 
  2502 007a 31       		.uleb128 0x31
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  2556 00b1 13       		.uleb128 0x13
  2557 00b2 02       		.uleb128 0x2
  2558 00b3 17       		.uleb128 0x17
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 71
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 71
 
 
  2559 00b4 00       		.byte	0
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  2613 00ed 8A8201   		.uleb128 0x410a
  2614 00f0 00       		.byte	0
  2615 00f1 02       		.uleb128 0x2
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 72
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 72
 
 
  2616 00f2 18       		.uleb128 0x18
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  2670 012b 19       		.uleb128 0x19
  2671 012c 03       		.uleb128 0x3
  2672 012d 0E       		.uleb128 0xe
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 73
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 73
 
 
  2673 012e 3A       		.uleb128 0x3a
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  2727 0056 1B000000 		.4byte	.LVL7-1
  2728 005a 0100     		.2byte	0x1
  2729 005c 50       		.byte	0x50
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 74
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 74
 
 
  2730 005d 00000000 		.4byte	0
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  2784 00e7 07000000 		.4byte	.LVL17-1
  2785 00eb 0100     		.2byte	0x1
  2786 00ed 50       		.byte	0x50
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 75
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 75
 
 
  2787 00ee 07000000 		.4byte	.LVL17-1
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  2841 0173 21000000 		.4byte	.LVL25-1
  2842 0177 0100     		.2byte	0x1
  2843 0179 50       		.byte	0x50
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 76
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 76
 
 
  2844 017a 00000000 		.4byte	0
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  2898 0204 07000000 		.4byte	.LVL35-1
  2899 0208 0100     		.2byte	0x1
  2900 020a 50       		.byte	0x50
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 77
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 77
 
 
  2901 020b 07000000 		.4byte	.LVL35-1
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  2955 0290 1B000000 		.4byte	.LVL43-1
  2956 0294 0100     		.2byte	0x1
  2957 0296 50       		.byte	0x50
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 78
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 78
 
 
  2958 0297 00000000 		.4byte	0
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  3012 031c 00000000 		.4byte	0
  3013              	.LLST26:
  3014 0320 00000000 		.4byte	.LVL52
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 79
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 79
 
 
  3015 0324 07000000 		.4byte	.LVL53-1
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  3069 03a9 0100     		.2byte	0x1
  3070 03ab 50       		.byte	0x50
  3071 03ac 07000000 		.4byte	.LVL61-1
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 80
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 80
 
 
  3072 03b0 16000000 		.4byte	.LVL62
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  3126 0439 28000000 		.4byte	.LFE32
  3127 043d 0400     		.2byte	0x4
  3128 043f F3       		.byte	0xf3
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 81
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 81
 
 
  3129 0440 01       		.uleb128 0x1
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  3183 04c5 00000000 		.4byte	0
  3184              	.LLST39:
  3185 04c9 08000000 		.4byte	.LVL77
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 82
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 82
 
 
  3186 04cd 1D000000 		.4byte	.LVL79-1
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  3240 000c 0000     		.2byte	0
  3241 000e 0000     		.2byte	0
  3242 0010 00000000 		.4byte	.LFB3
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 83
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 83
 
 
  3243 0014 1C000000 		.4byte	.LFE3-.LFB3
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  3297 00ec 24000000 		.4byte	.LFE31-.LFB31
  3298 00f0 00000000 		.4byte	.LFB32
  3299 00f4 28000000 		.4byte	.LFE32-.LFB32
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 84
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 84
 
 
  3300 00f8 00000000 		.4byte	.LFB33
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  3354 0070 00000000 		.4byte	.LFB18
  3355 0074 10000000 		.4byte	.LFE18
  3356 0078 00000000 		.4byte	.LFB19
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 85
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 85
 
 
  3357 007c 10000000 		.4byte	.LFE19
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  3410      02005600 
  3410      00000201 
  3410      FB0E0D00 
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 86
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 86
 
 
  3410      01010101 
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  3432      4D69645F 
  3432      54687265 
  3432      73685F47 
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 87
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 87
 
 
  3432      6574496E 
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  3452      73685F53 
  3452      65745374 
  3453              	.LASF9:
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 88
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 88
 
 
  3454 01e7 75696E74 		.ascii	"uint8\000"
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  3476      72697465 
  3477              	.LASF8:
  3478 02bc 756E7369 		.ascii	"unsigned int\000"
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 89
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 89
 
 
  3478      676E6564 
@@ -5290,275 +5290,275 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 1
  3480      54687265 
  3480      73685F69 
  3480      6E697456 
- 3481              	.LASF66:
- 3482 02e0 636F6D6D 		.ascii	"command\000"
- 3482      616E6400 
- 3483              	.LASF5:
- 3484 02e8 6C6F6E67 		.ascii	"long unsigned int\000"
- 3484      20756E73 
- 3484      69676E65 
- 3484      6420696E 
- 3484      7400
- 3485              	.LASF28:
- 3486 02fa 6D6F6465 		.ascii	"modeMask\000"
- 3486      4D61736B 
- 3486      00
- 3487              	.LASF78:
- 3488 0303 433A5C55 		.ascii	"C:\\Users\\Nick\\Documents\\PSoC Creator\\capsensel"
- 3488      73657273 
- 3488      5C4E6963 
- 3488      6B5C446F 
- 3488      63756D65 
- 3489 0331 6564315C 		.ascii	"ed1\\capsenseled\\capsenseled.cydsn\000"
- 3489      63617073 
- 3489      656E7365 
- 3489      6C65645C 
- 3489      63617073 
- 3490              	.LASF3:
- 3491 0353 73686F72 		.ascii	"short unsigned int\000"
- 3491      7420756E 
- 3491      7369676E 
- 3491      65642069 
- 3491      6E7400
- 3492              	.LASF33:
- 3493 0366 50574D5F 		.ascii	"PWM_Mid_Thresh_SetPWMDeadTime\000"
- 3493      4D69645F 
- 3493      54687265 
- 3493      73685F53 
- 3493      65745057 
- 3494              	.LASF80:
- 3495 0384 4379456E 		.ascii	"CyEnterCriticalSection\000"
- 3495      74657243 
- 3495      72697469 
- 3495      63616C53 
- 3495      65637469 
+ 3481              	.LASF78:
+ 3482 02e0 433A5C55 		.ascii	"C:\\Users\\rdeiaco\\Documents\\PSoC Creator\\capsto"
+ 3482      73657273 
+ 3482      5C726465 
+ 3482      6961636F 
+ 3482      5C446F63 
+ 3483 030e 6E653730 		.ascii	"ne70merged\\capsenseled.cydsn\000"
+ 3483      6D657267 
+ 3483      65645C63 
+ 3483      61707365 
+ 3483      6E73656C 
+ 3484              	.LASF66:
+ 3485 032b 636F6D6D 		.ascii	"command\000"
+ 3485      616E6400 
+ 3486              	.LASF5:
+ 3487 0333 6C6F6E67 		.ascii	"long unsigned int\000"
+ 3487      20756E73 
+ 3487      69676E65 
+ 3487      6420696E 
+ 3487      7400
+ 3488              	.LASF28:
+ 3489 0345 6D6F6465 		.ascii	"modeMask\000"
+ 3489      4D61736B 
+ 3489      00
+ 3490              	.LASF80:
+ 3491 034e 4379456E 		.ascii	"CyEnterCriticalSection\000"
+ 3491      74657243 
+ 3491      72697469 
+ 3491      63616C53 
+ 3491      65637469 
+ 3492              	.LASF3:
+ 3493 0365 73686F72 		.ascii	"short unsigned int\000"
+ 3493      7420756E 
+ 3493      7369676E 
+ 3493      65642069 
+ 3493      6E7400
+ 3494              	.LASF33:
+ 3495 0378 50574D5F 		.ascii	"PWM_Mid_Thresh_SetPWMDeadTime\000"
+ 3495      4D69645F 
+ 3495      54687265 
+ 3495      73685F53 
+ 3495      65745057 
  3496              	.LASF26:
- 3497 039b 6F6E6553 		.ascii	"oneShotEnable\000"
+ 3497 0396 6F6E6553 		.ascii	"oneShotEnable\000"
  3497      686F7445 
  3497      6E61626C 
  3497      6500
  3498              	.LASF14:
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 90
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 90
 
 
- 3499 03a9 72656733 		.ascii	"reg32\000"
+ 3499 03a4 72656733 		.ascii	"reg32\000"
  3499      3200
  3500              	.LASF35:
- 3501 03af 50574D5F 		.ascii	"PWM_Mid_Thresh_SetPWMInvert\000"
+ 3501 03aa 50574D5F 		.ascii	"PWM_Mid_Thresh_SetPWMInvert\000"
  3501      4D69645F 
  3501      54687265 
  3501      73685F53 
  3501      65745057 
  3502              	.LASF15:
- 3503 03cb 73697A65 		.ascii	"sizetype\000"
+ 3503 03c6 73697A65 		.ascii	"sizetype\000"
  3503      74797065 
  3503      00
  3504              	.LASF65:
- 3505 03d4 50574D5F 		.ascii	"PWM_Mid_Thresh_TriggerCommand\000"
+ 3505 03cf 50574D5F 		.ascii	"PWM_Mid_Thresh_TriggerCommand\000"
  3505      4D69645F 
  3505      54687265 
  3505      73685F54 
  3505      72696767 
  3506              	.LASF30:
- 3507 03f2 73796E63 		.ascii	"syncKillEnable\000"
+ 3507 03ed 73796E63 		.ascii	"syncKillEnable\000"
  3507      4B696C6C 
  3507      456E6162 
  3507      6C6500
  3508              	.LASF52:
- 3509 0401 636F6D70 		.ascii	"compare\000"
+ 3509 03fc 636F6D70 		.ascii	"compare\000"
  3509      61726500 
  3510              	.LASF17:
- 3511 0409 50574D5F 		.ascii	"PWM_Mid_Thresh_Stop\000"
+ 3511 0404 50574D5F 		.ascii	"PWM_Mid_Thresh_Stop\000"
  3511      4D69645F 
  3511      54687265 
  3511      73685F53 
  3511      746F7000 
  3512              	.LASF76:
- 3513 041d 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 3513 0418 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
  3513      4320342E 
  3513      392E3320 
  3513      32303135 
  3513      30333033 
- 3514 0450 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0 -mthumb -g -O"
+ 3514 044b 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0 -mthumb -g -O"
  3514      20726576 
  3514      6973696F 
  3514      6E203232 
  3514      31323230 
- 3515 0483 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 3515 047e 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
  3515      66756E63 
  3515      74696F6E 
  3515      2D736563 
  3515      74696F6E 
  3516              	.LASF68:
- 3517 04ab 50574D5F 		.ascii	"PWM_Mid_Thresh_SetInterruptMode\000"
+ 3517 04a6 50574D5F 		.ascii	"PWM_Mid_Thresh_SetInterruptMode\000"
  3517      4D69645F 
  3517      54687265 
  3517      73685F53 
  3517      6574496E 
  3518              	.LASF20:
- 3519 04cb 50574D5F 		.ascii	"PWM_Mid_Thresh_SetQDMode\000"
+ 3519 04c6 50574D5F 		.ascii	"PWM_Mid_Thresh_SetQDMode\000"
  3519      4D69645F 
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 91
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 91
 
 
  3519      54687265 
  3519      73685F53 
  3519      65745144 
  3520              	.LASF11:
- 3521 04e4 666C6F61 		.ascii	"float\000"
+ 3521 04df 666C6F61 		.ascii	"float\000"
  3521      7400
  3522              	.LASF24:
- 3523 04ea 70726573 		.ascii	"prescaler\000"
+ 3523 04e5 70726573 		.ascii	"prescaler\000"
  3523      63616C65 
  3523      7200
  3524              	.LASF1:
- 3525 04f4 756E7369 		.ascii	"unsigned char\000"
+ 3525 04ef 756E7369 		.ascii	"unsigned char\000"
  3525      676E6564 
  3525      20636861 
  3525      7200
  3526              	.LASF32:
- 3527 0502 73746F70 		.ascii	"stopOnKillEnable\000"
+ 3527 04fd 73746F70 		.ascii	"stopOnKillEnable\000"
  3527      4F6E4B69 
  3527      6C6C456E 
  3527      61626C65 
  3527      00
  3528              	.LASF41:
- 3529 0513 50574D5F 		.ascii	"PWM_Mid_Thresh_WritePeriod\000"
+ 3529 050e 50574D5F 		.ascii	"PWM_Mid_Thresh_WritePeriod\000"
  3529      4D69645F 
  3529      54687265 
  3529      73685F57 
  3529      72697465 
  3530              	.LASF75:
- 3531 052e 50574D5F 		.ascii	"PWM_Mid_Thresh_SetInterrupt\000"
+ 3531 0529 50574D5F 		.ascii	"PWM_Mid_Thresh_SetInterrupt\000"
  3531      4D69645F 
  3531      54687265 
  3531      73685F53 
  3531      6574496E 
  3532              	.LASF2:
- 3533 054a 73686F72 		.ascii	"short int\000"
+ 3533 0545 73686F72 		.ascii	"short int\000"
  3533      7420696E 
  3533      7400
  3534              	.LASF16:
- 3535 0554 50574D5F 		.ascii	"PWM_Mid_Thresh_Enable\000"
+ 3535 054f 50574D5F 		.ascii	"PWM_Mid_Thresh_Enable\000"
  3535      4D69645F 
  3535      54687265 
  3535      73685F45 
  3535      6E61626C 
  3536              	.LASF69:
- 3537 056a 696E7465 		.ascii	"interruptMask\000"
+ 3537 0565 696E7465 		.ascii	"interruptMask\000"
  3537      72727570 
  3537      744D6173 
  3537      6B00
  3538              	.LASF54:
- 3539 0578 50574D5F 		.ascii	"PWM_Mid_Thresh_WriteCompareBuf\000"
+ 3539 0573 50574D5F 		.ascii	"PWM_Mid_Thresh_WriteCompareBuf\000"
  3539      4D69645F 
  3539      54687265 
  3539      73685F57 
  3539      72697465 
  3540              	.LASF25:
- 3541 0597 50574D5F 		.ascii	"PWM_Mid_Thresh_SetOneShot\000"
+ 3541 0592 50574D5F 		.ascii	"PWM_Mid_Thresh_SetOneShot\000"
  3541      4D69645F 
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 92
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 92
 
 
  3541      54687265 
  3541      73685F53 
  3541      65744F6E 
  3542              	.LASF13:
- 3543 05b1 63686172 		.ascii	"char\000"
+ 3543 05ac 63686172 		.ascii	"char\000"
  3543      00
  3544              	.LASF21:
- 3545 05b6 6D6F6465 		.ascii	"mode\000"
+ 3545 05b1 6D6F6465 		.ascii	"mode\000"
  3545      00
  3546              	.LASF64:
- 3547 05bb 50574D5F 		.ascii	"PWM_Mid_Thresh_SetCountMode\000"
+ 3547 05b6 50574D5F 		.ascii	"PWM_Mid_Thresh_SetCountMode\000"
  3547      4D69645F 
  3547      54687265 
  3547      73685F53 
  3547      6574436F 
  3548              	.LASF40:
- 3549 05d7 636F756E 		.ascii	"counterMode\000"
+ 3549 05d2 636F756E 		.ascii	"counterMode\000"
  3549      7465724D 
  3549      6F646500 
  3550              	.LASF47:
- 3551 05e3 50574D5F 		.ascii	"PWM_Mid_Thresh_WritePeriodBuf\000"
+ 3551 05de 50574D5F 		.ascii	"PWM_Mid_Thresh_WritePeriodBuf\000"
  3551      4D69645F 
  3551      54687265 
  3551      73685F57 
  3551      72697465 
  3552              	.LASF57:
- 3553 0601 50574D5F 		.ascii	"PWM_Mid_Thresh_ReadCapture\000"
+ 3553 05fc 50574D5F 		.ascii	"PWM_Mid_Thresh_ReadCapture\000"
  3553      4D69645F 
  3553      54687265 
  3553      73685F52 
  3553      65616443 
  3554              	.LASF55:
- 3555 061c 636F6D70 		.ascii	"compareBuf\000"
+ 3555 0617 636F6D70 		.ascii	"compareBuf\000"
  3555      61726542 
  3555      756600
  3556              	.LASF49:
- 3557 0627 50574D5F 		.ascii	"PWM_Mid_Thresh_ReadPeriodBuf\000"
+ 3557 0622 50574D5F 		.ascii	"PWM_Mid_Thresh_ReadPeriodBuf\000"
  3557      4D69645F 
  3557      54687265 
  3557      73685F52 
  3557      65616450 
  3558              	.LASF18:
- 3559 0644 656E6162 		.ascii	"enableInterrupts\000"
+ 3559 063f 656E6162 		.ascii	"enableInterrupts\000"
  3559      6C65496E 
  3559      74657272 
  3559      75707473 
  3559      00
  3560              	.LASF53:
- 3561 0655 50574D5F 		.ascii	"PWM_Mid_Thresh_ReadCompare\000"
+ 3561 0650 50574D5F 		.ascii	"PWM_Mid_Thresh_ReadCompare\000"
  3561      4D69645F 
  3561      54687265 
  3561      73685F52 
  3561      65616443 
  3562              	.LASF58:
- 3563 0670 50574D5F 		.ascii	"PWM_Mid_Thresh_ReadCaptureBuf\000"
+ 3563 066b 50574D5F 		.ascii	"PWM_Mid_Thresh_ReadCaptureBuf\000"
  3563      4D69645F 
  3563      54687265 
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\ccqZA1be.s 			page 93
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccPtxpHh.s 			page 93
 
 
  3563      73685F52 
  3563      65616443 
  3564              	.LASF50:
- 3565 068e 50574D5F 		.ascii	"PWM_Mid_Thresh_SetPeriodSwap\000"
+ 3565 0689 50574D5F 		.ascii	"PWM_Mid_Thresh_SetPeriodSwap\000"
  3565      4D69645F 
  3565      54687265 
  3565      73685F53 
  3565      65745065 
  3566              	.LASF19:
- 3567 06ab 50574D5F 		.ascii	"PWM_Mid_Thresh_SetMode\000"
+ 3567 06a6 50574D5F 		.ascii	"PWM_Mid_Thresh_SetMode\000"
  3567      4D69645F 
  3567      54687265 
  3567      73685F53 
  3567      65744D6F 
  3568              	.LASF46:
- 3569 06c2 73776170 		.ascii	"swapEnable\000"
+ 3569 06bd 73776170 		.ascii	"swapEnable\000"
  3569      456E6162 
  3569      6C6500
  3570              	.LASF70:
- 3571 06cd 50574D5F 		.ascii	"PWM_Mid_Thresh_Init\000"
+ 3571 06c8 50574D5F 		.ascii	"PWM_Mid_Thresh_Init\000"
  3571      4D69645F 
  3571      54687265 
  3571      73685F49 
  3571      6E697400 
  3572              	.LASF44:
- 3573 06e1 50574D5F 		.ascii	"PWM_Mid_Thresh_ReadPeriod\000"
+ 3573 06dc 50574D5F 		.ascii	"PWM_Mid_Thresh_ReadPeriod\000"
  3573      4D69645F 
  3573      54687265 
  3573      73685F52 
  3573      65616450 
  3574              	.LASF77:
- 3575 06fb 47656E65 		.ascii	"Generated_Source\\PSoC4\\PWM_Mid_Thresh.c\000"
+ 3575 06f6 47656E65 		.ascii	"Generated_Source\\PSoC4\\PWM_Mid_Thresh.c\000"
  3575      72617465 
  3575      645F536F 
  3575      75726365 
  3575      5C50536F 
  3576              	.LASF48:
- 3577 0723 70657269 		.ascii	"periodBuf\000"
+ 3577 071e 70657269 		.ascii	"periodBuf\000"
  3577      6F644275 
  3577      6600
  3578              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br

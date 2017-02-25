@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\cc6fKKX1.s 			page 1
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccWMDeKv.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\cc6fKKX1.s 			page 1
   30:Generated_Source\PSoC4/IDAC_Fire_Thresh_PM.c **** * Return:
   31:Generated_Source\PSoC4/IDAC_Fire_Thresh_PM.c **** *  None
   32:Generated_Source\PSoC4/IDAC_Fire_Thresh_PM.c **** *
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\cc6fKKX1.s 			page 2
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccWMDeKv.s 			page 2
 
 
   33:Generated_Source\PSoC4/IDAC_Fire_Thresh_PM.c **** * Global Variables:
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\cc6fKKX1.s 			page 1
   54 000c 03D0     		beq	.L3
   59:Generated_Source\PSoC4/IDAC_Fire_Thresh_PM.c ****         IDAC_Fire_Thresh_IDAC_MODE_POSITION)))
   60:Generated_Source\PSoC4/IDAC_Fire_Thresh_PM.c ****         {
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\cc6fKKX1.s 			page 3
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccWMDeKv.s 			page 3
 
 
   61:Generated_Source\PSoC4/IDAC_Fire_Thresh_PM.c ****             IDAC_Fire_Thresh_backup.enableState = 1u;
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\cc6fKKX1.s 			page 1
   82:Generated_Source\PSoC4/IDAC_Fire_Thresh_PM.c **** * Return:
   83:Generated_Source\PSoC4/IDAC_Fire_Thresh_PM.c **** *  None
   84:Generated_Source\PSoC4/IDAC_Fire_Thresh_PM.c **** *
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\cc6fKKX1.s 			page 4
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccWMDeKv.s 			page 4
 
 
   85:Generated_Source\PSoC4/IDAC_Fire_Thresh_PM.c **** * Global Variables:
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\cc6fKKX1.s 			page 1
  114 0008 01D1     		bne	.L8
  113:Generated_Source\PSoC4/IDAC_Fire_Thresh_PM.c ****     {
  114:Generated_Source\PSoC4/IDAC_Fire_Thresh_PM.c ****         /* Enable operation */
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\cc6fKKX1.s 			page 5
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccWMDeKv.s 			page 5
 
 
  115:Generated_Source\PSoC4/IDAC_Fire_Thresh_PM.c ****         IDAC_Fire_Thresh_Enable();
@@ -277,40 +277,40 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\cc6fKKX1.s 			page 1
  144 0006 00000000 		.4byte	.Ldebug_abbrev0
  145 000a 04       		.byte	0x4
  146 000b 01       		.uleb128 0x1
- 147 000c DB010000 		.4byte	.LASF23
+ 147 000c D6010000 		.4byte	.LASF23
  148 0010 01       		.byte	0x1
- 149 0011 82010000 		.4byte	.LASF24
- 150 0015 7D000000 		.4byte	.LASF25
+ 149 0011 7D010000 		.4byte	.LASF24
+ 150 0015 29010000 		.4byte	.LASF25
  151 0019 00000000 		.4byte	.Ldebug_ranges0+0
  152 001d 00000000 		.4byte	0
  153 0021 00000000 		.4byte	.Ldebug_line0
  154 0025 02       		.uleb128 0x2
  155 0026 01       		.byte	0x1
  156 0027 06       		.byte	0x6
- 157 0028 CF010000 		.4byte	.LASF0
+ 157 0028 CA010000 		.4byte	.LASF0
  158 002c 02       		.uleb128 0x2
  159 002d 01       		.byte	0x1
  160 002e 08       		.byte	0x8
- 161 002f 66010000 		.4byte	.LASF1
+ 161 002f 16010000 		.4byte	.LASF1
  162 0033 02       		.uleb128 0x2
  163 0034 02       		.byte	0x2
  164 0035 05       		.byte	0x5
- 165 0036 69020000 		.4byte	.LASF2
+ 165 0036 64020000 		.4byte	.LASF2
  166 003a 02       		.uleb128 0x2
  167 003b 02       		.byte	0x2
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\cc6fKKX1.s 			page 6
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccWMDeKv.s 			page 6
 
 
  168 003c 07       		.byte	0x7
- 169 003d BC010000 		.4byte	.LASF3
+ 169 003d B7010000 		.4byte	.LASF3
  170 0041 02       		.uleb128 0x2
  171 0042 04       		.byte	0x4
  172 0043 05       		.byte	0x5
- 173 0044 79010000 		.4byte	.LASF4
+ 173 0044 74010000 		.4byte	.LASF4
  174 0048 02       		.uleb128 0x2
  175 0049 04       		.byte	0x4
  176 004a 07       		.byte	0x7
- 177 004b D3000000 		.4byte	.LASF5
+ 177 004b 83000000 		.4byte	.LASF5
  178 004f 02       		.uleb128 0x2
  179 0050 08       		.byte	0x8
  180 0051 05       		.byte	0x5
@@ -318,7 +318,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\cc6fKKX1.s 			page 1
  182 0056 02       		.uleb128 0x2
  183 0057 08       		.byte	0x8
  184 0058 07       		.byte	0x7
- 185 0059 FC000000 		.4byte	.LASF7
+ 185 0059 AC000000 		.4byte	.LASF7
  186 005d 03       		.uleb128 0x3
  187 005e 04       		.byte	0x4
  188 005f 05       		.byte	0x5
@@ -328,7 +328,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\cc6fKKX1.s 			page 1
  192 0066 07       		.byte	0x7
  193 0067 21000000 		.4byte	.LASF8
  194 006b 04       		.uleb128 0x4
- 195 006c CD000000 		.4byte	.LASF9
+ 195 006c 7D000000 		.4byte	.LASF9
  196 0070 02       		.byte	0x2
  197 0071 C2       		.byte	0xc2
  198 0072 2C000000 		.4byte	0x2c
@@ -340,17 +340,17 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\cc6fKKX1.s 			page 1
  204 0081 02       		.uleb128 0x2
  205 0082 04       		.byte	0x4
  206 0083 04       		.byte	0x4
- 207 0084 32010000 		.4byte	.LASF11
+ 207 0084 E2000000 		.4byte	.LASF11
  208 0088 02       		.uleb128 0x2
  209 0089 08       		.byte	0x8
  210 008a 04       		.byte	0x4
- 211 008b AF010000 		.4byte	.LASF12
+ 211 008b AA010000 		.4byte	.LASF12
  212 008f 02       		.uleb128 0x2
  213 0090 01       		.byte	0x1
  214 0091 08       		.byte	0x8
- 215 0092 74010000 		.4byte	.LASF13
+ 215 0092 24010000 		.4byte	.LASF13
  216 0096 05       		.uleb128 0x5
- 217 0097 B6010000 		.4byte	.LASF14
+ 217 0097 B1010000 		.4byte	.LASF14
  218 009b 02       		.byte	0x2
  219 009c 6E01     		.2byte	0x16e
  220 009e A2000000 		.4byte	0xa2
@@ -358,11 +358,11 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\cc6fKKX1.s 			page 1
  222 00a3 76000000 		.4byte	0x76
  223 00a7 02       		.uleb128 0x2
  224 00a8 04       		.byte	0x4
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\cc6fKKX1.s 			page 7
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccWMDeKv.s 			page 7
 
 
  225 00a9 07       		.byte	0x7
- 226 00aa 73020000 		.4byte	.LASF15
+ 226 00aa 6E020000 		.4byte	.LASF15
  227 00ae 07       		.uleb128 0x7
  228 00af 01       		.byte	0x1
  229 00b0 03       		.byte	0x3
@@ -376,12 +376,12 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\cc6fKKX1.s 			page 1
  237 00c1 00       		.byte	0
  238 00c2 00       		.byte	0
  239 00c3 04       		.uleb128 0x4
- 240 00c4 13010000 		.4byte	.LASF16
+ 240 00c4 C3000000 		.4byte	.LASF16
  241 00c8 03       		.byte	0x3
  242 00c9 20       		.byte	0x20
  243 00ca AE000000 		.4byte	0xae
  244 00ce 09       		.uleb128 0x9
- 245 00cf 7C020000 		.4byte	.LASF17
+ 245 00cf 77020000 		.4byte	.LASF17
  246 00d3 01       		.byte	0x1
  247 00d4 25       		.byte	0x25
  248 00d5 00000000 		.4byte	.LFB2
@@ -389,7 +389,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\cc6fKKX1.s 			page 1
  250 00dd 01       		.uleb128 0x1
  251 00de 9C       		.byte	0x9c
  252 00df 0A       		.uleb128 0xa
- 253 00e0 E5000000 		.4byte	.LASF19
+ 253 00e0 95000000 		.4byte	.LASF19
  254 00e4 01       		.byte	0x1
  255 00e5 38       		.byte	0x38
  256 00e6 00000000 		.4byte	.LFB3
@@ -410,7 +410,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\cc6fKKX1.s 			page 1
  271 010d 01       		.uleb128 0x1
  272 010e 9C       		.byte	0x9c
  273 010f 0A       		.uleb128 0xa
- 274 0110 4E010000 		.4byte	.LASF20
+ 274 0110 FE000000 		.4byte	.LASF20
  275 0114 01       		.byte	0x1
  276 0115 6C       		.byte	0x6c
  277 0116 00000000 		.4byte	.LFB5
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\cc6fKKX1.s 			page 1
  279 011e 01       		.uleb128 0x1
  280 011f 9C       		.byte	0x9c
  281 0120 2E010000 		.4byte	0x12e
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\cc6fKKX1.s 			page 8
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccWMDeKv.s 			page 8
 
 
  282 0124 0B       		.uleb128 0xb
@@ -434,7 +434,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\cc6fKKX1.s 			page 1
  292 013a 03       		.byte	0x3
  293 013b 00000000 		.4byte	IDAC_Fire_Thresh_backup
  294 013f 0D       		.uleb128 0xd
- 295 0140 38010000 		.4byte	.LASF21
+ 295 0140 E8000000 		.4byte	.LASF21
  296 0144 03       		.byte	0x3
  297 0145 53       		.byte	0x53
  298 0146 0D       		.uleb128 0xd
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\cc6fKKX1.s 			page 1
  336 001f 24       		.uleb128 0x24
  337 0020 00       		.byte	0
  338 0021 0B       		.uleb128 0xb
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\cc6fKKX1.s 			page 9
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccWMDeKv.s 			page 9
 
 
  339 0022 0B       		.uleb128 0xb
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\cc6fKKX1.s 			page 1
  393 0058 0D       		.uleb128 0xd
  394 0059 00       		.byte	0
  395 005a 03       		.uleb128 0x3
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\cc6fKKX1.s 			page 10
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccWMDeKv.s 			page 10
 
 
  396 005b 0E       		.uleb128 0xe
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\cc6fKKX1.s 			page 1
  450 0093 19       		.uleb128 0x19
  451 0094 01       		.uleb128 0x1
  452 0095 13       		.uleb128 0x13
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\cc6fKKX1.s 			page 11
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccWMDeKv.s 			page 11
 
 
  453 0096 00       		.byte	0
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\cc6fKKX1.s 			page 1
  507 0018 00000000 		.4byte	.LFB3
  508 001c 2C000000 		.4byte	.LFE3-.LFB3
  509 0020 00000000 		.4byte	.LFB4
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\cc6fKKX1.s 			page 12
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccWMDeKv.s 			page 12
 
 
  510 0024 02000000 		.4byte	.LFE4-.LFB4
@@ -718,130 +718,130 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\cc6fKKX1.s 			page 1
  543 005e 49444143 		.ascii	"IDAC_Fire_Thresh_RestoreConfig\000"
  543      5F466972 
  543      655F5468 
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\cc6fKKX1.s 			page 13
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccWMDeKv.s 			page 13
 
 
  543      72657368 
  543      5F526573 
- 544              	.LASF25:
- 545 007d 433A5C55 		.ascii	"C:\\Users\\Nick\\Documents\\PSoC Creator\\capsensel"
- 545      73657273 
- 545      5C4E6963 
- 545      6B5C446F 
- 545      63756D65 
- 546 00ab 6564315C 		.ascii	"ed1\\capsenseled\\capsenseled.cydsn\000"
- 546      63617073 
- 546      656E7365 
- 546      6C65645C 
- 546      63617073 
- 547              	.LASF9:
- 548 00cd 75696E74 		.ascii	"uint8\000"
- 548      3800
- 549              	.LASF5:
- 550 00d3 6C6F6E67 		.ascii	"long unsigned int\000"
- 550      20756E73 
- 550      69676E65 
- 550      6420696E 
- 550      7400
- 551              	.LASF19:
- 552 00e5 49444143 		.ascii	"IDAC_Fire_Thresh_Sleep\000"
- 552      5F466972 
- 552      655F5468 
- 552      72657368 
- 552      5F536C65 
- 553              	.LASF7:
- 554 00fc 6C6F6E67 		.ascii	"long long unsigned int\000"
- 554      206C6F6E 
- 554      6720756E 
- 554      7369676E 
- 554      65642069 
- 555              	.LASF16:
- 556 0113 49444143 		.ascii	"IDAC_Fire_Thresh_BACKUP_STRUCT\000"
- 556      5F466972 
- 556      655F5468 
- 556      72657368 
- 556      5F424143 
- 557              	.LASF11:
- 558 0132 666C6F61 		.ascii	"float\000"
- 558      7400
- 559              	.LASF21:
- 560 0138 49444143 		.ascii	"IDAC_Fire_Thresh_Stop\000"
- 560      5F466972 
- 560      655F5468 
- 560      72657368 
- 560      5F53746F 
- 561              	.LASF20:
- 562 014e 49444143 		.ascii	"IDAC_Fire_Thresh_Wakeup\000"
- 562      5F466972 
- 562      655F5468 
- 562      72657368 
- 562      5F57616B 
- 563              	.LASF1:
- 564 0166 756E7369 		.ascii	"unsigned char\000"
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\cc6fKKX1.s 			page 14
+ 544              	.LASF9:
+ 545 007d 75696E74 		.ascii	"uint8\000"
+ 545      3800
+ 546              	.LASF5:
+ 547 0083 6C6F6E67 		.ascii	"long unsigned int\000"
+ 547      20756E73 
+ 547      69676E65 
+ 547      6420696E 
+ 547      7400
+ 548              	.LASF19:
+ 549 0095 49444143 		.ascii	"IDAC_Fire_Thresh_Sleep\000"
+ 549      5F466972 
+ 549      655F5468 
+ 549      72657368 
+ 549      5F536C65 
+ 550              	.LASF7:
+ 551 00ac 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 551      206C6F6E 
+ 551      6720756E 
+ 551      7369676E 
+ 551      65642069 
+ 552              	.LASF16:
+ 553 00c3 49444143 		.ascii	"IDAC_Fire_Thresh_BACKUP_STRUCT\000"
+ 553      5F466972 
+ 553      655F5468 
+ 553      72657368 
+ 553      5F424143 
+ 554              	.LASF11:
+ 555 00e2 666C6F61 		.ascii	"float\000"
+ 555      7400
+ 556              	.LASF21:
+ 557 00e8 49444143 		.ascii	"IDAC_Fire_Thresh_Stop\000"
+ 557      5F466972 
+ 557      655F5468 
+ 557      72657368 
+ 557      5F53746F 
+ 558              	.LASF20:
+ 559 00fe 49444143 		.ascii	"IDAC_Fire_Thresh_Wakeup\000"
+ 559      5F466972 
+ 559      655F5468 
+ 559      72657368 
+ 559      5F57616B 
+ 560              	.LASF1:
+ 561 0116 756E7369 		.ascii	"unsigned char\000"
+ 561      676E6564 
+ 561      20636861 
+ 561      7200
+ 562              	.LASF13:
+ 563 0124 63686172 		.ascii	"char\000"
+ 563      00
+ 564              	.LASF25:
+ 565 0129 433A5C55 		.ascii	"C:\\Users\\rdeiaco\\Documents\\PSoC Creator\\capsto"
+ 565      73657273 
+ 565      5C726465 
+ 565      6961636F 
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccWMDeKv.s 			page 14
 
 
- 564      676E6564 
- 564      20636861 
- 564      7200
- 565              	.LASF13:
- 566 0174 63686172 		.ascii	"char\000"
- 566      00
+ 565      5C446F63 
+ 566 0157 6E653730 		.ascii	"ne70merged\\capsenseled.cydsn\000"
+ 566      6D657267 
+ 566      65645C63 
+ 566      61707365 
+ 566      6E73656C 
  567              	.LASF4:
- 568 0179 6C6F6E67 		.ascii	"long int\000"
+ 568 0174 6C6F6E67 		.ascii	"long int\000"
  568      20696E74 
  568      00
  569              	.LASF24:
- 570 0182 47656E65 		.ascii	"Generated_Source\\PSoC4\\IDAC_Fire_Thresh_PM.c\000"
+ 570 017d 47656E65 		.ascii	"Generated_Source\\PSoC4\\IDAC_Fire_Thresh_PM.c\000"
  570      72617465 
  570      645F536F 
  570      75726365 
  570      5C50536F 
  571              	.LASF12:
- 572 01af 646F7562 		.ascii	"double\000"
+ 572 01aa 646F7562 		.ascii	"double\000"
  572      6C6500
  573              	.LASF14:
- 574 01b6 72656733 		.ascii	"reg32\000"
+ 574 01b1 72656733 		.ascii	"reg32\000"
  574      3200
  575              	.LASF3:
- 576 01bc 73686F72 		.ascii	"short unsigned int\000"
+ 576 01b7 73686F72 		.ascii	"short unsigned int\000"
  576      7420756E 
  576      7369676E 
  576      65642069 
  576      6E7400
  577              	.LASF0:
- 578 01cf 7369676E 		.ascii	"signed char\000"
+ 578 01ca 7369676E 		.ascii	"signed char\000"
  578      65642063 
  578      68617200 
  579              	.LASF23:
- 580 01db 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 580 01d6 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
  580      4320342E 
  580      392E3320 
  580      32303135 
  580      30333033 
- 581 020e 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0 -mthumb -g -O"
+ 581 0209 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0 -mthumb -g -O"
  581      20726576 
  581      6973696F 
  581      6E203232 
  581      31323230 
- 582 0241 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 582 023c 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
  582      66756E63 
  582      74696F6E 
  582      2D736563 
  582      74696F6E 
  583              	.LASF2:
- 584 0269 73686F72 		.ascii	"short int\000"
+ 584 0264 73686F72 		.ascii	"short int\000"
  584      7420696E 
  584      7400
  585              	.LASF15:
- 586 0273 73697A65 		.ascii	"sizetype\000"
+ 586 026e 73697A65 		.ascii	"sizetype\000"
  586      74797065 
  586      00
  587              	.LASF17:
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\cc6fKKX1.s 			page 15
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccWMDeKv.s 			page 15
 
 
- 588 027c 49444143 		.ascii	"IDAC_Fire_Thresh_SaveConfig\000"
+ 588 0277 49444143 		.ascii	"IDAC_Fire_Thresh_SaveConfig\000"
  588      5F466972 
  588      655F5468 
  588      72657368 

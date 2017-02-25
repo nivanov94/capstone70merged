@@ -1,0 +1,1965 @@
+<?xml version="1.0" encoding="utf-8"?>
+<CyXmlSerializer>
+<!--This file is machine generated and read. It is not intended to be edited by hand.-->
+<!--Due to this, there is no schema for this file.-->
+<CyGuid_7a7929f8-5e3b-4f86-a093-2d4ee6513111 type_name="CyDesigner.Common.ProjMgmt.Model.CyPrjMgmtProjectCustomData" version="1">
+<CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997 type_name="CyDesigner.Common.Base.CyCustomData" version="2">
+<userData>
+<dataGuid v="47ec7058-2f43-4a2f-ae73-172624e235df">
+<CyGuid_47ec7058-2f43-4a2f-ae73-172624e235df type_name="CyDesigner.Common.ProjMgmt.Model.CyConfDepList" version="1">
+<name v="cmpl_deps">
+<CyGuid_f44455c5-3770-4452-b988-0a7a7ff46256 type_name="CyDesigner.Common.ProjMgmt.Model.CyConfigDependencies" version="1">
+<dependency_info name="c9323d49-d323-40b8-9b59-cc008d68a989@Debug@CortexM0" xml_contents_version="2">
+<CyGuid_1173175f-1b9b-4ad4-a065-754a48a27021 type_name="CyDesigner.Common.Base.CyFileDeps" version="1">
+<file name=".\CortexM0\ARM_GCC_493\Debug\ADC_SAR_Seq_1.o">
+<dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_1.c" />
+<dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_1.h" />
+<dep name=".\Generated_Source\PSoC4\CyLFClk.h" />
+<dep name=".\Generated_Source\PSoC4\CyLib.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\ADC_SAR_Seq_1.c" />
+<file name=".\Generated_Source\PSoC4\ADC_SAR_Seq_1.h" />
+<file name=".\Generated_Source\PSoC4\CyLFClk.h" />
+<file name=".\Generated_Source\PSoC4\CyLib.h" />
+<file name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<file name=".\Generated_Source\PSoC4\cyfitter.h" />
+<file name=".\Generated_Source\PSoC4\cytypes.h" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\ADC_SAR_Seq_1_INT.o">
+<dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_1.h" />
+<dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_1_INT.c" />
+<dep name=".\Generated_Source\PSoC4\CyLFClk.h" />
+<dep name=".\Generated_Source\PSoC4\CyLib.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+<dep name=".\cyapicallbacks.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\ADC_SAR_Seq_1_INT.c" />
+<file name=".\cyapicallbacks.h" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\ADC_SAR_Seq_1_IRQ.o">
+<dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_1_IRQ.c" />
+<dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_1_IRQ.h" />
+<dep name=".\Generated_Source\PSoC4\CyLFClk.h" />
+<dep name=".\Generated_Source\PSoC4\CyLib.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+<dep name=".\cyapicallbacks.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\ADC_SAR_Seq_1_IRQ.c" />
+<file name=".\Generated_Source\PSoC4\ADC_SAR_Seq_1_IRQ.h" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\ADC_SAR_Seq_1_PM.o">
+<dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_1.h" />
+<dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_1_PM.c" />
+<dep name=".\Generated_Source\PSoC4\CyLFClk.h" />
+<dep name=".\Generated_Source\PSoC4\CyLib.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\ADC_SAR_Seq_1_PM.c" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\ADC_SAR_Seq_1_intClock.o">
+<dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_1_intClock.c" />
+<dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_1_intClock.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\ADC_SAR_Seq_1_intClock.c" />
+<file name=".\Generated_Source\PSoC4\ADC_SAR_Seq_1_intClock.h" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\Bootloadable.o">
+<dep name=".\Generated_Source\PSoC4\Bootloadable.c" />
+<dep name=".\Generated_Source\PSoC4\Bootloadable.h" />
+<dep name=".\Generated_Source\PSoC4\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC4\CyLFClk.h" />
+<dep name=".\Generated_Source\PSoC4\CyLib.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\Bootloadable.c" />
+<file name=".\Generated_Source\PSoC4\Bootloadable.h" />
+<file name=".\Generated_Source\PSoC4\CyFlash.h" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\Clock_1.o">
+<dep name=".\Generated_Source\PSoC4\Clock_1.c" />
+<dep name=".\Generated_Source\PSoC4\Clock_1.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\Clock_1.c" />
+<file name=".\Generated_Source\PSoC4\Clock_1.h" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\Clock_PWM.o">
+<dep name=".\Generated_Source\PSoC4\Clock_PWM.c" />
+<dep name=".\Generated_Source\PSoC4\Clock_PWM.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\Clock_PWM.c" />
+<file name=".\Generated_Source\PSoC4\Clock_PWM.h" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\Cm0Start.o">
+<dep name=".\Generated_Source\PSoC4\Cm0Start.c" />
+<dep name=".\Generated_Source\PSoC4\CyLFClk.h" />
+<dep name=".\Generated_Source\PSoC4\CyLib.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter_cfg.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+<dep name=".\cyapicallbacks.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\Cm0Start.c" />
+<file name=".\Generated_Source\PSoC4\cyfitter_cfg.h" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\CyFlash.o">
+<dep name=".\Generated_Source\PSoC4\CyFlash.c" />
+<dep name=".\Generated_Source\PSoC4\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC4\CyLFClk.h" />
+<dep name=".\Generated_Source\PSoC4\CyLib.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\CyFlash.c" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\CyLFClk.o">
+<dep name=".\Generated_Source\PSoC4\CyLFClk.c" />
+<dep name=".\Generated_Source\PSoC4\CyLFClk.h" />
+<dep name=".\Generated_Source\PSoC4\CyLib.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\CyLFClk.c" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\CyLib.o">
+<dep name=".\Generated_Source\PSoC4\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC4\CyLFClk.h" />
+<dep name=".\Generated_Source\PSoC4\CyLib.c" />
+<dep name=".\Generated_Source\PSoC4\CyLib.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\CyLib.c" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\FIRE_FILTER_INPUT.o">
+<dep name=".\Generated_Source\PSoC4\FIRE_FILTER_INPUT.c" />
+<dep name=".\Generated_Source\PSoC4\FIRE_FILTER_INPUT.h" />
+<dep name=".\Generated_Source\PSoC4\FIRE_FILTER_INPUT_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\FIRE_FILTER_INPUT.c" />
+<file name=".\Generated_Source\PSoC4\FIRE_FILTER_INPUT.h" />
+<file name=".\Generated_Source\PSoC4\FIRE_FILTER_INPUT_aliases.h" />
+<file name=".\Generated_Source\PSoC4\cypins.h" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\FIRE_FILTER_INPUT_PM.o">
+<dep name=".\Generated_Source\PSoC4\FIRE_FILTER_INPUT.h" />
+<dep name=".\Generated_Source\PSoC4\FIRE_FILTER_INPUT_PM.c" />
+<dep name=".\Generated_Source\PSoC4\FIRE_FILTER_INPUT_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\FIRE_FILTER_INPUT_PM.c" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\Fire_Peak.o">
+<dep name=".\Generated_Source\PSoC4\Fire_Peak.c" />
+<dep name=".\Generated_Source\PSoC4\Fire_Peak.h" />
+<dep name=".\Generated_Source\PSoC4\Fire_Peak_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\Fire_Peak.c" />
+<file name=".\Generated_Source\PSoC4\Fire_Peak.h" />
+<file name=".\Generated_Source\PSoC4\Fire_Peak_aliases.h" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\Fire_Peak_PM.o">
+<dep name=".\Generated_Source\PSoC4\Fire_Peak.h" />
+<dep name=".\Generated_Source\PSoC4\Fire_Peak_PM.c" />
+<dep name=".\Generated_Source\PSoC4\Fire_Peak_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\Fire_Peak_PM.c" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\Fire_Thresh.o">
+<dep name=".\Generated_Source\PSoC4\Fire_Thresh.c" />
+<dep name=".\Generated_Source\PSoC4\Fire_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\Fire_Thresh_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\Fire_Thresh.c" />
+<file name=".\Generated_Source\PSoC4\Fire_Thresh.h" />
+<file name=".\Generated_Source\PSoC4\Fire_Thresh_aliases.h" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\Fire_Thresh_Feedback.o">
+<dep name=".\Generated_Source\PSoC4\Fire_Thresh_Feedback.c" />
+<dep name=".\Generated_Source\PSoC4\Fire_Thresh_Feedback.h" />
+<dep name=".\Generated_Source\PSoC4\Fire_Thresh_Feedback_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\Fire_Thresh_Feedback.c" />
+<file name=".\Generated_Source\PSoC4\Fire_Thresh_Feedback.h" />
+<file name=".\Generated_Source\PSoC4\Fire_Thresh_Feedback_aliases.h" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\Fire_Thresh_Feedback_PM.o">
+<dep name=".\Generated_Source\PSoC4\Fire_Thresh_Feedback.h" />
+<dep name=".\Generated_Source\PSoC4\Fire_Thresh_Feedback_PM.c" />
+<dep name=".\Generated_Source\PSoC4\Fire_Thresh_Feedback_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\Fire_Thresh_Feedback_PM.c" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\Fire_Thresh_PM.o">
+<dep name=".\Generated_Source\PSoC4\Fire_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\Fire_Thresh_PM.c" />
+<dep name=".\Generated_Source\PSoC4\Fire_Thresh_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\Fire_Thresh_PM.c" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\HIGH_FILTER_INPUT.o">
+<dep name=".\Generated_Source\PSoC4\HIGH_FILTER_INPUT.c" />
+<dep name=".\Generated_Source\PSoC4\HIGH_FILTER_INPUT.h" />
+<dep name=".\Generated_Source\PSoC4\HIGH_FILTER_INPUT_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\HIGH_FILTER_INPUT.c" />
+<file name=".\Generated_Source\PSoC4\HIGH_FILTER_INPUT.h" />
+<file name=".\Generated_Source\PSoC4\HIGH_FILTER_INPUT_aliases.h" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\HIGH_FILTER_INPUT_PM.o">
+<dep name=".\Generated_Source\PSoC4\HIGH_FILTER_INPUT.h" />
+<dep name=".\Generated_Source\PSoC4\HIGH_FILTER_INPUT_PM.c" />
+<dep name=".\Generated_Source\PSoC4\HIGH_FILTER_INPUT_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\HIGH_FILTER_INPUT_PM.c" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\High_Peak.o">
+<dep name=".\Generated_Source\PSoC4\High_Peak.c" />
+<dep name=".\Generated_Source\PSoC4\High_Peak.h" />
+<dep name=".\Generated_Source\PSoC4\High_Peak_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\High_Peak.c" />
+<file name=".\Generated_Source\PSoC4\High_Peak.h" />
+<file name=".\Generated_Source\PSoC4\High_Peak_aliases.h" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\High_Peak_PM.o">
+<dep name=".\Generated_Source\PSoC4\High_Peak.h" />
+<dep name=".\Generated_Source\PSoC4\High_Peak_PM.c" />
+<dep name=".\Generated_Source\PSoC4\High_Peak_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\High_Peak_PM.c" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\High_Thresh.o">
+<dep name=".\Generated_Source\PSoC4\High_Thresh.c" />
+<dep name=".\Generated_Source\PSoC4\High_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\High_Thresh_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\High_Thresh.c" />
+<file name=".\Generated_Source\PSoC4\High_Thresh.h" />
+<file name=".\Generated_Source\PSoC4\High_Thresh_aliases.h" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\High_Thresh_Feedback.o">
+<dep name=".\Generated_Source\PSoC4\High_Thresh_Feedback.c" />
+<dep name=".\Generated_Source\PSoC4\High_Thresh_Feedback.h" />
+<dep name=".\Generated_Source\PSoC4\High_Thresh_Feedback_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\High_Thresh_Feedback.c" />
+<file name=".\Generated_Source\PSoC4\High_Thresh_Feedback.h" />
+<file name=".\Generated_Source\PSoC4\High_Thresh_Feedback_aliases.h" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\High_Thresh_Feedback_PM.o">
+<dep name=".\Generated_Source\PSoC4\High_Thresh_Feedback.h" />
+<dep name=".\Generated_Source\PSoC4\High_Thresh_Feedback_PM.c" />
+<dep name=".\Generated_Source\PSoC4\High_Thresh_Feedback_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\High_Thresh_Feedback_PM.c" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\High_Thresh_PM.o">
+<dep name=".\Generated_Source\PSoC4\High_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\High_Thresh_PM.c" />
+<dep name=".\Generated_Source\PSoC4\High_Thresh_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\High_Thresh_PM.c" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\IDAC_Fire_Thresh.o">
+<dep name=".\Generated_Source\PSoC4\CyLFClk.h" />
+<dep name=".\Generated_Source\PSoC4\CyLib.h" />
+<dep name=".\Generated_Source\PSoC4\IDAC_Fire_Thresh.c" />
+<dep name=".\Generated_Source\PSoC4\IDAC_Fire_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\IDAC_Fire_Thresh.c" />
+<file name=".\Generated_Source\PSoC4\IDAC_Fire_Thresh.h" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\IDAC_Fire_Thresh_PM.o">
+<dep name=".\Generated_Source\PSoC4\CyLFClk.h" />
+<dep name=".\Generated_Source\PSoC4\CyLib.h" />
+<dep name=".\Generated_Source\PSoC4\IDAC_Fire_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\IDAC_Fire_Thresh_PM.c" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\IDAC_Fire_Thresh_PM.c" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\LED_BLUE.o">
+<dep name=".\Generated_Source\PSoC4\LED_BLUE.c" />
+<dep name=".\Generated_Source\PSoC4\LED_BLUE.h" />
+<dep name=".\Generated_Source\PSoC4\LED_BLUE_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\LED_BLUE.c" />
+<file name=".\Generated_Source\PSoC4\LED_BLUE.h" />
+<file name=".\Generated_Source\PSoC4\LED_BLUE_aliases.h" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\LED_BLUE_PM.o">
+<dep name=".\Generated_Source\PSoC4\LED_BLUE.h" />
+<dep name=".\Generated_Source\PSoC4\LED_BLUE_PM.c" />
+<dep name=".\Generated_Source\PSoC4\LED_BLUE_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\LED_BLUE_PM.c" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\LED_GREEN.o">
+<dep name=".\Generated_Source\PSoC4\LED_GREEN.c" />
+<dep name=".\Generated_Source\PSoC4\LED_GREEN.h" />
+<dep name=".\Generated_Source\PSoC4\LED_GREEN_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\LED_GREEN.c" />
+<file name=".\Generated_Source\PSoC4\LED_GREEN.h" />
+<file name=".\Generated_Source\PSoC4\LED_GREEN_aliases.h" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\LED_GREEN_PM.o">
+<dep name=".\Generated_Source\PSoC4\LED_GREEN.h" />
+<dep name=".\Generated_Source\PSoC4\LED_GREEN_PM.c" />
+<dep name=".\Generated_Source\PSoC4\LED_GREEN_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\LED_GREEN_PM.c" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\LED_RED.o">
+<dep name=".\Generated_Source\PSoC4\LED_RED.c" />
+<dep name=".\Generated_Source\PSoC4\LED_RED.h" />
+<dep name=".\Generated_Source\PSoC4\LED_RED_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\LED_RED.c" />
+<file name=".\Generated_Source\PSoC4\LED_RED.h" />
+<file name=".\Generated_Source\PSoC4\LED_RED_aliases.h" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\LED_RED_PM.o">
+<dep name=".\Generated_Source\PSoC4\LED_RED.h" />
+<dep name=".\Generated_Source\PSoC4\LED_RED_PM.c" />
+<dep name=".\Generated_Source\PSoC4\LED_RED_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\LED_RED_PM.c" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\LOW_FILTER_INPUT.o">
+<dep name=".\Generated_Source\PSoC4\LOW_FILTER_INPUT.c" />
+<dep name=".\Generated_Source\PSoC4\LOW_FILTER_INPUT.h" />
+<dep name=".\Generated_Source\PSoC4\LOW_FILTER_INPUT_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\LOW_FILTER_INPUT.c" />
+<file name=".\Generated_Source\PSoC4\LOW_FILTER_INPUT.h" />
+<file name=".\Generated_Source\PSoC4\LOW_FILTER_INPUT_aliases.h" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\LOW_FILTER_INPUT_PM.o">
+<dep name=".\Generated_Source\PSoC4\LOW_FILTER_INPUT.h" />
+<dep name=".\Generated_Source\PSoC4\LOW_FILTER_INPUT_PM.c" />
+<dep name=".\Generated_Source\PSoC4\LOW_FILTER_INPUT_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\LOW_FILTER_INPUT_PM.c" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\Low_Peak.o">
+<dep name=".\Generated_Source\PSoC4\Low_Peak.c" />
+<dep name=".\Generated_Source\PSoC4\Low_Peak.h" />
+<dep name=".\Generated_Source\PSoC4\Low_Peak_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\Low_Peak.c" />
+<file name=".\Generated_Source\PSoC4\Low_Peak.h" />
+<file name=".\Generated_Source\PSoC4\Low_Peak_aliases.h" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\Low_Peak_PM.o">
+<dep name=".\Generated_Source\PSoC4\Low_Peak.h" />
+<dep name=".\Generated_Source\PSoC4\Low_Peak_PM.c" />
+<dep name=".\Generated_Source\PSoC4\Low_Peak_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\Low_Peak_PM.c" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\Low_Thresh.o">
+<dep name=".\Generated_Source\PSoC4\Low_Thresh.c" />
+<dep name=".\Generated_Source\PSoC4\Low_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\Low_Thresh_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\Low_Thresh.c" />
+<file name=".\Generated_Source\PSoC4\Low_Thresh.h" />
+<file name=".\Generated_Source\PSoC4\Low_Thresh_aliases.h" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\Low_Thresh_Feedback.o">
+<dep name=".\Generated_Source\PSoC4\Low_Thresh_Feedback.c" />
+<dep name=".\Generated_Source\PSoC4\Low_Thresh_Feedback.h" />
+<dep name=".\Generated_Source\PSoC4\Low_Thresh_Feedback_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\Low_Thresh_Feedback.c" />
+<file name=".\Generated_Source\PSoC4\Low_Thresh_Feedback.h" />
+<file name=".\Generated_Source\PSoC4\Low_Thresh_Feedback_aliases.h" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\Low_Thresh_Feedback_PM.o">
+<dep name=".\Generated_Source\PSoC4\Low_Thresh_Feedback.h" />
+<dep name=".\Generated_Source\PSoC4\Low_Thresh_Feedback_PM.c" />
+<dep name=".\Generated_Source\PSoC4\Low_Thresh_Feedback_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\Low_Thresh_Feedback_PM.c" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\Low_Thresh_PM.o">
+<dep name=".\Generated_Source\PSoC4\Low_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\Low_Thresh_PM.c" />
+<dep name=".\Generated_Source\PSoC4\Low_Thresh_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\Low_Thresh_PM.c" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\MED_FILTER_INPUT.o">
+<dep name=".\Generated_Source\PSoC4\MED_FILTER_INPUT.c" />
+<dep name=".\Generated_Source\PSoC4\MED_FILTER_INPUT.h" />
+<dep name=".\Generated_Source\PSoC4\MED_FILTER_INPUT_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\MED_FILTER_INPUT.c" />
+<file name=".\Generated_Source\PSoC4\MED_FILTER_INPUT.h" />
+<file name=".\Generated_Source\PSoC4\MED_FILTER_INPUT_aliases.h" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\MED_FILTER_INPUT_PM.o">
+<dep name=".\Generated_Source\PSoC4\MED_FILTER_INPUT.h" />
+<dep name=".\Generated_Source\PSoC4\MED_FILTER_INPUT_PM.c" />
+<dep name=".\Generated_Source\PSoC4\MED_FILTER_INPUT_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\MED_FILTER_INPUT_PM.c" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\Mid_Peak.o">
+<dep name=".\Generated_Source\PSoC4\Mid_Peak.c" />
+<dep name=".\Generated_Source\PSoC4\Mid_Peak.h" />
+<dep name=".\Generated_Source\PSoC4\Mid_Peak_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\Mid_Peak.c" />
+<file name=".\Generated_Source\PSoC4\Mid_Peak.h" />
+<file name=".\Generated_Source\PSoC4\Mid_Peak_aliases.h" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\Mid_Peak_PM.o">
+<dep name=".\Generated_Source\PSoC4\Mid_Peak.h" />
+<dep name=".\Generated_Source\PSoC4\Mid_Peak_PM.c" />
+<dep name=".\Generated_Source\PSoC4\Mid_Peak_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\Mid_Peak_PM.c" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\Mid_Thresh.o">
+<dep name=".\Generated_Source\PSoC4\Mid_Thresh.c" />
+<dep name=".\Generated_Source\PSoC4\Mid_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\Mid_Thresh_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\Mid_Thresh.c" />
+<file name=".\Generated_Source\PSoC4\Mid_Thresh.h" />
+<file name=".\Generated_Source\PSoC4\Mid_Thresh_aliases.h" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\Mid_Thresh_Feedback.o">
+<dep name=".\Generated_Source\PSoC4\Mid_Thresh_Feedback.c" />
+<dep name=".\Generated_Source\PSoC4\Mid_Thresh_Feedback.h" />
+<dep name=".\Generated_Source\PSoC4\Mid_Thresh_Feedback_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\Mid_Thresh_Feedback.c" />
+<file name=".\Generated_Source\PSoC4\Mid_Thresh_Feedback.h" />
+<file name=".\Generated_Source\PSoC4\Mid_Thresh_Feedback_aliases.h" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\Mid_Thresh_Feedback_PM.o">
+<dep name=".\Generated_Source\PSoC4\Mid_Thresh_Feedback.h" />
+<dep name=".\Generated_Source\PSoC4\Mid_Thresh_Feedback_PM.c" />
+<dep name=".\Generated_Source\PSoC4\Mid_Thresh_Feedback_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\Mid_Thresh_Feedback_PM.c" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\Mid_Thresh_PM.o">
+<dep name=".\Generated_Source\PSoC4\Mid_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\Mid_Thresh_PM.c" />
+<dep name=".\Generated_Source\PSoC4\Mid_Thresh_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\Mid_Thresh_PM.c" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\PGA_CS.o">
+<dep name=".\Generated_Source\PSoC4\PGA_CS.c" />
+<dep name=".\Generated_Source\PSoC4\PGA_CS.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_CS_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\PGA_CS.c" />
+<file name=".\Generated_Source\PSoC4\PGA_CS.h" />
+<file name=".\Generated_Source\PSoC4\PGA_CS_aliases.h" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\PGA_CS_PM.o">
+<dep name=".\Generated_Source\PSoC4\PGA_CS.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_CS_PM.c" />
+<dep name=".\Generated_Source\PSoC4\PGA_CS_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\PGA_CS_PM.c" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\PGA_INC.o">
+<dep name=".\Generated_Source\PSoC4\PGA_INC.c" />
+<dep name=".\Generated_Source\PSoC4\PGA_INC.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_INC_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\PGA_INC.c" />
+<file name=".\Generated_Source\PSoC4\PGA_INC.h" />
+<file name=".\Generated_Source\PSoC4\PGA_INC_aliases.h" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\PGA_INC_PM.o">
+<dep name=".\Generated_Source\PSoC4\PGA_INC.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_INC_PM.c" />
+<dep name=".\Generated_Source\PSoC4\PGA_INC_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\PGA_INC_PM.c" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\PGA_U_Db.o">
+<dep name=".\Generated_Source\PSoC4\PGA_U_Db.c" />
+<dep name=".\Generated_Source\PSoC4\PGA_U_Db.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_U_Db_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\PGA_U_Db.c" />
+<file name=".\Generated_Source\PSoC4\PGA_U_Db.h" />
+<file name=".\Generated_Source\PSoC4\PGA_U_Db_aliases.h" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\PGA_U_Db_PM.o">
+<dep name=".\Generated_Source\PSoC4\PGA_U_Db.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_U_Db_PM.c" />
+<dep name=".\Generated_Source\PSoC4\PGA_U_Db_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\PGA_U_Db_PM.c" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\PWM_High_Thresh.o">
+<dep name=".\Generated_Source\PSoC4\CyLFClk.h" />
+<dep name=".\Generated_Source\PSoC4\CyLib.h" />
+<dep name=".\Generated_Source\PSoC4\PWM_High_Thresh.c" />
+<dep name=".\Generated_Source\PSoC4\PWM_High_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\PWM_High_Thresh.c" />
+<file name=".\Generated_Source\PSoC4\PWM_High_Thresh.h" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\PWM_High_Thresh_PM.o">
+<dep name=".\Generated_Source\PSoC4\CyLFClk.h" />
+<dep name=".\Generated_Source\PSoC4\CyLib.h" />
+<dep name=".\Generated_Source\PSoC4\PWM_High_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\PWM_High_Thresh_PM.c" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\PWM_High_Thresh_PM.c" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\PWM_Low_Thresh.o">
+<dep name=".\Generated_Source\PSoC4\CyLFClk.h" />
+<dep name=".\Generated_Source\PSoC4\CyLib.h" />
+<dep name=".\Generated_Source\PSoC4\PWM_Low_Thresh.c" />
+<dep name=".\Generated_Source\PSoC4\PWM_Low_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\PWM_Low_Thresh.c" />
+<file name=".\Generated_Source\PSoC4\PWM_Low_Thresh.h" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\PWM_Low_Thresh_PM.o">
+<dep name=".\Generated_Source\PSoC4\CyLFClk.h" />
+<dep name=".\Generated_Source\PSoC4\CyLib.h" />
+<dep name=".\Generated_Source\PSoC4\PWM_Low_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\PWM_Low_Thresh_PM.c" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\PWM_Low_Thresh_PM.c" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\PWM_Mid_Thresh.o">
+<dep name=".\Generated_Source\PSoC4\CyLFClk.h" />
+<dep name=".\Generated_Source\PSoC4\CyLib.h" />
+<dep name=".\Generated_Source\PSoC4\PWM_Mid_Thresh.c" />
+<dep name=".\Generated_Source\PSoC4\PWM_Mid_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\PWM_Mid_Thresh.c" />
+<file name=".\Generated_Source\PSoC4\PWM_Mid_Thresh.h" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\PWM_Mid_Thresh_PM.o">
+<dep name=".\Generated_Source\PSoC4\CyLFClk.h" />
+<dep name=".\Generated_Source\PSoC4\CyLib.h" />
+<dep name=".\Generated_Source\PSoC4\PWM_Mid_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\PWM_Mid_Thresh_PM.c" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\PWM_Mid_Thresh_PM.c" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\TC_CC_ISR.o">
+<dep name=".\Generated_Source\PSoC4\CyLFClk.h" />
+<dep name=".\Generated_Source\PSoC4\CyLib.h" />
+<dep name=".\Generated_Source\PSoC4\TC_CC_ISR.c" />
+<dep name=".\Generated_Source\PSoC4\TC_CC_ISR.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+<dep name=".\cyapicallbacks.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\TC_CC_ISR.c" />
+<file name=".\Generated_Source\PSoC4\TC_CC_ISR.h" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\Timer.o">
+<dep name=".\Generated_Source\PSoC4\CyLFClk.h" />
+<dep name=".\Generated_Source\PSoC4\CyLib.h" />
+<dep name=".\Generated_Source\PSoC4\Timer.c" />
+<dep name=".\Generated_Source\PSoC4\Timer.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\Timer.c" />
+<file name=".\Generated_Source\PSoC4\Timer.h" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\Timer_PM.o">
+<dep name=".\Generated_Source\PSoC4\CyLFClk.h" />
+<dep name=".\Generated_Source\PSoC4\CyLib.h" />
+<dep name=".\Generated_Source\PSoC4\Timer.h" />
+<dep name=".\Generated_Source\PSoC4\Timer_PM.c" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\Timer_PM.c" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\UART.o">
+<dep name=".\Generated_Source\PSoC4\UART.c" />
+<dep name=".\Generated_Source\PSoC4\UART.h" />
+<dep name=".\Generated_Source\PSoC4\UART_PVT.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\UART.c" />
+<file name=".\Generated_Source\PSoC4\UART.h" />
+<file name=".\Generated_Source\PSoC4\UART_PVT.h" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\USER_INPUT.o">
+<dep name=".\Generated_Source\PSoC4\USER_INPUT.c" />
+<dep name=".\Generated_Source\PSoC4\USER_INPUT.h" />
+<dep name=".\Generated_Source\PSoC4\USER_INPUT_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\USER_INPUT.c" />
+<file name=".\Generated_Source\PSoC4\USER_INPUT.h" />
+<file name=".\Generated_Source\PSoC4\USER_INPUT_aliases.h" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\USER_INPUT_PM.o">
+<dep name=".\Generated_Source\PSoC4\USER_INPUT.h" />
+<dep name=".\Generated_Source\PSoC4\USER_INPUT_PM.c" />
+<dep name=".\Generated_Source\PSoC4\USER_INPUT_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\USER_INPUT_PM.c" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\WDT_Interrupt.o">
+<dep name=".\Generated_Source\PSoC4\CyLFClk.h" />
+<dep name=".\Generated_Source\PSoC4\CyLib.h" />
+<dep name=".\Generated_Source\PSoC4\WDT_Interrupt.c" />
+<dep name=".\Generated_Source\PSoC4\WDT_Interrupt.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+<dep name=".\cyapicallbacks.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\WDT_Interrupt.c" />
+<file name=".\Generated_Source\PSoC4\WDT_Interrupt.h" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\cyPm.o">
+<dep name=".\Generated_Source\PSoC4\CyLFClk.h" />
+<dep name=".\Generated_Source\PSoC4\CyLib.h" />
+<dep name=".\Generated_Source\PSoC4\cyPm.c" />
+<dep name=".\Generated_Source\PSoC4\cyPm.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\cyPm.c" />
+<file name=".\Generated_Source\PSoC4\cyPm.h" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\cybootloader.o">
+<dep name=".\Generated_Source\PSoC4\cybootloader.c" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\cybootloader.c" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\cyfitter_cfg.o">
+<dep name=".\Generated_Source\PSoC4\CyLFClk.h" />
+<dep name=".\Generated_Source\PSoC4\CyLib.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter_cfg.c" />
+<dep name=".\Generated_Source\PSoC4\cyfitter_cfg.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+<dep name=".\cyapicallbacks.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\cyfitter_cfg.c" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\cymetadata.o">
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cymetadata.c" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\cymetadata.c" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\cyutils.o">
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+<dep name=".\Generated_Source\PSoC4\cyutils.c" />
+</file>
+<file name=".\Generated_Source\PSoC4\cyutils.c" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\motor.o">
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+<dep name=".\Generated_Source\PSoC4\motor.c" />
+<dep name=".\Generated_Source\PSoC4\motor.h" />
+<dep name=".\Generated_Source\PSoC4\motor_aliases.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\motor.c" />
+<file name=".\Generated_Source\PSoC4\motor.h" />
+<file name=".\Generated_Source\PSoC4\motor_aliases.h" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\motor_PM.o">
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+<dep name=".\Generated_Source\PSoC4\motor.h" />
+<dep name=".\Generated_Source\PSoC4\motor_PM.c" />
+<dep name=".\Generated_Source\PSoC4\motor_aliases.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\motor_PM.c" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\IDAC.o">
+<dep name=".\Generated_Source\PSoC4\core_cm0.h" />
+<dep name=".\Generated_Source\PSoC4\core_cm0_psoc4.h" />
+<dep name=".\Generated_Source\PSoC4\core_cmFunc.h" />
+<dep name=".\Generated_Source\PSoC4\core_cmInstr.h" />
+<dep name=".\Generated_Source\PSoC4\cydisabledsheets.h" />
+<dep name=".\Generated_Source\PSoC4\project.h" />
+<dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_1.h" />
+<dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_1_IRQ.h" />
+<dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_1_intClock.h" />
+<dep name=".\Generated_Source\PSoC4\Bootloadable.h" />
+<dep name=".\Generated_Source\PSoC4\Clock_1.h" />
+<dep name=".\Generated_Source\PSoC4\Clock_PWM.h" />
+<dep name=".\Generated_Source\PSoC4\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC4\CyLFClk.h" />
+<dep name=".\Generated_Source\PSoC4\CyLib.h" />
+<dep name=".\Generated_Source\PSoC4\FIRE_FILTER_INPUT.h" />
+<dep name=".\Generated_Source\PSoC4\FIRE_FILTER_INPUT_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Fire_Peak.h" />
+<dep name=".\Generated_Source\PSoC4\Fire_Peak_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Fire_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\Fire_Thresh_Feedback.h" />
+<dep name=".\Generated_Source\PSoC4\Fire_Thresh_Feedback_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Fire_Thresh_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\HIGH_FILTER_INPUT.h" />
+<dep name=".\Generated_Source\PSoC4\HIGH_FILTER_INPUT_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\High_Peak.h" />
+<dep name=".\Generated_Source\PSoC4\High_Peak_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\High_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\High_Thresh_Feedback.h" />
+<dep name=".\Generated_Source\PSoC4\High_Thresh_Feedback_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\High_Thresh_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\IDAC_Fire_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\LED_BLUE.h" />
+<dep name=".\Generated_Source\PSoC4\LED_BLUE_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\LED_GREEN.h" />
+<dep name=".\Generated_Source\PSoC4\LED_GREEN_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\LED_RED.h" />
+<dep name=".\Generated_Source\PSoC4\LED_RED_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\LOW_FILTER_INPUT.h" />
+<dep name=".\Generated_Source\PSoC4\LOW_FILTER_INPUT_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Low_Peak.h" />
+<dep name=".\Generated_Source\PSoC4\Low_Peak_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Low_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\Low_Thresh_Feedback.h" />
+<dep name=".\Generated_Source\PSoC4\Low_Thresh_Feedback_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Low_Thresh_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\MED_FILTER_INPUT.h" />
+<dep name=".\Generated_Source\PSoC4\MED_FILTER_INPUT_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Mid_Peak.h" />
+<dep name=".\Generated_Source\PSoC4\Mid_Peak_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Mid_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\Mid_Thresh_Feedback.h" />
+<dep name=".\Generated_Source\PSoC4\Mid_Thresh_Feedback_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Mid_Thresh_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_CS.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_CS_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_INC.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_INC_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_U_Db.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_U_Db_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\PWM_High_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\PWM_Low_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\PWM_Mid_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\TC_CC_ISR.h" />
+<dep name=".\Generated_Source\PSoC4\Timer.h" />
+<dep name=".\Generated_Source\PSoC4\UART.h" />
+<dep name=".\Generated_Source\PSoC4\UART_PVT.h" />
+<dep name=".\Generated_Source\PSoC4\USER_INPUT.h" />
+<dep name=".\Generated_Source\PSoC4\USER_INPUT_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\WDT_Interrupt.h" />
+<dep name=".\Generated_Source\PSoC4\cyPm.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter_cfg.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+<dep name=".\Generated_Source\PSoC4\motor.h" />
+<dep name=".\Generated_Source\PSoC4\motor_aliases.h" />
+<dep name=".\IDAC.c" />
+<dep name=".\IDAC.h" />
+<dep name=".\adc.h" />
+</file>
+<file name=".\Generated_Source\PSoC4\core_cm0.h" />
+<file name=".\Generated_Source\PSoC4\core_cm0_psoc4.h" />
+<file name=".\Generated_Source\PSoC4\core_cmFunc.h" />
+<file name=".\Generated_Source\PSoC4\core_cmInstr.h" />
+<file name=".\Generated_Source\PSoC4\cydisabledsheets.h" />
+<file name=".\Generated_Source\PSoC4\project.h" />
+<file name=".\IDAC.c" />
+<file name=".\IDAC.h" />
+<file name=".\adc.h" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\OTAMandatory.o">
+<dep name=".\Generated_Source\PSoC4\core_cm0.h" />
+<dep name=".\Generated_Source\PSoC4\core_cm0_psoc4.h" />
+<dep name=".\Generated_Source\PSoC4\core_cmFunc.h" />
+<dep name=".\Generated_Source\PSoC4\core_cmInstr.h" />
+<dep name=".\Generated_Source\PSoC4\cydisabledsheets.h" />
+<dep name=".\Generated_Source\PSoC4\project.h" />
+<dep name=".\Debug.h" />
+<dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_1.h" />
+<dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_1_IRQ.h" />
+<dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_1_intClock.h" />
+<dep name=".\Generated_Source\PSoC4\Bootloadable.h" />
+<dep name=".\Generated_Source\PSoC4\Clock_1.h" />
+<dep name=".\Generated_Source\PSoC4\Clock_PWM.h" />
+<dep name=".\Generated_Source\PSoC4\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC4\CyLFClk.h" />
+<dep name=".\Generated_Source\PSoC4\CyLib.h" />
+<dep name=".\Generated_Source\PSoC4\FIRE_FILTER_INPUT.h" />
+<dep name=".\Generated_Source\PSoC4\FIRE_FILTER_INPUT_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Fire_Peak.h" />
+<dep name=".\Generated_Source\PSoC4\Fire_Peak_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Fire_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\Fire_Thresh_Feedback.h" />
+<dep name=".\Generated_Source\PSoC4\Fire_Thresh_Feedback_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Fire_Thresh_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\HIGH_FILTER_INPUT.h" />
+<dep name=".\Generated_Source\PSoC4\HIGH_FILTER_INPUT_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\High_Peak.h" />
+<dep name=".\Generated_Source\PSoC4\High_Peak_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\High_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\High_Thresh_Feedback.h" />
+<dep name=".\Generated_Source\PSoC4\High_Thresh_Feedback_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\High_Thresh_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\IDAC_Fire_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\LED_BLUE.h" />
+<dep name=".\Generated_Source\PSoC4\LED_BLUE_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\LED_GREEN.h" />
+<dep name=".\Generated_Source\PSoC4\LED_GREEN_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\LED_RED.h" />
+<dep name=".\Generated_Source\PSoC4\LED_RED_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\LOW_FILTER_INPUT.h" />
+<dep name=".\Generated_Source\PSoC4\LOW_FILTER_INPUT_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Low_Peak.h" />
+<dep name=".\Generated_Source\PSoC4\Low_Peak_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Low_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\Low_Thresh_Feedback.h" />
+<dep name=".\Generated_Source\PSoC4\Low_Thresh_Feedback_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Low_Thresh_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\MED_FILTER_INPUT.h" />
+<dep name=".\Generated_Source\PSoC4\MED_FILTER_INPUT_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Mid_Peak.h" />
+<dep name=".\Generated_Source\PSoC4\Mid_Peak_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Mid_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\Mid_Thresh_Feedback.h" />
+<dep name=".\Generated_Source\PSoC4\Mid_Thresh_Feedback_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Mid_Thresh_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_CS.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_CS_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_INC.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_INC_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_U_Db.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_U_Db_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\PWM_High_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\PWM_Low_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\PWM_Mid_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\TC_CC_ISR.h" />
+<dep name=".\Generated_Source\PSoC4\Timer.h" />
+<dep name=".\Generated_Source\PSoC4\UART.h" />
+<dep name=".\Generated_Source\PSoC4\UART_PVT.h" />
+<dep name=".\Generated_Source\PSoC4\USER_INPUT.h" />
+<dep name=".\Generated_Source\PSoC4\USER_INPUT_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\WDT_Interrupt.h" />
+<dep name=".\Generated_Source\PSoC4\cyPm.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter_cfg.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+<dep name=".\Generated_Source\PSoC4\motor.h" />
+<dep name=".\Generated_Source\PSoC4\motor_aliases.h" />
+<dep name=".\OTAMandatory.c" />
+<dep name=".\OTAMandatory.h" />
+<dep name=".\Options.h" />
+<dep name=".\common.h" />
+</file>
+<file name=".\Debug.h" />
+<file name=".\OTAMandatory.c" />
+<file name=".\OTAMandatory.h" />
+<file name=".\Options.h" />
+<file name=".\common.h" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\OTAOptional.o">
+<dep name=".\Generated_Source\PSoC4\core_cm0.h" />
+<dep name=".\Generated_Source\PSoC4\core_cm0_psoc4.h" />
+<dep name=".\Generated_Source\PSoC4\core_cmFunc.h" />
+<dep name=".\Generated_Source\PSoC4\core_cmInstr.h" />
+<dep name=".\Generated_Source\PSoC4\cydisabledsheets.h" />
+<dep name=".\Generated_Source\PSoC4\project.h" />
+<dep name=".\Debug.h" />
+<dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_1.h" />
+<dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_1_IRQ.h" />
+<dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_1_intClock.h" />
+<dep name=".\Generated_Source\PSoC4\Bootloadable.h" />
+<dep name=".\Generated_Source\PSoC4\Clock_1.h" />
+<dep name=".\Generated_Source\PSoC4\Clock_PWM.h" />
+<dep name=".\Generated_Source\PSoC4\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC4\CyLFClk.h" />
+<dep name=".\Generated_Source\PSoC4\CyLib.h" />
+<dep name=".\Generated_Source\PSoC4\FIRE_FILTER_INPUT.h" />
+<dep name=".\Generated_Source\PSoC4\FIRE_FILTER_INPUT_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Fire_Peak.h" />
+<dep name=".\Generated_Source\PSoC4\Fire_Peak_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Fire_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\Fire_Thresh_Feedback.h" />
+<dep name=".\Generated_Source\PSoC4\Fire_Thresh_Feedback_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Fire_Thresh_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\HIGH_FILTER_INPUT.h" />
+<dep name=".\Generated_Source\PSoC4\HIGH_FILTER_INPUT_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\High_Peak.h" />
+<dep name=".\Generated_Source\PSoC4\High_Peak_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\High_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\High_Thresh_Feedback.h" />
+<dep name=".\Generated_Source\PSoC4\High_Thresh_Feedback_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\High_Thresh_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\IDAC_Fire_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\LED_BLUE.h" />
+<dep name=".\Generated_Source\PSoC4\LED_BLUE_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\LED_GREEN.h" />
+<dep name=".\Generated_Source\PSoC4\LED_GREEN_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\LED_RED.h" />
+<dep name=".\Generated_Source\PSoC4\LED_RED_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\LOW_FILTER_INPUT.h" />
+<dep name=".\Generated_Source\PSoC4\LOW_FILTER_INPUT_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Low_Peak.h" />
+<dep name=".\Generated_Source\PSoC4\Low_Peak_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Low_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\Low_Thresh_Feedback.h" />
+<dep name=".\Generated_Source\PSoC4\Low_Thresh_Feedback_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Low_Thresh_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\MED_FILTER_INPUT.h" />
+<dep name=".\Generated_Source\PSoC4\MED_FILTER_INPUT_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Mid_Peak.h" />
+<dep name=".\Generated_Source\PSoC4\Mid_Peak_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Mid_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\Mid_Thresh_Feedback.h" />
+<dep name=".\Generated_Source\PSoC4\Mid_Thresh_Feedback_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Mid_Thresh_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_CS.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_CS_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_INC.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_INC_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_U_Db.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_U_Db_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\PWM_High_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\PWM_Low_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\PWM_Mid_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\TC_CC_ISR.h" />
+<dep name=".\Generated_Source\PSoC4\Timer.h" />
+<dep name=".\Generated_Source\PSoC4\UART.h" />
+<dep name=".\Generated_Source\PSoC4\UART_PVT.h" />
+<dep name=".\Generated_Source\PSoC4\USER_INPUT.h" />
+<dep name=".\Generated_Source\PSoC4\USER_INPUT_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\WDT_Interrupt.h" />
+<dep name=".\Generated_Source\PSoC4\cyPm.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter_cfg.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+<dep name=".\Generated_Source\PSoC4\motor.h" />
+<dep name=".\Generated_Source\PSoC4\motor_aliases.h" />
+<dep name=".\OTAMandatory.h" />
+<dep name=".\OTAOptional.c" />
+<dep name=".\OTAOptional.h" />
+<dep name=".\Options.h" />
+<dep name=".\common.h" />
+</file>
+<file name=".\OTAOptional.c" />
+<file name=".\OTAOptional.h" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\PGA.o">
+<dep name=".\Generated_Source\PSoC4\core_cm0.h" />
+<dep name=".\Generated_Source\PSoC4\core_cm0_psoc4.h" />
+<dep name=".\Generated_Source\PSoC4\core_cmFunc.h" />
+<dep name=".\Generated_Source\PSoC4\core_cmInstr.h" />
+<dep name=".\Generated_Source\PSoC4\cydisabledsheets.h" />
+<dep name=".\Generated_Source\PSoC4\project.h" />
+<dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_1.h" />
+<dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_1_IRQ.h" />
+<dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_1_intClock.h" />
+<dep name=".\Generated_Source\PSoC4\Bootloadable.h" />
+<dep name=".\Generated_Source\PSoC4\Clock_1.h" />
+<dep name=".\Generated_Source\PSoC4\Clock_PWM.h" />
+<dep name=".\Generated_Source\PSoC4\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC4\CyLFClk.h" />
+<dep name=".\Generated_Source\PSoC4\CyLib.h" />
+<dep name=".\Generated_Source\PSoC4\FIRE_FILTER_INPUT.h" />
+<dep name=".\Generated_Source\PSoC4\FIRE_FILTER_INPUT_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Fire_Peak.h" />
+<dep name=".\Generated_Source\PSoC4\Fire_Peak_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Fire_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\Fire_Thresh_Feedback.h" />
+<dep name=".\Generated_Source\PSoC4\Fire_Thresh_Feedback_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Fire_Thresh_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\HIGH_FILTER_INPUT.h" />
+<dep name=".\Generated_Source\PSoC4\HIGH_FILTER_INPUT_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\High_Peak.h" />
+<dep name=".\Generated_Source\PSoC4\High_Peak_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\High_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\High_Thresh_Feedback.h" />
+<dep name=".\Generated_Source\PSoC4\High_Thresh_Feedback_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\High_Thresh_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\IDAC_Fire_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\LED_BLUE.h" />
+<dep name=".\Generated_Source\PSoC4\LED_BLUE_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\LED_GREEN.h" />
+<dep name=".\Generated_Source\PSoC4\LED_GREEN_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\LED_RED.h" />
+<dep name=".\Generated_Source\PSoC4\LED_RED_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\LOW_FILTER_INPUT.h" />
+<dep name=".\Generated_Source\PSoC4\LOW_FILTER_INPUT_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Low_Peak.h" />
+<dep name=".\Generated_Source\PSoC4\Low_Peak_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Low_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\Low_Thresh_Feedback.h" />
+<dep name=".\Generated_Source\PSoC4\Low_Thresh_Feedback_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Low_Thresh_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\MED_FILTER_INPUT.h" />
+<dep name=".\Generated_Source\PSoC4\MED_FILTER_INPUT_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Mid_Peak.h" />
+<dep name=".\Generated_Source\PSoC4\Mid_Peak_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Mid_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\Mid_Thresh_Feedback.h" />
+<dep name=".\Generated_Source\PSoC4\Mid_Thresh_Feedback_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Mid_Thresh_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_CS.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_CS_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_INC.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_INC_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_U_Db.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_U_Db_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\PWM_High_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\PWM_Low_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\PWM_Mid_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\TC_CC_ISR.h" />
+<dep name=".\Generated_Source\PSoC4\Timer.h" />
+<dep name=".\Generated_Source\PSoC4\UART.h" />
+<dep name=".\Generated_Source\PSoC4\UART_PVT.h" />
+<dep name=".\Generated_Source\PSoC4\USER_INPUT.h" />
+<dep name=".\Generated_Source\PSoC4\USER_INPUT_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\WDT_Interrupt.h" />
+<dep name=".\Generated_Source\PSoC4\cyPm.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter_cfg.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+<dep name=".\Generated_Source\PSoC4\motor.h" />
+<dep name=".\Generated_Source\PSoC4\motor_aliases.h" />
+<dep name=".\PGA.c" />
+<dep name=".\PGA.h" />
+</file>
+<file name=".\PGA.c" />
+<file name=".\PGA.h" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\PWM.o">
+<dep name=".\Generated_Source\PSoC4\core_cm0.h" />
+<dep name=".\Generated_Source\PSoC4\core_cm0_psoc4.h" />
+<dep name=".\Generated_Source\PSoC4\core_cmFunc.h" />
+<dep name=".\Generated_Source\PSoC4\core_cmInstr.h" />
+<dep name=".\Generated_Source\PSoC4\cydisabledsheets.h" />
+<dep name=".\Generated_Source\PSoC4\project.h" />
+<dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_1.h" />
+<dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_1_IRQ.h" />
+<dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_1_intClock.h" />
+<dep name=".\Generated_Source\PSoC4\Bootloadable.h" />
+<dep name=".\Generated_Source\PSoC4\Clock_1.h" />
+<dep name=".\Generated_Source\PSoC4\Clock_PWM.h" />
+<dep name=".\Generated_Source\PSoC4\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC4\CyLFClk.h" />
+<dep name=".\Generated_Source\PSoC4\CyLib.h" />
+<dep name=".\Generated_Source\PSoC4\FIRE_FILTER_INPUT.h" />
+<dep name=".\Generated_Source\PSoC4\FIRE_FILTER_INPUT_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Fire_Peak.h" />
+<dep name=".\Generated_Source\PSoC4\Fire_Peak_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Fire_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\Fire_Thresh_Feedback.h" />
+<dep name=".\Generated_Source\PSoC4\Fire_Thresh_Feedback_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Fire_Thresh_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\HIGH_FILTER_INPUT.h" />
+<dep name=".\Generated_Source\PSoC4\HIGH_FILTER_INPUT_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\High_Peak.h" />
+<dep name=".\Generated_Source\PSoC4\High_Peak_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\High_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\High_Thresh_Feedback.h" />
+<dep name=".\Generated_Source\PSoC4\High_Thresh_Feedback_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\High_Thresh_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\IDAC_Fire_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\LED_BLUE.h" />
+<dep name=".\Generated_Source\PSoC4\LED_BLUE_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\LED_GREEN.h" />
+<dep name=".\Generated_Source\PSoC4\LED_GREEN_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\LED_RED.h" />
+<dep name=".\Generated_Source\PSoC4\LED_RED_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\LOW_FILTER_INPUT.h" />
+<dep name=".\Generated_Source\PSoC4\LOW_FILTER_INPUT_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Low_Peak.h" />
+<dep name=".\Generated_Source\PSoC4\Low_Peak_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Low_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\Low_Thresh_Feedback.h" />
+<dep name=".\Generated_Source\PSoC4\Low_Thresh_Feedback_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Low_Thresh_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\MED_FILTER_INPUT.h" />
+<dep name=".\Generated_Source\PSoC4\MED_FILTER_INPUT_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Mid_Peak.h" />
+<dep name=".\Generated_Source\PSoC4\Mid_Peak_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Mid_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\Mid_Thresh_Feedback.h" />
+<dep name=".\Generated_Source\PSoC4\Mid_Thresh_Feedback_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Mid_Thresh_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_CS.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_CS_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_INC.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_INC_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_U_Db.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_U_Db_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\PWM_High_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\PWM_Low_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\PWM_Mid_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\TC_CC_ISR.h" />
+<dep name=".\Generated_Source\PSoC4\Timer.h" />
+<dep name=".\Generated_Source\PSoC4\UART.h" />
+<dep name=".\Generated_Source\PSoC4\UART_PVT.h" />
+<dep name=".\Generated_Source\PSoC4\USER_INPUT.h" />
+<dep name=".\Generated_Source\PSoC4\USER_INPUT_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\WDT_Interrupt.h" />
+<dep name=".\Generated_Source\PSoC4\cyPm.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter_cfg.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+<dep name=".\Generated_Source\PSoC4\motor.h" />
+<dep name=".\Generated_Source\PSoC4\motor_aliases.h" />
+<dep name=".\PWM.c" />
+<dep name=".\PWM.h" />
+<dep name=".\adc.h" />
+</file>
+<file name=".\PWM.c" />
+<file name=".\PWM.h" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\adc.o">
+<dep name=".\Generated_Source\PSoC4\core_cm0.h" />
+<dep name=".\Generated_Source\PSoC4\core_cm0_psoc4.h" />
+<dep name=".\Generated_Source\PSoC4\core_cmFunc.h" />
+<dep name=".\Generated_Source\PSoC4\core_cmInstr.h" />
+<dep name=".\Generated_Source\PSoC4\cydisabledsheets.h" />
+<dep name=".\Generated_Source\PSoC4\project.h" />
+<dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_1.h" />
+<dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_1_IRQ.h" />
+<dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_1_intClock.h" />
+<dep name=".\Generated_Source\PSoC4\Bootloadable.h" />
+<dep name=".\Generated_Source\PSoC4\Clock_1.h" />
+<dep name=".\Generated_Source\PSoC4\Clock_PWM.h" />
+<dep name=".\Generated_Source\PSoC4\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC4\CyLFClk.h" />
+<dep name=".\Generated_Source\PSoC4\CyLib.h" />
+<dep name=".\Generated_Source\PSoC4\FIRE_FILTER_INPUT.h" />
+<dep name=".\Generated_Source\PSoC4\FIRE_FILTER_INPUT_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Fire_Peak.h" />
+<dep name=".\Generated_Source\PSoC4\Fire_Peak_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Fire_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\Fire_Thresh_Feedback.h" />
+<dep name=".\Generated_Source\PSoC4\Fire_Thresh_Feedback_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Fire_Thresh_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\HIGH_FILTER_INPUT.h" />
+<dep name=".\Generated_Source\PSoC4\HIGH_FILTER_INPUT_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\High_Peak.h" />
+<dep name=".\Generated_Source\PSoC4\High_Peak_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\High_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\High_Thresh_Feedback.h" />
+<dep name=".\Generated_Source\PSoC4\High_Thresh_Feedback_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\High_Thresh_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\IDAC_Fire_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\LED_BLUE.h" />
+<dep name=".\Generated_Source\PSoC4\LED_BLUE_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\LED_GREEN.h" />
+<dep name=".\Generated_Source\PSoC4\LED_GREEN_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\LED_RED.h" />
+<dep name=".\Generated_Source\PSoC4\LED_RED_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\LOW_FILTER_INPUT.h" />
+<dep name=".\Generated_Source\PSoC4\LOW_FILTER_INPUT_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Low_Peak.h" />
+<dep name=".\Generated_Source\PSoC4\Low_Peak_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Low_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\Low_Thresh_Feedback.h" />
+<dep name=".\Generated_Source\PSoC4\Low_Thresh_Feedback_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Low_Thresh_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\MED_FILTER_INPUT.h" />
+<dep name=".\Generated_Source\PSoC4\MED_FILTER_INPUT_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Mid_Peak.h" />
+<dep name=".\Generated_Source\PSoC4\Mid_Peak_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Mid_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\Mid_Thresh_Feedback.h" />
+<dep name=".\Generated_Source\PSoC4\Mid_Thresh_Feedback_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Mid_Thresh_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_CS.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_CS_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_INC.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_INC_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_U_Db.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_U_Db_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\PWM_High_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\PWM_Low_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\PWM_Mid_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\TC_CC_ISR.h" />
+<dep name=".\Generated_Source\PSoC4\Timer.h" />
+<dep name=".\Generated_Source\PSoC4\UART.h" />
+<dep name=".\Generated_Source\PSoC4\UART_PVT.h" />
+<dep name=".\Generated_Source\PSoC4\USER_INPUT.h" />
+<dep name=".\Generated_Source\PSoC4\USER_INPUT_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\WDT_Interrupt.h" />
+<dep name=".\Generated_Source\PSoC4\cyPm.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter_cfg.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+<dep name=".\Generated_Source\PSoC4\motor.h" />
+<dep name=".\Generated_Source\PSoC4\motor_aliases.h" />
+<dep name=".\adc.c" />
+<dep name=".\adc.h" />
+</file>
+<file name=".\adc.c" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\debug.o">
+<dep name=".\Generated_Source\PSoC4\core_cm0.h" />
+<dep name=".\Generated_Source\PSoC4\core_cm0_psoc4.h" />
+<dep name=".\Generated_Source\PSoC4\core_cmFunc.h" />
+<dep name=".\Generated_Source\PSoC4\core_cmInstr.h" />
+<dep name=".\Generated_Source\PSoC4\cydisabledsheets.h" />
+<dep name=".\Generated_Source\PSoC4\project.h" />
+<dep name=".\Debug.h" />
+<dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_1.h" />
+<dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_1_IRQ.h" />
+<dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_1_intClock.h" />
+<dep name=".\Generated_Source\PSoC4\Bootloadable.h" />
+<dep name=".\Generated_Source\PSoC4\Clock_1.h" />
+<dep name=".\Generated_Source\PSoC4\Clock_PWM.h" />
+<dep name=".\Generated_Source\PSoC4\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC4\CyLFClk.h" />
+<dep name=".\Generated_Source\PSoC4\CyLib.h" />
+<dep name=".\Generated_Source\PSoC4\FIRE_FILTER_INPUT.h" />
+<dep name=".\Generated_Source\PSoC4\FIRE_FILTER_INPUT_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Fire_Peak.h" />
+<dep name=".\Generated_Source\PSoC4\Fire_Peak_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Fire_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\Fire_Thresh_Feedback.h" />
+<dep name=".\Generated_Source\PSoC4\Fire_Thresh_Feedback_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Fire_Thresh_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\HIGH_FILTER_INPUT.h" />
+<dep name=".\Generated_Source\PSoC4\HIGH_FILTER_INPUT_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\High_Peak.h" />
+<dep name=".\Generated_Source\PSoC4\High_Peak_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\High_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\High_Thresh_Feedback.h" />
+<dep name=".\Generated_Source\PSoC4\High_Thresh_Feedback_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\High_Thresh_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\IDAC_Fire_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\LED_BLUE.h" />
+<dep name=".\Generated_Source\PSoC4\LED_BLUE_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\LED_GREEN.h" />
+<dep name=".\Generated_Source\PSoC4\LED_GREEN_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\LED_RED.h" />
+<dep name=".\Generated_Source\PSoC4\LED_RED_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\LOW_FILTER_INPUT.h" />
+<dep name=".\Generated_Source\PSoC4\LOW_FILTER_INPUT_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Low_Peak.h" />
+<dep name=".\Generated_Source\PSoC4\Low_Peak_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Low_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\Low_Thresh_Feedback.h" />
+<dep name=".\Generated_Source\PSoC4\Low_Thresh_Feedback_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Low_Thresh_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\MED_FILTER_INPUT.h" />
+<dep name=".\Generated_Source\PSoC4\MED_FILTER_INPUT_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Mid_Peak.h" />
+<dep name=".\Generated_Source\PSoC4\Mid_Peak_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Mid_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\Mid_Thresh_Feedback.h" />
+<dep name=".\Generated_Source\PSoC4\Mid_Thresh_Feedback_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Mid_Thresh_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_CS.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_CS_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_INC.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_INC_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_U_Db.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_U_Db_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\PWM_High_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\PWM_Low_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\PWM_Mid_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\TC_CC_ISR.h" />
+<dep name=".\Generated_Source\PSoC4\Timer.h" />
+<dep name=".\Generated_Source\PSoC4\UART.h" />
+<dep name=".\Generated_Source\PSoC4\UART_PVT.h" />
+<dep name=".\Generated_Source\PSoC4\USER_INPUT.h" />
+<dep name=".\Generated_Source\PSoC4\USER_INPUT_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\WDT_Interrupt.h" />
+<dep name=".\Generated_Source\PSoC4\cyPm.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter_cfg.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+<dep name=".\Generated_Source\PSoC4\motor.h" />
+<dep name=".\Generated_Source\PSoC4\motor_aliases.h" />
+<dep name=".\OTAMandatory.h" />
+<dep name=".\Options.h" />
+<dep name=".\common.h" />
+<dep name=".\debug.c" />
+</file>
+<file name=".\debug.c" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\filter.o">
+<dep name=".\Generated_Source\PSoC4\core_cm0.h" />
+<dep name=".\Generated_Source\PSoC4\core_cm0_psoc4.h" />
+<dep name=".\Generated_Source\PSoC4\core_cmFunc.h" />
+<dep name=".\Generated_Source\PSoC4\core_cmInstr.h" />
+<dep name=".\Generated_Source\PSoC4\cydisabledsheets.h" />
+<dep name=".\Generated_Source\PSoC4\project.h" />
+<dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_1.h" />
+<dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_1_IRQ.h" />
+<dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_1_intClock.h" />
+<dep name=".\Generated_Source\PSoC4\Bootloadable.h" />
+<dep name=".\Generated_Source\PSoC4\Clock_1.h" />
+<dep name=".\Generated_Source\PSoC4\Clock_PWM.h" />
+<dep name=".\Generated_Source\PSoC4\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC4\CyLFClk.h" />
+<dep name=".\Generated_Source\PSoC4\CyLib.h" />
+<dep name=".\Generated_Source\PSoC4\FIRE_FILTER_INPUT.h" />
+<dep name=".\Generated_Source\PSoC4\FIRE_FILTER_INPUT_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Fire_Peak.h" />
+<dep name=".\Generated_Source\PSoC4\Fire_Peak_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Fire_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\Fire_Thresh_Feedback.h" />
+<dep name=".\Generated_Source\PSoC4\Fire_Thresh_Feedback_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Fire_Thresh_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\HIGH_FILTER_INPUT.h" />
+<dep name=".\Generated_Source\PSoC4\HIGH_FILTER_INPUT_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\High_Peak.h" />
+<dep name=".\Generated_Source\PSoC4\High_Peak_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\High_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\High_Thresh_Feedback.h" />
+<dep name=".\Generated_Source\PSoC4\High_Thresh_Feedback_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\High_Thresh_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\IDAC_Fire_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\LED_BLUE.h" />
+<dep name=".\Generated_Source\PSoC4\LED_BLUE_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\LED_GREEN.h" />
+<dep name=".\Generated_Source\PSoC4\LED_GREEN_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\LED_RED.h" />
+<dep name=".\Generated_Source\PSoC4\LED_RED_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\LOW_FILTER_INPUT.h" />
+<dep name=".\Generated_Source\PSoC4\LOW_FILTER_INPUT_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Low_Peak.h" />
+<dep name=".\Generated_Source\PSoC4\Low_Peak_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Low_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\Low_Thresh_Feedback.h" />
+<dep name=".\Generated_Source\PSoC4\Low_Thresh_Feedback_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Low_Thresh_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\MED_FILTER_INPUT.h" />
+<dep name=".\Generated_Source\PSoC4\MED_FILTER_INPUT_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Mid_Peak.h" />
+<dep name=".\Generated_Source\PSoC4\Mid_Peak_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Mid_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\Mid_Thresh_Feedback.h" />
+<dep name=".\Generated_Source\PSoC4\Mid_Thresh_Feedback_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Mid_Thresh_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_CS.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_CS_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_INC.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_INC_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_U_Db.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_U_Db_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\PWM_High_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\PWM_Low_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\PWM_Mid_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\TC_CC_ISR.h" />
+<dep name=".\Generated_Source\PSoC4\Timer.h" />
+<dep name=".\Generated_Source\PSoC4\UART.h" />
+<dep name=".\Generated_Source\PSoC4\UART_PVT.h" />
+<dep name=".\Generated_Source\PSoC4\USER_INPUT.h" />
+<dep name=".\Generated_Source\PSoC4\USER_INPUT_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\WDT_Interrupt.h" />
+<dep name=".\Generated_Source\PSoC4\cyPm.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter_cfg.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+<dep name=".\Generated_Source\PSoC4\motor.h" />
+<dep name=".\Generated_Source\PSoC4\motor_aliases.h" />
+<dep name=".\filter.c" />
+<dep name=".\filter.h" />
+<dep name=".\queue.h" />
+</file>
+<file name=".\filter.c" />
+<file name=".\filter.h" />
+<file name=".\queue.h" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\main.o">
+<dep name=".\Generated_Source\PSoC4\core_cm0.h" />
+<dep name=".\Generated_Source\PSoC4\core_cm0_psoc4.h" />
+<dep name=".\Generated_Source\PSoC4\core_cmFunc.h" />
+<dep name=".\Generated_Source\PSoC4\core_cmInstr.h" />
+<dep name=".\Generated_Source\PSoC4\cydisabledsheets.h" />
+<dep name=".\Generated_Source\PSoC4\project.h" />
+<dep name=".\CyBLE_custom.h" />
+<dep name=".\Debug.h" />
+<dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_1.h" />
+<dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_1_IRQ.h" />
+<dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_1_intClock.h" />
+<dep name=".\Generated_Source\PSoC4\Bootloadable.h" />
+<dep name=".\Generated_Source\PSoC4\Clock_1.h" />
+<dep name=".\Generated_Source\PSoC4\Clock_PWM.h" />
+<dep name=".\Generated_Source\PSoC4\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC4\CyLFClk.h" />
+<dep name=".\Generated_Source\PSoC4\CyLib.h" />
+<dep name=".\Generated_Source\PSoC4\FIRE_FILTER_INPUT.h" />
+<dep name=".\Generated_Source\PSoC4\FIRE_FILTER_INPUT_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Fire_Peak.h" />
+<dep name=".\Generated_Source\PSoC4\Fire_Peak_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Fire_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\Fire_Thresh_Feedback.h" />
+<dep name=".\Generated_Source\PSoC4\Fire_Thresh_Feedback_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Fire_Thresh_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\HIGH_FILTER_INPUT.h" />
+<dep name=".\Generated_Source\PSoC4\HIGH_FILTER_INPUT_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\High_Peak.h" />
+<dep name=".\Generated_Source\PSoC4\High_Peak_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\High_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\High_Thresh_Feedback.h" />
+<dep name=".\Generated_Source\PSoC4\High_Thresh_Feedback_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\High_Thresh_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\IDAC_Fire_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\LED_BLUE.h" />
+<dep name=".\Generated_Source\PSoC4\LED_BLUE_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\LED_GREEN.h" />
+<dep name=".\Generated_Source\PSoC4\LED_GREEN_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\LED_RED.h" />
+<dep name=".\Generated_Source\PSoC4\LED_RED_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\LOW_FILTER_INPUT.h" />
+<dep name=".\Generated_Source\PSoC4\LOW_FILTER_INPUT_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Low_Peak.h" />
+<dep name=".\Generated_Source\PSoC4\Low_Peak_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Low_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\Low_Thresh_Feedback.h" />
+<dep name=".\Generated_Source\PSoC4\Low_Thresh_Feedback_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Low_Thresh_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\MED_FILTER_INPUT.h" />
+<dep name=".\Generated_Source\PSoC4\MED_FILTER_INPUT_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Mid_Peak.h" />
+<dep name=".\Generated_Source\PSoC4\Mid_Peak_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Mid_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\Mid_Thresh_Feedback.h" />
+<dep name=".\Generated_Source\PSoC4\Mid_Thresh_Feedback_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Mid_Thresh_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_CS.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_CS_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_INC.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_INC_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_U_Db.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_U_Db_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\PWM_High_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\PWM_Low_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\PWM_Mid_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\TC_CC_ISR.h" />
+<dep name=".\Generated_Source\PSoC4\Timer.h" />
+<dep name=".\Generated_Source\PSoC4\UART.h" />
+<dep name=".\Generated_Source\PSoC4\UART_PVT.h" />
+<dep name=".\Generated_Source\PSoC4\USER_INPUT.h" />
+<dep name=".\Generated_Source\PSoC4\USER_INPUT_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\WDT_Interrupt.h" />
+<dep name=".\Generated_Source\PSoC4\cyPm.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter_cfg.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+<dep name=".\Generated_Source\PSoC4\motor.h" />
+<dep name=".\Generated_Source\PSoC4\motor_aliases.h" />
+<dep name=".\IDAC.h" />
+<dep name=".\OTAMandatory.h" />
+<dep name=".\OTAOptional.h" />
+<dep name=".\Options.h" />
+<dep name=".\PGA.h" />
+<dep name=".\PWM.h" />
+<dep name=".\adc.h" />
+<dep name=".\common.h" />
+<dep name=".\filter.h" />
+<dep name=".\main.c" />
+<dep name=".\main.h" />
+<dep name=".\queue.h" />
+<dep name=".\user_cfg_def.h" />
+</file>
+<file name=".\CyBLE_custom.h" />
+<file name=".\main.c" />
+<file name=".\main.h" />
+<file name=".\user_cfg_def.h" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\queue.o">
+<dep name=".\Generated_Source\PSoC4\core_cm0.h" />
+<dep name=".\Generated_Source\PSoC4\core_cm0_psoc4.h" />
+<dep name=".\Generated_Source\PSoC4\core_cmFunc.h" />
+<dep name=".\Generated_Source\PSoC4\core_cmInstr.h" />
+<dep name=".\Generated_Source\PSoC4\cydisabledsheets.h" />
+<dep name=".\Generated_Source\PSoC4\project.h" />
+<dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_1.h" />
+<dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_1_IRQ.h" />
+<dep name=".\Generated_Source\PSoC4\ADC_SAR_Seq_1_intClock.h" />
+<dep name=".\Generated_Source\PSoC4\Bootloadable.h" />
+<dep name=".\Generated_Source\PSoC4\Clock_1.h" />
+<dep name=".\Generated_Source\PSoC4\Clock_PWM.h" />
+<dep name=".\Generated_Source\PSoC4\CyFlash.h" />
+<dep name=".\Generated_Source\PSoC4\CyLFClk.h" />
+<dep name=".\Generated_Source\PSoC4\CyLib.h" />
+<dep name=".\Generated_Source\PSoC4\FIRE_FILTER_INPUT.h" />
+<dep name=".\Generated_Source\PSoC4\FIRE_FILTER_INPUT_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Fire_Peak.h" />
+<dep name=".\Generated_Source\PSoC4\Fire_Peak_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Fire_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\Fire_Thresh_Feedback.h" />
+<dep name=".\Generated_Source\PSoC4\Fire_Thresh_Feedback_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Fire_Thresh_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\HIGH_FILTER_INPUT.h" />
+<dep name=".\Generated_Source\PSoC4\HIGH_FILTER_INPUT_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\High_Peak.h" />
+<dep name=".\Generated_Source\PSoC4\High_Peak_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\High_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\High_Thresh_Feedback.h" />
+<dep name=".\Generated_Source\PSoC4\High_Thresh_Feedback_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\High_Thresh_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\IDAC_Fire_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\LED_BLUE.h" />
+<dep name=".\Generated_Source\PSoC4\LED_BLUE_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\LED_GREEN.h" />
+<dep name=".\Generated_Source\PSoC4\LED_GREEN_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\LED_RED.h" />
+<dep name=".\Generated_Source\PSoC4\LED_RED_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\LOW_FILTER_INPUT.h" />
+<dep name=".\Generated_Source\PSoC4\LOW_FILTER_INPUT_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Low_Peak.h" />
+<dep name=".\Generated_Source\PSoC4\Low_Peak_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Low_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\Low_Thresh_Feedback.h" />
+<dep name=".\Generated_Source\PSoC4\Low_Thresh_Feedback_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Low_Thresh_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\MED_FILTER_INPUT.h" />
+<dep name=".\Generated_Source\PSoC4\MED_FILTER_INPUT_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Mid_Peak.h" />
+<dep name=".\Generated_Source\PSoC4\Mid_Peak_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Mid_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\Mid_Thresh_Feedback.h" />
+<dep name=".\Generated_Source\PSoC4\Mid_Thresh_Feedback_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\Mid_Thresh_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_CS.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_CS_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_INC.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_INC_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_U_Db.h" />
+<dep name=".\Generated_Source\PSoC4\PGA_U_Db_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\PWM_High_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\PWM_Low_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\PWM_Mid_Thresh.h" />
+<dep name=".\Generated_Source\PSoC4\TC_CC_ISR.h" />
+<dep name=".\Generated_Source\PSoC4\Timer.h" />
+<dep name=".\Generated_Source\PSoC4\UART.h" />
+<dep name=".\Generated_Source\PSoC4\UART_PVT.h" />
+<dep name=".\Generated_Source\PSoC4\USER_INPUT.h" />
+<dep name=".\Generated_Source\PSoC4\USER_INPUT_aliases.h" />
+<dep name=".\Generated_Source\PSoC4\WDT_Interrupt.h" />
+<dep name=".\Generated_Source\PSoC4\cyPm.h" />
+<dep name=".\Generated_Source\PSoC4\cydevice_trm.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter.h" />
+<dep name=".\Generated_Source\PSoC4\cyfitter_cfg.h" />
+<dep name=".\Generated_Source\PSoC4\cypins.h" />
+<dep name=".\Generated_Source\PSoC4\cytypes.h" />
+<dep name=".\Generated_Source\PSoC4\motor.h" />
+<dep name=".\Generated_Source\PSoC4\motor_aliases.h" />
+<dep name=".\queue.c" />
+<dep name=".\queue.h" />
+</file>
+<file name=".\queue.c" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\CyBootAsmGnu.o">
+<dep name=".\Generated_Source\PSoC4\CyBootAsmGnu.s" />
+<dep name=".\Generated_Source\PSoC4\cydevicegnu_trm.inc" />
+<dep name=".\Generated_Source\PSoC4\cyfittergnu.inc" />
+</file>
+<file name=".\Generated_Source\PSoC4\CyBootAsmGnu.s" />
+<file name=".\Generated_Source\PSoC4\cydevicegnu_trm.inc" />
+<file name=".\Generated_Source\PSoC4\cyfittergnu.inc" />
+<file name=".\CortexM0\ARM_GCC_493\Debug\UART_AsmGnu.o">
+<dep name=".\Generated_Source\PSoC4\UART_AsmGnu.s" />
+<dep name=".\Generated_Source\PSoC4\cydevicegnu_trm.inc" />
+<dep name=".\Generated_Source\PSoC4\cyfittergnu.inc" />
+</file>
+<file name=".\Generated_Source\PSoC4\UART_AsmGnu.s" />
+</CyGuid_1173175f-1b9b-4ad4-a065-754a48a27021>
+</dependency_info>
+</CyGuid_f44455c5-3770-4452-b988-0a7a7ff46256>
+</name>
+<name v="link_deps">
+<CyGuid_f44455c5-3770-4452-b988-0a7a7ff46256 type_name="CyDesigner.Common.ProjMgmt.Model.CyConfigDependencies" version="1">
+<dependency_info name="c9323d49-d323-40b8-9b59-cc008d68a989@Debug@CortexM0" xml_contents_version="2">
+<CyGuid_1173175f-1b9b-4ad4-a065-754a48a27021 type_name="CyDesigner.Common.Base.CyFileDeps" version="1">
+<file name=".\CortexM0\ARM_GCC_493\Debug\capsenseled.hex">
+<dep name=".\CortexM0\ARM_GCC_493\Debug\main.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\debug.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\OTAMandatory.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\OTAOptional.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\adc.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\filter.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\IDAC.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\PGA.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\queue.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\PWM.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\cyfitter_cfg.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\cymetadata.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\Clock_1.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\Cm0Start.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\CyBootAsmGnu.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\CyFlash.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\CyLib.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\cyPm.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\cyutils.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\CyLFClk.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\UART.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\UART_AsmGnu.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\cybootloader.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\WDT_Interrupt.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\Bootloadable.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\Mid_Thresh.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\Mid_Thresh_PM.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\PWM_High_Thresh.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\PWM_High_Thresh_PM.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\Low_Thresh.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\Low_Thresh_PM.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\PWM_Mid_Thresh.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\PWM_Mid_Thresh_PM.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\PWM_Low_Thresh.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\PWM_Low_Thresh_PM.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\TC_CC_ISR.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\Timer.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\Timer_PM.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\High_Thresh.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\High_Thresh_PM.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\LED_GREEN.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\LED_GREEN_PM.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\LED_BLUE.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\LED_BLUE_PM.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\LOW_FILTER_INPUT.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\LOW_FILTER_INPUT_PM.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\MED_FILTER_INPUT.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\MED_FILTER_INPUT_PM.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\HIGH_FILTER_INPUT.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\HIGH_FILTER_INPUT_PM.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\LED_RED.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\LED_RED_PM.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\USER_INPUT.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\USER_INPUT_PM.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\FIRE_FILTER_INPUT.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\FIRE_FILTER_INPUT_PM.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\IDAC_Fire_Thresh.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\IDAC_Fire_Thresh_PM.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\Fire_Thresh.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\Fire_Thresh_PM.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\ADC_SAR_Seq_1.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\ADC_SAR_Seq_1_PM.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\ADC_SAR_Seq_1_INT.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\Low_Thresh_Feedback.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\Low_Thresh_Feedback_PM.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\Mid_Thresh_Feedback.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\Mid_Thresh_Feedback_PM.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\High_Thresh_Feedback.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\High_Thresh_Feedback_PM.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\Fire_Thresh_Feedback.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\Fire_Thresh_Feedback_PM.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\motor.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\motor_PM.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\PGA_CS.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\PGA_CS_PM.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\PGA_U_Db.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\PGA_U_Db_PM.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\PGA_INC.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\PGA_INC_PM.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\Clock_PWM.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\ADC_SAR_Seq_1_IRQ.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\ADC_SAR_Seq_1_intClock.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\Low_Peak.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\Low_Peak_PM.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\Mid_Peak.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\Mid_Peak_PM.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\High_Peak.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\High_Peak_PM.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\Fire_Peak.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\Fire_Peak_PM.o" />
+<dep name=".\CortexM0\ARM_GCC_493\Debug\capsenseled.a" />
+<dep name="${CyRoot}\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CortexM0\ARM_GCC_493\Debug\CyComponentLibrary.a" />
+</file>
+</CyGuid_1173175f-1b9b-4ad4-a065-754a48a27021>
+</dependency_info>
+</CyGuid_f44455c5-3770-4452-b988-0a7a7ff46256>
+</name>
+</CyGuid_47ec7058-2f43-4a2f-ae73-172624e235df>
+</dataGuid>
+<dataGuid v="b0374e30-ce3a-47f2-ad85-821643292c68">
+<CyGuid_b0374e30-ce3a-47f2-ad85-821643292c68 type_name="CyDesigner.Common.ProjMgmt.Common.CyCmdLineData" version="2">
+<genericCmdLineData>
+<name v="c9323d49-d323-40b8-9b59-cc008d68a989@Debug@CortexM0">
+<name_val_pair name="main.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="debug.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="OTAMandatory.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="OTAOptional.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="adc.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="filter.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="IDAC.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="PGA.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="queue.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="PWM.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\cyfitter_cfg.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\cymetadata.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\Clock_1.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\Cm0Start.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\CyBootAsmGnu.s" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -alh=${OutputDir}/${CompileFile}.lst -g -W" />
+<name_val_pair name="Generated_Source\PSoC4\CyFlash.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\CyLib.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\cyPm.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\cyutils.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\CyLFClk.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\UART.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\UART_AsmGnu.s" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -alh=${OutputDir}/${CompileFile}.lst -g -W" />
+<name_val_pair name="Generated_Source\PSoC4\cybootloader.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\WDT_Interrupt.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\Bootloadable.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\Mid_Thresh.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\Mid_Thresh_PM.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\PWM_High_Thresh.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\PWM_High_Thresh_PM.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\Low_Thresh.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\Low_Thresh_PM.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\PWM_Mid_Thresh.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\PWM_Mid_Thresh_PM.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\PWM_Low_Thresh.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\PWM_Low_Thresh_PM.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\TC_CC_ISR.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\Timer.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\Timer_PM.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\High_Thresh.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\High_Thresh_PM.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\LED_GREEN.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\LED_GREEN_PM.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\LED_BLUE.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\LED_BLUE_PM.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\LOW_FILTER_INPUT.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\LOW_FILTER_INPUT_PM.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\MED_FILTER_INPUT.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\MED_FILTER_INPUT_PM.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\HIGH_FILTER_INPUT.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\HIGH_FILTER_INPUT_PM.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\LED_RED.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\LED_RED_PM.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\USER_INPUT.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\USER_INPUT_PM.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\FIRE_FILTER_INPUT.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\FIRE_FILTER_INPUT_PM.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\IDAC_Fire_Thresh.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\IDAC_Fire_Thresh_PM.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\Fire_Thresh.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\Fire_Thresh_PM.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\ADC_SAR_Seq_1.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\ADC_SAR_Seq_1_PM.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\ADC_SAR_Seq_1_INT.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\Low_Thresh_Feedback.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\Low_Thresh_Feedback_PM.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\Mid_Thresh_Feedback.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\Mid_Thresh_Feedback_PM.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\High_Thresh_Feedback.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\High_Thresh_Feedback_PM.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\Fire_Thresh_Feedback.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\Fire_Thresh_Feedback_PM.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\motor.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\motor_PM.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\PGA_CS.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\PGA_CS_PM.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\PGA_U_Db.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\PGA_U_Db_PM.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\PGA_INC.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\PGA_INC_PM.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\Clock_PWM.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\ADC_SAR_Seq_1_IRQ.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\ADC_SAR_Seq_1_intClock.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="C:\Users\rdeiaco\Documents\PSoC Creator\capstone70merged\capsenseled.cydsn\CortexM0\ARM_GCC_493\Debug\capsenseled.hex" v="-mcpu=cortex-m0 -mthumb -g -ffunction-sections -Og -ffat-lto-objects -L Generated_Source\PSoC4 -L .\LinkerScripts -Wl,-Map,${OutputDir}/${ProjectShortName}.map -T .\LinkerScripts\cm0gcc.ld -specs=nano.specs -Wl,--gc-sections" />
+<name_val_pair name="Generated_Source\PSoC4\Low_Peak.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\Low_Peak_PM.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\Mid_Peak.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\Mid_Peak_PM.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\High_Peak.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\High_Peak_PM.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\Fire_Peak.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+<name_val_pair name="Generated_Source\PSoC4\Fire_Peak_PM.c" v="-mcpu=cortex-m0 -mthumb -I. -IGenerated_Source\PSoC4 -Wa,-alh=${OutputDir}/${CompileFile}.lst -g -D DEBUG -Wall -ffunction-sections -Og -ffat-lto-objects" />
+</name>
+</genericCmdLineData>
+<codeGenCmdLineTag v="-.appdatapath &quot;C:\Users\rdeiaco\AppData\Local\Cypress Semiconductor\PSoC Creator\4.0&quot; -.fdsnotice -.fdswarpdepfile=warp_dependencies.txt -.fdselabdepfile=elab_dependencies.txt -.fdsbldfile=generated_files.txt -.fdsreffile=referenced_files.txt -p &quot;C:\Users\rdeiaco\Documents\PSoC Creator\capstone70merged\capsenseled.cydsn\capsenseled.cyprj&quot; -d CY8C4247LQI-BL483 -s &quot;C:\Users\rdeiaco\Documents\PSoC Creator\capstone70merged\capsenseled.cydsn\Generated_Source\PSoC4&quot; -- -yv2 -q10 -ygs -o2 -v3 -.fftcfgtype=LE" />
+</CyGuid_b0374e30-ce3a-47f2-ad85-821643292c68>
+</dataGuid>
+<dataGuid v="769d31ea-68b1-4f0c-b90a-7c10a43ee563">
+<CyGuid_769d31ea-68b1-4f0c-b90a-7c10a43ee563 type_name="CyDesigner.Common.ProjMgmt.Model.CyLinkCustomData" version="1">
+<deps_time v="131324582472654111" />
+</CyGuid_769d31ea-68b1-4f0c-b90a-7c10a43ee563>
+</dataGuid>
+</userData>
+</CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
+<properties />
+</CyGuid_7a7929f8-5e3b-4f86-a093-2d4ee6513111>
+</CyXmlSerializer>

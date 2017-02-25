@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\cccGebIf.s 			page 1
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccNcudIW.s 			page 1
 
 
    1              		.cpu cortex-m0
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\cccGebIf.s 			page 1
   18:filter.c      ****     temp += sum(prev);
   38              		.loc 1 18 0
   39 0006 081C     		mov	r0, r1
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\cccGebIf.s 			page 2
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccNcudIW.s 			page 2
 
 
   40              	.LVL2:
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\cccGebIf.s 			page 1
   26:filter.c      ****     }
   27:filter.c      ****     else {
   28:filter.c      ****         if (count > 0) {
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\cccGebIf.s 			page 3
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccNcudIW.s 			page 3
 
 
   87              		.loc 1 28 0
@@ -152,40 +152,40 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\cccGebIf.s 			page 1
  110 0006 00000000 		.4byte	.Ldebug_abbrev0
  111 000a 04       		.byte	0x4
  112 000b 01       		.uleb128 0x1
- 113 000c 2F010000 		.4byte	.LASF22
+ 113 000c DF000000 		.4byte	.LASF22
  114 0010 01       		.byte	0x1
- 115 0011 EE000000 		.4byte	.LASF23
- 116 0015 2D000000 		.4byte	.LASF24
+ 115 0011 9E000000 		.4byte	.LASF23
+ 116 0015 7C010000 		.4byte	.LASF24
  117 0019 00000000 		.4byte	.Ldebug_ranges0+0
  118 001d 00000000 		.4byte	0
  119 0021 00000000 		.4byte	.Ldebug_line0
  120 0025 02       		.uleb128 0x2
  121 0026 01       		.byte	0x1
  122 0027 06       		.byte	0x6
- 123 0028 1E010000 		.4byte	.LASF0
+ 123 0028 CE000000 		.4byte	.LASF0
  124 002c 02       		.uleb128 0x2
  125 002d 01       		.byte	0x1
  126 002e 08       		.byte	0x8
- 127 002f BE000000 		.4byte	.LASF1
+ 127 002f 6E000000 		.4byte	.LASF1
  128 0033 02       		.uleb128 0x2
  129 0034 02       		.byte	0x2
  130 0035 05       		.byte	0x5
- 131 0036 BD010000 		.4byte	.LASF2
+ 131 0036 6D010000 		.4byte	.LASF2
  132 003a 02       		.uleb128 0x2
  133 003b 02       		.byte	0x2
  134 003c 07       		.byte	0x7
- 135 003d 0B010000 		.4byte	.LASF3
+ 135 003d BB000000 		.4byte	.LASF3
  136 0041 02       		.uleb128 0x2
  137 0042 04       		.byte	0x4
  138 0043 05       		.byte	0x5
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\cccGebIf.s 			page 4
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccNcudIW.s 			page 4
 
 
- 139 0044 E0000000 		.4byte	.LASF4
+ 139 0044 90000000 		.4byte	.LASF4
  140 0048 02       		.uleb128 0x2
  141 0049 04       		.byte	0x4
  142 004a 07       		.byte	0x7
- 143 004b 7D000000 		.4byte	.LASF5
+ 143 004b 2D000000 		.4byte	.LASF5
  144 004f 02       		.uleb128 0x2
  145 0050 08       		.byte	0x8
  146 0051 05       		.byte	0x5
@@ -193,7 +193,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\cccGebIf.s 			page 1
  148 0056 02       		.uleb128 0x2
  149 0057 08       		.byte	0x8
  150 0058 07       		.byte	0x7
- 151 0059 8F000000 		.4byte	.LASF7
+ 151 0059 3F000000 		.4byte	.LASF7
  152 005d 03       		.uleb128 0x3
  153 005e 04       		.byte	0x4
  154 005f 05       		.byte	0x5
@@ -210,35 +210,35 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\cccGebIf.s 			page 1
  165 0076 02       		.uleb128 0x2
  166 0077 04       		.byte	0x4
  167 0078 04       		.byte	0x4
- 168 0079 AB000000 		.4byte	.LASF9
+ 168 0079 5B000000 		.4byte	.LASF9
  169 007d 02       		.uleb128 0x2
  170 007e 08       		.byte	0x8
  171 007f 04       		.byte	0x4
- 172 0080 F7000000 		.4byte	.LASF10
+ 172 0080 A7000000 		.4byte	.LASF10
  173 0084 02       		.uleb128 0x2
  174 0085 01       		.byte	0x1
  175 0086 08       		.byte	0x8
- 176 0087 B9000000 		.4byte	.LASF11
+ 176 0087 69000000 		.4byte	.LASF11
  177 008b 02       		.uleb128 0x2
  178 008c 04       		.byte	0x4
  179 008d 07       		.byte	0x7
- 180 008e CC010000 		.4byte	.LASF12
+ 180 008e C7010000 		.4byte	.LASF12
  181 0092 05       		.uleb128 0x5
  182 0093 0C       		.byte	0xc
  183 0094 02       		.byte	0x2
  184 0095 12       		.byte	0x12
  185 0096 B3000000 		.4byte	0xb3
  186 009a 06       		.uleb128 0x6
- 187 009b E9000000 		.4byte	.LASF13
+ 187 009b 99000000 		.4byte	.LASF13
  188 009f 02       		.byte	0x2
  189 00a0 13       		.byte	0x13
  190 00a1 5D000000 		.4byte	0x5d
  191 00a5 00       		.byte	0
  192 00a6 06       		.uleb128 0x6
- 193 00a7 A6000000 		.4byte	.LASF14
+ 193 00a7 56000000 		.4byte	.LASF14
  194 00ab 02       		.byte	0x2
  195 00ac 14       		.byte	0x14
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\cccGebIf.s 			page 5
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccNcudIW.s 			page 5
 
 
  196 00ad B3000000 		.4byte	0xb3
@@ -252,12 +252,12 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\cccGebIf.s 			page 1
  204 00c1 05       		.byte	0x5
  205 00c2 00       		.byte	0
  206 00c3 04       		.uleb128 0x4
- 207 00c4 B1000000 		.4byte	.LASF16
+ 207 00c4 61000000 		.4byte	.LASF16
  208 00c8 02       		.byte	0x2
  209 00c9 15       		.byte	0x15
  210 00ca 92000000 		.4byte	0x92
  211 00ce 09       		.uleb128 0x9
- 212 00cf CC000000 		.4byte	.LASF19
+ 212 00cf 7C000000 		.4byte	.LASF19
  213 00d3 01       		.byte	0x1
  214 00d4 10       		.byte	0x10
  215 00d5 6B000000 		.4byte	0x6b
@@ -273,7 +273,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\cccGebIf.s 			page 1
  225 00ee 6B000000 		.4byte	0x6b
  226 00f2 00000000 		.4byte	.LLST0
  227 00f6 0A       		.uleb128 0xa
- 228 00f7 C7010000 		.4byte	.LASF18
+ 228 00f7 77010000 		.4byte	.LASF18
  229 00fb 01       		.byte	0x1
  230 00fc 10       		.byte	0x10
  231 00fd 3F010000 		.4byte	0x13f
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\cccGebIf.s 			page 1
  250 0128 0E       		.uleb128 0xe
  251 0129 16000000 		.4byte	.LVL5
  252 012d B2010000 		.4byte	0x1b2
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\cccGebIf.s 			page 6
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccNcudIW.s 			page 6
 
 
  253 0131 0D       		.uleb128 0xd
@@ -319,7 +319,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\cccGebIf.s 			page 1
  268 0140 04       		.byte	0x4
  269 0141 C3000000 		.4byte	0xc3
  270 0145 09       		.uleb128 0x9
- 271 0146 FE000000 		.4byte	.LASF20
+ 271 0146 AE000000 		.4byte	.LASF20
  272 014a 01       		.byte	0x1
  273 014b 17       		.byte	0x17
  274 014c 5D000000 		.4byte	0x5d
@@ -335,13 +335,13 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\cccGebIf.s 			page 1
  284 0165 6B000000 		.4byte	0x6b
  285 0169 76000000 		.4byte	.LLST3
  286 016d 0A       		.uleb128 0xa
- 287 016e C7010000 		.4byte	.LASF18
+ 287 016e 77010000 		.4byte	.LASF18
  288 0172 01       		.byte	0x1
  289 0173 17       		.byte	0x17
  290 0174 3F010000 		.4byte	0x13f
  291 0178 97000000 		.4byte	.LLST4
  292 017c 0A       		.uleb128 0xa
- 293 017d DA000000 		.4byte	.LASF21
+ 293 017d 8A000000 		.4byte	.LASF21
  294 0181 01       		.byte	0x1
  295 0182 17       		.byte	0x17
  296 0183 5D000000 		.4byte	0x5d
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\cccGebIf.s 			page 1
  307 019a 51       		.byte	0x51
  308 019b 00       		.byte	0
  309 019c 00       		.byte	0
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\cccGebIf.s 			page 7
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccNcudIW.s 			page 7
 
 
  310 019d 10       		.uleb128 0x10
@@ -371,7 +371,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\cccGebIf.s 			page 1
  317 01ad 3F010000 		.4byte	0x13f
  318 01b1 00       		.byte	0
  319 01b2 12       		.uleb128 0x12
- 320 01b3 2A010000 		.4byte	.LASF26
+ 320 01b3 DA000000 		.4byte	.LASF26
  321 01b7 02       		.byte	0x2
  322 01b8 18       		.byte	0x18
  323 01b9 11       		.uleb128 0x11
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\cccGebIf.s 			page 1
  364 0021 0B       		.uleb128 0xb
  365 0022 0B       		.uleb128 0xb
  366 0023 3E       		.uleb128 0x3e
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\cccGebIf.s 			page 8
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccNcudIW.s 			page 8
 
 
  367 0024 0B       		.uleb128 0xb
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\cccGebIf.s 			page 1
  421 005a 00       		.byte	0
  422 005b 08       		.uleb128 0x8
  423 005c 21       		.uleb128 0x21
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\cccGebIf.s 			page 9
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccNcudIW.s 			page 9
 
 
  424 005d 00       		.byte	0
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\cccGebIf.s 			page 1
  478 0094 3A       		.uleb128 0x3a
  479 0095 0B       		.uleb128 0xb
  480 0096 3B       		.uleb128 0x3b
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\cccGebIf.s 			page 10
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccNcudIW.s 			page 10
 
 
  481 0097 0B       		.uleb128 0xb
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\cccGebIf.s 			page 1
  535 00d4 3B       		.uleb128 0x3b
  536 00d5 0B       		.uleb128 0xb
  537 00d6 27       		.uleb128 0x27
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\cccGebIf.s 			page 11
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccNcudIW.s 			page 11
 
 
  538 00d7 19       		.uleb128 0x19
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\cccGebIf.s 			page 1
  592 002b 51       		.byte	0x51
  593 002c 0B000000 		.4byte	.LVL3-1
  594 0030 1A000000 		.4byte	.LVL7
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\cccGebIf.s 			page 12
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccNcudIW.s 			page 12
 
 
  595 0034 0100     		.2byte	0x1
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\cccGebIf.s 			page 1
  649              	.LLST5:
  650 00b8 00000000 		.4byte	.LVL8
  651 00bc 07000000 		.4byte	.LVL9-1
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\cccGebIf.s 			page 13
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccNcudIW.s 			page 13
 
 
  652 00c0 0100     		.2byte	0x1
@@ -778,120 +778,120 @@ ARM GAS  C:\Users\Nick\AppData\Local\Temp\cccGebIf.s 			page 1
  695              	.LASF25:
  696 0023 74656D70 		.ascii	"temp\000"
  696      00
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\cccGebIf.s 			page 14
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccNcudIW.s 			page 14
 
 
  697              	.LASF15:
  698 0028 696E7438 		.ascii	"int8\000"
  698      00
- 699              	.LASF24:
- 700 002d 433A5C55 		.ascii	"C:\\Users\\Nick\\Documents\\PSoC Creator\\capsensel"
- 700      73657273 
- 700      5C4E6963 
- 700      6B5C446F 
- 700      63756D65 
- 701 005b 6564315C 		.ascii	"ed1\\capsenseled\\capsenseled.cydsn\000"
- 701      63617073 
- 701      656E7365 
- 701      6C65645C 
- 701      63617073 
- 702              	.LASF5:
- 703 007d 6C6F6E67 		.ascii	"long unsigned int\000"
- 703      20756E73 
- 703      69676E65 
- 703      6420696E 
- 703      7400
- 704              	.LASF7:
- 705 008f 6C6F6E67 		.ascii	"long long unsigned int\000"
- 705      206C6F6E 
- 705      6720756E 
- 705      7369676E 
- 705      65642069 
- 706              	.LASF14:
- 707 00a6 64617461 		.ascii	"data\000"
- 707      00
- 708              	.LASF9:
- 709 00ab 666C6F61 		.ascii	"float\000"
- 709      7400
- 710              	.LASF16:
- 711 00b1 71756575 		.ascii	"queue_t\000"
- 711      655F7400 
- 712              	.LASF11:
- 713 00b9 63686172 		.ascii	"char\000"
- 713      00
- 714              	.LASF1:
- 715 00be 756E7369 		.ascii	"unsigned char\000"
- 715      676E6564 
- 715      20636861 
- 715      7200
- 716              	.LASF19:
- 717 00cc 66696C74 		.ascii	"filter_sample\000"
- 717      65725F73 
- 717      616D706C 
- 717      6500
- 718              	.LASF21:
- 719 00da 636F756E 		.ascii	"count\000"
- 719      7400
- 720              	.LASF4:
- 721 00e0 6C6F6E67 		.ascii	"long int\000"
- 721      20696E74 
- 721      00
- 722              	.LASF13:
- 723 00e9 68656164 		.ascii	"head\000"
-ARM GAS  C:\Users\Nick\AppData\Local\Temp\cccGebIf.s 			page 15
+ 699              	.LASF5:
+ 700 002d 6C6F6E67 		.ascii	"long unsigned int\000"
+ 700      20756E73 
+ 700      69676E65 
+ 700      6420696E 
+ 700      7400
+ 701              	.LASF7:
+ 702 003f 6C6F6E67 		.ascii	"long long unsigned int\000"
+ 702      206C6F6E 
+ 702      6720756E 
+ 702      7369676E 
+ 702      65642069 
+ 703              	.LASF14:
+ 704 0056 64617461 		.ascii	"data\000"
+ 704      00
+ 705              	.LASF9:
+ 706 005b 666C6F61 		.ascii	"float\000"
+ 706      7400
+ 707              	.LASF16:
+ 708 0061 71756575 		.ascii	"queue_t\000"
+ 708      655F7400 
+ 709              	.LASF11:
+ 710 0069 63686172 		.ascii	"char\000"
+ 710      00
+ 711              	.LASF1:
+ 712 006e 756E7369 		.ascii	"unsigned char\000"
+ 712      676E6564 
+ 712      20636861 
+ 712      7200
+ 713              	.LASF19:
+ 714 007c 66696C74 		.ascii	"filter_sample\000"
+ 714      65725F73 
+ 714      616D706C 
+ 714      6500
+ 715              	.LASF21:
+ 716 008a 636F756E 		.ascii	"count\000"
+ 716      7400
+ 717              	.LASF4:
+ 718 0090 6C6F6E67 		.ascii	"long int\000"
+ 718      20696E74 
+ 718      00
+ 719              	.LASF13:
+ 720 0099 68656164 		.ascii	"head\000"
+ 720      00
+ 721              	.LASF23:
+ 722 009e 66696C74 		.ascii	"filter.c\000"
+ 722      65722E63 
+ 722      00
+ 723              	.LASF10:
+ 724 00a7 646F7562 		.ascii	"double\000"
+ 724      6C6500
+ 725              	.LASF20:
+ 726 00ae 66696C74 		.ascii	"filter_count\000"
+ 726      65725F63 
+ARM GAS  C:\Users\rdeiaco\AppData\Local\Temp\ccNcudIW.s 			page 15
 
 
- 723      00
- 724              	.LASF23:
- 725 00ee 66696C74 		.ascii	"filter.c\000"
- 725      65722E63 
- 725      00
- 726              	.LASF10:
- 727 00f7 646F7562 		.ascii	"double\000"
- 727      6C6500
- 728              	.LASF20:
- 729 00fe 66696C74 		.ascii	"filter_count\000"
- 729      65725F63 
- 729      6F756E74 
- 729      00
- 730              	.LASF3:
- 731 010b 73686F72 		.ascii	"short unsigned int\000"
- 731      7420756E 
- 731      7369676E 
- 731      65642069 
- 731      6E7400
- 732              	.LASF0:
- 733 011e 7369676E 		.ascii	"signed char\000"
- 733      65642063 
- 733      68617200 
- 734              	.LASF26:
- 735 012a 70757368 		.ascii	"push\000"
- 735      00
- 736              	.LASF22:
- 737 012f 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
- 737      4320342E 
- 737      392E3320 
- 737      32303135 
- 737      30333033 
- 738 0162 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0 -mthumb -g -O"
- 738      20726576 
- 738      6973696F 
- 738      6E203232 
- 738      31323230 
- 739 0195 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
- 739      66756E63 
- 739      74696F6E 
- 739      2D736563 
- 739      74696F6E 
- 740              	.LASF2:
- 741 01bd 73686F72 		.ascii	"short int\000"
- 741      7420696E 
- 741      7400
- 742              	.LASF18:
- 743 01c7 70726576 		.ascii	"prev\000"
- 743      00
+ 726      6F756E74 
+ 726      00
+ 727              	.LASF3:
+ 728 00bb 73686F72 		.ascii	"short unsigned int\000"
+ 728      7420756E 
+ 728      7369676E 
+ 728      65642069 
+ 728      6E7400
+ 729              	.LASF0:
+ 730 00ce 7369676E 		.ascii	"signed char\000"
+ 730      65642063 
+ 730      68617200 
+ 731              	.LASF26:
+ 732 00da 70757368 		.ascii	"push\000"
+ 732      00
+ 733              	.LASF22:
+ 734 00df 474E5520 		.ascii	"GNU C 4.9.3 20150303 (release) [ARM/embedded-4_9-br"
+ 734      4320342E 
+ 734      392E3320 
+ 734      32303135 
+ 734      30333033 
+ 735 0112 616E6368 		.ascii	"anch revision 221220] -mcpu=cortex-m0 -mthumb -g -O"
+ 735      20726576 
+ 735      6973696F 
+ 735      6E203232 
+ 735      31323230 
+ 736 0145 67202D66 		.ascii	"g -ffunction-sections -ffat-lto-objects\000"
+ 736      66756E63 
+ 736      74696F6E 
+ 736      2D736563 
+ 736      74696F6E 
+ 737              	.LASF2:
+ 738 016d 73686F72 		.ascii	"short int\000"
+ 738      7420696E 
+ 738      7400
+ 739              	.LASF18:
+ 740 0177 70726576 		.ascii	"prev\000"
+ 740      00
+ 741              	.LASF24:
+ 742 017c 433A5C55 		.ascii	"C:\\Users\\rdeiaco\\Documents\\PSoC Creator\\capsto"
+ 742      73657273 
+ 742      5C726465 
+ 742      6961636F 
+ 742      5C446F63 
+ 743 01aa 6E653730 		.ascii	"ne70merged\\capsenseled.cydsn\000"
+ 743      6D657267 
+ 743      65645C63 
+ 743      61707365 
+ 743      6E73656C 
  744              	.LASF12:
- 745 01cc 73697A65 		.ascii	"sizetype\000"
+ 745 01c7 73697A65 		.ascii	"sizetype\000"
  745      74797065 
  745      00
  746              		.ident	"GCC: (GNU Tools for ARM Embedded Processors) 4.9.3 20150303 (release) [ARM/embedded-4_9-br
