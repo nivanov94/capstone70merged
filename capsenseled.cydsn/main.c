@@ -2,6 +2,7 @@
 #include "OTAOptional.h"
 #include "common.h"
 #include "stdio.h"
+#include "stdbool.h"
 #include "CyBLE_custom.h"
 #include "main.h"
 
@@ -12,6 +13,7 @@
 #include "IDAC.h"
 #include "adc.h"
 #include "PGA.h"
+#include "print.h"
 
 #include "user_cfg_def.h"
 
@@ -24,11 +26,12 @@ uint8 alarmNotify   = 1; // Always notify
 alarm_state_e alarm_state    = TYPE_NO_ALARM;
 
 // Configuration updated by the app
-vib_type_e      curFireAlarmVibType = VIBTYPE_CONTINUOUS;
-vib_type_e      curAmbulanceVibType = VIBTYPE_CONTINUOUS;
-vib_duration_e  curVibDuration      = DURATION_5S;
-vib_intensity_e curVibIntensity     = INTENSITY_LOW;
-
+vib_type_e      curFireAlarmVibType      = VIBTYPE_CONTINUOUS;
+vib_type_e      curAmbulanceVibType      = VIBTYPE_CONTINUOUS;
+vib_duration_e  curVibDuration           = DURATION_5S;
+vib_intensity_e curVibIntensity          = INTENSITY_LOW;
+bool            curAlarmDetectEnable     = 1;
+bool            curAmbulanceDetectEnable = 1;
 
 /* LED control defines (active low)*/
 #define LIGHT_OFF                       (1u)
@@ -120,6 +123,14 @@ void setAmbulanceVibType(int vibType){
 
 void setVibDuration(int vibDuration){
     curVibDuration = vibDuration;
+}
+
+void setAlarmDetectEnable(int enable){
+    curAlarmDetectEnable = enable;
+}
+
+void setAmbulanceDetectEnable(int enable){
+    curAmbulanceDetectEnable = enable;
 }
 
 
@@ -366,6 +377,20 @@ void AppCallBack(uint32 event, void* eventParam)
                 setFireAlarmVibType(wrReqParam->handleValPair.value.val[0]);
                 CyBle_GattsWriteRsp(cyBle_connHandle); 
             }
+            
+            /* Request to update whether to enable fire alarm detection */
+            if (wrReqParam->handleValPair.attrHandle == CYBLE_LEDCAPSENSE_ALARMDETECTENABLED_CHAR_HANDLE)
+            {
+                setAlarmDetectEnable(wrReqParam->handleValPair.value.val[0]);
+                CyBle_GattsWriteRsp(cyBle_connHandle); 
+            }
+            
+            /* Request to update whether to enable ambulance detection */
+            if (wrReqParam->handleValPair.attrHandle == CYBLE_LEDCAPSENSE_AMBULANCEDETECTENABLED_CHAR_HANDLE)
+            {
+                setAmbulanceDetectEnable(wrReqParam->handleValPair.value.val[0]);
+                CyBle_GattsWriteRsp(cyBle_connHandle); 
+            }
 
             break;
         
@@ -402,9 +427,9 @@ int main()
     
     ConfigureSharedPins();
     
-    //LED_RED_Write(0);
+    LED_RED_Write(0);
         
-    //PGA_set_gain(MIC_GAIN);
+    PGA_set_gain(MIC_GAIN);
     
     /*enable ADC, PWM, and IDAC for threshold initialization */
     init_PWM();
@@ -498,6 +523,8 @@ int main()
                     push(&med_deriv, med_count - prev_med_count);
                     push(&high_deriv, high_count - prev_high_count);
                     
+                    UART_PutString("Test\r\n");
+                    
                     // second derivative concavity test
                     if ((sum(&slope_detect) == 0) && (peek(&slope_detect) == 1)) {
                         low_count = 0;
@@ -514,7 +541,7 @@ int main()
                                   
                     
                     /* Check for fire alarm threshold. */
-                    if (fire_count > 800) {
+                    if (curAlarmDetectEnable && fire_count > 800) {
                         state = 5;
                         liveness_count = 0;
                         init_queue(&slope_detect);
@@ -522,7 +549,7 @@ int main()
                     }
                     
                     /* Check for siren threshold. */
-                    else if ((low_count > 25) && (med_count > 5) && (high_count < 5) && (low_count >= med_count)) {
+                    else if (curAmbulanceDetectEnable && (low_count > 25) && (med_count > 5) && (high_count < 5) && (low_count >= med_count)) {
                         state = 2;
                         low_count = 0;
                         med_count = 0;
