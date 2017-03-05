@@ -48,6 +48,10 @@
 #define CYBLE_LEDCAPSENSE_ALARMVIBTYPE_CHARACTERISTIC_USER_DESCRIPTION_DESC_INDEX   (0x00u) /* Index of Characteristic User Description descriptor */
 #define CYBLE_LEDCAPSENSE_AMBULANCEVIBTYPE_CHAR_INDEX   (0x06u) /* Index of ambulanceVibType characteristic */
 #define CYBLE_LEDCAPSENSE_AMBULANCEVIBTYPE_CHARACTERISTIC_USER_DESCRIPTION_DESC_INDEX   (0x00u) /* Index of Characteristic User Description descriptor */
+#define CYBLE_LEDCAPSENSE_ALARMDETECTENABLED_CHAR_INDEX   (0x07u) /* Index of alarmDetectEnabled characteristic */
+#define CYBLE_LEDCAPSENSE_ALARMDETECTENABLED_CHARACTERISTIC_USER_DESCRIPTION_DESC_INDEX   (0x00u) /* Index of Characteristic User Description descriptor */
+#define CYBLE_LEDCAPSENSE_AMBULANCEDETECTENABLED_CHAR_INDEX   (0x08u) /* Index of ambulanceDetectEnabled characteristic */
+#define CYBLE_LEDCAPSENSE_AMBULANCEDETECTENABLED_CHARACTERISTIC_USER_DESCRIPTION_DESC_INDEX   (0x00u) /* Index of Characteristic User Description descriptor */
 
 
 #define CYBLE_LEDCAPSENSE_SERVICE_HANDLE   (0x000Cu) /* Handle of ledcapsense service */
@@ -67,6 +71,12 @@
 #define CYBLE_LEDCAPSENSE_ALARMVIBTYPE_CHARACTERISTIC_USER_DESCRIPTION_DESC_HANDLE   (0x0020u) /* Handle of Characteristic User Description descriptor */
 #define CYBLE_LEDCAPSENSE_AMBULANCEVIBTYPE_CHAR_HANDLE   (0x0022u) /* Handle of ambulanceVibType characteristic */
 #define CYBLE_LEDCAPSENSE_AMBULANCEVIBTYPE_CHARACTERISTIC_USER_DESCRIPTION_DESC_HANDLE   (0x0023u) /* Handle of Characteristic User Description descriptor */
+#define CYBLE_LEDCAPSENSE_ALARMDETECTENABLED_DECL_HANDLE   (0x0024u) /* Handle of alarmDetectEnabled characteristic declaration */
+#define CYBLE_LEDCAPSENSE_ALARMDETECTENABLED_CHAR_HANDLE   (0x0025u) /* Handle of alarmDetectEnabled characteristic */
+#define CYBLE_LEDCAPSENSE_ALARMDETECTENABLED_CHARACTERISTIC_USER_DESCRIPTION_DESC_HANDLE   (0x0026u) /* Handle of Characteristic User Description descriptor */
+#define CYBLE_LEDCAPSENSE_AMBULANCEDETECTENABLED_DECL_HANDLE   (0x0027u) /* Handle of ambulanceDetectEnabled characteristic declaration */
+#define CYBLE_LEDCAPSENSE_AMBULANCEDETECTENABLED_CHAR_HANDLE   (0x0028u) /* Handle of ambulanceDetectEnabled characteristic */
+#define CYBLE_LEDCAPSENSE_AMBULANCEDETECTENABLED_CHARACTERISTIC_USER_DESCRIPTION_DESC_HANDLE   (0x0029u) /* Handle of Characteristic User Description descriptor */
 
 
 
