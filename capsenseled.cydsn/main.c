@@ -15,7 +15,6 @@
 /* LED control defines (active low)*/
 #define LIGHT_OFF                       (1u)
 #define LIGHT_ON                        (0u)
-#define SIZE 2000U
 
 #define LOW_FILT  0
 #define MID_FILT  1
@@ -23,12 +22,8 @@
 
 #define MIC_GAIN 68/2.2
 
-
-/* Selects the active blinking LED */
-uint8 activeLed;
 // Flag to indicate when to sample digital lines.
 uint8 sample_lines;
-
 
 /*******************************************************************************
 * Defines the interrupt service routine and allocates a vector to the interrupt.
@@ -47,7 +42,6 @@ CY_ISR(InterruptHandler)
         sample_lines = 1;        
     }
 }
-
 
 /***************************************************************
  * Main
@@ -91,8 +85,7 @@ int main()
     
     /*put ADC to sleep*/
     ADC_sleep();
-    
-    
+     
     /* Enable interrupt component connected to interrupt */
     TC_CC_ISR_StartEx(InterruptHandler);
 
