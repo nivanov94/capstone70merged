@@ -1,7 +1,5 @@
 
 #include <project.h>
-#include "OTAOptional.h"
-#include "common.h"
 #include <stdio.h>
 #include "stdbool.h"
 #include "CyBLE_custom.h"
@@ -12,7 +10,6 @@
 #include "adc.h"
 #include "PGA.h"
 #include "print.h"
-#include "user_cfg_def.h"
 
 
 /* LED control defines (active low)*/

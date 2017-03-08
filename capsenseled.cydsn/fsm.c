@@ -21,6 +21,7 @@
 #define LIGHT_OFF 1u
 #define MOTOR_ON  1u
 #define MOTOR_OFF 0u
+#define SAMPLE_PERIOD 0.1 //seconds
 
 alarm_state_e alarmStateOld = TYPE_NO_ALARM;
 
@@ -52,6 +53,7 @@ static int mid_count;
 static int high_count;
 static int fire_count;
 static int liveness_count;
+static int motor_pulse_count;
 static int prev_low_count;
 static int prev_med_count;
 static int prev_high_count;
@@ -160,7 +162,7 @@ void fsm_tick(void) {
                 mid_count = 0;
                 high_count = 0;
                 fire_count = 0;
-               liveness_count = 0;
+                liveness_count = 0;
                 init_queue(&slope_detect);
                 LED_BLUE_Write(LIGHT_ON);
             }        
@@ -177,7 +179,7 @@ void fsm_tick(void) {
             high_count = filter_count(HIGH_FILTER_INPUT_Read(), &high_prev, high_count); 
 
             if (liveness_count > 100) {
-                state = 0;                    
+                state = 1;                    
                 LED_BLUE_Write(LIGHT_OFF);
             }
             else if ((low_count <= mid_count) && (mid_count > 20) && (mid_count > high_count) && (high_count > 12)) {
@@ -197,7 +199,7 @@ void fsm_tick(void) {
             high_count = filter_count(HIGH_FILTER_INPUT_Read(), &high_prev, high_count);                    
                     
             if (liveness_count > 100) {
-                state = 0;
+                state = 1;
                 low_count = 0;
                 mid_count = 0;
                 high_count = 0;
@@ -217,27 +219,62 @@ void fsm_tick(void) {
             }
             break;
             
-        /* In this state, indicate detection of the fire alarm. */
+        /* In this state, indicate detection of the siren. */
         case 4:
-
             motor_Write(MOTOR_ON);
             notifyAmbulance();
             state = 6;
+            motor_pulse_count = 0;
             break;
                     
         /* In this state, indicate detection of the fire alarm */
         case 5:
-
             motor_Write(MOTOR_ON);
             notifyFireAlarm();
-            state = 6;                   
+            state = 7;
+            motor_pulse_count = 0;
             break;
                 
         /* alert acknowledged by user */
         case 6:
-            if (alarm_state == TYPE_NO_ALARM) {
+            liveness_count++;
+            if (alarm_state == TYPE_NO_ALARM || liveness_count*SAMPLE_PERIOD > curVibDuration) {
                 motor_Write(MOTOR_OFF);
                 state = 0;
+            }
+            else if (curAmbulanceVibType == VIBTYPE_INTERVAL) {
+                motor_pulse_count++;
+                if (motor_pulse_count == 1000) {
+                    motor_pulse_count = 0;
+                }
+                
+                if (motor_pulse_count < 500) {
+                    motor_Write(MOTOR_ON);
+                }
+                else {
+                    motor_Write(MOTOR_OFF);
+                }
+            }
+            break;
+            
+        case 7:
+            liveness_count++;
+            if (alarm_state == TYPE_NO_ALARM || liveness_count*SAMPLE_PERIOD > curVibDuration) {
+                motor_Write(MOTOR_OFF);
+                state = 0;
+            }
+            else if (curFireAlarmVibType == VIBTYPE_INTERVAL) {
+                motor_pulse_count++;
+                if (motor_pulse_count == 1000) {
+                    motor_pulse_count = 0;
+                }
+                
+                if (motor_pulse_count < 500) {
+                    motor_Write(MOTOR_ON);
+                }
+                else {
+                    motor_Write(MOTOR_OFF);
+                }
             }
         default:
             break;
