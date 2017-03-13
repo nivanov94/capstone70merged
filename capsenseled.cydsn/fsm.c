@@ -40,11 +40,11 @@ static uint8 state;
 
 // FSM Accumulator LPF queues
 static queue_t low_prev;
-static queue_t med_prev;
+static queue_t mid_prev;
 static queue_t high_prev;
 static queue_t fire_prev;
-static queue_t slope_detect;
-static queue_t med_deriv;
+static queue_t low_deriv;
+static queue_t mid_deriv;
 static queue_t high_deriv;
 
 // FSM Filter Accululators
@@ -55,7 +55,7 @@ static int fire_count;
 static int liveness_count;
 static int motor_pulse_count;
 static int prev_low_count;
-static int prev_med_count;
+static int prev_mid_count;
 static int prev_high_count;
 
 
@@ -82,11 +82,11 @@ void setAmbulanceDetectEnable(int enable){
 
 void fsm_init(void) {
     init_queue(&low_prev);
-    init_queue(&med_prev);
+    init_queue(&mid_prev);
     init_queue(&high_prev);
     init_queue(&fire_prev);
-    init_queue(&slope_detect);
-    init_queue(&med_deriv);
+    init_queue(&low_deriv);
+    init_queue(&mid_deriv);
     init_queue(&high_deriv);
     
     state = 0;
@@ -110,6 +110,10 @@ void fsm_tick(void) {
             fire_count = 0;
             liveness_count = 0;
         
+            init_queue(&low_deriv);
+            init_queue(&mid_deriv);
+            init_queue(&high_deriv);
+        
             LED_GREEN_Write(LIGHT_OFF);
             LED_BLUE_Write(LIGHT_OFF);
             LED_RED_Write(LIGHT_OFF);
@@ -122,26 +126,26 @@ void fsm_tick(void) {
          */
         case 1:
             prev_low_count = low_count;
-            prev_med_count = mid_count;
+            prev_mid_count = mid_count;
             prev_high_count = high_count;
             low_count = filter_count(LOW_FILTER_INPUT_Read(), &low_prev, low_count);
-            mid_count = filter_count(MED_FILTER_INPUT_Read(), &med_prev, mid_count);
+            mid_count = filter_count(MID_FILTER_INPUT_Read(), &mid_prev, mid_count);
             high_count = filter_count(HIGH_FILTER_INPUT_Read(), &high_prev, high_count);
             fire_count = filter_count(FIRE_FILTER_INPUT_Read(), &fire_prev, fire_count);
-            push(&slope_detect, low_count - prev_low_count);
-            push(&med_deriv, mid_count - prev_med_count);
+            push(&low_deriv, low_count - prev_low_count);
+            push(&mid_deriv, mid_count - prev_mid_count);
             push(&high_deriv, high_count - prev_high_count);
                     
                     
             // second derivative concavity test
-            if ((sum(&slope_detect) == 0) && (peek(&slope_detect) == 1)) {
+            if ((sum(&low_deriv) == 0) && (peek(&low_deriv) == 1)) {
                 low_count = 0;
                 mid_count = 0;
                 high_count = 0;
             }
                     
            /* all filter negative first derivative test */
-            if ((sum(&slope_detect) == -6) && (sum(&med_deriv) == -6) && (sum(&high_deriv) == -6)) {
+            if ((sum(&low_deriv) == -6) && (sum(&mid_deriv) == -6) && (sum(&high_deriv) == -6)) {
                 low_count = 0;
                 mid_count = 0;
                 high_count = 0;
@@ -151,19 +155,20 @@ void fsm_tick(void) {
             if (curAlarmDetectEnable && fire_count > 800) {
                 state = 5;
                 liveness_count = 0;
-                init_queue(&slope_detect);
+                init_queue(&low_deriv);
                 LED_RED_Write(LIGHT_ON);
             }
                     
             /* Check for siren threshold. */
-            else if (curAmbulanceDetectEnable && (low_count > 25) && (mid_count > 5) && (high_count < 5) && (low_count >= mid_count)) {
+            else if (curAmbulanceDetectEnable && (low_count > 25) && (mid_count > 5) && (high_count < 5) 
+                    && (low_count >= mid_count) && peek(&mid_prev) && !peek(&high_prev)) {
                 state = 2;
                 low_count = 0;
                 mid_count = 0;
                 high_count = 0;
                 fire_count = 0;
                 liveness_count = 0;
-                init_queue(&slope_detect);
+                init_queue(&low_deriv);
                 LED_BLUE_Write(LIGHT_ON);
             }        
             break;
@@ -175,14 +180,15 @@ void fsm_tick(void) {
         case 2:
             liveness_count++;
             low_count = filter_count(LOW_FILTER_INPUT_Read(), &low_prev, low_count);
-            mid_count = filter_count(MED_FILTER_INPUT_Read(), &med_prev, mid_count);
+            mid_count = filter_count(MID_FILTER_INPUT_Read(), &mid_prev, mid_count);
             high_count = filter_count(HIGH_FILTER_INPUT_Read(), &high_prev, high_count); 
 
             if (liveness_count > 100) {
-                state = 1;                    
+                state = 0;                    
                 LED_BLUE_Write(LIGHT_OFF);
             }
-            else if ((low_count <= mid_count) && (mid_count > 20) && (mid_count > high_count) && (high_count > 12)) {
+            else if ((low_count <= mid_count) && (mid_count > 20) && (mid_count > high_count) 
+                    && (high_count > 12) && peek(&high_prev)) {
                 state = 3;
                 low_count = 0;
                 mid_count = 0;
@@ -195,16 +201,11 @@ void fsm_tick(void) {
         case 3:
             liveness_count++;
             low_count = filter_count(LOW_FILTER_INPUT_Read(), &low_prev, low_count);
-            mid_count = filter_count(MED_FILTER_INPUT_Read(), &med_prev, mid_count);
+            mid_count = filter_count(MID_FILTER_INPUT_Read(), &mid_prev, mid_count);
             high_count = filter_count(HIGH_FILTER_INPUT_Read(), &high_prev, high_count);                    
                     
             if (liveness_count > 100) {
-                state = 1;
-                low_count = 0;
-                mid_count = 0;
-                high_count = 0;
-                fire_count = 0;
-                liveness_count = 0;
+                state = 0;
                 LED_BLUE_Write(LIGHT_OFF);
             }
             else if ((low_count < 20) && (mid_count < 30) && (high_count > 95)) {
