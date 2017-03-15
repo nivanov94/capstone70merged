@@ -1,7 +1,0 @@
-C:\Users\Nick\Documents\PSoC Creator\capsenseled1\capsenseled\BLE_OTA_FixedStack_Bootloader01.cydsn\BLE_OTA_FixedStack_Bootloader01.cyprj|895567a5-8854-4f5a-9b13-e872941e2f7b
-C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\default\CyAnnotationLibrary\CyAnnotationLibrary.cylib\CyAnnotationLibrary.cyprj|b2e7209c-fd35-454c-8f1c-3dc337464635
-C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibraryupdates\CyComponentLibraryUpdates.cylib\CyComponentLibraryUpdates.cyprj|92df82b5-8ae6-4a0c-9307-3f757e0b4840
-C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cycomponentlibrary\CyComponentLibrary.cylib\CyComponentLibrary.cyprj|542ef1e7-c04c-424e-9dac-8e95964f469f
-C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\cyprimitives\CyPrimitives.cylib\CyPrimitives.cyprj|433da90d-1ec3-4dd8-ad9b-cf17bf660374
-C:\Program Files (x86)\Cypress\PSoC Creator\4.0\PSoC Creator\psoc\content\default\CyReferenceLibrary\CyReferenceLibrary.cylib\CyReferenceLibrary.cyprj|705fd61f-4352-4bc1-8ec6-e9087b7dbbf0
-C:\Users\Nick\Documents\PSoC Creator\capsenseled1\capsenseled\capsenseled.cydsn\capsenseled.cyprj|5bef792c-d977-42ae-9106-f9825c4de0a9
