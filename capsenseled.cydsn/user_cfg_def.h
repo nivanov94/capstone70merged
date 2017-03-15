@@ -9,7 +9,9 @@
  *
  * ========================================
 */
-
+#ifndef USER_CFG_DEF_H
+#define USER_CFG_DEF_H
+    
 typedef enum {
     TYPE_NO_ALARM,
     TYPE_FIRE_ALARM,
@@ -35,5 +37,6 @@ typedef enum {
     VIBTYPE_INTERVAL,
 } vib_type_e;
 
+#endif
 
 /* [] END OF FILE */

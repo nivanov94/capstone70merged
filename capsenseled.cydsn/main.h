@@ -31,7 +31,7 @@
 #include "OTAOptional.h"
 #include "common.h"
 
-
+/*
 
 
 void AppCallBack(uint32 event, void* eventParam);
@@ -45,7 +45,10 @@ extern CYBLE_GATT_ERR_CODE_T CyBle_GattsWriteAttributeValue
 		);
         
 extern CYBLE_API_RESULT_T CyBle_GapFixAuthPassKey(uint8 isFixed, uint32 fixedPassKey);
-
+*/
+    
+void notifyAmbulance();
+void notifyFireAlarm();
 #endif /* MAIN_H */
 
 /* [] END OF FILE */

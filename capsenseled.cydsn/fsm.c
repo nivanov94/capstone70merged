@@ -21,7 +21,8 @@
 #define LIGHT_OFF 1u
 #define MOTOR_ON  1u
 #define MOTOR_OFF 0u
-#define SAMPLE_PERIOD 0.1 //seconds
+#define SAMPLE_PERIOD 0.01 //seconds
+#define SAMPLE_FREQ 100
 
 alarm_state_e alarmStateOld = TYPE_NO_ALARM;
 
@@ -31,9 +32,11 @@ alarm_state_e alarm_state    = TYPE_NO_ALARM;
 // Configuration updated by the app
 vib_type_e      curFireAlarmVibType      = VIBTYPE_CONTINUOUS;
 vib_type_e      curAmbulanceVibType      = VIBTYPE_CONTINUOUS;
-vib_duration_e  curVibDuration           = DURATION_5S;
+unsigned int    curVibDuration           = 5U;
 bool            curAlarmDetectEnable     = 1;
 bool            curAmbulanceDetectEnable = 1;
+
+const unsigned int durationLUT[] = {5U, 10U, 20U, 30U};
 
 // The state of the FSM.
 static uint8 state;
@@ -52,7 +55,7 @@ static int low_count;
 static int mid_count;
 static int high_count;
 static int fire_count;
-static int liveness_count;
+static unsigned int liveness_count;
 static int motor_pulse_count;
 static int prev_low_count;
 static int prev_mid_count;
@@ -68,7 +71,8 @@ void setAmbulanceVibType(int vibType){
 }
 
 void setVibDuration(int vibDuration){
-    curVibDuration = vibDuration;
+    curVibDuration = durationLUT[vibDuration];
+        
 }
 
 void setAlarmDetectEnable(int enable){
@@ -239,17 +243,17 @@ void fsm_tick(void) {
         /* alert acknowledged by user */
         case 6:
             liveness_count++;
-            if (alarm_state == TYPE_NO_ALARM || liveness_count*SAMPLE_PERIOD > curVibDuration) {
+            if (alarm_state == TYPE_NO_ALARM || liveness_count > SAMPLE_FREQ*curVibDuration) {
                 motor_Write(MOTOR_OFF);
                 state = 0;
             }
             else if (curAmbulanceVibType == VIBTYPE_INTERVAL) {
                 motor_pulse_count++;
-                if (motor_pulse_count == 1000) {
+                if (motor_pulse_count == SAMPLE_FREQ) {
                     motor_pulse_count = 0;
                 }
                 
-                if (motor_pulse_count < 500) {
+                if (motor_pulse_count < SAMPLE_FREQ/2) {
                     motor_Write(MOTOR_ON);
                 }
                 else {
@@ -260,17 +264,17 @@ void fsm_tick(void) {
             
         case 7:
             liveness_count++;
-            if (alarm_state == TYPE_NO_ALARM || liveness_count*SAMPLE_PERIOD > curVibDuration) {
+            if (alarm_state == TYPE_NO_ALARM || liveness_count > SAMPLE_FREQ*curVibDuration) {
                 motor_Write(MOTOR_OFF);
                 state = 0;
             }
             else if (curFireAlarmVibType == VIBTYPE_INTERVAL) {
                 motor_pulse_count++;
-                if (motor_pulse_count == 1000) {
+                if (motor_pulse_count == SAMPLE_FREQ) {
                     motor_pulse_count = 0;
                 }
                 
-                if (motor_pulse_count < 500) {
+                if (motor_pulse_count < SAMPLE_FREQ/2) {
                     motor_Write(MOTOR_ON);
                 }
                 else {

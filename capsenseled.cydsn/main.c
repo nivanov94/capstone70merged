@@ -9,7 +9,9 @@
 #include "IDAC.h"
 #include "adc.h"
 #include "PGA.h"
+
 #include "print.h"
+#include "BLE.h"
 
 
 /* LED control defines (active low)*/
