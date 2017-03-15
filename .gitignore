@@ -1,0 +1,7 @@
+*.lst
+*.o
+capsenseled.cydsn/CortexM0/*
+capsenseled.cydsn/Debug/*
+capsenseled.cydsn/CortexM0
+capsenseled.cywrk.*
+
