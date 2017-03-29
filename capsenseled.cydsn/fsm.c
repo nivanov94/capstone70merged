@@ -15,6 +15,7 @@
 #include "filter.h"
 #include "user_cfg_def.h"
 #include "BLE.h"
+#include "print.h"
 #include <stdbool.h>
 
 #define LIGHT_ON  0u
@@ -140,7 +141,6 @@ void fsm_tick(void) {
             push(&mid_deriv, mid_count - prev_mid_count);
             push(&high_deriv, high_count - prev_high_count);
                     
-                    
             // second derivative concavity test
             if ((sum(&low_deriv) == 0) && (peek(&low_deriv) == 1)) {
                 low_count = 0;
@@ -164,7 +164,7 @@ void fsm_tick(void) {
             }
                     
             /* Check for siren threshold. */
-            else if (curAmbulanceDetectEnable && (low_count > 25) && (mid_count > 5) && (high_count < 5) 
+            else if (curAmbulanceDetectEnable && (low_count >= 25) && (mid_count >= 5) 
                     && (low_count >= mid_count) && peek(&mid_prev) && !peek(&high_prev)) {
                 state = 2;
                 low_count = 0;
@@ -172,7 +172,6 @@ void fsm_tick(void) {
                 high_count = 0;
                 fire_count = 0;
                 liveness_count = 0;
-                init_queue(&low_deriv);
                 LED_BLUE_Write(LIGHT_ON);
             }        
             break;
@@ -186,19 +185,21 @@ void fsm_tick(void) {
             low_count = filter_count(LOW_FILTER_INPUT_Read(), &low_prev, low_count);
             mid_count = filter_count(MID_FILTER_INPUT_Read(), &mid_prev, mid_count);
             high_count = filter_count(HIGH_FILTER_INPUT_Read(), &high_prev, high_count); 
-
-            if (liveness_count > 100) {
+            
+            if (liveness_count > 75) {
                 state = 0;                    
                 LED_BLUE_Write(LIGHT_OFF);
             }
-            else if ((low_count <= mid_count) && (mid_count > 20) && (mid_count > high_count) 
-                    && (high_count > 12) && peek(&high_prev)) {
+            else if ((low_count <= mid_count) && (mid_count >= 45) && (mid_count >= high_count) 
+                    && (high_count >= 5) && peek(&high_prev)) {
                 state = 3;
                 low_count = 0;
                 mid_count = 0;
                 high_count = 0;
                 fire_count = 0;
                 liveness_count = 0;
+                LED_BLUE_Write(LIGHT_OFF);
+                LED_GREEN_Write(LIGHT_ON);
             }                                            
             break;
                     
@@ -207,20 +208,20 @@ void fsm_tick(void) {
             low_count = filter_count(LOW_FILTER_INPUT_Read(), &low_prev, low_count);
             mid_count = filter_count(MID_FILTER_INPUT_Read(), &mid_prev, mid_count);
             high_count = filter_count(HIGH_FILTER_INPUT_Read(), &high_prev, high_count);                    
-                    
+            
             if (liveness_count > 100) {
                 state = 0;
-                LED_BLUE_Write(LIGHT_OFF);
+                LED_GREEN_Write(LIGHT_OFF);
             }
-            else if ((low_count < 20) && (mid_count < 30) && (high_count > 95)) {
+            else if ((low_count <= high_count) && (mid_count <= high_count) && (high_count >= 45)) {
                 state = 4;
                 low_count = 0;
                 mid_count = 0;
                 high_count = 0;
                 fire_count = 0;
                 liveness_count = 0;
-                LED_BLUE_Write(LIGHT_OFF);
-                LED_GREEN_Write(LIGHT_ON);
+                LED_GREEN_Write(LIGHT_OFF);
+                LED_RED_Write(LIGHT_ON);
             }
             break;
             

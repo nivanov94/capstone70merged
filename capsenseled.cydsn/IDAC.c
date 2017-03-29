@@ -28,7 +28,7 @@
 #define FIRE_THRESH_INDEX 3
 
 static uint8 IDAC_current = 0x00;
-static float voltage_threshold = 0.6;
+static float voltage_threshold = 0.65;
 
 void init_IDAC(void) {
     

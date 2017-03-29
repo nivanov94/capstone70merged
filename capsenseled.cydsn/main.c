@@ -21,8 +21,9 @@
 #define LOW_FILT  0
 #define MID_FILT  1
 #define HIGH_FILT 2
+#define FIRE_FILT 3
 
-#define MIC_GAIN 68/2.2
+#define MIC_GAIN 150
 
 // Flag to indicate when to sample digital lines.
 uint8 sample_lines;
