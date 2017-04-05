@@ -194,6 +194,26 @@ void ConfigureSharedPins()
 }
 
 
+static uint8 BL_activate = 0;
+static uint8 BL_activate_now = 0;
+
+uint8 Bootloader_Activate_Read(void) {
+    return BL_activate;
+}
+
+void Bootloader_Activatie_Set(uint8 state) {
+    BL_activate = state;
+}
+
+void Bootloader_Enter_Set (void) {
+    BL_activate_now = 1;
+}
+
+uint8 Bootloader_Enter_Now(void) {
+    return BL_activate_now;
+}
+
+
 /*******************************************************************************
 * Function Name: BootloaderSwitch()
 ********************************************************************************
@@ -208,15 +228,15 @@ void ConfigureSharedPins()
 *******************************************************************************/
 void BootloaderSwitch()
 {
-    if (Bootloader_Service_Activation_Read() == 0)
+    if (Bootloader_Enter_Now() == 1)
     {
         CyDelay(100);
-        if (Bootloader_Service_Activation_Read() == 0)
+        if (Bootloader_Enter_Now() == 1)
         {
-            DBG_PRINTF("Bootloader activation button pressed \r\n");
-            DBG_PRINTF("Switching to bootloader application... \r\n");
+            char str[100];
+            sprintf(str, "Bootloader activation button pressed \r\n");
+            UART_PutString(str);
             CyDelay(500);
-            
             
             CyBle_Shutdown(); /* stop all ongoing activities */
             CyBle_ProcessEvents(); /* process all pending events */

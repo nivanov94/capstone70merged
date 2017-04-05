@@ -20,7 +20,9 @@ void fsm_tick(void);
 
 void setFireAlarmVibType(int vibType);
 void setAmbulanceVibType(int vibType);
-void setVibDuration(int vibDuration);
+void setSirenVibDuration(int vibDuration);
+void setAlarmVibDuration(int vibDuration);
+void setVibIntensity(int muteEnable);
 void setAlarmDetectEnable(int enable);
 void setAmbulanceDetectEnable(int enable);
 void fsm_set_alarm_state(alarm_state_e status);

@@ -9,8 +9,6 @@
 #include "IDAC.h"
 #include "adc.h"
 #include "PGA.h"
-
-#include "print.h"
 #include "BLE.h"
 
 
@@ -103,7 +101,7 @@ int main()
             sample_lines = 0;
             fsm_tick();
         }
-            
+        
         CyBle_ProcessEvents();
         BootloaderSwitch();
            

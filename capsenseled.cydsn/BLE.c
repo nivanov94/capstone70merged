@@ -64,7 +64,7 @@ void AppCallBack(uint32 event, void* eventParam);
  * Function to update the LED state in the GATT database
  **************************************************************/
 void updateLed()
-{
+{/*
     CYBLE_GATTS_HANDLE_VALUE_NTF_T 	tempHandle;
    
     //uint8 red_State = !red_Read();
@@ -76,6 +76,7 @@ void updateLed()
   	//tempHandle.value.val = (uint8 *) &red_State;
     tempHandle.value.len = 1;
     CyBle_GattsWriteAttributeValue(&tempHandle,0,&cyBle_connHandle,CYBLE_GATT_DB_LOCALLY_INITIATED);  
+    */
 }
     
 
@@ -128,8 +129,11 @@ void AppCallBack(uint32 event, void* eventParam)
         case CYBLE_EVT_GAP_DEVICE_DISCONNECTED:
             UART_PutString("Disconnected\n");
             CyBle_GappStartAdvertisement(CYBLE_ADVERTISING_FAST);
-            //blue_Write(0);
-            //red_Write(1);
+            
+            // If disconnected and requested activating bootloader, activate. 
+            if (Bootloader_Activate_Read() == 1) {
+                Bootloader_Enter_Set();
+            }
         break;
         case CYBLE_EVT_TIMEOUT: 
             UART_PutString("Timeout\n");
@@ -239,16 +243,6 @@ void AppCallBack(uint32 event, void* eventParam)
             char str[100];
             sprintf(str, "attrHandle = %d \n", (int)(wrReqParam->handleValPair.attrHandle));
             UART_PutString(str);
-			      
-            /* request write the LED value */
-            if(wrReqParam->handleValPair.attrHandle == CYBLE_LEDCAPSENSE_LED_CHAR_HANDLE)
-            {
-                /* only update the value and write the response if the requested write is allowed */
-                if(CYBLE_GATT_ERR_NONE == CyBle_GattsWriteAttributeValue(&wrReqParam->handleValPair, 0, &cyBle_connHandle, CYBLE_GATT_DB_PEER_INITIATED))
-                {
-                    CyBle_GattsWriteRsp(cyBle_connHandle);
-                }
-            }
             
             /* request to update the CapSense notification */
             if(wrReqParam->handleValPair.attrHandle == CYBLE_LEDCAPSENSE_CAPSENSE_CAPSENSECCCD_DESC_HANDLE) 
@@ -260,7 +254,7 @@ void AppCallBack(uint32 event, void* eventParam)
             /* Request to change the vibration intensity -> between mute, low, medium, and high */
             if (wrReqParam->handleValPair.attrHandle == CYBLE_LEDCAPSENSE_VIBINTENSITY_CHAR_HANDLE)
             {
-                //setVibIntensity(wrReqParam->handleValPair.value.val[0]);
+                setVibIntensity(wrReqParam->handleValPair.value.val[0]);
                 CyBle_GattsWriteRsp(cyBle_connHandle);
             }
             
@@ -279,12 +273,7 @@ void AppCallBack(uint32 event, void* eventParam)
                 CyBle_GattsWriteRsp(cyBle_connHandle);                
             }
             
-            /* Request to update the vibration duration */
-            if (wrReqParam->handleValPair.attrHandle == CYBLE_LEDCAPSENSE_VIBDURATION_CHAR_HANDLE)
-            {
-                setVibDuration(wrReqParam->handleValPair.value.val[0]);
-                CyBle_GattsWriteRsp(cyBle_connHandle); 
-            }
+
             
             /* Request to update the ambulance's vibration type */
             if (wrReqParam->handleValPair.attrHandle == CYBLE_LEDCAPSENSE_AMBULANCEVIBTYPE_CHAR_HANDLE)
@@ -293,10 +282,24 @@ void AppCallBack(uint32 event, void* eventParam)
                 CyBle_GattsWriteRsp(cyBle_connHandle); 
             }
             
+            /* Request to update the alarm vibration duration */
+            if (wrReqParam->handleValPair.attrHandle == CYBLE_LEDCAPSENSE_AMBULANCEVIBDURATION_CHAR_HANDLE)
+            {
+                setSirenVibDuration(wrReqParam->handleValPair.value.val[0]);
+                CyBle_GattsWriteRsp(cyBle_connHandle); 
+            }
+            
             /* Request to update the fire alarm's vibration type */
             if (wrReqParam->handleValPair.attrHandle == CYBLE_LEDCAPSENSE_ALARMVIBTYPE_CHAR_HANDLE)
             {
                 setFireAlarmVibType(wrReqParam->handleValPair.value.val[0]);
+                CyBle_GattsWriteRsp(cyBle_connHandle); 
+            }
+            
+            /* Request to update the alarm vibration duration */
+            if (wrReqParam->handleValPair.attrHandle == CYBLE_LEDCAPSENSE_ALARMVIBDURATION_CHAR_HANDLE)
+            {
+                setAlarmVibDuration(wrReqParam->handleValPair.value.val[0]);
                 CyBle_GattsWriteRsp(cyBle_connHandle); 
             }
             
@@ -312,7 +315,20 @@ void AppCallBack(uint32 event, void* eventParam)
             {
                 setAmbulanceDetectEnable(wrReqParam->handleValPair.value.val[0]);
                 CyBle_GattsWriteRsp(cyBle_connHandle); 
+                
             }
+            
+            /* Request to update whether to activate BL */
+            if (wrReqParam->handleValPair.attrHandle == CYBLE_LEDCAPSENSE_BLACTIVATE_CHAR_HANDLE)
+            {
+                CyBle_GattsWriteRsp(cyBle_connHandle); 
+                CyDelay(200);
+                Bootloader_Activatie_Set(wrReqParam->handleValPair.value.val[0]);
+                char str[100];
+                sprintf(str, "BL Activate: Value written: %d \r\n", wrReqParam->handleValPair.value.val[0]);
+                UART_PutString(str);
+            }
+            
 
             break;
         

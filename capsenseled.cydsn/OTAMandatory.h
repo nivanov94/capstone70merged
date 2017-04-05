@@ -3350,6 +3350,10 @@ extern const CYBLE_BTSS_T cyBle_btss;
 void ConfigureSharedPins(void);
 void BootloaderSwitch(void);
 void ConfigureServices(void);
+void Bootloader_Activatie_Set(uint8 state);
+uint8 Bootloader_Activate_Read(void);
+void Bootloader_Enter_Set (void);
+uint8 Bootloader_Enter_Now(void);
 
 #endif /* SHARED_API_HEADER */
 

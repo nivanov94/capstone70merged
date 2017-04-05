@@ -15,7 +15,6 @@
 #include "filter.h"
 #include "user_cfg_def.h"
 #include "BLE.h"
-#include "print.h"
 #include <stdbool.h>
 
 #define LIGHT_ON  0u
@@ -33,7 +32,9 @@ alarm_state_e alarm_state    = TYPE_NO_ALARM;
 // Configuration updated by the app
 vib_type_e      curFireAlarmVibType      = VIBTYPE_CONTINUOUS;
 vib_type_e      curAmbulanceVibType      = VIBTYPE_CONTINUOUS;
-unsigned int    curVibDuration           = 5U;
+unsigned int    curSirenVibDuration      = 5U;
+unsigned int    curAlarmVibDuration      = 5U;
+bool            muteHaptic               = 0;
 bool            curAlarmDetectEnable     = 1;
 bool            curAmbulanceDetectEnable = 1;
 
@@ -71,9 +72,12 @@ void setAmbulanceVibType(int vibType){
     curAmbulanceVibType = vibType;
 }
 
-void setVibDuration(int vibDuration){
-    curVibDuration = durationLUT[vibDuration];
-        
+void setSirenVibDuration(int vibDuration){
+    curSirenVibDuration = durationLUT[vibDuration];     
+}
+
+void setAlarmVibDuration(int vibDuration){
+    curAlarmVibDuration = durationLUT[vibDuration];
 }
 
 void setAlarmDetectEnable(int enable){
@@ -84,6 +88,9 @@ void setAmbulanceDetectEnable(int enable){
     curAmbulanceDetectEnable = enable;
 }
 
+void setVibIntensity(int muteEnable) {
+    muteHaptic = muteEnable;
+}
 
 void fsm_init(void) {
     init_queue(&low_prev);
@@ -154,7 +161,7 @@ void fsm_tick(void) {
                 mid_count = 0;
                 high_count = 0;
             }                      
-                    
+            
             /* Check for fire alarm threshold. */
             if (curAlarmDetectEnable && fire_count > 800) {
                 state = 5;
@@ -165,7 +172,7 @@ void fsm_tick(void) {
                     
             /* Check for siren threshold. */
             else if (curAmbulanceDetectEnable && (low_count >= 25) && (mid_count >= 5) 
-                    && (low_count >= mid_count) && peek(&mid_prev) && !peek(&high_prev)) {
+                    && (low_count >= mid_count)) {
                 state = 2;
                 low_count = 0;
                 mid_count = 0;
@@ -191,7 +198,7 @@ void fsm_tick(void) {
                 LED_BLUE_Write(LIGHT_OFF);
             }
             else if ((low_count <= mid_count) && (mid_count >= 45) && (mid_count >= high_count) 
-                    && (high_count >= 5) && peek(&high_prev)) {
+                    && (high_count >= 5)) {
                 state = 3;
                 low_count = 0;
                 mid_count = 0;
@@ -227,24 +234,36 @@ void fsm_tick(void) {
             
         /* In this state, indicate detection of the siren. */
         case 4:
-            motor_Write(MOTOR_ON);
             notifyAmbulance();
-            state = 6;
-            motor_pulse_count = 0;
+            
+            if (muteHaptic) {
+                state = 0;
+            }
+            else {
+                motor_Write(MOTOR_ON);
+                state = 6;
+                motor_pulse_count = 0;
+            }
             break;
                     
         /* In this state, indicate detection of the fire alarm */
         case 5:
-            motor_Write(MOTOR_ON);
             notifyFireAlarm();
-            state = 7;
-            motor_pulse_count = 0;
+            
+            if (muteHaptic) {
+                state = 0;
+            }
+            else {
+                motor_Write(MOTOR_ON);
+                state = 7;
+                motor_pulse_count = 0;
+            }
             break;
                 
         /* alert acknowledged by user */
         case 6:
             liveness_count++;
-            if (alarm_state == TYPE_NO_ALARM || liveness_count > SAMPLE_FREQ*curVibDuration) {
+            if (alarm_state == TYPE_NO_ALARM || liveness_count > SAMPLE_FREQ*curSirenVibDuration) {
                 motor_Write(MOTOR_OFF);
                 state = 0;
             }
@@ -265,7 +284,7 @@ void fsm_tick(void) {
             
         case 7:
             liveness_count++;
-            if (alarm_state == TYPE_NO_ALARM || liveness_count > SAMPLE_FREQ*curVibDuration) {
+            if (alarm_state == TYPE_NO_ALARM || liveness_count > SAMPLE_FREQ*curAlarmVibDuration) {
                 motor_Write(MOTOR_OFF);
                 state = 0;
             }
